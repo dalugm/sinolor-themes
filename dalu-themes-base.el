@@ -62,7 +62,7 @@
     (mode-line-inactive  :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
-    (mode-line-buffer-id :weight 'bold  :height 0.1)
+    (mode-line-buffer-id :weight 'bold)
     (header-line         :backgorund bg     :foregorund fg     :distant-foreground bg)
 
     ;; tab-line/tab-bar (Emacs 27+)

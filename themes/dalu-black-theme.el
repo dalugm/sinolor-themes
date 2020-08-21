@@ -1,53 +1,47 @@
-;;; dalu-dark-theme.el --- Dark theme
+;;; dalu-black-theme.el --- Black theme
 
 ;;; Commentary:
 ;;
-;; Dark theme.
+;; Black theme.
 ;;
-;; Color selected from Chinese traditional colors.
-;;
-;; 蕈紫	#815c94
-;; 玉髓绿	#41b349
-;; 宫殿绿	#20894d
-;; 汉白玉	#f8f4ed
 
 ;;; Code:
 
 (require 'dalu-themes)
 
-(defgroup dalu-dark-theme nil
+(defgroup dalu-black-theme nil
   "Options for dalu-themes"
   :group 'dalu-themes)
 
-(defcustom dalu-dark-brighter-modeline nil
+(defcustom dalu-black-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'dalu-dark-theme
+  :group 'dalu-black-theme
   :type 'boolean)
 
-(defcustom dalu-dark-brighter-comments nil
+(defcustom dalu-black-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'dalu-dark-theme
+  :group 'dalu-black-theme
   :type 'boolean)
 
-(defcustom dalu-dark-comment-bg dalu-dark-brighter-comments
+(defcustom dalu-black-comment-bg dalu-black-brighter-comments
   "If non-nil, comments will have a subtle, darker background.
 
 Enhancing their legibility."
-  :group 'dalu-dark-theme
+  :group 'dalu-black-theme
   :type 'boolean)
 
-(defcustom dalu-dark-padded-modeline dalu-themes-padded-modeline
+(defcustom dalu-black-padded-modeline dalu-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 
 Can be an integer to determine the exact padding."
-  :group 'dalu-dark-theme
+  :group 'dalu-black-theme
   :type '(choice integer boolean))
 
-(def-dalu-theme dalu-dark
-  "A dark theme modified from `doom-one'."
+(def-dalu-theme dalu-black
+  "A derived dark theme from `dalu-dark'"
 
   ;; name        default   256       16
-  ((bg         '("#242525" nil       nil            ))
+  ((bg         '("#000000" nil       nil            ))
    (bg-alt     '("#333333" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
@@ -61,7 +55,6 @@ Can be an integer to determine the exact padding."
    (fg         '("#41b349" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("green4"  "#2d2d2d" "white"        ))
 
-   (white      '("#f8f4ed" "#dfdfdf" "white"))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"  ))
    (red        '("#cc163a" "#ff6655" "red"          ))
    (orange     '("#fa7e23" "#dd8844" "brightred"    ))
@@ -80,8 +73,8 @@ Can be an integer to determine the exact padding."
    (vertical-bar   (dalu-themes--darken base1 0.1))
    (selection      dark-blue)
    (builtin        "#00b8ff")
-   (comments       grey)
-   (doc-comments   white)
+   (comments       "#a7a7a7")
+   (doc-comments   "#aaaaaa")
    (constants      "#bd00ff")
    (functions      "gold2")
    (keywords       blue)
@@ -102,10 +95,10 @@ Can be an integer to determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright dalu-dark-brighter-modeline)
+   (-modeline-bright dalu-black-brighter-modeline)
    (-modeline-pad
-    (when dalu-dark-padded-modeline
-      (if (integerp dalu-dark-padded-modeline) dalu-dark-padded-modeline 4)))
+    (when dalu-black-padded-modeline
+      (if (integerp dalu-black-padded-modeline) dalu-black-padded-modeline 4)))
 
    (modeline-fg     fg)
    (modeline-fg-alt base5)
@@ -132,16 +125,16 @@ Can be an integer to determine the exact padding."
 
    (font-lock-comment-face
     :foreground comments
-    :background (if dalu-dark-comment-bg (dalu-themes--lighten bg 0.05)))
+    :background (if dalu-black-comment-bg (dalu-themes--lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
    (mode-line
-    :background modeline-bg :foreground modeline-fg
+    :background highlight :foreground highlight
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :background bg :foreground bg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
@@ -184,4 +177,4 @@ Can be an integer to determine the exact padding."
   ()
   )
 
-;;; dalu-dark-theme.el ends here
+;;; dalu-black-theme.el ends here

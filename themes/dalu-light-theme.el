@@ -38,7 +38,7 @@ Can be an integer to determine the exact padding."
   :type '(choice integer boolean))
 
 (def-dalu-theme dalu-light
-  "A derived light theme by dalu-theme-dark."
+  "A derived light theme from `dalu-dark.'"
 
   ;; name        default   256       16
   ((bg         '("#FAFAFA" nil       nil            ))

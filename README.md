@@ -1,13 +1,25 @@
-<img src="./dark-screenshot.png">
-<img src="./light-screenshot.png">
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
 
-## Dalu's Emacs Theme
+- [Dalu's Emacs Theme](#dalus-emacs-theme)
+    - [Installation](#installation)
+    - [Usage](#usage)
+
+<!-- markdown-toc end -->
+
+# Dalu's Emacs Theme
 
 dalu-themes is my customized theme package, code base fork from [emacs-doom-themes](https://github.com/hlissner/emacs-doom-themes "emacs-doom-themes").
 
-Remove some niche packages code and try to keep compatible in terminal and GUI.
+Colors are mostly selected from traditional Chinese color.
 
-### Installation
+Light and Black (used in lightless night) theme are derived from dark theme.
+
+Forked from `doom-one`, `dalu-test-theme` is not recommended to use, which is only used to test color compatible.
+
+**All themes are compatible both in terminal and GUI.**
+
+## Installation
 
 1. Clone this repository
 
@@ -22,36 +34,8 @@ git clone --depth=1 https://github.com/dalu98/dalu-themes.git
 (require 'dalu-themes)
 ```
 
-### Usage
+## Usage
 
-#### Load theme
-
-Switch to dark theme:
-
-```elisp
-(dalu-themes-load-dark)
-```
-
-Switch to light theme:
-
-```elisp
-(dalu-themes-load-light)
-```
-
-#### Toggle theme
-
-```elisp
-(dalu-themes-toggle)
-```
-
-#### Load theme with current time
-
-```elisp
-(dalu-themes-load)
-```
-
-#### Check the time every hour then adjusted theme with sunrise
-
-```elisp
-(dalu-themes-load-with-sunrise)
+``` elisp
+(load-theme 'dalu-dark t)
 ```

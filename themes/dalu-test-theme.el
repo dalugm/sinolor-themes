@@ -1,54 +1,49 @@
-;;; dalu-dark-theme.el --- Dark theme
+;;; dalu-test-theme.el --- inspired by Atom One Dark -*- no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;
-;; Dark theme.
+;; for test only.
 ;;
-;; Color selected from Chinese traditional colors.
-;;
-;; 蕈紫	#815c94
-;; 玉髓绿	#41b349
-;; 宫殿绿	#20894d
-;; 汉白玉	#f8f4ed
 
 ;;; Code:
 
 (require 'dalu-themes)
 
-(defgroup dalu-dark-theme nil
+(defgroup dalu-test-theme nil
   "Options for dalu-themes"
   :group 'dalu-themes)
 
-(defcustom dalu-dark-brighter-modeline nil
+(defcustom dalu-test-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'dalu-dark-theme
+  :group 'dalu-test-theme
   :type 'boolean)
 
-(defcustom dalu-dark-brighter-comments nil
+(defcustom dalu-test-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'dalu-dark-theme
+  :group 'dalu-test-theme
   :type 'boolean)
 
-(defcustom dalu-dark-comment-bg dalu-dark-brighter-comments
+(defcustom dalu-test-comment-bg dalu-test-brighter-comments
   "If non-nil, comments will have a subtle, darker background.
 
 Enhancing their legibility."
-  :group 'dalu-dark-theme
+  :group 'dalu-test-theme
   :type 'boolean)
 
-(defcustom dalu-dark-padded-modeline dalu-themes-padded-modeline
+(defcustom dalu-test-padded-modeline dalu-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 
 Can be an integer to determine the exact padding."
-  :group 'dalu-dark-theme
+  :group 'dalu-test-theme
   :type '(choice integer boolean))
 
-(def-dalu-theme dalu-dark
-  "A dark theme modified from `doom-one'."
+;;
+(def-dalu-theme dalu-test
+  "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         '("#242525" nil       nil            ))
-   (bg-alt     '("#333333" nil       nil            ))
+  ((bg         '("#282c34" nil       nil            ))
+   (bg-alt     '("#21242b" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -58,41 +53,39 @@ Can be an integer to determine the exact padding."
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#41b349" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("green4"  "#2d2d2d" "white"        ))
+   (fg         '("#bbc2cf" "#bfbfbf" "brightwhite"  ))
+   (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
 
-   (white      '("#f8f4ed" "#dfdfdf" "white"))
-   (grey       '("#b7ae8f" "#3f3f3f" "brightblack"  ))
-   (red        '("#cc163a" "#ff6655" "red"          ))
-   (orange     '("#fa7e23" "#dd8844" "brightred"    ))
-   (green      '("#20894d" "#99bb66" "green"        ))
-   (teal       '("#12a182" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#fed71a" "#ECBE7B" "yellow"       ))
-   (blue       '("#1772b4" "#51afef" "brightblue"   ))
-   (dark-blue  '("#144a74" "#2257A0" "blue"         ))
-   (magenta    '("#7e1671" "#c678dd" "brightmagenta"))
-   (violet     '("#815c94" "#a9a1e1" "magenta"      ))
-   (cyan       '("#63bbd0" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#134857" "#5699AF" "cyan"         ))
+   (grey       base4)
+   (red        '("#ff6c6b" "#ff6655" "red"          ))
+   (orange     '("#da8548" "#dd8844" "brightred"    ))
+   (green      '("#98be65" "#99bb66" "green"        ))
+   (teal       '("#4db5bd" "#44b9b1" "brightgreen"  ))
+   (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
+   (blue       '("#51afef" "#51afef" "brightblue"   ))
+   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
+   (magenta    '("#c678dd" "#c678dd" "brightmagenta"))
+   (violet     '("#a9a1e1" "#a9a1e1" "magenta"      ))
+   (cyan       '("#46D9FF" "#46D9FF" "brightcyan"   ))
+   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
 
    ;; face categories -- required for all themes
-   (highlight      green)
+   (highlight      blue)
    (vertical-bar   (dalu-themes--darken base1 0.1))
    (selection      dark-blue)
-   (builtin        "#00b8ff")
-   (comments       grey)
-   (doc-comments   white)
-   (constants      "#bd00ff")
-   (functions      "gold2")
+   (builtin        magenta)
+   (comments       (if dalu-test-brighter-comments dark-cyan base5))
+   (doc-comments   (dalu-themes--lighten (if dalu-test-brighter-comments dark-cyan base5) 0.25))
+   (constants      violet)
+   (functions      magenta)
    (keywords       blue)
    (methods        cyan)
-   (operators      "cyan3")
-   (type           "#00b8ff")
-   (strings        "#DFD67A")
-   (variables      "gold2")
+   (operators      blue)
+   (type           yellow)
+   (strings        green)
+   (variables      (dalu-themes--lighten magenta 0.4))
    (numbers        orange)
-   (region         "#3F90F7")
-   (region-fg      "#FFF")
+   (region         `(,(dalu-themes--lighten (car bg-alt) 0.15) ,@(dalu-themes--lighten (cdr base1) 0.35)))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -102,10 +95,10 @@ Can be an integer to determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright dalu-dark-brighter-modeline)
+   (-modeline-bright dalu-test-brighter-modeline)
    (-modeline-pad
-    (when dalu-dark-padded-modeline
-      (if (integerp dalu-dark-padded-modeline) dalu-dark-padded-modeline 4)))
+    (when dalu-test-padded-modeline
+      (if (integerp dalu-test-padded-modeline) dalu-test-padded-modeline 4)))
 
    (modeline-fg     fg)
    (modeline-fg-alt base5)
@@ -127,12 +120,12 @@ Can be an integer to determine the exact padding."
 
    (evil-goggles-default-face :inherit 'region :background (dalu-themes--blend region bg 0.5))
 
-   ((line-number &override) :foreground fg-alt :background bg)
-   ((line-number-current-line &override) :foreground fg :background bg)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground fg)
 
    (font-lock-comment-face
     :foreground comments
-    :background (if dalu-dark-comment-bg (dalu-themes--lighten bg 0.05)))
+    :background (if dalu-test-comment-bg (dalu-themes--lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -170,6 +163,9 @@ Can be an integer to determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
+   ;; LaTeX-mode
+   (font-latex-math-face :foreground green)
+
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
@@ -184,4 +180,4 @@ Can be an integer to determine the exact padding."
   ()
   )
 
-;;; dalu-dark-theme.el ends here
+;;; dalu-test-theme.el ends here
