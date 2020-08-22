@@ -1,4 +1,4 @@
-;;; dalu-dark-theme.el --- Dark theme
+;;; dalu-vibrant-theme.el --- Dark theme
 
 ;;; Commentary:
 ;;
@@ -35,35 +35,35 @@
 
 (require 'dalu-themes)
 
-(defgroup dalu-dark-theme nil
+(defgroup dalu-vibrant-theme nil
   "Options for dalu-themes"
   :group 'dalu-themes)
 
-(defcustom dalu-dark-brighter-modeline nil
+(defcustom dalu-vibrant-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'dalu-dark-theme
+  :group 'dalu-vibrant-theme
   :type 'boolean)
 
-(defcustom dalu-dark-brighter-comments nil
+(defcustom dalu-vibrant-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'dalu-dark-theme
+  :group 'dalu-vibrant-theme
   :type 'boolean)
 
-(defcustom dalu-dark-comment-bg dalu-dark-brighter-comments
+(defcustom dalu-vibrant-comment-bg dalu-vibrant-brighter-comments
   "If non-nil, comments will have a subtle, darker background.
 
 Enhancing their legibility."
-  :group 'dalu-dark-theme
+  :group 'dalu-vibrant-theme
   :type 'boolean)
 
-(defcustom dalu-dark-padded-modeline dalu-themes-padded-modeline
+(defcustom dalu-vibrant-padded-modeline dalu-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 
 Can be an integer to determine the exact padding."
-  :group 'dalu-dark-theme
+  :group 'dalu-vibrant-theme
   :type '(choice integer boolean))
 
-(def-dalu-theme dalu-dark
+(def-dalu-theme dalu-vibrant
   "A dark theme modified from `doom-one'."
 
   ;; name        default   256       16
@@ -78,7 +78,7 @@ Can be an integer to determine the exact padding."
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#d8e3e7" "#bfbfbf" "brightwhite"  ))
+   (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#1772b4"  "#2d2d2d" "white"        ))
 
    (white      '("#f8f4ed" "#dfdfdf" "white"))
@@ -125,10 +125,10 @@ Can be an integer to determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright dalu-dark-brighter-modeline)
+   (-modeline-bright dalu-vibrant-brighter-modeline)
    (-modeline-pad
-    (when dalu-dark-padded-modeline
-      (if (integerp dalu-dark-padded-modeline) dalu-dark-padded-modeline 4)))
+    (when dalu-vibrant-padded-modeline
+      (if (integerp dalu-vibrant-padded-modeline) dalu-vibrant-padded-modeline 4)))
 
    (modeline-fg     fg)
    (modeline-fg-alt base5)
@@ -155,7 +155,7 @@ Can be an integer to determine the exact padding."
 
    (font-lock-comment-face
     :foreground comments
-    :background (if dalu-dark-comment-bg (dalu-themes--lighten bg 0.05)))
+    :background (if dalu-vibrant-comment-bg (dalu-themes--lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -207,4 +207,4 @@ Can be an integer to determine the exact padding."
   ()
   )
 
-;;; dalu-dark-theme.el ends here
+;;; dalu-vibrant-theme.el ends here

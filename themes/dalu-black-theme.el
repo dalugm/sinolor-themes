@@ -52,37 +52,40 @@ Can be an integer to determine the exact padding."
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#41b349" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("green4"  "#2d2d2d" "white"        ))
+   (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
+   (fg-alt     '("#1772b4"  "#2d2d2d" "white"        ))
 
+   (white      '("#f8f4ed" "#dfdfdf" "white"))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"  ))
-   (red        '("#cc163a" "#ff6655" "red"          ))
+   (red        '("#de1c31" "#ff6655" "red"          ))
    (orange     '("#fa7e23" "#dd8844" "brightred"    ))
-   (green      '("#20894d" "#99bb66" "green"        ))
+   (yellow     '("#e2d849" "#ffff00" "yellow"       ))
+   (gold       '("#fed71a" "#ffd700" "gold"         ))
+   (gold2      '("#e2c027" "#ffd700" "gold2"        ))
    (teal       '("#12a182" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#fed71a" "#ECBE7B" "yellow"       ))
    (blue       '("#1772b4" "#51afef" "brightblue"   ))
    (dark-blue  '("#144a74" "#2257A0" "blue"         ))
-   (magenta    '("#7e1671" "#c678dd" "brightmagenta"))
-   (violet     '("#815c94" "#a9a1e1" "magenta"      ))
    (cyan       '("#63bbd0" "#46D9FF" "brightcyan"   ))
    (dark-cyan  '("#134857" "#5699AF" "cyan"         ))
+   (green      '("#20894d" "#99bb66" "green"        ))
+   (magenta    '("#7e1671" "#c678dd" "brightmagenta"))
+   (violet     '("#815c94" "#a9a1e1" "magenta"      ))
 
    ;; face categories -- required for all themes
-   (highlight      green)
+   (highlight      white)
    (vertical-bar   (dalu-themes--darken base1 0.1))
    (selection      dark-blue)
    (builtin        "#00b8ff")
-   (comments       "#a7a7a7")
-   (doc-comments   "#aaaaaa")
-   (constants      "#bd00ff")
-   (functions      "gold2")
+   (comments       grey)
+   (doc-comments   yellow)
+   (constants      violet)
+   (functions      gold2)
    (keywords       blue)
    (methods        cyan)
    (operators      "cyan3")
    (type           "#00b8ff")
-   (strings        "#DFD67A")
-   (variables      "gold2")
+   (strings        yellow)
+   (variables      gold)
    (numbers        orange)
    (region         "#3F90F7")
    (region-fg      "#FFF")
@@ -131,10 +134,10 @@ Can be an integer to determine the exact padding."
     :foreground doc-comments)
 
    (mode-line
-    :background highlight :foreground highlight
+    :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background bg :foreground bg
+    :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))

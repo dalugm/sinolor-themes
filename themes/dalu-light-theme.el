@@ -131,10 +131,10 @@ Can be an integer to determine the exact padding."
     :foreground doc-comments)
 
    (mode-line
-    :background highlight :foreground highlight
+    :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background bg :foreground bg
+    :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
