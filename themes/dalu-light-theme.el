@@ -4,6 +4,19 @@
 ;;
 ;; Light theme.
 ;;
+;; Color selected from Chinese traditional colors.
+;;
+;; 月白	#eef7f2
+;;
+;; 香叶红	#f07c82
+;; 牡丹粉红	#eea2a4
+;;
+;; 鸢尾蓝	#158bb8
+;; 霁青	#63bbd0
+;; 瀑布蓝	#51c4d3
+;;
+;; 玉髓绿	#41b349
+;;
 
 ;;; Code:
 
@@ -41,38 +54,42 @@ Can be an integer to determine the exact padding."
   "A derived light theme from `dalu-dark.'"
 
   ;; name        default   256       16
-  ((bg         '("#FAFAFA" nil       nil            ))
-   (bg-alt     '("#C3E8FF" nil       nil            ))
-   (base0      '("#1B2229" "black"   "black"        ))
-   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
-   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-   (base3      '("#EAEAEA" "#262626" "brightblack"  ))
-   (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  ))
-   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
-   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#383a42" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#c6c7c7" "#2d2d2d" "white"        ))
+  ((bg         '("#eef7f2" nil       nil           ))
+   (bg-alt     '("#63bbd0" nil       nil           ))
+   (base0      '("#f07c82" "#d7005f" "red"         ))
+   (base1      '("#eea2a4" "#d700af" "magenta"     ))
+   (base2      '("#c04851" "#d700ff" "magenta"     ))
+   (base3      '("#c04851" "#262626" "magenta"     ))
+   (base4      '("#eea2a4" "#3f3f3f" "magenta"     ))
+   (base5      '("#eea2a4" "#525252" "magenta"     ))
+   (base6      '("#73797e" "#6b6b6b" "magenta"     ))
+   (base7      '("#9ca0a4" "#979797" "magenta"     ))
+   (base8      '("#DFDFDF" "#dfdfdf" "white"       ))
+   (fg         '("#383a42" "#bfbfbf" "brightwhite" ))
+   (fg-alt     '("#c6c7c7" "#2d2d2d" "white"       ))
 
-   (grey       base4)
-   (red        '("#ff6c6b" "#ff6655" "red"          ))
-   (orange     '("#da8548" "#dd8844" "brightred"    ))
-   (green      '("#98be65" "#99bb66" "green"        ))
-   (teal       '("#4db5bd" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
-   (blue       '("#51afef" "#51afef" "brightblue"   ))
-   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
-   (magenta    '("#c678dd" "#c678dd" "brightmagenta"))
-   (violet     '("#a9a1e1" "#a9a1e1" "magenta"      ))
-   (cyan       '("#46D9FF" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
+   (white      '("#f8f4ed" "#dfdfdf" "white"))
+   (grey       '("#b7ae8f" "#3f3f3f" "brightblack"  ))
+   (red        '("#de1c31" "#ff6655" "red"          ))
+   (orange     '("#fa7e23" "#dd8844" "brightred"    ))
+   (yellow     '("#e2d849" "#ffff00" "yellow"       ))
+   (gold       '("#fed71a" "#ffd700" "gold"         ))
+   (gold2      '("#e2c027" "#ffd700" "gold2"        ))
+   (teal       '("#12a182" "#44b9b1" "brightgreen"  ))
+   (blue       '("#51c4d3" "#51afef" "brightblue"   ))
+   (blue2      '("#8fb2c9" "#00afd7" "brightblue"   ))
+   (dark-blue  '("#10aec2" "#2257A0" "blue"         ))
+   (cyan       '("#63bbd0" "#46D9FF" "brightcyan"   ))
+   (dark-cyan  '("#134857" "#5699AF" "cyan"         ))
+   (green      '("#20894d" "#99bb66" "green"        ))
+   (magenta    '("#7e1671" "#c678dd" "brightmagenta"))
+   (violet     '("#815c94" "#a9a1e1" "magenta"      ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
    (vertical-bar   (dalu-themes--darken base2 0.1))
-   (selection      "#CCCCCC")
-   (builtin        dark-blue)
+   (selection      "#10aec2")
+   (builtin        blue2)
    (comments       (if dalu-light-brighter-comments cyan base4))
    (doc-comments   (dalu-themes--darken comments 0.15))
    (constants      "#008080")
@@ -81,11 +98,11 @@ Can be an integer to determine the exact padding."
    (methods        cyan)
    (operators      blue)
    (type           "#A90C6C")
-   (strings        "#0CA921")
+   (strings        "#41b349")
    (variables      (dalu-themes--darken magenta 0.36))
    (numbers        orange)
    (region         "#3F90F7")
-   (region-fg      "#000")
+   (region-fg      "#46D9FF")
    (error          red)
    (warning        yellow)
    (success        green)
