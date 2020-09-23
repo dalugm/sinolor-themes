@@ -172,7 +172,9 @@ Can be an integer to determine the exact padding."
    ((markdown-code-face &override) :background (dalu-themes--lighten base3 0.05))
 
    ;; org-mode
-   (org-hide :foreground hidden)
+   (org-hide              :foreground hidden)
+   (org-block-begin-line  :background (dalu-themes--lighten base3 0.05) :overline t)
+   (org-block-end-line    :background (dalu-themes--lighten base3 0.05) :underline t)
    (solaire-org-hide-face :foreground hidden))
 
 

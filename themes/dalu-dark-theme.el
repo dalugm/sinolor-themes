@@ -6,15 +6,15 @@
 ;;
 ;; Color selected from Chinese traditional colors.
 ;;
-;; 唐菖蒲红	#de1c31
-;; 尖晶石红	#cc163a
 ;; 春梅红	#f1939c
 ;; 满江红	#a7535a
+;; 唐菖蒲红	#de1c31
+;; 尖晶石红	#cc163a
 ;;
 ;; 蝶黄	#e2d849
-;; 佛手黄	#fed71a
 ;; 姜黄	#e2c027
 ;; 枯黄	#b78d12
+;; 佛手黄	#fed71a
 ;;
 ;; 群青	#1772b4
 ;; 晴山蓝	#8fb2c9
@@ -30,11 +30,12 @@
 ;; 蕈紫	#815c94
 ;; 暗玉紫	#22202e
 ;; 剑锋紫	#3e3841
+;; 青莲紫	#8b2671
 ;; 暗龙胆紫	#22202e
 ;;
+;; 芽绿	#96c24e
 ;; 玉髓绿	#41b349
 ;; 宫殿绿	#20894d
-;; 芽绿	#96c24e
 
 ;;; Code:
 
@@ -77,7 +78,7 @@ Can be an integer to determine the exact padding."
    (base0      '("#5c2223" "black"   "black"        )) ; matching highlight bg
    (base1      '("#22202e" "#1e1e1e" "brightblack"  )) ; minibuffer selection bg
    (base2      '("#2b1216" "#2e2e2e" "brightblack"  )) ; completion selection bg
-   (base3      '("#23272e" "#262626" "brightblack"  ))
+   (base3      '("#23272e" "#262626" "brightblack"  )) ; org block bg
    (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
    (base5      '("#5B6268" "#525252" "brightblack"  ))
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
@@ -205,6 +206,8 @@ Can be an integer to determine the exact padding."
 
    ;; org-mode
    (org-hide :foreground hidden)
+   (org-block-begin-line  :background (dalu-themes--lighten base3 0.05) :overline t)
+   (org-block-end-line    :background (dalu-themes--lighten base3 0.05) :underline t)
    (solaire-org-hide-face :foreground hidden))
 
 

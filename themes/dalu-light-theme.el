@@ -10,10 +10,12 @@
 ;;
 ;; 香叶红	#f07c82
 ;; 牡丹粉红	#eea2a4
+;; 丁香淡紫	#e9d7df
 ;;
 ;; 鸢尾蓝	#158bb8
 ;; 霁青	#63bbd0
 ;; 瀑布蓝	#51c4d3
+;; 远天蓝	#d0dfe6
 ;;
 ;; 玉髓绿	#41b349
 ;;
@@ -59,7 +61,7 @@ Can be an integer to determine the exact padding."
    (base0      '("#f07c82" "#d7005f" "red"         ))
    (base1      '("#eea2a4" "#d700af" "magenta"     ))
    (base2      '("#c04851" "#d700ff" "magenta"     ))
-   (base3      '("#c04851" "#262626" "magenta"     ))
+   (base3      '("#d0dfe6" "#262626" "gray"        ))
    (base4      '("#eea2a4" "#3f3f3f" "magenta"     ))
    (base5      '("#eea2a4" "#525252" "magenta"     ))
    (base6      '("#73797e" "#6b6b6b" "magenta"     ))
@@ -186,7 +188,9 @@ Can be an integer to determine the exact padding."
    ((markdown-code-face &override) :background (dalu-themes--lighten base3 0.05))
 
    ;; org-mode
-   (org-hide :foreground hidden)
+   (org-hide              :foreground hidden)
+   (org-block-begin-line  :background (dalu-themes--lighten base3 0.05) :overline t)
+   (org-block-end-line    :background (dalu-themes--lighten base3 0.05) :underline t)
    (solaire-org-hide-face :foreground hidden))
 
 
