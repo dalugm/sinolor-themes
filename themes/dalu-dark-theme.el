@@ -74,13 +74,13 @@ Can be an integer to determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#3e3841" "black"   "black"        ))
-   (bg-alt     '("#333333" nil       nil            ))
+   (bg-alt     '("#333333" nil       nil            )) ; inactive modeline bg
    (base0      '("#5c2223" "black"   "black"        )) ; matching highlight bg
    (base1      '("#22202e" "#1e1e1e" "brightblack"  )) ; minibuffer selection bg
    (base2      '("#2b1216" "#2e2e2e" "brightblack"  )) ; completion selection bg
    (base3      '("#23272e" "#262626" "brightblack"  )) ; org block bg
    (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  ))
+   (base5      '("#5B6268" "#525252" "brightblack"  )) ; inactive modeline fg
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))

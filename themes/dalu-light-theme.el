@@ -7,13 +7,15 @@
 ;; Color selected from Chinese traditional colors.
 ;;
 ;; 月白	#eef7f2
+;; 穹灰	#c4d7d6
+;; 淡绿灰	#70887d
 ;;
 ;; 香叶红	#f07c82
 ;; 牡丹粉红	#eea2a4
 ;; 丁香淡紫	#e9d7df
 ;;
-;; 鸢尾蓝	#158bb8
 ;; 霁青	#63bbd0
+;; 鸢尾蓝	#158bb8
 ;; 瀑布蓝	#51c4d3
 ;; 远天蓝	#d0dfe6
 ;;
@@ -57,13 +59,13 @@ Can be an integer to determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#eef7f2" nil       nil           ))
-   (bg-alt     '("#63bbd0" nil       nil           ))
+   (bg-alt     '("#c4d7d6" nil       nil           ))
    (base0      '("#f07c82" "#d7005f" "red"         ))
    (base1      '("#eea2a4" "#d700af" "magenta"     ))
    (base2      '("#c04851" "#d700ff" "magenta"     ))
    (base3      '("#d0dfe6" "#262626" "gray"        ))
    (base4      '("#eea2a4" "#3f3f3f" "magenta"     ))
-   (base5      '("#eea2a4" "#525252" "magenta"     ))
+   (base5      '("#70887d" "#3f3f3f" "gray"        ))
    (base6      '("#73797e" "#6b6b6b" "magenta"     ))
    (base7      '("#9ca0a4" "#979797" "magenta"     ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"       ))
@@ -189,6 +191,7 @@ Can be an integer to determine the exact padding."
 
    ;; org-mode
    (org-hide              :foreground hidden)
+   (org-block             :background base3 :extend t)
    (org-block-begin-line  :background (dalu-themes--lighten base3 0.05) :overline t)
    (org-block-end-line    :background (dalu-themes--lighten base3 0.05) :underline t)
    (solaire-org-hide-face :foreground hidden))
