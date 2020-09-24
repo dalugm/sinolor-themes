@@ -185,7 +185,7 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; ivy-mode
-   (ivy-current-match :underline t :distant-foreground base0 :background magenta :weight 'normal)
+   (ivy-current-match :underline t :distant-foreground base0 :foreground orange :weight 'normal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
