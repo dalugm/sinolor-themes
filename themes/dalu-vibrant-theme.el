@@ -79,9 +79,9 @@ Can be an integer to determine the exact padding."
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
    (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#1772b4"  "#2d2d2d" "white"        ))
+   (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
 
-   (white      '("#f8f4ed" "#dfdfdf" "white"))
+   (white      '("#f8f4ed" "#dfdfdf" "white"        ))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"  ))
    (red        '("#de1c31" "#ff6655" "red"          ))
    (orange     '("#fa7e23" "#dd8844" "brightred"    ))
@@ -185,7 +185,7 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (ivy-current-match :underline t :distant-foreground base0 :background magenta :weight 'normal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -208,5 +208,11 @@ Can be an integer to determine the exact padding."
   ;; --- extra variables ---------------------
   ()
   )
+
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
+;; End:
 
 ;;; dalu-vibrant-theme.el ends here

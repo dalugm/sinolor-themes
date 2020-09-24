@@ -41,21 +41,21 @@ Can be an integer to determine the exact padding."
   "A derived dark theme from `dalu-dark'"
 
   ;; name        default   256       16
-  ((bg         '("#000000" nil       nil            ))
+  ((bg         '("#000000" "black"   "black"        ))
    (bg-alt     '("#333333" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
-   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
+   (base1      '("#ef632b" "white"   "white"        ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
    (base3      '("#23272e" "#262626" "brightblack"  ))
    (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
    (base5      '("#5B6268" "#525252" "brightblack"  ))
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
+   (base8      '("#eef7f2" "#dfdfdf" "white"        ))
    (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#1772b4"  "#2d2d2d" "white"        ))
+   (fg-alt     '("#1772b4"  "#2d2d2d" "white"       ))
 
-   (white      '("#f8f4ed" "#dfdfdf" "white"))
+   (white      '("#f8f4ed" "#dfdfdf" "white"        ))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"  ))
    (red        '("#de1c31" "#ff6655" "red"          ))
    (orange     '("#fa7e23" "#dd8844" "brightred"    ))
@@ -64,7 +64,7 @@ Can be an integer to determine the exact padding."
    (gold2      '("#e2c027" "#ffd700" "gold2"        ))
    (teal       '("#12a182" "#44b9b1" "brightgreen"  ))
    (blue       '("#1772b4" "#51afef" "brightblue"   ))
-   (dark-blue  '("#144a74" "#2257A0" "blue"         ))
+   (dark-blue  '("#126e82" "#2257A0" "blue"         ))
    (cyan       '("#63bbd0" "#46D9FF" "brightcyan"   ))
    (dark-cyan  '("#134857" "#5699AF" "cyan"         ))
    (green      '("#20894d" "#99bb66" "green"        ))
@@ -158,7 +158,7 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (ivy-current-match :underline t :distant-foreground base0 :background base1 :weight 'normal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -181,5 +181,11 @@ Can be an integer to determine the exact padding."
   ;; --- extra variables ---------------------
   ()
   )
+
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
+;; End:
 
 ;;; dalu-black-theme.el ends here

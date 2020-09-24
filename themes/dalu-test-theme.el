@@ -54,9 +54,9 @@ Can be an integer to determine the exact padding."
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
    (fg         '("#00CE00" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("green4" "#2d2d2d" "white"        ))
+   (fg-alt     '("green4" "#2d2d2d"  "white"        ))
 
-   (grey       base4)
+   (grey       base4                                )
    (red        '("#ff6c6b" "#ff6655" "red"          ))
    (orange     '("#da8548" "#dd8844" "brightred"    ))
    (green      '("#98be65" "#99bb66" "green"        ))
@@ -182,5 +182,11 @@ Can be an integer to determine the exact padding."
   ;; --- extra variables ---------------------
   ()
   )
+
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
+;; End:
 
 ;;; dalu-test-theme.el ends here

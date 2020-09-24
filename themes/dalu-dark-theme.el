@@ -10,20 +10,26 @@
 ;; 满江红	#a7535a
 ;; 唐菖蒲红	#de1c31
 ;; 尖晶石红	#cc163a
+;; 龙利鱼红	#ef632b
 ;;
 ;; 蝶黄	#e2d849
 ;; 姜黄	#e2c027
 ;; 枯黄	#b78d12
+;; 素馨黄	#fccb16
 ;; 佛手黄	#fed71a
 ;;
 ;; 群青	#1772b4
 ;; 晴山蓝	#8fb2c9
 ;; 瀑布蓝	#51c4d3
 ;; 甸子蓝	#10aec2
+;; 玉鈫蓝	#126e82
 ;;
+;; 月白	#eef7f2
+;; 穹灰	#c4d7d6
 ;; 汉白玉	#f8f4ed
 ;; 云峰白	#d8e3e7
 ;; 古鼎灰	#36292f
+;; 隐红灰	#b598a1
 ;; 大理石灰	#c4cbcf
 ;;
 ;; 李紫	#2b1216
@@ -73,21 +79,21 @@ Can be an integer to determine the exact padding."
   "A dark theme modified from `doom-one'."
 
   ;; name        default   256       16
-  ((bg         '("#3e3841" "black"   "black"        ))
+  ((bg         '("#3e3841" nil       nil            ))
    (bg-alt     '("#333333" nil       nil            )) ; inactive modeline bg
    (base0      '("#5c2223" "black"   "black"        )) ; matching highlight bg
-   (base1      '("#22202e" "#1e1e1e" "brightblack"  )) ; minibuffer selection bg
-   (base2      '("#2b1216" "#2e2e2e" "brightblack"  )) ; completion selection bg
+   (base1      '("#fccb16" "#ffff00" "brightyellow" )) ; minibuffer input candidates bg
+   (base2      '("#2b1216" "#2e2e2e" "brightblack"  )) ; frame completion selection bg
    (base3      '("#23272e" "#262626" "brightblack"  )) ; org block bg
    (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
    (base5      '("#5B6268" "#525252" "brightblack"  )) ; inactive modeline fg
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
+   (base8      '("#eef7f2" "#dfdfdf" "white"        ))
    (fg         '("#d8e3e7" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#1772b4"  "#2d2d2d" "white"       ))
 
-   (white      '("#f8f4ed" "#dfdfdf" "white"))
+   (white      '("#f8f4ed" "#dfdfdf" "white"        ))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"  ))
    (red        '("#de1c31" "#ff6655" "red"          ))
    (orange     '("#fa7e23" "#dd8844" "brightred"    ))
@@ -109,7 +115,7 @@ Can be an integer to determine the exact padding."
    (vertical-bar   (dalu-themes--darken base1 0.1))
    (selection      dark-blue)
    (builtin        blue2)
-    (comments       (if dalu-dark-brighter-comments base7 grey))
+   (comments       (if dalu-dark-brighter-comments base7 grey))
    (doc-comments   yellow)
    (constants      violet)
    (functions      gold2)
@@ -191,7 +197,7 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (ivy-current-match :underline t :distant-foreground base0 :background base8 :weight 'normal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -214,5 +220,11 @@ Can be an integer to determine the exact padding."
   ;; --- extra variables ---------------------
   ()
   )
+
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
+;; End:
 
 ;;; dalu-dark-theme.el ends here
