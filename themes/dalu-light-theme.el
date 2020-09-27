@@ -86,8 +86,9 @@ Can be an integer to determine the exact padding."
    (cyan       '("#63bbd0" "#46D9FF" "brightcyan"   ))
    (dark-cyan  '("#134857" "#5699AF" "cyan"         ))
    (green      '("#20894d" "#99bb66" "green"        ))
-   (magenta    '("#7e1671" "#c678dd" "brightmagenta"))
-   (violet     '("#815c94" "#a9a1e1" "magenta"      ))
+   (magenta    '("#8b2671" "#870087" "brightmagenta"))
+   (purple     '("#8b2671" "#5f5faf" "brightmagenta"))
+   (violet     '("#815c94" "#af87ff" "magenta"      ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
@@ -174,6 +175,9 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
+
+   ;; table
+   (table-cell :background grey)
 
    ;; ivy-mode
    (ivy-current-match :underline t :distant-foreground base0 :foreground base4 :weight 'normal)
