@@ -82,7 +82,7 @@ Can be an integer to determine the exact padding."
   ((bg         '("#3e3841" nil       nil            ))
    (bg-alt     '("#333333" nil       nil            )) ; inactive modeline bg
    (base0      '("#5c2223" "black"   "black"        )) ; matching highlight bg
-   (base1      '("#fccb16" "#ffff00" "brightyellow" )) ; minibuffer input candidates bg
+   (base1      '("#fccb16" "#f7af00" "brightyellow" )) ; minibuffer input candidates bg
    (base2      '("#2b1216" "#2e2e2e" "brightblack"  )) ; frame completion selection bg
    (base3      '("#23272e" "#262626" "brightblack"  )) ; org block bg
    (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))

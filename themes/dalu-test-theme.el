@@ -54,7 +54,7 @@ Can be an integer to determine the exact padding."
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
    (fg         '("#00CE00" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("green4" "#2d2d2d"  "white"        ))
+   (fg-alt     '("green4"  "#2d2d2d" "white"        ))
 
    (white      '("#f8f4ed" "#dfdfdf" "white"         ))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"   ))

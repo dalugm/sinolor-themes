@@ -199,7 +199,7 @@ Can be an integer to determine the exact padding."
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
+   (markdown-header-face :inherit 'bold :foreground blue)
    ((markdown-code-face &override) :background (dalu-themes--lighten base3 0.05))
 
    ;; org-mode

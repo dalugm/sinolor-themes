@@ -44,7 +44,7 @@ Can be an integer to determine the exact padding."
   ((bg         '("#000000" "black"   "black"        ))
    (bg-alt     '("#333333" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
-   (base1      '("#ef632b" "white"   "white"        ))
+   (base1      '("#ef632b" "#d75f00" "brightyellow" ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
    (base3      '("#23272e" "#262626" "brightblack"  ))
    (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
@@ -53,7 +53,7 @@ Can be an integer to determine the exact padding."
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#eef7f2" "#dfdfdf" "white"        ))
    (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#1772b4"  "#2d2d2d" "white"       ))
+   (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
 
    (white      '("#f8f4ed" "#dfdfdf" "white"         ))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"   ))
@@ -173,7 +173,7 @@ Can be an integer to determine the exact padding."
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
+   (markdown-header-face :inherit 'bold :foreground blue)
    ((markdown-code-face &override) :background (dalu-themes--lighten base3 0.05))
 
    ;; org-mode
