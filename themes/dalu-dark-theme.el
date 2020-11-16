@@ -215,6 +215,9 @@ Can be an integer to determine the exact padding."
    (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (dalu-themes--lighten base3 0.05))
 
+   ;; info-mode
+   (Info-quoted :inherit font-lock-variable-name-face)
+
    ;; org-mode
    (org-hide :foreground hidden)
    (org-block-begin-line  :background (dalu-themes--lighten base3 0.05) :overline t)
