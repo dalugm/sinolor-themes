@@ -13,7 +13,7 @@ dalu-themes is my customized theme package, code base fork from [emacs-doom-them
 
 Colors are mostly selected from traditional Chinese color.
 
-Light ,Black (used in lightless night) and Vibrant theme are derived from dark theme.
+Light, Black (used in lightless night) and Vibrant theme are derived from dark theme.
 
 Forked from `doom-one`, `dalu-test-theme` which is only used to test color compatible is not recommended to use.
 

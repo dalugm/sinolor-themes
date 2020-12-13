@@ -1,8 +1,16 @@
-;;; dalu-themes.el --- theme related functions -*- lexical-binding: t; -*-
+;;; dalu-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
-;;  Theme related functions
+;; Dalu Themes is an opinionated UI plugin and pack of themes
+;; inspired by `doom-themes'
+;;
+;; Flagship themes
+;;   `dalu-black'
+;;   `dalu-light'
+;;   `dalu-vibrant'
+;;   `dalu-black'
+;;
 ;;
 
 ;;; Code:
