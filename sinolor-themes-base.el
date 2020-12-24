@@ -1,4 +1,4 @@
-;;; dalu-themes-base.el --- basic theme config -*- lexical-binding: t; -*-
+;;; sinolor-themes-base.el --- basic theme config -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -7,10 +7,10 @@
 
 ;;; Code:
 
-(defvar dalu-themes--base-faces
+(defvar sinolor-themes--base-faces
   '(;; --- custom faces -----------------------
     (doom-modeline-error
-     :background (dalu-themes--darken red 0.25)
+     :background (sinolor-themes--darken red 0.25)
      :foreground base0
      :distant-foreground base0)
     (doom-visual-bell :background error)
@@ -22,7 +22,7 @@
 
     (default :background bg :foreground fg)
     (fringe :inherit 'default :foreground base4)
-    (region               :background region     :foreground nil   :distant-foreground (dalu-themes--darken fg 0.2) :extend t)
+    (region               :background region     :foreground nil   :distant-foreground (sinolor-themes--darken fg 0.2) :extend t)
     (highlight            :background highlight  :foreground base0 :distant-foreground base8)
     (cursor               :background highlight)
     (shadow               :foreground base5)
@@ -127,10 +127,10 @@
     (custom-button-mouse            :foreground bg     :background blue   :box '(:line-width 1 :style none))
 
     (custom-variable-button   :foreground green :underline t)
-    (custom-saved             :foreground green :background (dalu-themes--blend green bg 0.2) :bold bold)
+    (custom-saved             :foreground green :background (sinolor-themes--blend green bg 0.2) :bold bold)
     (custom-comment           :foreground fg :background region)
     (custom-comment-tag       :foreground grey)
-    (custom-modified          :foreground blue :background (dalu-themes--blend blue bg 0.2))
+    (custom-modified          :foreground blue :background (sinolor-themes--blend blue bg 0.2))
     (custom-variable-tag      :foreground magenta)
     (custom-visibility        :foreground blue :underline nil)
     (custom-group-subtitle    :foreground red)
@@ -138,9 +138,9 @@
     (custom-group-tag-1       :foreground blue)
     (custom-set               :foreground yellow :background bg)
     (custom-themed            :foreground yellow :background bg)
-    (custom-invalid           :foreground red :background (dalu-themes--blend red bg 0.2))
+    (custom-invalid           :foreground red :background (sinolor-themes--blend red bg 0.2))
     (custom-variable-obsolete :foreground grey :background bg)
-    (custom-state             :foreground green :background (dalu-themes--blend green bg 0.2))
+    (custom-state             :foreground green :background (sinolor-themes--blend green bg 0.2))
     (custom-changed           :foreground blue :background bg)
 
     ;; dired
@@ -155,10 +155,10 @@
     (dired-warning    :foreground warning)
 
     ;; ediff
-    (ediff-fine-diff-A    :background (dalu-themes--blend selection bg 0.7) :weight 'bold :extend t)
+    (ediff-fine-diff-A    :background (sinolor-themes--blend selection bg 0.7) :weight 'bold :extend t)
     (ediff-fine-diff-B    :inherit 'ediff-fine-diff-A)
     (ediff-fine-diff-C    :inherit 'ediff-fine-diff-A)
-    (ediff-current-diff-A :background (dalu-themes--blend selection bg 0.3) :extend t)
+    (ediff-current-diff-A :background (sinolor-themes--blend selection bg 0.3) :extend t)
     (ediff-current-diff-B :inherit 'ediff-current-diff-A)
     (ediff-current-diff-C :inherit 'ediff-current-diff-A)
     (ediff-even-diff-A    :inherit 'hl-line)
@@ -233,7 +233,7 @@
     (message-header-name       :foreground green)
     (message-header-subject    :foreground highlight :weight 'bold)
     (message-header-to         :foreground highlight :weight 'bold)
-    (message-header-cc         :inherit 'message-header-to :foreground (dalu-themes--darken highlight 0.15))
+    (message-header-cc         :inherit 'message-header-to :foreground (sinolor-themes--darken highlight 0.15))
     (message-header-other      :foreground violet)
     (message-header-newsgroups :foreground yellow)
     (message-header-xheader    :foreground doc-comments)
@@ -255,14 +255,14 @@
 
     ;; vterm
     (vterm               :foreground fg)
-    (vterm-color-black   :background (dalu-themes--lighten base0 0.25)   :foreground base0)
-    (vterm-color-red     :background (dalu-themes--lighten red 0.25)     :foreground red)
-    (vterm-color-green   :background (dalu-themes--lighten green 0.25)   :foreground green)
-    (vterm-color-yellow  :background (dalu-themes--lighten yellow 0.25)  :foreground yellow)
-    (vterm-color-blue    :background (dalu-themes--lighten blue 0.25)    :foreground blue)
-    (vterm-color-magenta :background (dalu-themes--lighten magenta 0.25) :foreground magenta)
-    (vterm-color-cyan    :background (dalu-themes--lighten cyan 0.25)    :foreground cyan)
-    (vterm-color-white   :background (dalu-themes--lighten base8 0.25)   :foreground base8)
+    (vterm-color-black   :background (sinolor-themes--lighten base0 0.25)   :foreground base0)
+    (vterm-color-red     :background (sinolor-themes--lighten red 0.25)     :foreground red)
+    (vterm-color-green   :background (sinolor-themes--lighten green 0.25)   :foreground green)
+    (vterm-color-yellow  :background (sinolor-themes--lighten yellow 0.25)  :foreground yellow)
+    (vterm-color-blue    :background (sinolor-themes--lighten blue 0.25)    :foreground blue)
+    (vterm-color-magenta :background (sinolor-themes--lighten magenta 0.25) :foreground magenta)
+    (vterm-color-cyan    :background (sinolor-themes--lighten cyan 0.25)    :foreground cyan)
+    (vterm-color-white   :background (sinolor-themes--lighten base8 0.25)   :foreground base8)
 
     ;; widget
     (widget-button-pressed :foreground red)
@@ -277,34 +277,34 @@
     ;; --- plugin faces -----------------------
     ;; all-the-icons
     (all-the-icons-red      :foreground red)
-    (all-the-icons-lred     :foreground (dalu-themes--lighten red 0.3))
-    (all-the-icons-dred     :foreground (dalu-themes--darken red 0.3))
+    (all-the-icons-lred     :foreground (sinolor-themes--lighten red 0.3))
+    (all-the-icons-dred     :foreground (sinolor-themes--darken red 0.3))
     (all-the-icons-green    :foreground green)
-    (all-the-icons-lgreen   :foreground (dalu-themes--lighten green 0.3))
-    (all-the-icons-dgreen   :foreground (dalu-themes--darken green 0.3))
+    (all-the-icons-lgreen   :foreground (sinolor-themes--lighten green 0.3))
+    (all-the-icons-dgreen   :foreground (sinolor-themes--darken green 0.3))
     (all-the-icons-yellow   :foreground yellow)
-    (all-the-icons-lyellow  :foreground (dalu-themes--lighten yellow 0.3))
-    (all-the-icons-dyellow  :foreground (dalu-themes--darken yellow 0.3))
+    (all-the-icons-lyellow  :foreground (sinolor-themes--lighten yellow 0.3))
+    (all-the-icons-dyellow  :foreground (sinolor-themes--darken yellow 0.3))
     (all-the-icons-blue     :foreground blue)
     (all-the-icons-blue-alt :foreground teal)
-    (all-the-icons-lblue    :foreground (dalu-themes--lighten blue 0.3))
+    (all-the-icons-lblue    :foreground (sinolor-themes--lighten blue 0.3))
     (all-the-icons-dblue    :foreground dark-blue)
     (all-the-icons-maroon   :foreground magenta)
-    (all-the-icons-lmaroon  :foreground (dalu-themes--lighten magenta 0.3))
-    (all-the-icons-dmaroon  :foreground (dalu-themes--darken magenta 0.3))
+    (all-the-icons-lmaroon  :foreground (sinolor-themes--lighten magenta 0.3))
+    (all-the-icons-dmaroon  :foreground (sinolor-themes--darken magenta 0.3))
     (all-the-icons-purple   :foreground violet)
-    (all-the-icons-lpurple  :foreground (dalu-themes--lighten violet 0.3))
-    (all-the-icons-dpurple  :foreground (dalu-themes--darken violet 0.3))
+    (all-the-icons-lpurple  :foreground (sinolor-themes--lighten violet 0.3))
+    (all-the-icons-dpurple  :foreground (sinolor-themes--darken violet 0.3))
     (all-the-icons-cyan     :foreground cyan)
     (all-the-icons-cyan-alt :foreground cyan)
-    (all-the-icons-lcyan    :foreground (dalu-themes--lighten cyan 0.3))
+    (all-the-icons-lcyan    :foreground (sinolor-themes--lighten cyan 0.3))
     (all-the-icons-dcyan    :foreground dark-cyan)
-    (all-the-icons-pink     :foreground (dalu-themes--lighten red 0.35))
-    (all-the-icons-lpink    :foreground (dalu-themes--lighten red 0.55))
+    (all-the-icons-pink     :foreground (sinolor-themes--lighten red 0.35))
+    (all-the-icons-lpink    :foreground (sinolor-themes--lighten red 0.55))
     (all-the-icons-dpink    :foreground red)
-    (all-the-icons-silver   :foreground (dalu-themes--lighten grey 0.45))
-    (all-the-icons-lsilver  :foreground (dalu-themes--lighten grey 0.7))
-    (all-the-icons-dsilver  :foreground (dalu-themes--lighten grey 0.1))
+    (all-the-icons-silver   :foreground (sinolor-themes--lighten grey 0.45))
+    (all-the-icons-lsilver  :foreground (sinolor-themes--lighten grey 0.7))
+    (all-the-icons-dsilver  :foreground (sinolor-themes--lighten grey 0.1))
 
     ;; all-the-icons-dired
     (all-the-icons-dired-dir-face    :foreground doc-comments)
@@ -318,16 +318,16 @@
     (avy-lead-face :background highlight :foreground bg :distant-foreground fg :weight 'bold)
     (avy-lead-face-0
      (&all   :inherit 'avy-lead-face)
-     (&dark  :background (dalu-themes--lighten highlight 0.3))
-     (&light :background (dalu-themes--darken highlight 0.3)))
+     (&dark  :background (sinolor-themes--lighten highlight 0.3))
+     (&light :background (sinolor-themes--darken highlight 0.3)))
     (avy-lead-face-1
      (&all   :inherit 'avy-lead-face)
-     (&dark  :background (dalu-themes--lighten highlight 0.6))
-     (&light :background (dalu-themes--darken highlight 0.6)))
+     (&dark  :background (sinolor-themes--lighten highlight 0.6))
+     (&light :background (sinolor-themes--darken highlight 0.6)))
     (avy-lead-face-2
      (&all   :inherit 'avy-lead-face)
-     (&dark  :background (dalu-themes--lighten highlight 0.9))
-     (&light :background (dalu-themes--darken highlight 0.9)))
+     (&dark  :background (sinolor-themes--lighten highlight 0.9))
+     (&light :background (sinolor-themes--darken highlight 0.9)))
 
     ;; bookmark+
     (bmkp-*-mark :foreground bg :background yellow)
@@ -368,9 +368,9 @@
 
     ;; calfw
     (cfw:face-title              :foreground blue                     :weight 'bold :height 2.0 :inherit 'variable-pitch)
-    (cfw:face-header             :foreground (dalu-themes--blend blue bg 0.8) :weight 'bold)
-    (cfw:face-sunday             :foreground (dalu-themes--blend red bg 0.8)  :weight 'bold)
-    (cfw:face-saturday           :foreground (dalu-themes--blend red bg 0.8)  :weight 'bold)
+    (cfw:face-header             :foreground (sinolor-themes--blend blue bg 0.8) :weight 'bold)
+    (cfw:face-sunday             :foreground (sinolor-themes--blend red bg 0.8)  :weight 'bold)
+    (cfw:face-saturday           :foreground (sinolor-themes--blend red bg 0.8)  :weight 'bold)
     (cfw:face-holiday            :foreground nil :background bg-alt   :weight 'bold)
     (cfw:face-grid               :foreground vertical-bar)
     (cfw:face-periods            :foreground yellow)
@@ -390,7 +390,7 @@
     (company-tooltip            :inherit 'tooltip)
     (company-tooltip-common                           :foreground highlight :distant-foreground base0 :weight 'bold)
     (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg :weight 'bold)
-    (company-tooltip-search-selection :background (dalu-themes--darken selection 0.25))
+    (company-tooltip-search-selection :background (sinolor-themes--darken selection 0.25))
     (company-tooltip-selection  :background selection :weight 'bold)
     (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
     (company-tooltip-annotation                       :foreground violet :distant-foreground bg)
@@ -420,8 +420,8 @@
     (diff-added   :inherit 'hl-line :foreground green)
     (diff-changed :foreground violet)
     (diff-context
-     (&dark  :foreground (dalu-themes--darken fg 0.12))
-     (&light :foreground (dalu-themes--lighten fg 0.12)))
+     (&dark  :foreground (sinolor-themes--darken fg 0.12))
+     (&light :foreground (sinolor-themes--lighten fg 0.12)))
     (diff-removed :foreground red :background base3)
     (diff-header  :foreground cyan :background nil)
     (diff-file-header :foreground blue :background nil)
@@ -456,29 +456,29 @@
     (dired-k-directory :foreground blue :weight 'bold)
 
     ;; dired-subtree
-    (dired-subtree-depth-1-face :background (dalu-themes--darken bg-alt 0.02))
-    (dired-subtree-depth-2-face :background (dalu-themes--darken bg-alt 0.04))
-    (dired-subtree-depth-3-face :background (dalu-themes--darken bg-alt 0.06))
-    (dired-subtree-depth-4-face :background (dalu-themes--darken bg-alt 0.08))
-    (dired-subtree-depth-5-face :background (dalu-themes--darken bg-alt 0.10))
-    (dired-subtree-depth-6-face :background (dalu-themes--darken bg-alt 0.12))
+    (dired-subtree-depth-1-face :background (sinolor-themes--darken bg-alt 0.02))
+    (dired-subtree-depth-2-face :background (sinolor-themes--darken bg-alt 0.04))
+    (dired-subtree-depth-3-face :background (sinolor-themes--darken bg-alt 0.06))
+    (dired-subtree-depth-4-face :background (sinolor-themes--darken bg-alt 0.08))
+    (dired-subtree-depth-5-face :background (sinolor-themes--darken bg-alt 0.10))
+    (dired-subtree-depth-6-face :background (sinolor-themes--darken bg-alt 0.12))
 
     ;; diredfl
     (diredfl-autofile-name          :foreground base4)
     (diredfl-compressed-file-name   :foreground yellow)
-    (diredfl-compressed-file-suffix :foreground (dalu-themes--blend orange bg 0.6))
+    (diredfl-compressed-file-suffix :foreground (sinolor-themes--blend orange bg 0.6))
     (diredfl-date-time              :foreground cyan :weight 'light)
-    (diredfl-deletion               :foreground red :background (dalu-themes--blend red bg 0.2) :weight 'bold)
-    (diredfl-deletion-file-name     :foreground red :background (dalu-themes--blend red bg 0.2))
+    (diredfl-deletion               :foreground red :background (sinolor-themes--blend red bg 0.2) :weight 'bold)
+    (diredfl-deletion-file-name     :foreground red :background (sinolor-themes--blend red bg 0.2))
     (diredfl-dir-heading            :foreground blue :weight 'bold)
     (diredfl-dir-name               :foreground blue)
     (diredfl-dir-priv               :foreground blue)
     (diredfl-exec-priv              :foreground green)
     (diredfl-executable-tag         :foreground green)
     (diredfl-file-name              :foreground fg)
-    (diredfl-file-suffix            :foreground (dalu-themes--blend fg bg 0.6))
-    (diredfl-flag-mark              :foreground yellow :background (dalu-themes--blend yellow bg 0.2) :weight 'bold)
-    (diredfl-flag-mark-line         :background (dalu-themes--blend yellow bg 0.1))
+    (diredfl-file-suffix            :foreground (sinolor-themes--blend fg bg 0.6))
+    (diredfl-flag-mark              :foreground yellow :background (sinolor-themes--blend yellow bg 0.2) :weight 'bold)
+    (diredfl-flag-mark-line         :background (sinolor-themes--blend yellow bg 0.1))
     (diredfl-ignored-file-name      :foreground comments)
     (diredfl-link-priv              :foreground violet)
     (diredfl-no-priv                :foreground fg)
@@ -507,7 +507,7 @@
     (erc-command-indicator-face :weight 'bold)
     (erc-direct-msg-face :foreground magenta)
     (erc-error-face :inherit 'error)
-    (erc-header-line :background (dalu-themes--darken bg-alt 0.15) :foreground highlight)
+    (erc-header-line :background (sinolor-themes--darken bg-alt 0.15) :foreground highlight)
     (erc-input-face :foreground green)
     (erc-current-nick-face :foreground green :weight 'bold)
     (erc-timestamp-face :foreground blue :weight 'bold)
@@ -621,14 +621,14 @@
     (gnus-header-newsgroups      :inherit 'message-header-other)
     (gnus-header-subject         :inherit 'message-header-subject)
     (gnus-summary-cancelled      :foreground red :strike-through t)
-    (gnus-summary-high-ancient   :foreground (dalu-themes--lighten base5 0.2) :inherit 'italic)
-    (gnus-summary-high-read      :foreground (dalu-themes--lighten fg 0.2))
-    (gnus-summary-high-ticked    :foreground (dalu-themes--lighten magenta 0.2))
-    (gnus-summary-high-unread    :foreground (dalu-themes--lighten green 0.2))
-    (gnus-summary-low-ancient    :foreground (dalu-themes--darken base5 0.2) :inherit 'italic)
-    (gnus-summary-low-read       :foreground (dalu-themes--darken fg 0.2))
-    (gnus-summary-low-ticked     :foreground (dalu-themes--darken magenta 0.2))
-    (gnus-summary-low-unread     :foreground (dalu-themes--darken green 0.2))
+    (gnus-summary-high-ancient   :foreground (sinolor-themes--lighten base5 0.2) :inherit 'italic)
+    (gnus-summary-high-read      :foreground (sinolor-themes--lighten fg 0.2))
+    (gnus-summary-high-ticked    :foreground (sinolor-themes--lighten magenta 0.2))
+    (gnus-summary-high-unread    :foreground (sinolor-themes--lighten green 0.2))
+    (gnus-summary-low-ancient    :foreground (sinolor-themes--darken base5 0.2) :inherit 'italic)
+    (gnus-summary-low-read       :foreground (sinolor-themes--darken fg 0.2))
+    (gnus-summary-low-ticked     :foreground (sinolor-themes--darken magenta 0.2))
+    (gnus-summary-low-unread     :foreground (sinolor-themes--darken green 0.2))
     (gnus-summary-normal-ancient :foreground base5 :inherit 'italic)
     (gnus-summary-normal-read    :foreground fg)
     (gnus-summary-normal-ticked  :foreground magenta)
@@ -683,7 +683,7 @@
     ;; hideshow
     (+doom-folded-face :inherit 'font-lock-comment-face
                           :weight 'light
-                          :background (dalu-themes--darken bg 0.125))
+                          :background (sinolor-themes--darken bg 0.125))
 
     ;; highlight-indentation-mode
     (highlight-indentation-face                :inherit 'hl-line)
@@ -700,13 +700,13 @@
 
     ;; highlight-symbol
     (highlight-symbol-face
-     (&dark  :background (dalu-themes--lighten region 0.1) :distant-foreground fg-alt)
-     (&light :background (dalu-themes--darken region 0.1) :distant-foreground fg-alt))
+     (&dark  :background (sinolor-themes--lighten region 0.1) :distant-foreground fg-alt)
+     (&light :background (sinolor-themes--darken region 0.1) :distant-foreground fg-alt))
 
     ;; highlight-thing
     (highlight-thing
-     (&dark  :background (dalu-themes--lighten region 0.1) :distant-foreground fg-alt)
-     (&light :background (dalu-themes--darken region 0.1) :distant-foreground fg-alt))
+     (&dark  :background (sinolor-themes--lighten region 0.1) :distant-foreground fg-alt)
+     (&light :background (sinolor-themes--darken region 0.1) :distant-foreground fg-alt))
 
     ;; hlinum
     (linum-highlight-face :foreground fg :distant-foreground nil :weight 'normal)
@@ -741,7 +741,7 @@
     (ivy-current-match :background region :distant-foreground nil :extend t)
     (ivy-minibuffer-match-face-1
      :background nil
-     :foreground (dalu-themes--lighten grey 0.14)
+     :foreground (sinolor-themes--lighten grey 0.14)
      :weight 'light)
     (ivy-minibuffer-match-face-2
      :inherit 'ivy-minibuffer-match-face-1
@@ -760,7 +760,7 @@
     (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
 
     ;; ivy-posframe
-    (ivy-posframe :background (dalu-themes--darken bg-alt 0.2))
+    (ivy-posframe :background (sinolor-themes--darken bg-alt 0.2))
     (ivy-posframe-border :inherit 'internal-border)
 
     ;; jabber
@@ -828,15 +828,15 @@
     (lsp-face-highlight-write   :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
     (lsp-ui-doc-background :inherit 'tooltip)
     (lsp-ui-peek-filename :inherit 'mode-line-buffer-id)
-    (lsp-ui-peek-header :foreground fg :background (dalu-themes--lighten bg 0.1) :bold bold)
+    (lsp-ui-peek-header :foreground fg :background (sinolor-themes--lighten bg 0.1) :bold bold)
     (lsp-ui-peek-selection :foreground bg :background blue :bold bold)
-    (lsp-ui-peek-list :background (dalu-themes--darken bg 0.1))
-    (lsp-ui-peek-peek :background (dalu-themes--darken bg 0.1))
+    (lsp-ui-peek-list :background (sinolor-themes--darken bg 0.1))
+    (lsp-ui-peek-peek :background (sinolor-themes--darken bg 0.1))
     (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
     (lsp-ui-peek-line-number :foreground success)
-    (lsp-ui-sideline-code-action :foreground (dalu-themes--blend highlight bg 0.85))
+    (lsp-ui-sideline-code-action :foreground (sinolor-themes--blend highlight bg 0.85))
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
-    (lsp-ui-sideline-symbol-info :foreground (dalu-themes--blend comments bg 0.85)
+    (lsp-ui-sideline-symbol-info :foreground (sinolor-themes--blend comments bg 0.85)
                                  :background bg-alt :extend t)
     (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
 
@@ -851,18 +851,18 @@
     (magit-branch-remote     :foreground green)
     (magit-cherry-equivalent :foreground violet)
     (magit-cherry-unmatched  :foreground cyan)
-    (magit-diff-added             :foreground (dalu-themes--darken green 0.2)  :background (dalu-themes--blend green bg 0.1) :extend t)
-    (magit-diff-added-highlight   :foreground green                    :background (dalu-themes--blend green bg 0.2) :weight 'bold :extend t)
-    (magit-diff-base              :foreground (dalu-themes--darken orange 0.2) :background (dalu-themes--blend orange bg 0.1) :extend t)
-    (magit-diff-base-highlight    :foreground orange                   :background (dalu-themes--blend orange bg 0.2) :weight 'bold :extend t)
-    (magit-diff-context           :foreground (dalu-themes--darken fg 0.4) :background bg :extend t)
+    (magit-diff-added             :foreground (sinolor-themes--darken green 0.2)  :background (sinolor-themes--blend green bg 0.1) :extend t)
+    (magit-diff-added-highlight   :foreground green                    :background (sinolor-themes--blend green bg 0.2) :weight 'bold :extend t)
+    (magit-diff-base              :foreground (sinolor-themes--darken orange 0.2) :background (sinolor-themes--blend orange bg 0.1) :extend t)
+    (magit-diff-base-highlight    :foreground orange                   :background (sinolor-themes--blend orange bg 0.2) :weight 'bold :extend t)
+    (magit-diff-context           :foreground (sinolor-themes--darken fg 0.4) :background bg :extend t)
     (magit-diff-context-highlight :foreground fg                   :background bg-alt :extend t)
     (magit-diff-file-heading           :foreground fg :weight 'bold :extend t)
     (magit-diff-file-heading-selection :foreground magenta               :background dark-blue :weight 'bold :extend t)
-    (magit-diff-hunk-heading           :foreground bg                    :background (dalu-themes--blend violet bg 0.3) :extend t)
+    (magit-diff-hunk-heading           :foreground bg                    :background (sinolor-themes--blend violet bg 0.3) :extend t)
     (magit-diff-hunk-heading-highlight :foreground bg                    :background violet :weight 'bold :extend t)
-    (magit-diff-removed                :foreground (dalu-themes--darken red 0.2) :background (dalu-themes--blend red base3 0.1) :extend t)
-    (magit-diff-removed-highlight      :foreground red                   :background (dalu-themes--blend red base3 0.2) :weight 'bold :extend t)
+    (magit-diff-removed                :foreground (sinolor-themes--darken red 0.2) :background (sinolor-themes--blend red base3 0.1) :extend t)
+    (magit-diff-removed-highlight      :foreground red                   :background (sinolor-themes--blend red base3 0.2) :weight 'bold :extend t)
     (magit-diff-lines-heading          :foreground yellow :background red :extend t :extend t)
     (magit-diffstat-added              :foreground green)
     (magit-diffstat-removed            :foreground red)
@@ -913,7 +913,7 @@
 
     ;; objed
     (objed-mode-line :inherit 'warning :weight 'bold)
-    (objed-hl        :inherit 'region :background (dalu-themes--blend region bg 0.5))
+    (objed-hl        :inherit 'region :background (sinolor-themes--blend region bg 0.5))
 
     ;; parenface
     (paren-face :foreground comments)
@@ -937,11 +937,11 @@
 
     ;; power
     (powerline-active0   :inherit 'mode-line :background bg)
-    (powerline-active1   :inherit 'mode-line :background (dalu-themes--lighten 'bg 0.025))
-    (powerline-active2   :inherit 'mode-line :foreground base8 :background (dalu-themes--lighten 'bg 0.08))
+    (powerline-active1   :inherit 'mode-line :background (sinolor-themes--lighten 'bg 0.025))
+    (powerline-active2   :inherit 'mode-line :foreground base8 :background (sinolor-themes--lighten 'bg 0.08))
     (powerline-inactive0 :inherit 'mode-line-inactive :background base2)
-    (powerline-inactive1 :inherit 'mode-line-inactive :background (dalu-themes--lighten 'base2 0.02))
-    (powerline-inactive2 :inherit 'mode-line-inactive :background (dalu-themes--lighten 'base2 0.04))
+    (powerline-inactive1 :inherit 'mode-line-inactive :background (sinolor-themes--lighten 'base2 0.02))
+    (powerline-inactive2 :inherit 'mode-line-inactive :background (sinolor-themes--lighten 'base2 0.04))
 
     ;; rainbow-delimiters
     (rainbow-delimiters-depth-1-face :foreground blue)
@@ -972,9 +972,9 @@
     ((sp-show-pair-mismatch-face &inherit show-paren-mismatch))
 
     ;; smerge-tool
-    (smerge-lower :background (dalu-themes--blend green bg 0.2))
-    (smerge-upper :background (dalu-themes--blend red base3 0.2))
-    (smerge-base  :background (dalu-themes--blend blue bg 0.2))
+    (smerge-lower :background (sinolor-themes--blend green bg 0.2))
+    (smerge-upper :background (sinolor-themes--blend red base3 0.2))
+    (smerge-base  :background (sinolor-themes--blend blue bg 0.2))
     (smerge-markers :background comments :foreground bg :distant-foreground fg :weight 'bold)
     (smerge-refined-added   :inherit 'diff-added :inverse-video t)
     (smerge-refined-removed :inherit 'diff-removed :inverse-video t)
@@ -1032,7 +1032,7 @@
     (tldr-command-itself   :foreground bg :background green :weight 'semi-bold)
     (tldr-title            :foreground yellow :bold t :height 1.4)
     (tldr-description      :foreground fg :weight 'semi-bold)
-    (tldr-introduction     :foreground (dalu-themes--blend blue bg 0.8) :weight 'semi-bold)
+    (tldr-introduction     :foreground (sinolor-themes--blend blue bg 0.8) :weight 'semi-bold)
     (tldr-code-block       :foreground green :background region :weight 'semi-bold)
     (tldr-command-argument :foreground fg :background region )
 
@@ -1048,8 +1048,8 @@
 
     ;; twittering-mode
     (twitter-divider                    ; custom face in my Emacs
-     (&light :underline `(:color ,(dalu-themes--lighten vertical-bar 0.2)))
-     (&dark  :underline `(:color ,(dalu-themes--darken vertical-bar 0.2))))
+     (&light :underline `(:color ,(sinolor-themes--lighten vertical-bar 0.2)))
+     (&dark  :underline `(:color ,(sinolor-themes--darken vertical-bar 0.2))))
 
     ;; undo-tree
     (undo-tree-visualizer-default-face :foreground base5)
@@ -1139,9 +1139,9 @@
     (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
     (font-latex-sectioning-1-face :foreground magenta :weight 'semi-bold)
     (font-latex-sectioning-2-face :foreground violet  :weight 'semi-bold)
-    (font-latex-sectioning-3-face :foreground (dalu-themes--lighten blue 0.3)    :weight 'semi-bold)
-    (font-latex-sectioning-4-face :foreground (dalu-themes--lighten magenta 0.3) :weight 'semi-bold)
-    (font-latex-sectioning-5-face :foreground (dalu-themes--lighten violet 0.3)  :weight 'semi-bold)
+    (font-latex-sectioning-3-face :foreground (sinolor-themes--lighten blue 0.3)    :weight 'semi-bold)
+    (font-latex-sectioning-4-face :foreground (sinolor-themes--lighten magenta 0.3) :weight 'semi-bold)
+    (font-latex-sectioning-5-face :foreground (sinolor-themes--lighten violet 0.3)  :weight 'semi-bold)
     (font-latex-script-char-face  :foreground dark-blue)
     (font-latex-string-face       :inherit 'font-lock-string-face)
     (font-latex-warning-face      :inherit 'font-lock-warning-face)
@@ -1233,7 +1233,7 @@
     (notmuch-message-summary-face            :foreground grey :background nil)
     (notmuch-search-count                    :foreground comments)
     (notmuch-search-date                     :foreground numbers)
-    (notmuch-search-flagged-face             :foreground (dalu-themes--blend red base4 0.5))
+    (notmuch-search-flagged-face             :foreground (sinolor-themes--blend red base4 0.5))
     (notmuch-search-matching-authors         :foreground blue)
     (notmuch-search-non-matching-authors     :foreground fg)
     (notmuch-search-subject                  :foreground fg)
@@ -1262,11 +1262,11 @@
     (outline-1 :foreground blue                        :weight 'bold :extend t)
     (outline-2 :foreground magenta                     :weight 'bold :extend t)
     (outline-3 :foreground violet                      :weight 'bold :extend t)
-    (outline-4 :foreground (dalu-themes--lighten blue 0.25)    :weight 'bold :extend t)
-    (outline-5 :foreground (dalu-themes--lighten magenta 0.25) :weight 'bold :extend t)
-    (outline-6 :foreground (dalu-themes--lighten blue 0.5)     :weight 'bold :extend t)
-    (outline-7 :foreground (dalu-themes--lighten magenta 0.5)  :weight 'bold :extend t)
-    (outline-8 :foreground (dalu-themes--lighten blue 0.8)     :weight 'bold :extend t)
+    (outline-4 :foreground (sinolor-themes--lighten blue 0.25)    :weight 'bold :extend t)
+    (outline-5 :foreground (sinolor-themes--lighten magenta 0.25) :weight 'bold :extend t)
+    (outline-6 :foreground (sinolor-themes--lighten blue 0.5)     :weight 'bold :extend t)
+    (outline-7 :foreground (sinolor-themes--lighten magenta 0.5)  :weight 'bold :extend t)
+    (outline-8 :foreground (sinolor-themes--lighten blue 0.8)     :weight 'bold :extend t)
 
     ;; org-mode
     (org-archived                 :foreground doc-comments)
@@ -1317,12 +1317,12 @@
     (org-agenda-done :inherit 'org-done)
     (org-agenda-dimmed-todo-face :foreground comments)
     (org-agenda-date          :foreground violet :weight 'ultra-bold)
-    (org-agenda-date-today    :foreground (dalu-themes--lighten violet 0.4)   :weight 'ultra-bold)
-    (org-agenda-date-weekend  :foreground (dalu-themes--darken violet 0.4)  :weight 'ultra-bold)
+    (org-agenda-date-today    :foreground (sinolor-themes--lighten violet 0.4)   :weight 'ultra-bold)
+    (org-agenda-date-weekend  :foreground (sinolor-themes--darken violet 0.4)  :weight 'ultra-bold)
     (org-agenda-structure     :foreground fg :weight 'ultra-bold)
-    (org-agenda-clocking      :background (dalu-themes--blend blue bg 0.2))
-    (org-upcoming-deadline         :foreground (dalu-themes--blend fg bg 0.8))
-    (org-upcoming-distant-deadline :foreground (dalu-themes--blend fg bg 0.5))
+    (org-agenda-clocking      :background (sinolor-themes--blend blue bg 0.2))
+    (org-upcoming-deadline         :foreground (sinolor-themes--blend fg bg 0.8))
+    (org-upcoming-distant-deadline :foreground (sinolor-themes--blend fg bg 0.5))
     (org-scheduled            :foreground fg)
     (org-scheduled-today      :foreground base7)
     (org-scheduled-previously :foreground base8)
@@ -1332,12 +1332,12 @@
     ;; org-habit
     (org-habit-clear-face          :weight 'bold :background base4)
     (org-habit-clear-future-face   :weight 'bold :background base3)
-    (org-habit-ready-face          :weight 'bold :background (dalu-themes--blend blue bg-alt 0.5))
-    (org-habit-ready-future-face   :weight 'bold :background (dalu-themes--blend blue bg-alt 0.3))
-    (org-habit-alert-face          :weight 'bold :background (dalu-themes--blend yellow bg-alt 0.5))
-    (org-habit-alert-future-face   :weight 'bold :background (dalu-themes--blend yellow bg-alt 0.3))
-    (org-habit-overdue-face        :weight 'bold :background (dalu-themes--blend red bg-alt 0.5))
-    (org-habit-overdue-future-face :weight 'bold :background (dalu-themes--blend red bg-alt 0.3))
+    (org-habit-ready-face          :weight 'bold :background (sinolor-themes--blend blue bg-alt 0.5))
+    (org-habit-ready-future-face   :weight 'bold :background (sinolor-themes--blend blue bg-alt 0.3))
+    (org-habit-alert-face          :weight 'bold :background (sinolor-themes--blend yellow bg-alt 0.5))
+    (org-habit-alert-future-face   :weight 'bold :background (sinolor-themes--blend yellow bg-alt 0.3))
+    (org-habit-overdue-face        :weight 'bold :background (sinolor-themes--blend red bg-alt 0.5))
+    (org-habit-overdue-future-face :weight 'bold :background (sinolor-themes--blend red bg-alt 0.3))
 
     ;; org-journal
     (org-journal-highlight :foreground highlight)
@@ -1387,18 +1387,18 @@
     (telephone-line-accent-inactive :foreground fg :background base2)
     (telephone-line-projectile :foreground green)
     (telephone-line-evil :foreground fg :weight 'bold)
-    (telephone-line-evil-insert :background (dalu-themes--blend green bg 0.5) :weight 'bold)
-    (telephone-line-evil-normal :background (dalu-themes--blend red bg 0.5) :weight 'bold)
-    (telephone-line-evil-visual :background (dalu-themes--blend orange bg 0.5) :weight 'bold)
-    (telephone-line-evil-replace :background (dalu-themes--color bg-alt) :weight 'bold)
-    (telephone-line-evil-motion :background (dalu-themes--blend blue bg 0.5) :weight 'bold)
-    (telephone-line-evil-operator :background (dalu-themes--blend violet bg 0.5) :weight 'bold)
-    (telephone-line-evil-emacs :background (dalu-themes--blend magenta bg 0.5) :weight 'bold)
+    (telephone-line-evil-insert :background (sinolor-themes--blend green bg 0.5) :weight 'bold)
+    (telephone-line-evil-normal :background (sinolor-themes--blend red bg 0.5) :weight 'bold)
+    (telephone-line-evil-visual :background (sinolor-themes--blend orange bg 0.5) :weight 'bold)
+    (telephone-line-evil-replace :background (sinolor-themes--color bg-alt) :weight 'bold)
+    (telephone-line-evil-motion :background (sinolor-themes--blend blue bg 0.5) :weight 'bold)
+    (telephone-line-evil-operator :background (sinolor-themes--blend violet bg 0.5) :weight 'bold)
+    (telephone-line-evil-emacs :background (sinolor-themes--blend magenta bg 0.5) :weight 'bold)
 
     ;; typescript-mode
     (typescript-jsdoc-tag :foreground doc-comments)
-    (typescript-jsdoc-type :foreground (dalu-themes--darken doc-comments 0.15))
-    (typescript-jsdoc-value :foreground (dalu-themes--lighten doc-comments 0.15))
+    (typescript-jsdoc-type :foreground (sinolor-themes--darken doc-comments 0.15))
+    (typescript-jsdoc-value :foreground (sinolor-themes--lighten doc-comments 0.15))
 
     ;; sh-mode
     (sh-heredoc :inherit 'font-lock-string-face :weight 'normal)
@@ -1425,47 +1425,47 @@
     ;; woman
     (woman-bold :inherit 'Man-overstrike)
     (woman-italic :inherit 'Man-underline))
-  "TODO")
+  "TODO.")
 
-(defvar dalu-themes--base-vars
+(defvar sinolor-themes--base-vars
   '((ansi-color-names-vector
-     (vconcat (mapcar #'dalu-themes--color '(bg red green yellow blue magenta cyan fg))))
+     (vconcat (mapcar #'sinolor-themes--color '(bg red green yellow blue magenta cyan fg))))
     (rustic-ansi-faces
-     (vconcat (mapcar #'dalu-themes--color '(bg red green yellow blue magenta cyan fg))))
+     (vconcat (mapcar #'sinolor-themes--color '(bg red green yellow blue magenta cyan fg))))
 
-    (fci-rule-color (dalu-themes--color 'base5))
+    (fci-rule-color (sinolor-themes--color 'base5))
 
-    (jdee-db-spec-breakpoint-face-colors `(cons ,(dalu-themes--color 'base0) ,(dalu-themes--color 'grey)))
-    (jdee-db-requested-breakpoint-face-colors `(cons ,(dalu-themes--color 'base0) ,(dalu-themes--color 'green)))
-    (jdee-db-active-breakpoint-face-colors `(cons ,(dalu-themes--color 'base0) ,(dalu-themes--color 'highlight)))
+    (jdee-db-spec-breakpoint-face-colors `(cons ,(sinolor-themes--color 'base0) ,(sinolor-themes--color 'grey)))
+    (jdee-db-requested-breakpoint-face-colors `(cons ,(sinolor-themes--color 'base0) ,(sinolor-themes--color 'green)))
+    (jdee-db-active-breakpoint-face-colors `(cons ,(sinolor-themes--color 'base0) ,(sinolor-themes--color 'highlight)))
 
-    (objed-cursor-color (dalu-themes--color 'red))
+    (objed-cursor-color (sinolor-themes--color 'red))
 
-    (pdf-view-midnight-colors `(cons ,(dalu-themes--color 'fg) ,(dalu-themes--color 'bg)))
+    (pdf-view-midnight-colors `(cons ,(sinolor-themes--color 'fg) ,(sinolor-themes--color 'bg)))
 
     (vc-annotate-color-map
-     `(list (cons 20  ,(dalu-themes--color 'green))
-            (cons 40  ,(dalu-themes--blend 'yellow 'green (/ 1.0 3)))
-            (cons 60  ,(dalu-themes--blend 'yellow 'green (/ 2.0 3)))
-            (cons 80  ,(dalu-themes--color 'yellow))
-            (cons 100 ,(dalu-themes--blend 'orange 'yellow (/ 1.0 3)))
-            (cons 120 ,(dalu-themes--blend 'orange 'yellow (/ 2.0 3)))
-            (cons 140 ,(dalu-themes--color 'orange))
-            (cons 160 ,(dalu-themes--blend 'magenta 'orange (/ 1.0 3)))
-            (cons 180 ,(dalu-themes--blend 'magenta 'orange (/ 2.0 3)))
-            (cons 200 ,(dalu-themes--color 'magenta))
-            (cons 220 ,(dalu-themes--blend 'red 'magenta (/ 1.0 3)))
-            (cons 240 ,(dalu-themes--blend 'red 'magenta (/ 2.0 3)))
-            (cons 260 ,(dalu-themes--color 'red))
-            (cons 280 ,(dalu-themes--blend 'grey 'red (/ 1.0 4)))
-            (cons 300 ,(dalu-themes--blend 'grey 'red (/ 2.0 4)))
-            (cons 320 ,(dalu-themes--blend 'grey 'red (/ 3.0 4)))
-            (cons 340 ,(dalu-themes--color 'base5))
-            (cons 360 ,(dalu-themes--color 'base5))))
+     `(list (cons 20  ,(sinolor-themes--color 'green))
+            (cons 40  ,(sinolor-themes--blend 'yellow 'green (/ 1.0 3)))
+            (cons 60  ,(sinolor-themes--blend 'yellow 'green (/ 2.0 3)))
+            (cons 80  ,(sinolor-themes--color 'yellow))
+            (cons 100 ,(sinolor-themes--blend 'orange 'yellow (/ 1.0 3)))
+            (cons 120 ,(sinolor-themes--blend 'orange 'yellow (/ 2.0 3)))
+            (cons 140 ,(sinolor-themes--color 'orange))
+            (cons 160 ,(sinolor-themes--blend 'magenta 'orange (/ 1.0 3)))
+            (cons 180 ,(sinolor-themes--blend 'magenta 'orange (/ 2.0 3)))
+            (cons 200 ,(sinolor-themes--color 'magenta))
+            (cons 220 ,(sinolor-themes--blend 'red 'magenta (/ 1.0 3)))
+            (cons 240 ,(sinolor-themes--blend 'red 'magenta (/ 2.0 3)))
+            (cons 260 ,(sinolor-themes--color 'red))
+            (cons 280 ,(sinolor-themes--blend 'grey 'red (/ 1.0 4)))
+            (cons 300 ,(sinolor-themes--blend 'grey 'red (/ 2.0 4)))
+            (cons 320 ,(sinolor-themes--blend 'grey 'red (/ 3.0 4)))
+            (cons 340 ,(sinolor-themes--color 'base5))
+            (cons 360 ,(sinolor-themes--color 'base5))))
     (vc-annotate-very-old-color nil)
-    (vc-annotate-background (dalu-themes--color 'bg)))
-  "TODO")
+    (vc-annotate-background (sinolor-themes--color 'bg)))
+  "TODO.")
 
-(provide 'dalu-themes-base)
+(provide 'sinolor-themes-base)
 
-;;; dalu-themes-base.el ends here
+;;; sinolor-themes-base.el ends here

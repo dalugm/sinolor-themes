@@ -1,41 +1,39 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [Dalu's Emacs Theme](#dalus-emacs-theme)
+- [Sinolor Theme](#sinolor-theme)
     - [Installation](#installation)
     - [Usage](#usage)
 
 <!-- markdown-toc end -->
 
-# Dalu's Emacs Theme
+# Sinolor Theme
 
-dalu-themes is my customized theme package, code base fork from [emacs-doom-themes](https://github.com/hlissner/emacs-doom-themes "emacs-doom-themes").
+Sinolor themes is a theme package whose code base fork from [emacs-doom-themes](https://github.com/hlissner/emacs-doom-themes "emacs-doom-themes").
 
-Colors are mostly selected from traditional Chinese color.
+Colors are selected from Chinese traditional color.
 
-Light, Black (used in lightless night) and Vibrant theme are derived from dark theme.
+Light, Black (used in lightless night) and Vibrant theme are derived from the Dark theme.
 
-Forked from `doom-one`, `dalu-test-theme` which is only used to test color compatible is not recommended to use.
-
-**All themes are compatible both in terminal and GUI.**
+Forked from `doom-one`, `sinolor-test-theme` which is only used to test color compatible is not recommended to use.
 
 ## Installation
 
 1. Clone this repository
 
 ```
-git clone --depth=1 https://github.com/dalu98/dalu-themes.git
+git clone --depth=1 https://github.com/dalu98/sinolor-themes.git
 ```
 
-2. Add `dalu-themes` to load-path.
+2. Add `sinolor-themes` to load-path.
 
 ```elisp
-(add-to-list 'load-path (expand-file-name "path/to/dalu-themes"))
-(require 'dalu-themes)
+(add-to-list 'load-path (expand-file-name "path/to/sinolor-themes"))
+(require 'sinolor-themes)
 ```
 
 ## Usage
 
 ``` elisp
-(load-theme 'dalu-dark t)
+(load-theme 'sinolor-dark t)
 ```

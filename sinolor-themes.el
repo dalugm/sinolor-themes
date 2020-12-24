@@ -1,74 +1,74 @@
-;;; dalu-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
+;;; sinolor-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
-;; Dalu Themes is an opinionated UI plugin and pack of themes
+;; Sinolor Themes is an opinionated UI plugin and pack of themes
 ;; inspired by `doom-themes'
 ;;
 ;; Flagship themes
-;;   `dalu-black'
-;;   `dalu-light'
-;;   `dalu-vibrant'
-;;   `dalu-black'
+;;   `sinolor-black'
+;;   `sinolor-light'
+;;   `sinolor-vibrant'
+;;   `sinolor-black'
 ;;
 ;;
 
 ;;; Code:
 
 (require 'cl-lib)
-(require 'dalu-themes-base)
+(require 'sinolor-themes-base)
 
-(defgroup dalu-themes nil
-  "Options for dalu-themes."
+(defgroup sinolor-themes nil
+  "Options for sinolor-themes."
   :group 'faces)
 
-(defcustom dalu-themes-padded-modeline nil
+(defcustom sinolor-themes-padded-modeline nil
   "Default value for padded-modeline setting for themes that support it."
-  :group 'dalu-themes
+  :group 'sinolor-themes
   :type '(choice integer boolean))
 
-(defcustom dalu-themes-enable-bold t
+(defcustom sinolor-themes-enable-bold t
   "If nil, bold will be disabled across all faces."
-  :group 'dalu-themes
+  :group 'sinolor-themes
   :type 'boolean)
 
-(defcustom dalu-themes-enable-italic t
+(defcustom sinolor-themes-enable-italic t
   "If nil, italics will be disabled across all faces."
-  :group 'dalu-themes
+  :group 'sinolor-themes
   :type 'boolean)
 
 ;;; API
 
-(defvar dalu-themes--colors nil)
-(defvar dalu-themes--min-colors '(257 256 16))
-(defvar dalu-themes--quoted-p nil)
-(defvar dalu-themes--faces nil)
+(defvar sinolor-themes--colors nil)
+(defvar sinolor-themes--min-colors '(257 256 16))
+(defvar sinolor-themes--quoted-p nil)
+(defvar sinolor-themes--faces nil)
 
-(defun dalu-themes--colors-p (item)
+(defun sinolor-themes--colors-p (item)
   "Judge themes ITEM colors."
   (declare (pure t) (side-effect-free t))
   (when item
     (cond ((listp item)
            (let ((car (car item)))
-             (cond ((memq car '(quote dalu-themes--color)) nil)
+             (cond ((memq car '(quote sinolor-themes--color)) nil)
                    ((memq car '(backquote \`))
-                    (let ((dalu-themes--quoted-p t))
-                      (dalu-themes--colors-p (cdr item))))
+                    (let ((sinolor-themes--quoted-p t))
+                      (sinolor-themes--colors-p (cdr item))))
                    ((eq car '\,)
-                    (let (dalu-themes--quoted-p)
-                      (dalu-themes--colors-p (cdr item))))
-                   ((or (dalu-themes--colors-p car)
-                        (dalu-themes--colors-p (cdr-safe item)))))))
+                    (let (sinolor-themes--quoted-p)
+                      (sinolor-themes--colors-p (cdr item))))
+                   ((or (sinolor-themes--colors-p car)
+                        (sinolor-themes--colors-p (cdr-safe item)))))))
           ((and (symbolp item)
                 (not (keywordp item))
-                (not dalu-themes--quoted-p)
+                (not sinolor-themes--quoted-p)
                 (not (equal (substring (symbol-name item) 0 1) "-"))
-                (assq item dalu-themes--colors))))))
+                (assq item sinolor-themes--colors))))))
 
-(defun dalu-themes--apply-faces (new-faces &optional default-faces)
+(defun sinolor-themes--apply-faces (new-faces &optional default-faces)
   "Apply NEW-FACES to DEFAULT-FACES."
   (declare (pure t) (side-effect-free t))
-  (let ((default-faces (or default-faces dalu-themes--base-faces))
+  (let ((default-faces (or default-faces sinolor-themes--base-faces))
         (faces (make-hash-table :test #'eq :size (+ (length default-faces) (length new-faces))))
         (directives (make-hash-table :test #'eq)))
     (dolist (spec (append (mapcar #'copy-sequence default-faces) new-faces))
@@ -101,8 +101,8 @@
       (maphash (lambda (face plist)
                  (when (keywordp (car plist))
                    ;; TODO Clean up duplicates in &all/&light/&dark blocks
-                   (dolist (prop (append (unless dalu-themes-enable-bold   '(:weight normal :bold nil))
-                                         (unless dalu-themes-enable-italic '(:slant normal :italic nil))))
+                   (dolist (prop (append (unless sinolor-themes-enable-bold   '(:weight normal :bold nil))
+                                         (unless sinolor-themes-enable-italic '(:slant normal :italic nil))))
                      (when (and (plist-member plist prop)
                                 (not (eq (plist-get plist prop) 'inherit)))
                        (plist-put plist prop
@@ -112,36 +112,36 @@
                faces)
       (nreverse results))))
 
-(defun dalu-themes--colorize (item type)
+(defun sinolor-themes--colorize (item type)
   "Colorize ITEM and TYPE."
   (declare (pure t) (side-effect-free t))
   (when item
-    (let ((dalu-themes--quoted-p dalu-themes--quoted-p))
+    (let ((sinolor-themes--quoted-p sinolor-themes--quoted-p))
       (cond ((listp item)
-             (cond ((memq (car item) '(quote dalu-themes--color))
+             (cond ((memq (car item) '(quote sinolor-themes--color))
                     item)
-                   ((eq (car item) 'dalu-themes--def)
-                    (dalu-themes--colorize
-                     (apply #'dalu-themes--def (cdr item)) type))
+                   ((eq (car item) 'sinolor-themes--def)
+                    (sinolor-themes--colorize
+                     (apply #'sinolor-themes--def (cdr item)) type))
                    ((let* ((item (append item nil))
                            (car (car item))
-                           (dalu-themes--quoted-p
+                           (sinolor-themes--quoted-p
                             (cond ((memq car '(backquote \`)) t)
                                   ((eq car '\,) nil)
-                                  (t dalu-themes--quoted-p))))
+                                  (t sinolor-themes--quoted-p))))
                       (cons car
                             (cl-loop
                              for i in (cdr item)
-                             collect (dalu-themes--colorize i type)))))))
+                             collect (sinolor-themes--colorize i type)))))))
             ((and (symbolp item)
                   (not (keywordp item))
-                  (not dalu-themes--quoted-p)
+                  (not sinolor-themes--quoted-p)
                   (not (equal (substring (symbol-name item) 0 1) "-"))
-                  (assq item dalu-themes--colors))
-             `(dalu-themes--color ',item ',type))
+                  (assq item sinolor-themes--colors))
+             `(sinolor-themes--color ',item ',type))
             (item)))))
 
-(defun dalu-themes--build-face (face)
+(defun sinolor-themes--build-face (face)
   "Build FACE."
   (declare (pure t) (side-effect-free t))
   `(list
@@ -150,10 +150,10 @@
        (cond ((keywordp (car face-body))
               (let ((real-attrs face-body)
                     defs)
-                (if (dalu-themes--colors-p real-attrs)
-                    (dolist (cl dalu-themes--min-colors `(list ,@(nreverse defs)))
+                (if (sinolor-themes--colors-p real-attrs)
+                    (dolist (cl sinolor-themes--min-colors `(list ,@(nreverse defs)))
                       (push `(list '((class color) (min-colors ,cl))
-                                   (list ,@(dalu-themes--colorize real-attrs cl)))
+                                   (list ,@(sinolor-themes--colorize real-attrs cl)))
                             defs))
                   `(list (list 't (list ,@real-attrs))))))
              ((memq (car-safe (car face-body)) '(quote backquote \`))
@@ -165,10 +165,10 @@
                         ((memq (car attrs) '(&dark &light))
                          (let ((bg (if (eq (car attrs) '&dark) 'dark 'light))
                                (real-attrs (append all-attrs (cdr attrs) '())))
-                           (cond ((dalu-themes--colors-p real-attrs)
-                                  (dolist (cl dalu-themes--min-colors)
+                           (cond ((sinolor-themes--colors-p real-attrs)
+                                  (dolist (cl sinolor-themes--min-colors)
                                     (push `(list '((class color) (min-colors ,cl) (background ,bg))
-                                                 (list ,@(dalu-themes--colorize real-attrs cl)))
+                                                 (list ,@(sinolor-themes--colorize real-attrs cl)))
                                           defs)))
                                  ((push `(list '((background ,bg)) (list ,@real-attrs))
                                         defs)))))))))))))
@@ -176,7 +176,7 @@
 ;;; Color helper functions
 
 ;;;###autoload
-(defun dalu-themes--name-to-rgb (color)
+(defun sinolor-themes--name-to-rgb (color)
   "Retrieves the hexidecimal string repesented the named COLOR (e.g. \"red\")
 for FRAME (defaults to the current frame)."
   (cl-loop with div = (float (car (tty-color-standard-values "#ffffff")))
@@ -184,52 +184,52 @@ for FRAME (defaults to the current frame)."
            collect (/ x div)))
 
 ;;;###autoload
-(defun dalu-themes--blend (color1 color2 alpha)
+(defun sinolor-themes--blend (color1 color2 alpha)
   "Blend two colors together by a coefficient ALPHA.
 
 COLOR1/COLOR2: (hexidecimal strings)
 ALPHA: (a float between 0 and 1)."
   (when (and color1 color2)
     (cond ((and color1 color2 (symbolp color1) (symbolp color2))
-           (dalu-themes--blend (dalu-themes--color color1) (dalu-themes--color color2) alpha))
+           (sinolor-themes--blend (sinolor-themes--color color1) (sinolor-themes--color color2) alpha))
 
           ((or (listp color1) (listp color2))
            (cl-loop for x in color1
                     when (if (listp color2) (pop color2) color2)
-                    collect (dalu-themes--blend x it alpha)))
+                    collect (sinolor-themes--blend x it alpha)))
 
           ((and (string-prefix-p "#" color1) (string-prefix-p "#" color2))
            (apply (lambda (r g b) (format "#%02x%02x%02x" (* r 255) (* g 255) (* b 255)))
-                  (cl-loop for it    in (dalu-themes--name-to-rgb color1)
-                           for other in (dalu-themes--name-to-rgb color2)
+                  (cl-loop for it    in (sinolor-themes--name-to-rgb color1)
+                           for other in (sinolor-themes--name-to-rgb color2)
                            collect (+ (* alpha it) (* other (- 1 alpha))))))
 
           (color1))))
 
 ;;;###autoload
-(defun dalu-themes--darken (color alpha)
+(defun sinolor-themes--darken (color alpha)
   "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between 0 and 1)."
   (cond ((and color (symbolp color))
-         (dalu-themes--darken (dalu-themes--color color) alpha))
+         (sinolor-themes--darken (sinolor-themes--color color) alpha))
         ((listp color)
-         (cl-loop for c in color collect (dalu-themes--darken c alpha)))
-        ((dalu-themes--blend color "#000000" (- 1 alpha)))))
+         (cl-loop for c in color collect (sinolor-themes--darken c alpha)))
+        ((sinolor-themes--blend color "#000000" (- 1 alpha)))))
 
 ;;;###autoload
-(defun dalu-themes--lighten (color alpha)
+(defun sinolor-themes--lighten (color alpha)
   "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between 0 and 1)."
   (cond ((and color (symbolp color))
-         (dalu-themes--lighten (dalu-themes--color color) alpha))
+         (sinolor-themes--lighten (sinolor-themes--color color) alpha))
         ((listp color)
-         (cl-loop for c in color collect (dalu-themes--lighten c alpha)))
-        ((dalu-themes--blend color "#FFFFFF" (- 1 alpha)))))
+         (cl-loop for c in color collect (sinolor-themes--lighten c alpha)))
+        ((sinolor-themes--blend color "#FFFFFF" (- 1 alpha)))))
 
 ;;;###autoload
-(defun dalu-themes--color (name &optional type)
+(defun sinolor-themes--color (name &optional type)
   "Retrieve a specific color named NAME (a symbol) with TYPE from the current theme."
   (let ((colors (if (listp name)
                     name
-                  (cdr-safe (assq name dalu-themes--colors)))))
+                  (cdr-safe (assq name sinolor-themes--colors)))))
     (and colors
          (cond ((listp colors)
                 (let ((i (or (plist-get '(256 1 16 2 8 3) type) 0)))
@@ -239,9 +239,9 @@ ALPHA: (a float between 0 and 1)."
                (t colors)))))
 
 ;;;###autoload
-(defun dalu-themes--def (face prop &optional class)
+(defun sinolor-themes--def (face prop &optional class)
   "Define themes."
-  (let ((spec (or (cdr (assq face dalu-themes--faces))
+  (let ((spec (or (cdr (assq face sinolor-themes--faces))
                   (error "Couldn't find the '%s' face" face))))
     (when (memq (car spec) '(quote backquote \`))
       (user-error "Can't fetch the literal spec for '%s'" face))
@@ -255,24 +255,24 @@ ALPHA: (a float between 0 and 1)."
              prop face (if class (format "'s '%s' class" class) "")))
     (plist-get spec prop)))
 
-(defun dalu-themes--prepare-facelist (custom-faces)
+(defun sinolor-themes--prepare-facelist (custom-faces)
   "Return an alist of face definitions for `custom-theme-set-faces'.
 
 CUSTOM-FACES in EXTRA-FACES override the default faces."
   (declare (pure t) (side-effect-free t))
-  (setq dalu-themes--faces (dalu-themes--apply-faces custom-faces))
-  (mapcar #'dalu-themes--build-face dalu-themes--faces))
+  (setq sinolor-themes--faces (sinolor-themes--apply-faces custom-faces))
+  (mapcar #'sinolor-themes--build-face sinolor-themes--faces))
 
-(defun dalu-themes--prepare-varlist (vars)
+(defun sinolor-themes--prepare-varlist (vars)
   "Return an alist of variable definitions for `custom-theme-set-variables'.
 
 VARS in EXTRA-VARS override the default ones."
   (declare (pure t) (side-effect-free t))
-  (cl-loop for (var val) in (append dalu-themes--base-vars vars)
+  (cl-loop for (var val) in (append sinolor-themes--base-vars vars)
            collect `(list ',var ,val)))
 
 ;;;###autoload
-(defun dalu-themes--set-faces (theme &rest faces)
+(defun sinolor-themes--set-faces (theme &rest faces)
   "Customize THEME (a symbol) with FACES.
 
 If THEME is nil, it applies to all themes you load.
@@ -280,37 +280,37 @@ FACES is a list of theme face specs.
 
 These is a simplified spec.  For example:
 
-  (dalu-themes--set-faces 'user
+  (sinolor-themes--set-faces 'user
     '(default :background red :foreground blue)
-    '(dalu-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-    '(dalu-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-    '(dalu-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-    '(dalu-modeline-buffer-project-root :foreground green :weight 'bold))"
+    '(sinolor-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+    '(sinolor-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
+    '(sinolor-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
+    '(sinolor-modeline-buffer-project-root :foreground green :weight 'bold))"
   (declare (indent defun))
   (apply #'custom-theme-set-faces
          (or theme 'user)
          (eval
-          `(let* ((bold   ,dalu-themes-enable-bold)
-                  (italic ,dalu-themes-enable-italic)
-                  ,@(cl-loop for (var . val) in dalu-themes--colors
+          `(let* ((bold   ,sinolor-themes-enable-bold)
+                  (italic ,sinolor-themes-enable-italic)
+                  ,@(cl-loop for (var . val) in sinolor-themes--colors
                              collect `(,var ',val)))
-             (list ,@(mapcar #'dalu-themes--build-face faces))))))
+             (list ,@(mapcar #'sinolor-themes--build-face faces))))))
 
-(defmacro def-dalu-theme (name docstring defs &optional extra-faces extra-vars)
+(defmacro def-sinolor-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a theme, named NAME (a symbol) with DOCSTRING, DEFS and optinal EXTRA-FACES EXTRA-VARS."
   (declare (doc-string 2))
-  (let ((dalu-themes--colors defs))
-    `(let* ((bold   dalu-themes-enable-bold)
-            (italic dalu-themes-enable-italic)
+  (let ((sinolor-themes--colors defs))
+    `(let* ((bold   sinolor-themes-enable-bold)
+            (italic sinolor-themes-enable-italic)
             ,@defs)
-       (setq dalu-themes--colors
+       (setq sinolor-themes--colors
              (list ,@(cl-loop for (var val) in defs
                               collect `(cons ',var ,val))))
        (deftheme ,name ,docstring)
        (custom-theme-set-faces
-        ',name ,@(dalu-themes--prepare-facelist extra-faces))
+        ',name ,@(sinolor-themes--prepare-facelist extra-faces))
        (custom-theme-set-variables
-        ',name ,@(dalu-themes--prepare-varlist extra-vars))
+        ',name ,@(sinolor-themes--prepare-varlist extra-vars))
        (unless bold (set-face-bold 'bold nil))
        (unless italic (set-face-italic 'italic nil))
        (provide-theme ',name))))
@@ -323,6 +323,6 @@ These is a simplified spec.  For example:
                  (or (and (file-directory-p dir) dir)
                      base))))
 
-(provide 'dalu-themes)
+(provide 'sinolor-themes)
 
-;;; dalu-themes.el ends here
+;;; sinolor-themes.el ends here

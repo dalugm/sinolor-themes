@@ -1,76 +1,85 @@
-;;; dalu-light-theme.el --- Light theme
+;;; sinolor-vibrant-theme.el --- Dark theme
 
 ;;; Commentary:
 ;;
-;; Light theme.
+;; Dark theme.
 ;;
 ;; Color selected from Chinese traditional colors.
 ;;
-;; 月白	#eef7f2
-;; 穹灰	#c4d7d6
-;; 淡绿灰	#70887d
+;; 唐菖蒲红	#de1c31
+;; 尖晶石红	#cc163a
+;; 春梅红	#f1939c
+;; 满江红	#a7535a
 ;;
-;; 香叶红	#f07c82
-;; 牡丹粉红	#eea2a4
-;; 丁香淡紫	#e9d7df
+;; 蝶黄	#e2d849
+;; 佛手黄	#fed71a
+;; 姜黄	#e2c027
+;; 枯黄	#b78d12
 ;;
-;; 霁青	#63bbd0
-;; 鸢尾蓝	#158bb8
-;; 瀑布蓝	#51c4d3
-;; 远天蓝	#d0dfe6
+;; 群青	#1772b4
+;; 晴山蓝	#8fb2c9
+;;
+;; 汉白玉	#f8f4ed
+;; 云峰白	#d8e3e7
+;; 古鼎灰	#36292f
+;; 大理石灰	#c4cbcf
+;;
+;; 蕈紫	#815c94
+;; 暗龙胆紫	#22202e
 ;;
 ;; 玉髓绿	#41b349
-;;
+;; 宫殿绿	#20894d
+;; 芽绿	#96c24e
 
 ;;; Code:
 
-(require 'dalu-themes)
+(require 'sinolor-themes)
 
-(defgroup dalu-light-theme nil
-  "Options for dalu-themes"
-  :group 'dalu-themes)
+(defgroup sinolor-vibrant-theme nil
+  "Options for sinolor-themes"
+  :group 'sinolor-themes)
 
-(defcustom dalu-light-brighter-modeline nil
+(defcustom sinolor-vibrant-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'dalu-light-theme
+  :group 'sinolor-vibrant-theme
   :type 'boolean)
 
-(defcustom dalu-light-brighter-comments nil
+(defcustom sinolor-vibrant-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'dalu-light-theme
+  :group 'sinolor-vibrant-theme
   :type 'boolean)
 
-(defcustom dalu-light-comment-bg dalu-light-brighter-comments
+(defcustom sinolor-vibrant-comment-bg sinolor-vibrant-brighter-comments
   "If non-nil, comments will have a subtle, darker background.
 
 Enhancing their legibility."
-  :group 'dalu-light-theme
+  :group 'sinolor-vibrant-theme
   :type 'boolean)
 
-(defcustom dalu-light-padded-modeline dalu-themes-padded-modeline
+(defcustom sinolor-vibrant-padded-modeline sinolor-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 
 Can be an integer to determine the exact padding."
-  :group 'dalu-light-theme
+  :group 'sinolor-vibrant-theme
   :type '(choice integer boolean))
 
-(def-dalu-theme dalu-light
-  "A derived light theme from `dalu-dark.'"
+(def-sinolor-theme sinolor-vibrant
+  "A dark theme modified from `doom-one'."
 
   ;; name        default   256       16
-  ((bg         '("#eef7f2" "#d7ffff" "brightwhite" ))
-   (bg-alt     '("#c4d7d6" "#d7d7ff" "gray"        ))
-   (base0      '("#f07c82" "#d7005f" "red"         ))
-   (base1      '("#eea2a4" "#d700af" "magenta"     ))
-   (base2      '("#c04851" "#d700ff" "magenta"     ))
-   (base3      '("#d0dfe6" "#262626" "gray"        ))
-   (base4      '("#ee3f4d" "#ff005f" "magenta"     ))
-   (base5      '("#70887d" "#3f3f3f" "gray"        ))
-   (base6      '("#73797e" "#6b6b6b" "magenta"     ))
-   (base7      '("#9ca0a4" "#979797" "magenta"     ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"       ))
-   (fg         '("#383a42" "#bfbfbf" "brightwhite" ))
-   (fg-alt     '("#c6c7c7" "#2d2d2d" "white"       ))
+  ((bg         '("#22202e" nil       nil            ))
+   (bg-alt     '("#333333" nil       nil            ))
+   (base0      '("#1B2229" "black"   "black"        ))
+   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
+   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
+   (base3      '("#23272e" "#262626" "brightblack"  ))
+   (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
+   (base5      '("#5B6268" "#525252" "brightblack"  ))
+   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
+   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
+   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
+   (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
+   (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
 
    (white      '("#f8f4ed" "#dfdfdf" "white"         ))
    (grey       '("#b7ae8f" "#3f3f3f" "brightblack"   ))
@@ -91,23 +100,23 @@ Can be an integer to determine the exact padding."
    (violet     '("#815c94" "#af87ff" "magenta"       ))
 
    ;; face categories -- required for all themes
-   (highlight      blue)
-   (vertical-bar   (dalu-themes--darken base2 0.1))
-   (selection      "#10aec2")
+   (highlight      white)
+   (vertical-bar   (sinolor-themes--darken base1 0.1))
+   (selection      dark-blue)
    (builtin        blue2)
-   (comments       (if dalu-light-brighter-comments cyan base4))
-   (doc-comments   (dalu-themes--darken comments 0.15))
-   (constants      "#008080")
-   (functions      "#0C0CA9")
-   (keywords       "#A91B0C")
+   (comments       grey)
+   (doc-comments   yellow)
+   (constants      violet)
+   (functions      gold2)
+   (keywords       blue)
    (methods        cyan)
-   (operators      blue)
-   (type           "#A90C6C")
-   (strings        "#41b349")
-   (variables      (dalu-themes--darken magenta 0.36))
+   (operators      "cyan3")
+   (type           "#00b8ff")
+   (strings        yellow)
+   (variables      gold)
    (numbers        orange)
-   (region         "#3F90F7")
-   (region-fg      "#46D9FF")
+   (region         "#b78d12")
+   (region-fg      "#FFF")
    (error          red)
    (warning        yellow)
    (success        green)
@@ -117,37 +126,37 @@ Can be an integer to determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright dalu-light-brighter-modeline)
+   (-modeline-bright sinolor-vibrant-brighter-modeline)
    (-modeline-pad
-    (when dalu-light-padded-modeline
-      (if (integerp dalu-light-padded-modeline) dalu-light-padded-modeline 4)))
+    (when sinolor-vibrant-padded-modeline
+      (if (integerp sinolor-vibrant-padded-modeline) sinolor-vibrant-padded-modeline 4)))
 
    (modeline-fg     fg)
    (modeline-fg-alt base5)
 
    (modeline-bg
     (if -modeline-bright
-        (dalu-themes--lighten blue 0.475)
-      `(,(dalu-themes--lighten (car bg-alt) 0.15) ,@(cdr base0))))
+        (sinolor-themes--darken blue 0.475)
+      `(,(sinolor-themes--darken (car bg-alt) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        (dalu-themes--lighten blue 0.45)
-      `(,(dalu-themes--lighten (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(dalu-themes--lighten (car bg-alt) 0.1) ,@(cdr bg-alt)))
+        (sinolor-themes--darken blue 0.45)
+      `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
    (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   (evil-goggles-default-face :inherit 'region :background (dalu-themes--blend region bg 0.5))
+   (evil-goggles-default-face :inherit 'region :background (sinolor-themes--blend region bg 0.5))
 
    ((line-number &override) :foreground fg-alt :background bg)
    ((line-number-current-line &override) :foreground fg :background bg)
 
    (font-lock-comment-face
     :foreground comments
-    :background (if dalu-light-comment-bg (dalu-themes--lighten bg 0.05)))
+    :background (if sinolor-vibrant-comment-bg (sinolor-themes--lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -180,7 +189,7 @@ Can be an integer to determine the exact padding."
    (table-cell :background grey)
 
    ;; ivy-mode
-   (ivy-current-match :underline t :distant-foreground base0 :foreground base4 :weight 'normal)
+   (ivy-current-match :underline t :distant-foreground base0 :foreground orange :weight 'normal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -190,17 +199,16 @@ Can be an integer to determine the exact padding."
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (dalu-themes--lighten base3 0.05))
+   (markdown-header-face :inherit 'bold :foreground blue)
+   ((markdown-code-face &override) :background (sinolor-themes--lighten base3 0.05))
 
    ;; info-mode
    (Info-quoted :inherit font-lock-variable-name-face)
 
    ;; org-mode
    (org-hide              :foreground hidden)
-   (org-block             :background base3 :extend t)
-   (org-block-begin-line  :background (dalu-themes--lighten base3 0.05) :overline t)
-   (org-block-end-line    :background (dalu-themes--lighten base3 0.05) :underline t)
+   (org-block-begin-line  :background (sinolor-themes--lighten base3 0.05) :overline t)
+   (org-block-end-line    :background (sinolor-themes--lighten base3 0.05) :underline t)
    (solaire-org-hide-face :foreground hidden))
 
 
@@ -214,4 +222,4 @@ Can be an integer to determine the exact padding."
 ;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
 ;; End:
 
-;;; dalu-light-theme.el ends here
+;;; sinolor-vibrant-theme.el ends here
