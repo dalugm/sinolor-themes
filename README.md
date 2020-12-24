@@ -11,7 +11,7 @@
 
 Sinolor themes is a theme package whose code base fork from [emacs-doom-themes](https://github.com/hlissner/emacs-doom-themes "emacs-doom-themes").
 
-Colors are selected from Chinese traditional color.
+Colors are selected from [CHINESE COLORS](http://zhongguose.com/).
 
 Light, Black (used in lightless night) and Vibrant theme are derived from the Dark theme.
 

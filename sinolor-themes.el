@@ -240,7 +240,7 @@ ALPHA: (a float between 0 and 1)."
 
 ;;;###autoload
 (defun sinolor-themes--def (face prop &optional class)
-  "Define themes."
+  "Define themes with FACE, PROP and CLASS."
   (let ((spec (or (cdr (assq face sinolor-themes--faces))
                   (error "Couldn't find the '%s' face" face))))
     (when (memq (car spec) '(quote backquote \`))
