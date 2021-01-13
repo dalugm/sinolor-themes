@@ -22,7 +22,7 @@ Forked from `doom-one`, `sinolor-test-theme` which is only used to test color co
 1. Clone this repository
 
 ```
-git clone --depth=1 https://github.com/dalu98/sinolor-themes.git
+git clone --depth=1 https://github.com/dalugm/sinolor-themes.git
 ```
 
 2. Add `sinolor-themes` to load-path.
