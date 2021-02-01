@@ -1,59 +1,69 @@
-;;; sinolor-black-theme.el --- Black theme
+;;; sinolor-green-theme.el --- inspired by green-is-the-new-black
 
 ;;; Commentary:
 ;;
-;; Black theme.
+;; A theme with blackened green colors.
 ;;
+;; 竹绿	#1ba784
+;; 苍绿	#314a43
+;; 毛绿	#66c18c
+;; 宫殿绿	#20894d
+;; 飞泉绿	#497568
+;; 深海绿	#1a3b32
+;; 莽丛绿	#223e36
+;; 瓦松绿	#6e8b74
+;; 松霜绿	#83a78d
 
 ;;; Code:
 
 (require 'sinolor-themes)
 
-(defgroup sinolor-black-theme nil
+(defgroup sinolor-green-theme nil
   "Options for sinolor-themes"
   :group 'sinolor-themes)
 
-(defcustom sinolor-black-brighter-modeline nil
+(defcustom sinolor-green-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'sinolor-black-theme
+  :group 'sinolor-green-theme
   :type 'boolean)
 
-(defcustom sinolor-black-brighter-comments nil
+(defcustom sinolor-green-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'sinolor-black-theme
+  :group 'sinolor-green-theme
   :type 'boolean)
 
-(defcustom sinolor-black-comment-bg sinolor-black-brighter-comments
+(defcustom sinolor-green-comment-bg sinolor-green-brighter-comments
   "If non-nil, comments will have a subtle, darker background.
 
 Enhancing their legibility."
-  :group 'sinolor-black-theme
+  :group 'sinolor-green-theme
   :type 'boolean)
 
-(defcustom sinolor-black-padded-modeline sinolor-themes-padded-modeline
+(defcustom sinolor-green-padded-modeline sinolor-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 
 Can be an integer to determine the exact padding."
-  :group 'sinolor-black-theme
+  :group 'sinolor-green-theme
   :type '(choice integer boolean))
 
-(def-sinolor-theme sinolor-black
-  "A derived dark theme from `sinolor-dark'"
+;;
+(def-sinolor-theme sinolor-green
+  "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         '("#000000" "black"   "black"        ))
-   (bg-alt     '("#333333" "#7f7f7f" "brightblack"  ))
-   (base0      '("#1B2229" "black"   "black"        ))
-   (base1      '("#ef632b" "#d75f00" "brightyellow" ))
-   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-   (base3      '("#23272e" "#262626" "brightblack"  ))
-   (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  ))
-   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
-   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#eef7f2" "#dfdfdf" "white"        ))
-   (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
+  ((bg         '("#141e1b" "black"   "black"       ))
+   (bg-alt     '("#333333" "#7f7f7f" "brightblack" ))
+   (base0      '("#1B2229" "black"   "black"       ))
+   (base1      '("#1c1f24" "#1e1e1e" "brightblack" ))
+   (base2      '("#202328" "#2e2e2e" "brightblack" ))
+   (base3      '("#23272e" "#262626" "brightblack" ))
+   (base4      '("#3f444a" "#3f3f3f" "brightblack" ))
+   (base5      '("#5B6268" "#525252" "brightblack" ))
+   (base6      '("#73797e" "#6b6b6b" "brightblack" ))
+   (base7      '("#9ca0a4" "#979797" "brightblack" ))
+   (base8      '("#DFDFDF" "#dfdfdf" "white"       ))
+   (fg         '("#1ba784" "#bfbfbf" "green"       ))
+   (fg-alt     '("#20894d" "#2d2d2d" "brightgreen" ))
 
    (white        '("#f8f4ed" "#dfdfdf" "white"         ))
    (grey         '("#b7ae8f" "#b2b2b2" "brightblack"   ))
@@ -67,42 +77,46 @@ Can be an integer to determine the exact padding."
    (cyan         '("#63bbd0" "#00ffff" "brightcyan"    ))
    (dark-cyan    '("#134857" "#00d7ff" "cyan"          ))
    (green        '("#20894d" "#00ff00" "brightgreen"   ))
+   (bright-green '("#41b349" "#00ff11" "brightgreen"   ))
+   (clear-green  '("#1ba784" "#00ff22" "brightgreen"   ))
+   (light-green  '("#497568" "#00ff33" "green"         ))
+   (heavy-green  '("#314a43" "#006f00" "green"         ))
    (dark-green   '("#1a3b32" "#005f00" "green"         ))
    (magenta      '("#8b2671" "#870087" "brightmagenta" ))
    (purple       '("#7e1671" "#5f5faf" "brightmagenta" ))
    (violet       '("#815c94" "#af87ff" "magenta"       ))
 
    ;; face categories -- required for all themes
-   (highlight    white)
-   (vertical-bar (sinolor-themes--darken base1 0.1))
-   (selection    dark-blue)
-   (builtin      "#00b8ff")
-   (comments     grey)
-   (doc-comments yellow)
-   (constants    violet)
-   (functions    gold)
-   (keywords     blue)
-   (methods      cyan)
-   (operators    "cyan3")
-   (type         "#00b8ff")
-   (strings      yellow)
-   (variables    gold)
-   (numbers      orange)
-   (region       base3)
-   (region-fg    "#FFF")
-   (error        red)
-   (warning      yellow)
-   (success      green)
-   (vc-modified  orange)
-   (vc-added     green)
-   (vc-deleted   red)
+   (highlight      green)
+   (vertical-bar   (sinolor-themes--darken base1 0.1))
+   (selection      fg-alt)
+   (builtin        "#66c18c")
+   (comments       light-green)
+   (doc-comments   "#83a78d")
+   (constants      light-green)
+   (functions      gold)
+   (keywords       green)
+   (methods        cyan)
+   (operators      dark-cyan)
+   (type           clear-green)
+   (strings        "#6e8b74")
+   (variables      bright-green)
+   (numbers        orange)
+   (region         dark-green)
+   (region-fg      "#FFF")
+   (error          red)
+   (warning        yellow)
+   (success        green)
+   (vc-modified    orange)
+   (vc-added       green)
+   (vc-deleted     red)
 
    ;; custom categories
-   (hidden `(,(car bg) "black" "black"))
-   (-modeline-bright sinolor-black-brighter-modeline)
+   (hidden     `(,(car bg) "black" "black"))
+   (-modeline-bright sinolor-green-brighter-modeline)
    (-modeline-pad
-    (when sinolor-black-padded-modeline
-      (if (integerp sinolor-black-padded-modeline) sinolor-black-padded-modeline 4)))
+    (when sinolor-green-padded-modeline
+      (if (integerp sinolor-green-padded-modeline) sinolor-green-padded-modeline 4)))
 
    (modeline-fg     fg)
    (modeline-fg-alt base5)
@@ -120,12 +134,12 @@ Can be an integer to determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  (((line-number &override) :foreground fg-alt :background bg)
-   ((line-number-current-line &override) :foreground fg :background bg)
+  (((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground fg)
 
    (font-lock-comment-face
     :foreground comments
-    :background (if sinolor-black-comment-bg (sinolor-themes--lighten bg 0.05)))
+    :background (if sinolor-green-comment-bg (sinolor-themes--lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -139,28 +153,28 @@ Can be an integer to determine the exact padding."
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
 
-   ;; table
-   (table-cell :background grey)
-
    ;; ivy-mode
-   (ivy-current-match :underline t :distant-foreground base0 :foreground base1 :weight 'normal)
+   (ivy-current-match :background heavy-green :distant-foreground base0 :underline t :weight 'normal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
-   (css-property :foreground green)
-   (css-selector :foreground blue)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+
+   ;; LaTeX-mode
+   (font-latex-math-face :foreground green)
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground blue)
+   (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (sinolor-themes--lighten base3 0.05))
 
    ;; info-mode
    (Info-quoted :inherit font-lock-variable-name-face)
 
    ;; org-mode
-   (org-hide :foreground hidden)
+   (org-hide             :foreground hidden)
    (org-block-begin-line :background (sinolor-themes--lighten base3 0.05) :overline t)
    (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t))
 
@@ -175,4 +189,4 @@ Can be an integer to determine the exact padding."
 ;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
 ;; End:
 
-;;; sinolor-black-theme.el ends here
+;;; sinolor-green-theme.el ends here

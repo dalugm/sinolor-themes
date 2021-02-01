@@ -10,7 +10,7 @@
 ;;   `sinolor-light'
 ;;   `sinolor-vibrant'
 ;;   `sinolor-black'
-;;
+;;   `sinolor-green'
 ;;
 
 ;;; Code:
@@ -186,7 +186,6 @@ for FRAME (defaults to the current frame)."
 ;;;###autoload
 (defun sinolor-themes--blend (color1 color2 alpha)
   "Blend two colors together by a coefficient ALPHA.
-
 COLOR1/COLOR2: (hexidecimal strings)
 ALPHA: (a float between 0 and 1)."
   (when (and color1 color2)

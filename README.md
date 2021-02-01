@@ -9,13 +9,13 @@
 
 # Sinolor Theme
 
-Sinolor themes is a theme package whose code base fork from [emacs-doom-themes](https://github.com/hlissner/emacs-doom-themes "emacs-doom-themes").
+Sinolor themes is a theme package which code base fork from [emacs-doom-themes](https://github.com/hlissner/emacs-doom-themes "emacs-doom-themes").
 
-Colors are selected from [CHINESE COLORS](http://zhongguose.com/).
+Colors are selected from [CHINESE COLORS](http://zhongguose.com/ "zhongguose").
 
 Light, Black (used in lightless night) and Vibrant theme are derived from the Dark theme.
 
-Forked from `doom-one`, `sinolor-test-theme` which is only used to test color compatible is not recommended to use.
+`sinolor-green-theme` refers to [green-is-the-new-black-emacs](https://github.com/fredcamps/green-is-the-new-black-emacs "gitnb").
 
 ## Installation
 

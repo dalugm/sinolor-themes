@@ -67,8 +67,8 @@ Can be an integer to determine the exact padding."
   "A dark theme modified from `doom-one'."
 
   ;; name        default   256       16
-  ((bg         '("#22202e" nil       nil            ))
-   (bg-alt     '("#333333" nil       nil            ))
+  ((bg         '("#22202e" "black"   "black"        ))
+   (bg-alt     '("#333333" nil       "brightblack"  ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -86,8 +86,8 @@ Can be an integer to determine the exact padding."
    (red        '("#de1c31" "#ff6655" "red"           ))
    (orange     '("#fa7e23" "#dd8844" "brightred"     ))
    (yellow     '("#e2d849" "#ffff00" "yellow"        ))
-   (gold       '("#fed71a" "#ffd700" "gold"          ))
-   (gold2      '("#e2c027" "#ffd700" "gold2"         ))
+   (gold       '("#fed71a" "#ffd700" "brightyellow"  ))
+   (gold2      '("#e2c027" "#ffd700" "brightyellow"  ))
    (teal       '("#12a182" "#00ff00" "brightgreen"   ))
    (blue       '("#51c4d3" "#00afff" "brightblue"    ))
    (blue2      '("#8fb2c9" "#0087ff" "brightblue"    ))
@@ -147,11 +147,7 @@ Can be an integer to determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (evil-goggles-default-face :inherit 'region :background (sinolor-themes--blend region bg 0.5))
-
-   ((line-number &override) :foreground fg-alt :background bg)
+  (((line-number &override) :foreground fg-alt :background bg)
    ((line-number-current-line &override) :foreground fg :background bg)
 
    (font-lock-comment-face
@@ -169,21 +165,6 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
-
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; table
    (table-cell :background grey)
@@ -206,10 +187,9 @@ Can be an integer to determine the exact padding."
    (Info-quoted :inherit font-lock-variable-name-face)
 
    ;; org-mode
-   (org-hide              :foreground hidden)
-   (org-block-begin-line  :background (sinolor-themes--lighten base3 0.05) :overline t)
-   (org-block-end-line    :background (sinolor-themes--lighten base3 0.05) :underline t)
-   (solaire-org-hide-face :foreground hidden))
+   (org-hide             :foreground hidden)
+   (org-block-begin-line :background (sinolor-themes--lighten base3 0.05) :overline t)
+   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t))
 
 
   ;; --- extra variables ---------------------

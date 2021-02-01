@@ -19,6 +19,7 @@
 ;; 佛手黄	#fed71a
 ;;
 ;; 群青	#1772b4
+;; 蓝绿	#12a182
 ;; 晴山蓝	#8fb2c9
 ;; 瀑布蓝	#51c4d3
 ;; 甸子蓝	#10aec2
@@ -30,19 +31,30 @@
 ;; 云峰白	#d8e3e7
 ;; 古鼎灰	#36292f
 ;; 隐红灰	#b598a1
+;; 暮云灰	#30161c
 ;; 大理石灰	#c4cbcf
 ;;
 ;; 李紫	#2b1216
 ;; 蕈紫	#815c94
-;; 暗玉紫	#22202e
+;; 樱草紫	#951c48
+;; 螺甸紫	#74759b
+;; 玫瑰紫	#ba2f7b
+;; 菜头紫	#951c48
+;; 淡青紫	#e0c8d1
+;; 暗玉紫	#5c2223
+;; 龙葵紫	#322f3b
 ;; 剑锋紫	#3e3841
 ;; 青莲紫	#8b2671
+;; 远山紫	#ccccd6
+;; 电气红紫	#c08eaf
 ;; 暗龙胆紫	#22202e
+;; 野葡萄紫	#4f383e
 ;;
 ;; 芽绿	#96c24e
 ;; 淡灰绿	#ad9e5f
 ;; 玉髓绿	#41b349
 ;; 宫殿绿	#20894d
+;; 深海绿	#1a6840
 
 ;;; Code:
 
@@ -64,14 +76,12 @@
 
 (defcustom sinolor-dark-comment-bg sinolor-dark-brighter-comments
   "If non-nil, comments will have a subtle, darker background.
-
 Enhancing their legibility."
   :group 'sinolor-dark-theme
   :type 'boolean)
 
 (defcustom sinolor-dark-padded-modeline sinolor-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
-
 Can be an integer to determine the exact padding."
   :group 'sinolor-dark-theme
   :type '(choice integer boolean))
@@ -80,56 +90,60 @@ Can be an integer to determine the exact padding."
   "A dark theme modified from `doom-one'."
 
   ;; name        default   256       16
-  ((bg         '("#3e3841" nil       nil            ))
-   (bg-alt     '("#333333" nil       nil            )) ; inactive modeline bg
-   (base0      '("#5c2223" "black"   "black"        )) ; matching highlight bg
-   (base1      '("#ad9e5f" "#f7af00" "orange"       ))  ; minibuffer input candidates bg
-   (base2      '("#2b1216" "#2e2e2e" "brightblack"  )) ; frame completion selection bg
-   (base3      '("#23272e" "#262626" "brightblack"  )) ; org block bg
-   (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  )) ; inactive modeline fg
-   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
-   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#eef7f2" "#dfdfdf" "white"        ))
-   (fg         '("#d8e3e7" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
+  ((bg         '("#3e3841" "#3a3a3a" "black"       )) ; background color
+   (bg-alt     '("#302f4b" "#4e4e4e" "brightblack" )) ; inactive modeline bg
+   (base0      '("#322f3b" "#303030" "brightblack" )) ; matching highlight bg
+   (base1      '("#36292f" "#1e1e1e" "brightblack" )) ; minibuffer input candidates bg
+   (base2      '("#2b1216" "#2e2e2e" "brightblack" )) ; frame completion selection bg
+   (base3      '("#23272e" "#262626" "brightblack" )) ; org block bg
+   (base4      '("#3f444a" "#3f3f3f" "brightblack" ))
+   (base5      '("#5B6268" "#525252" "brightblack" )) ; inactive modeline fg
+   (base6      '("#73797e" "#6b6b6b" "brightblack" ))
+   (base7      '("#9ca0a4" "#979797" "brightblack" ))
+   (base8      '("#eef7f2" "#dfdfdf" "white"       ))
+   (fg         '("#d8e3e7" "#bfbfbf" "brightwhite" ))
+   (fg-alt     '("#1772b4" "#2d2d2d" "white"       ))
 
-   (white      '("#f8f4ed" "#dfdfdf" "white"         ))
-   (grey       '("#b7ae8f" "#3f3f3f" "brightblack"   ))
-   (red        '("#de1c31" "#ff6655" "red"           ))
-   (orange     '("#fa7e23" "#dd8844" "brightred"     ))
-   (yellow     '("#e2d849" "#ffff00" "yellow"        ))
-   (gold       '("#fed71a" "#ffd700" "gold"          ))
-   (gold2      '("#e2c027" "#ffd700" "gold2"         ))
-   (teal       '("#12a182" "#00ff00" "brightgreen"   ))
-   (blue       '("#51c4d3" "#00afff" "brightblue"    ))
-   (blue2      '("#8fb2c9" "#0087ff" "brightblue"    ))
-   (dark-blue  '("#10aec2" "#000087" "blue"          ))
-   (cyan       '("#63bbd0" "#00ffff" "brightcyan"    ))
-   (dark-cyan  '("#134857" "#00d7ff" "cyan"          ))
-   (green      '("#20894d" "#00ff00" "green"         ))
-   (magenta    '("#8b2671" "#870087" "brightmagenta" ))
-   (purple     '("#8b2671" "#5f5faf" "brightmagenta" ))
-   (violet     '("#815c94" "#af87ff" "magenta"       ))
+   (white          '("#f8f4ed" "#dfdfdf" "white"         ))
+   (grey           '("#b7ae8f" "#b2b2b2" "brightblack"   ))
+   (red            '("#de1c31" "#ff6655" "red"           ))
+   (orange         '("#fa7e23" "#dd8844" "brightred"     ))
+   (yellow         '("#e2d849" "#ffff00" "yellow"        ))
+   (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
+   (teal           '("#12a182" "#00ff00" "brightblue"    ))
+   (blue           '("#51c4d3" "#00afff" "brightblue"    ))
+   (dark-blue      '("#10aec2" "#000087" "blue"          ))
+   (cyan           '("#63bbd0" "#00ffff" "brightcyan"    ))
+   (dark-cyan      '("#134857" "#00d7ff" "cyan"          ))
+   (green          '("#20894d" "#00ff00" "brightgreen"   ))
+   (dark-green     '("#1a3b32" "#005f00" "green"         ))
+   (magenta        '("#8b2671" "#870087" "brightmagenta" ))
+   (light-magenta  '("#ba2f7b" "#5f5faf" "magenta"       ))
+   (clear-magenta  '("#c35691" "#5f5fbf" "magenta"       ))
+   (bright-magenta '("#c06f98" "#5f5faf" "brightmagenta" ))
+   (dark-magenta   '("#a8456b" "#af87ff" "magenta"       ))
+   (heavy-magenta  '("#5c2223" "#5f5faf" "magenta"       ))
+   (purple         '("#7e1671" "#5f5faf" "brightmagenta" ))
+   (violet         '("#815c94" "#af87ff" "magenta"       ))
 
    ;; face categories -- required for all themes
    (highlight      white)
    (vertical-bar   (sinolor-themes--darken base1 0.1))
    (selection      dark-blue)
-   (builtin        blue2)
+   (builtin        violet)
    (comments       (if sinolor-dark-brighter-comments base7 grey))
-   (doc-comments   yellow)
-   (constants      violet)
-   (functions      gold2)
-   (keywords       blue)
+   (doc-comments   "#74759b")
+   (constants      magenta)
+   (functions      dark-magenta)
+   (keywords       clear-magenta)
    (methods        cyan)
-   (operators      "cyan3")
-   (type           "#00b8ff")
-   (strings        yellow)
-   (variables      gold)
+   (operators      dark-cyan)
+   (type           purple)
+   (strings        "#e0c8d1")
+   (variables      bright-magenta)
    (numbers        orange)
-   (region         "#b78d12")
-   (region-fg      "#FFF")
+   (region         violet)
+   (region-fg      base8)
    (error          red)
    (warning        yellow)
    (success        green)
@@ -160,11 +174,7 @@ Can be an integer to determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (evil-goggles-default-face :inherit 'region :background (sinolor-themes--blend region bg 0.5))
-
-   ((line-number &override) :foreground fg-alt :background bg)
+  (((line-number &override) :foreground fg-alt :background bg)
    ((line-number-current-line &override) :foreground fg :background bg)
 
    (font-lock-comment-face
@@ -183,26 +193,11 @@ Can be an integer to determine the exact padding."
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
-
    ;; table
    (table-cell :background magenta)
 
    ;; ivy-mode
-   (ivy-current-match :underline t :distant-foreground base0 :foreground base1 :weight 'normal)
+   (ivy-current-match :distant-foreground base0 :background base3 :underline t :weight 'normal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -219,10 +214,9 @@ Can be an integer to determine the exact padding."
    (Info-quoted :inherit font-lock-variable-name-face)
 
    ;; org-mode
-   (org-hide :foreground hidden)
-   (org-block-begin-line  :background (sinolor-themes--lighten base3 0.05) :overline t)
-   (org-block-end-line    :background (sinolor-themes--lighten base3 0.05) :underline t)
-   (solaire-org-hide-face :foreground hidden))
+   (org-hide             :foreground hidden)
+   (org-block-begin-line :background (sinolor-themes--lighten base3 0.05) :overline t)
+   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t))
 
 
   ;; --- extra variables ---------------------

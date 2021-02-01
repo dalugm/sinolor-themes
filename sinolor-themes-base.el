@@ -8,14 +8,7 @@
 ;;; Code:
 
 (defvar sinolor-themes--base-faces
-  '(;; --- custom faces -----------------------
-    (doom-modeline-error
-     :background (sinolor-themes--darken red 0.25)
-     :foreground base0
-     :distant-foreground base0)
-    (doom-visual-bell :background error)
-
-    ;; --- base faces -------------------------
+  '(;; --- base faces -------------------------
     (bold        :weight 'bold :foreground (unless bold base8))
     (italic      :slant  'italic)
     (bold-italic :inherit '(bold italic))
@@ -90,21 +83,6 @@
 
 
     ;; --- built-in plugin faces --------------
-    ;; centaur-tabs
-    ((centaur-tabs-default &inherit tab-bar))
-    ((centaur-tabs-selected &inherit tab-bar-tab))
-    ((centaur-tabs-unselected &inherit tab-bar-tab-inactive))
-    (centaur-tabs-selected-modified   :background bg :foreground teal)
-    (centaur-tabs-unselected-modified :background bg-alt :foreground teal)
-    (centaur-tabs-active-bar-face
-     :background (if (bound-and-true-p -modeline-bright) modeline-bg highlight))
-    (centaur-tabs-modified-marker-selected
-     :inherit 'centaur-tabs-selected
-     :foreground (if (bound-and-true-p -modeline-bright) modeline-bg highlight))
-    (centaur-tabs-modified-marker-unselected
-     :inherit 'centaur-tabs-unselected
-     :foreground (if (bound-and-true-p -modeline-bright) modeline-bg highlight))
-
     ;; cperl
     (cperl-array-face          :weight 'bold :inherit 'font-lock-variable-name-face)
     (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
@@ -206,8 +184,8 @@
     (hi-green-b  :foreground green :weight 'bold)
     (hi-blue     :background blue)
     (hi-blue-b   :foreground blue :weight 'bold)
-    ;; (hi-black-b  :weight 'bold)
-    ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
+    (hi-black-b  :weight 'bold)
+    (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
 
     ;; hl-fill-column-face
     (hl-fill-column-face :inherit '(hl-line shadow))
@@ -490,16 +468,6 @@
     (diredfl-tagged-autofile-name   :foreground base5)
     (diredfl-write-priv             :foreground red)
 
-    ;; doom-modeline
-    (doom-modeline-eldoc-bar :background green)
-    (doom-modeline-bar-inactive :background nil) ; transparent
-
-    ;; elscreen
-    (elscreen-tab-background-face     :background bg)
-    (elscreen-tab-control-face        :background bg     :foreground bg)
-    (elscreen-tab-current-screen-face :background bg-alt :foreground fg)
-    (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
-
     ;; erc
     (erc-button :weight 'bold :underline t)
     (erc-default-face :inherit 'default)
@@ -525,19 +493,6 @@
     (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
     (evil-ex-substitute-replacement :background base0 :foreground green :weight 'bold)
     (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
-
-    ;; evil-mc
-    (evil-mc-cursor-default-face :background magenta :foreground base0 :inverse-video nil)
-    (evil-mc-region-face :inherit 'region)
-    (evil-mc-cursor-bar-face :height 1 :background magenta :foreground base0)
-    (evil-mc-cursor-hbar-face :underline `(:color ,highlight))
-
-    ;; evil-snipe
-    (evil-snipe-first-match-face :foreground highlight :background dark-blue :weight 'bold)
-    (evil-snipe-matches-face     :foreground highlight :underline t :weight 'bold)
-
-    ;; evil-googles
-    (evil-goggles-default-face :inherit 'region)
 
     ;; flycheck
     (flycheck-error     :underline `(:style wave :color ,red))
@@ -679,11 +634,6 @@
 
     ;; helpful
     (helpful-heading :weight 'bold :height 1.2)
-
-    ;; hideshow
-    (+doom-folded-face :inherit 'font-lock-comment-face
-                          :weight 'light
-                          :background (sinolor-themes--darken bg 0.125))
 
     ;; highlight-indentation-mode
     (highlight-indentation-face                :inherit 'hl-line)
@@ -1009,7 +959,7 @@
      (&dark  :background base3))
 
     ;; swiper
-    (swiper-line-face    :background blue    :foreground base0)
+    (swiper-line-face    :background blue      :foreground base0)
     (swiper-match-face-1 :inherit 'unspecified :background base0   :foreground base5)
     (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
     (swiper-match-face-3 :inherit 'unspecified :background magenta :foreground base0 :weight 'bold)
@@ -1093,7 +1043,6 @@
      :background (if (default-value 'indent-tabs-mode) base3))
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :weight 'bold)
-
 
     ;; workgroups2
     (wg-current-workgroup-face :foreground base0 :background highlight)
@@ -1423,9 +1372,9 @@
     (web-mode-type-face              :foreground type)
 
     ;; woman
-    (woman-bold :inherit 'Man-overstrike)
+    (woman-bold   :inherit 'Man-overstrike)
     (woman-italic :inherit 'Man-underline))
-  "TODO.")
+  "Base faces.")
 
 (defvar sinolor-themes--base-vars
   '((ansi-color-names-vector
@@ -1464,7 +1413,7 @@
             (cons 360 ,(sinolor-themes--color 'base5))))
     (vc-annotate-very-old-color nil)
     (vc-annotate-background (sinolor-themes--color 'bg)))
-  "TODO.")
+  "Base variables.")
 
 (provide 'sinolor-themes-base)
 
