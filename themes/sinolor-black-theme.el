@@ -4,6 +4,14 @@
 ;;
 ;; Black theme.
 ;;
+;; 赭石	#862617
+;;
+;; 苍黄	#806332
+;;
+;; 貂紫	#815c94
+;;
+;; 暗海水绿	#584717
+;;
 
 ;;; Code:
 
@@ -38,7 +46,7 @@ Can be an integer to determine the exact padding."
   :type '(choice integer boolean))
 
 (def-sinolor-theme sinolor-black
-  "A derived dark theme from `sinolor-dark'"
+  "A derived dark theme from `sinolor-dark'."
 
   ;; name        default   256       16
   ((bg         '("#000000" "black"   "black"        ))
@@ -52,50 +60,51 @@ Can be an integer to determine the exact padding."
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#eef7f2" "#dfdfdf" "white"        ))
-   (fg         '("#cc163a" "#bfbfbf" "brightwhite"  ))
+   (fg         '("#862617" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
 
-   (white        '("#f8f4ed" "#dfdfdf" "white"         ))
-   (grey         '("#b7ae8f" "#b2b2b2" "brightblack"   ))
-   (red          '("#de1c31" "#ff6655" "red"           ))
-   (orange       '("#fa7e23" "#dd8844" "brightred"     ))
-   (yellow       '("#e2d849" "#ffff00" "yellow"        ))
-   (gold         '("#fed71a" "#ffd700" "brightyellow"  ))
-   (teal         '("#12a182" "#00ff00" "brightblue"    ))
-   (blue         '("#51c4d3" "#00afff" "brightblue"    ))
-   (dark-blue    '("#10aec2" "#000087" "blue"          ))
-   (cyan         '("#63bbd0" "#00ffff" "brightcyan"    ))
-   (dark-cyan    '("#134857" "#00d7ff" "cyan"          ))
-   (green        '("#20894d" "#00ff00" "brightgreen"   ))
-   (dark-green   '("#1a3b32" "#005f00" "green"         ))
-   (magenta      '("#8b2671" "#870087" "brightmagenta" ))
-   (purple       '("#7e1671" "#5f5faf" "brightmagenta" ))
-   (violet       '("#815c94" "#af87ff" "magenta"       ))
+   (grey       '("#b7ae8f" "#b2b2b2" "brightblack"   ))
+   (red        '("#862617" "#ff6655" "red"           ))
+   (orange     '("#fa7e23" "#dd8844" "brightred"     ))
+   (green      '("#20894d" "#00ff00" "brightgreen"   ))
+   (teal       '("#12a182" "#00ff00" "brightblue"    ))
+   (yellow     '("#806332" "#ffff00" "yellow"        ))
+   (blue       '("#51c4d3" "#00afff" "brightblue"    ))
+   (dark-blue  '("#21373d" "#000087" "blue"          ))
+   (magenta    '("#8b2671" "#870087" "brightmagenta" ))
+   (violet     '("#5d3131" "#af87ff" "magenta"       ))
+   (cyan       '("#134857" "#00ffff" "brightcyan"    ))
+   (dark-cyan  '("#132c33" "#00d7ff" "cyan"          ))
+
+   (white      '("#f8f4ed" "#dfdfdf" "white"        ))
+   (deep-red   '("#cf7543" "#ffd700" "brightyellow" ))
+   (dark-green '("#1a3b32" "#005f00" "green"        ))
+   (deep-green '("#584717" "#003f00" "green"        ))
 
    ;; face categories -- required for all themes
-   (highlight    white)
-   (vertical-bar (sinolor-themes--darken base1 0.1))
-   (selection    dark-blue)
-   (builtin      "#00b8ff")
-   (comments     grey)
-   (doc-comments yellow)
-   (constants    violet)
-   (functions    gold)
-   (keywords     blue)
-   (methods      cyan)
-   (operators    "cyan3")
-   (type         "#00b8ff")
-   (strings      yellow)
-   (variables    gold)
-   (numbers      orange)
-   (region       base3)
-   (region-fg    "#FFF")
-   (error        red)
-   (warning      yellow)
-   (success      green)
-   (vc-modified  orange)
-   (vc-added     green)
-   (vc-deleted   red)
+   (highlight      white)
+   (vertical-bar   (sinolor-themes--darken base1 0.1))
+   (selection      dark-blue)
+   (builtin        dark-green)
+   (comments       grey)
+   (doc-comments   deep-green)
+   (constants      violet)
+   (functions      deep-red)
+   (keywords       yellow)
+   (methods        cyan)
+   (operators      cyan)
+   (type           "#00b8ff")
+   (strings        yellow)
+   (variables      deep-red)
+   (numbers        orange)
+   (region         base3)
+   (region-fg      "#FFF")
+   (error          red)
+   (warning        yellow)
+   (success        green)
+   (vc-modified    orange)
+   (vc-added       green)
+   (vc-deleted     red)
 
    ;; custom categories
    (hidden `(,(car bg) "black" "black"))
@@ -172,7 +181,6 @@ Can be an integer to determine the exact padding."
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
 ;; End:
 
 ;;; sinolor-black-theme.el ends here

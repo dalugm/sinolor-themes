@@ -55,6 +55,7 @@
 ;; 玉髓绿	#41b349
 ;; 宫殿绿	#20894d
 ;; 深海绿	#1a6840
+;;
 
 ;;; Code:
 
@@ -87,44 +88,45 @@ Can be an integer to determine the exact padding."
   :type '(choice integer boolean))
 
 (def-sinolor-theme sinolor-dark
-  "A dark theme modified from `doom-one'."
+  "A dark theme based on Chinese traditional colors."
 
-  ;; name        default   256       16
-  ((bg         '("#3e3841" "#3a3a3a" "black"       )) ; background color
-   (bg-alt     '("#302f4b" "#4e4e4e" "brightblack" )) ; inactive modeline bg
-   (base0      '("#322f3b" "#303030" "brightblack" )) ; matching highlight bg
-   (base1      '("#36292f" "#1e1e1e" "brightblack" )) ; minibuffer input candidates bg
-   (base2      '("#2b1216" "#2e2e2e" "brightblack" )) ; frame completion selection bg
-   (base3      '("#23272e" "#262626" "brightblack" )) ; org block bg
-   (base4      '("#3f444a" "#3f3f3f" "brightblack" ))
-   (base5      '("#5B6268" "#525252" "brightblack" )) ; inactive modeline fg
-   (base6      '("#73797e" "#6b6b6b" "brightblack" ))
-   (base7      '("#9ca0a4" "#979797" "brightblack" ))
-   (base8      '("#eef7f2" "#dfdfdf" "white"       ))
-   (fg         '("#d8e3e7" "#bfbfbf" "brightwhite" ))
-   (fg-alt     '("#1772b4" "#2d2d2d" "white"       ))
+  ;; name            default   256       16
+  ((bg             '("#3e3841" "#3a3a3a" "black"       ))
+   (bg-alt         '("#302f4b" "#4e4e4e" "brightblack" ))
+   (base0          '("#322f3b" "#303030" "brightblack" ))
+   (base1          '("#36292f" "#1e1e1e" "brightblack" ))
+   (base2          '("#2b1216" "#2e2e2e" "brightblack" ))
+   (base3          '("#23272e" "#262626" "brightblack" ))
+   (base4          '("#3f444a" "#3f3f3f" "brightblack" ))
+   (base5          '("#5B6268" "#525252" "brightblack" ))
+   (base6          '("#73797e" "#6b6b6b" "brightblack" ))
+   (base7          '("#9ca0a4" "#979797" "brightblack" ))
+   (base8          '("#eef7f2" "#dfdfdf" "white"       ))
+   (fg             '("#d8e3e7" "#bfbfbf" "brightwhite" ))
+   (fg-alt         '("#1772b4" "#2d2d2d" "white"       ))
 
-   (white          '("#f8f4ed" "#dfdfdf" "white"         ))
    (grey           '("#b7ae8f" "#b2b2b2" "brightblack"   ))
    (red            '("#de1c31" "#ff6655" "red"           ))
    (orange         '("#fa7e23" "#dd8844" "brightred"     ))
-   (yellow         '("#e2d849" "#ffff00" "yellow"        ))
-   (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
+   (green          '("#20894d" "#00ff00" "brightgreen"   ))
    (teal           '("#12a182" "#00ff00" "brightblue"    ))
+   (yellow         '("#e2d849" "#ffff00" "yellow"        ))
    (blue           '("#51c4d3" "#00afff" "brightblue"    ))
-   (dark-blue      '("#10aec2" "#000087" "blue"          ))
+   (dark-blue      '("#126e82" "#000087" "blue"          ))
+   (magenta        '("#8b2671" "#870087" "brightmagenta" ))
+   (purple         '("#7e1671" "#5f5faf" "brightmagenta" ))
+   (violet         '("#815c94" "#af87ff" "magenta"       ))
    (cyan           '("#63bbd0" "#00ffff" "brightcyan"    ))
    (dark-cyan      '("#134857" "#00d7ff" "cyan"          ))
-   (green          '("#20894d" "#00ff00" "brightgreen"   ))
+
+   (white          '("#f8f4ed" "#dfdfdf" "white"         ))
+   (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
    (dark-green     '("#1a3b32" "#005f00" "green"         ))
-   (magenta        '("#8b2671" "#870087" "brightmagenta" ))
    (light-magenta  '("#ba2f7b" "#5f5faf" "magenta"       ))
    (clear-magenta  '("#c35691" "#5f5fbf" "magenta"       ))
    (bright-magenta '("#c06f98" "#5f5faf" "brightmagenta" ))
    (dark-magenta   '("#a8456b" "#af87ff" "magenta"       ))
    (heavy-magenta  '("#5c2223" "#5f5faf" "magenta"       ))
-   (purple         '("#7e1671" "#5f5faf" "brightmagenta" ))
-   (violet         '("#815c94" "#af87ff" "magenta"       ))
 
    ;; face categories -- required for all themes
    (highlight      white)
@@ -226,7 +228,6 @@ Can be an integer to determine the exact padding."
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
 ;; End:
 
 ;;; sinolor-dark-theme.el ends here

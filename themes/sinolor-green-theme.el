@@ -13,6 +13,7 @@
 ;; 莽丛绿	#223e36
 ;; 瓦松绿	#6e8b74
 ;; 松霜绿	#83a78d
+;;
 
 ;;; Code:
 
@@ -48,58 +49,59 @@ Can be an integer to determine the exact padding."
 
 ;;
 (def-sinolor-theme sinolor-green
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by `green-is-the-new-black'."
 
-  ;; name        default   256       16
-  ((bg         '("#141e1b" "black"   "black"       ))
-   (bg-alt     '("#333333" "#7f7f7f" "brightblack" ))
-   (base0      '("#1B2229" "black"   "black"       ))
-   (base1      '("#1c1f24" "#1e1e1e" "brightblack" ))
-   (base2      '("#202328" "#2e2e2e" "brightblack" ))
-   (base3      '("#23272e" "#262626" "brightblack" ))
-   (base4      '("#3f444a" "#3f3f3f" "brightblack" ))
-   (base5      '("#5B6268" "#525252" "brightblack" ))
-   (base6      '("#73797e" "#6b6b6b" "brightblack" ))
-   (base7      '("#9ca0a4" "#979797" "brightblack" ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"       ))
-   (fg         '("#1ba784" "#bfbfbf" "green"       ))
-   (fg-alt     '("#20894d" "#2d2d2d" "brightgreen" ))
+  ;; name          default   256       16
+  ((bg           '("#141e1b" "black"   "black"       ))
+   (bg-alt       '("#333333" "#7f7f7f" "brightblack" ))
+   (base0        '("#1B2229" "black"   "black"       ))
+   (base1        '("#1c1f24" "#1e1e1e" "brightblack" ))
+   (base2        '("#202328" "#2e2e2e" "brightblack" ))
+   (base3        '("#23272e" "#262626" "brightblack" ))
+   (base4        '("#3f444a" "#3f3f3f" "brightblack" ))
+   (base5        '("#5B6268" "#525252" "brightblack" ))
+   (base6        '("#73797e" "#6b6b6b" "brightblack" ))
+   (base7        '("#9ca0a4" "#979797" "brightblack" ))
+   (base8        '("#DFDFDF" "#dfdfdf" "white"       ))
+   (fg           '("#1ba784" "#bfbfbf" "green"       ))
+   (fg-alt       '("#20894d" "#2d2d2d" "brightgreen" ))
 
-   (white        '("#f8f4ed" "#dfdfdf" "white"         ))
    (grey         '("#b7ae8f" "#b2b2b2" "brightblack"   ))
    (red          '("#de1c31" "#ff6655" "red"           ))
    (orange       '("#fa7e23" "#dd8844" "brightred"     ))
-   (yellow       '("#e2d849" "#ffff00" "yellow"        ))
-   (gold         '("#fed71a" "#ffd700" "brightyellow"  ))
+   (green        '("#20894d" "#00ff00" "brightgreen"   ))
    (teal         '("#12a182" "#00ff00" "brightblue"    ))
+   (yellow       '("#e2d849" "#ffff00" "yellow"        ))
    (blue         '("#51c4d3" "#00afff" "brightblue"    ))
    (dark-blue    '("#10aec2" "#000087" "blue"          ))
+   (magenta      '("#8b2671" "#870087" "brightmagenta" ))
+   (violet       '("#815c94" "#af87ff" "magenta"       ))
    (cyan         '("#63bbd0" "#00ffff" "brightcyan"    ))
    (dark-cyan    '("#134857" "#00d7ff" "cyan"          ))
-   (green        '("#20894d" "#00ff00" "brightgreen"   ))
+
    (bright-green '("#41b349" "#00ff11" "brightgreen"   ))
    (clear-green  '("#1ba784" "#00ff22" "brightgreen"   ))
-   (light-green  '("#497568" "#00ff33" "green"         ))
+   (light-green  '("#66c18c" "#00ff33" "green"         ))
+   (light-green2 '("#497568" "#00ff33" "green"         ))
    (heavy-green  '("#314a43" "#006f00" "green"         ))
    (dark-green   '("#1a3b32" "#005f00" "green"         ))
-   (magenta      '("#8b2671" "#870087" "brightmagenta" ))
-   (purple       '("#7e1671" "#5f5faf" "brightmagenta" ))
-   (violet       '("#815c94" "#af87ff" "magenta"       ))
+   (deep-green   '("#83a78d" "#005f00" "green"         ))
+   (deep-green2  '("#6e8b74" "#005f00" "green"         ))
 
    ;; face categories -- required for all themes
    (highlight      green)
    (vertical-bar   (sinolor-themes--darken base1 0.1))
    (selection      fg-alt)
-   (builtin        "#66c18c")
-   (comments       light-green)
-   (doc-comments   "#83a78d")
+   (builtin        light-green)
+   (comments       light-green2)
+   (doc-comments   deep-green)
    (constants      light-green)
-   (functions      gold)
+   (functions      bright-green)
    (keywords       green)
    (methods        cyan)
    (operators      dark-cyan)
    (type           clear-green)
-   (strings        "#6e8b74")
+   (strings        deep-green2)
    (variables      bright-green)
    (numbers        orange)
    (region         dark-green)
@@ -165,6 +167,10 @@ Can be an integer to determine the exact padding."
    ;; LaTeX-mode
    (font-latex-math-face :foreground green)
 
+   ;; magit
+   (magit-diff-hunk-heading :foreground bg :background (sinolor-themes--blend green bg 0.6) :extend t)
+   (magit-diff-hunk-heading-highlight :foreground bg :background green :weight 'bold :extend t)
+
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
@@ -186,7 +192,6 @@ Can be an integer to determine the exact padding."
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
 ;; End:
 
 ;;; sinolor-green-theme.el ends here

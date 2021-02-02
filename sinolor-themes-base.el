@@ -9,8 +9,8 @@
 
 (defvar sinolor-themes--base-faces
   '(;; --- base faces -------------------------
-    (bold        :weight 'bold :foreground (unless bold base8))
-    (italic      :slant  'italic)
+    (bold        :weight  'bold :foreground (unless bold base8))
+    (italic      :slant   'italic)
     (bold-italic :inherit '(bold italic))
 
     (default :background bg :foreground fg)
@@ -809,7 +809,7 @@
     (magit-diff-context-highlight :foreground fg                   :background bg-alt :extend t)
     (magit-diff-file-heading           :foreground fg :weight 'bold :extend t)
     (magit-diff-file-heading-selection :foreground magenta               :background dark-blue :weight 'bold :extend t)
-    (magit-diff-hunk-heading           :foreground bg                    :background (sinolor-themes--blend violet bg 0.3) :extend t)
+    (magit-diff-hunk-heading           :foreground bg                    :background (sinolor-themes--blend violet bg 0.8) :extend t)
     (magit-diff-hunk-heading-highlight :foreground bg                    :background violet :weight 'bold :extend t)
     (magit-diff-removed                :foreground (sinolor-themes--darken red 0.2) :background (sinolor-themes--blend red base3 0.1) :extend t)
     (magit-diff-removed-highlight      :foreground red                   :background (sinolor-themes--blend red base3 0.2) :weight 'bold :extend t)
