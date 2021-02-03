@@ -4,6 +4,8 @@
 ;;
 ;; Black theme.
 ;;
+;; 夏云灰	#617172
+;;
 ;; 赭石	#862617
 ;;
 ;; 苍黄	#806332
@@ -60,7 +62,7 @@ Can be an integer to determine the exact padding."
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#eef7f2" "#dfdfdf" "white"        ))
-   (fg         '("#862617" "#bfbfbf" "brightwhite"  ))
+   (fg         '("#617172" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
 
    (grey       '("#b7ae8f" "#b2b2b2" "brightblack"   ))
@@ -93,7 +95,7 @@ Can be an integer to determine the exact padding."
    (keywords       yellow)
    (methods        cyan)
    (operators      cyan)
-   (type           "#00b8ff")
+   (type           red)
    (strings        yellow)
    (variables      deep-red)
    (numbers        orange)

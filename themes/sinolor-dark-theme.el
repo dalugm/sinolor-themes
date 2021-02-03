@@ -32,6 +32,7 @@
 ;; 古鼎灰	#36292f
 ;; 隐红灰	#b598a1
 ;; 暮云灰	#30161c
+;; 沙鱼灰	#302f4b
 ;; 大理石灰	#c4cbcf
 ;;
 ;; 李紫	#2b1216
@@ -92,7 +93,7 @@ Can be an integer to determine the exact padding."
 
   ;; name            default   256       16
   ((bg             '("#3e3841" "#3a3a3a" "black"       ))
-   (bg-alt         '("#302f4b" "#4e4e4e" "brightblack" ))
+   (bg-alt         '("#35333c" "#4e4e4e" "brightblack" ))
    (base0          '("#322f3b" "#303030" "brightblack" ))
    (base1          '("#36292f" "#1e1e1e" "brightblack" ))
    (base2          '("#2b1216" "#2e2e2e" "brightblack" ))
@@ -120,13 +121,14 @@ Can be an integer to determine the exact padding."
    (dark-cyan      '("#134857" "#00d7ff" "cyan"          ))
 
    (white          '("#f8f4ed" "#dfdfdf" "white"         ))
+   (dark-grey      '("#74759b" "#dfdfdf" "white"         ))
    (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
    (dark-green     '("#1a3b32" "#005f00" "green"         ))
    (light-magenta  '("#ba2f7b" "#5f5faf" "magenta"       ))
+   (light-magenta2 '("#ad6598" "#5f5faf" "magenta"       ))
    (clear-magenta  '("#c35691" "#5f5fbf" "magenta"       ))
    (bright-magenta '("#c06f98" "#5f5faf" "brightmagenta" ))
    (dark-magenta   '("#a8456b" "#af87ff" "magenta"       ))
-   (heavy-magenta  '("#5c2223" "#5f5faf" "magenta"       ))
 
    ;; face categories -- required for all themes
    (highlight      white)
@@ -134,14 +136,14 @@ Can be an integer to determine the exact padding."
    (selection      dark-blue)
    (builtin        violet)
    (comments       (if sinolor-dark-brighter-comments base7 grey))
-   (doc-comments   "#74759b")
+   (doc-comments   dark-grey)
    (constants      magenta)
    (functions      dark-magenta)
    (keywords       clear-magenta)
    (methods        cyan)
    (operators      dark-cyan)
    (type           purple)
-   (strings        "#e0c8d1")
+   (strings        light-magenta2)
    (variables      bright-magenta)
    (numbers        orange)
    (region         violet)
