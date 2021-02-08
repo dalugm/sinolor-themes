@@ -8,7 +8,7 @@
 ;; Flagship themes
 ;;   `sinolor-black'
 ;;   `sinolor-light'
-;;   `sinolor-vibrant'
+;;   `sinolor-palace'
 ;;   `sinolor-black'
 ;;   `sinolor-green'
 ;;
