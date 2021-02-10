@@ -78,10 +78,11 @@ Can be an integer to determine the exact padding."
    (cyan       '("#134857" "#00ffff" "brightcyan"    ))
    (dark-cyan  '("#132c33" "#00d7ff" "cyan"          ))
 
-   (white      '("#f8f4ed" "#dfdfdf" "white"        ))
-   (deep-red   '("#cf7543" "#ffd700" "brightyellow" ))
-   (dark-green '("#1a3b32" "#005f00" "green"        ))
-   (deep-green '("#584717" "#003f00" "green"        ))
+   (white       '("#f8f4ed" "#dfdfdf" "white"        ))
+   (clear-white '("#eef7f2" "#dadada" "white"        ))
+   (deep-red    '("#cf7543" "#ffd700" "brightyellow" ))
+   (dark-green  '("#1a3b32" "#005f00" "green"        ))
+   (deep-green  '("#584717" "#003f00" "green"        ))
 
    ;; face categories -- required for all themes
    (highlight      white)
@@ -100,7 +101,7 @@ Can be an integer to determine the exact padding."
    (variables      deep-red)
    (numbers        orange)
    (region         base3)
-   (region-fg      "#FFF")
+   (region-fg      clear-white)
    (error          red)
    (warning        yellow)
    (success        green)

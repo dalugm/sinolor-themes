@@ -17,6 +17,7 @@
 ;; 枯黄	#b78d12
 ;;
 ;; 群青	#1772b4
+;; 景泰蓝	#2775b6
 ;; 晴山蓝	#8fb2c9
 ;;
 ;; 汉白玉	#f8f4ed
@@ -95,8 +96,11 @@ Can be an integer to determine the exact padding."
    (cyan      '("#63bbd0" "#00ffff" "brightcyan"    ))
    (dark-cyan '("#134857" "#00d7ff" "cyan"          ))
 
-   (white     '("#f8f4ed" "#dfdfdf" "white"         ))
-   (gold      '("#fed71a" "#ffd700" "brightyellow"  ))
+   (white       '("#f8f4ed" "#dfdfdf" "white"        ))
+   (clear-white '("#eef7f2" "#dadada" "white"        ))
+   (light-blue  '("#2775b6" "#0087ff" "brightblue"   ))
+   (gold        '("#fed71a" "#ffd700" "brightyellow" ))
+   (deep-gold   '("#b78d12" "#bbbd22" "yellow"       ))
 
    ;; face categories -- required for all themes
    (highlight      white)
@@ -110,12 +114,12 @@ Can be an integer to determine the exact padding."
    (keywords       teal)
    (methods        cyan)
    (operators      cyan)
-   (type           "#00b8ff")
+   (type           light-blue)
    (strings        yellow)
    (variables      gold)
    (numbers        orange)
-   (region         "#b78d12")
-   (region-fg      "#FFF")
+   (region         deep-gold)
+   (region-fg      white)
    (error          red)
    (warning        yellow)
    (success        green)

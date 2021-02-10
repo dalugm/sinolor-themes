@@ -97,12 +97,13 @@ Can be an integer to determine the exact padding."
    (light-blue   '("#63bbd0" "#0087ff" "blue"          ))
    (clear-blue   '("#b0d5df" "#00d7ff" "brightblue"    ))
    (deep-blue    '("#1772b4" "#0000ff" "blue"          ))
+   (deep-blue2   '("#10aec2" "#0000ff" "blue"          ))
    (heavy-blue   '("#126e82" "#0000af" "blue"          ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
    (vertical-bar   (sinolor-themes--darken base2 0.1))
-   (selection      "#10aec2")
+   (selection      deep-blue2)
    (builtin        light-green)
    (comments       grey)
    (doc-comments   (sinolor-themes--darken comments 0.15))
@@ -116,7 +117,7 @@ Can be an integer to determine the exact padding."
    (variables      green)
    (numbers        orange)
    (region         clear-blue)
-   (region-fg      "#46D9FF")
+   (region-fg      white)
    (error          red)
    (warning        yellow)
    (success        green)

@@ -107,7 +107,7 @@ Can be an integer to determine the exact padding."
    (variables      bright-green2)
    (numbers        orange)
    (region         dark-green)
-   (region-fg      "#FFF")
+   (region-fg      light-green)
    (error          red)
    (warning        yellow)
    (success        green)

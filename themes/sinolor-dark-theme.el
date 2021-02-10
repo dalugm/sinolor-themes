@@ -120,7 +120,8 @@ Can be an integer to determine the exact padding."
    (cyan           '("#63bbd0" "#00ffff" "brightcyan"    ))
    (dark-cyan      '("#134857" "#00d7ff" "cyan"          ))
 
-   (white          '("#f8f4ed" "#dfdfdf" "white"         ))
+   (white          '("#f8f4ed" "#dfdfdf" "brightwhite"   ))
+   (clear-white    '("#eef7f2" "#dadada" "white"         ))
    (dark-grey      '("#74759b" "#dfdfdf" "white"         ))
    (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
    (dark-green     '("#1a3b32" "#005f00" "green"         ))
