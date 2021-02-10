@@ -100,7 +100,7 @@ Can be an integer to determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      white)
-   (vertical-bar   (sinolor-themes--darken base1 0.1))
+   (vertical-bar   (sinolor-themes--darken base1 0.4))
    (selection      dark-blue)
    (builtin        dark-blue)
    (comments       grey)

@@ -92,7 +92,7 @@ Can be an integer to determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      green)
-   (vertical-bar   (sinolor-themes--darken base1 0.1))
+   (vertical-bar   (sinolor-themes--darken base1 0.6))
    (selection      fg-alt)
    (builtin        deep-green2)
    (comments       light-green2)
