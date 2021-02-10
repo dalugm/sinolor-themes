@@ -4,6 +4,7 @@
 ;;
 ;; A theme with blackened green colors.
 ;;
+;; 水绿	#8cc269
 ;; 竹绿	#1ba784
 ;; 苍绿	#314a43
 ;; 毛绿	#66c18c
@@ -79,30 +80,31 @@ Can be an integer to determine the exact padding."
    (cyan         '("#63bbd0" "#00ffff" "brightcyan"    ))
    (dark-cyan    '("#134857" "#00d7ff" "cyan"          ))
 
-   (bright-green '("#41b349" "#00ff11" "brightgreen"   ))
-   (clear-green  '("#1ba784" "#00ff22" "brightgreen"   ))
-   (light-green  '("#66c18c" "#00ff33" "green"         ))
-   (light-green2 '("#497568" "#00ff33" "green"         ))
-   (heavy-green  '("#314a43" "#006f00" "green"         ))
-   (dark-green   '("#1a3b32" "#005f00" "green"         ))
-   (deep-green   '("#83a78d" "#005f00" "green"         ))
-   (deep-green2  '("#6e8b74" "#005f00" "green"         ))
+   (bright-green  '("#41b349" "#00ff11" "brightgreen" ))
+   (bright-green2 '("#8cc269" "#00ff44" "brightgreen" ))
+   (clear-green   '("#1ba784" "#00ff22" "brightgreen" ))
+   (light-green   '("#66c18c" "#00ff33" "green"       ))
+   (light-green2  '("#497568" "#00ff33" "green"       ))
+   (heavy-green   '("#314a43" "#006f00" "green"       ))
+   (dark-green    '("#1a3b32" "#005f00" "green"       ))
+   (deep-green    '("#83a78d" "#005f00" "green"       ))
+   (deep-green2   '("#6e8b74" "#005f00" "green"       ))
 
    ;; face categories -- required for all themes
    (highlight      green)
    (vertical-bar   (sinolor-themes--darken base1 0.1))
    (selection      fg-alt)
-   (builtin        light-green)
+   (builtin        deep-green2)
    (comments       light-green2)
    (doc-comments   deep-green)
-   (constants      light-green)
+   (constants      deep-green2)
    (functions      bright-green)
    (keywords       green)
    (methods        cyan)
    (operators      dark-cyan)
    (type           clear-green)
-   (strings        deep-green2)
-   (variables      bright-green)
+   (strings        light-green)
+   (variables      bright-green2)
    (numbers        orange)
    (region         dark-green)
    (region-fg      "#FFF")
@@ -155,8 +157,14 @@ Can be an integer to determine the exact padding."
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
 
+    ;; git-commit
+    (git-commit-summary :foreground light-green)
+
    ;; ivy-mode
    (ivy-current-match :background heavy-green :distant-foreground base0 :underline t :weight 'normal)
+   (ivy-minibuffer-match-face-2
+    :inherit 'ivy-minibuffer-match-face-1
+    :foreground light-green :background base1 :weight 'semi-bold)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
