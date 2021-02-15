@@ -48,6 +48,18 @@
     (font-lock-preprocessor-char-face    :inherit 'bold :foreground operators)
     (font-lock-regexp-grouping-backslash :inherit 'bold :foreground operators)
     (font-lock-regexp-grouping-construct :inherit 'bold :foreground operators)
+    ;;;; line numbers
+    ;; 1. Line number faces must explicitly disable its text style attributes
+    ;;    because nearby faces may "bleed" into the line numbers otherwise.
+    ;; 2. All other line number plugin faces should &inherit from these.
+    (line-number
+     :inherit 'default
+     :foreground base5 :distant-foreground nil
+     :weight 'normal :italic nil :underline nil :strike-through nil)
+    (line-number-current-line
+     :inherit '(hl-line default)
+     :foreground fg :distant-foreground nil
+     :weight 'normal :italic nil :underline nil :strike-through nil)
     ;;;; mode-line / header-line
     (mode-line           :background bg     :foreground fg     :distant-foreground bg)
     (mode-line-inactive  :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
@@ -65,18 +77,6 @@
     ((tab-bar &inherit tab-line))
     ((tab-bar-tab &inherit tab-line-tab))
     ((tab-bar-tab-inactive &inherit tab-line-tab-inactive))
-    ;;;; line numbers
-    ;; 1. Line number faces must explicitly disable its text style attributes
-    ;;    because nearby faces may "bleed" into the line numbers otherwise.
-    ;; 2. All other line number plugin faces should &inherit from these.
-    (line-number
-     :inherit 'default
-     :foreground base5 :distant-foreground nil
-     :weight 'normal :italic nil :underline nil :strike-through nil)
-    (line-number-current-line
-     :inherit '(hl-line default)
-     :foreground fg :distant-foreground nil
-     :weight 'normal :italic nil :underline nil :strike-through nil)
 
     ;;;; --- package faces --------------
     ;; Headings are formatted as such:
@@ -86,48 +86,6 @@
     ;; The purpose of this is to make it easy to jump to via `imenu', or search
     ;; for with isearch, swiper, etc.
 
-    ;;;; agda-mode <modes:agda2-mode>
-    (agda2-highlight-keyword-face                 :inherit 'font-lock-keyword-face)
-    (agda2-highlight-string-face                  :inherit 'font-lock-string-face)
-    (agda2-highlight-number-face                  :inherit 'font-lock-string-face)
-    (agda2-highlight-symbol-face                  :inherit 'font-lock-variable-name-face)
-    (agda2-highlight-primitive-type-face          :inherit 'font-lock-type-face)
-    (agda2-highlight-bound-variable-face          :inherit 'font-lock-variable-name-face)
-    (agda2-highlight-inductive-constructor-face   :inherit 'font-lock-type-face)
-    (agda2-highlight-coinductive-constructor-face :inherit 'font-lock-type-face)
-    (agda2-highlight-datatype-face                :inherit 'font-lock-type-face)
-    (agda2-highlight-field-face                   :inherit 'font-lock-type-face)
-    (agda2-highlight-function-face                :inherit 'font-lock-function-name-face)
-    (agda2-highlight-module-face                  :inherit 'font-lock-variable-name-face)
-    (agda2-highlight-postulate-face               :inherit 'font-lock-type-face)
-    (agda2-highlight-primitive-face               :inherit 'font-lock-type-face)
-    (agda2-highlight-macro-face                   :inherit 'font-lock-function-name-face)
-    (agda2-highlight-record-face                  :inherit 'font-lock-type-face)
-    (agda2-highlight-error-face                   :inherit 'font-lock-warning-face)
-    (agda2-highlight-dotted-face                  :inherit 'font-lock-variable-name-face)
-    (agda2-highlight-unsolved-meta-face           :inherit 'font-lock-warning-face)
-    (agda2-highlight-unsolved-constraint-face     :inherit 'font-lock-warning-face)
-    (agda2-highlight-termination-problem-face     :inherit 'font-lock-warning-face)
-    (agda2-highlight-positivity-problem-face      :inherit 'font-lock-warning-face)
-    (agda2-highlight-incomplete-pattern-face      :inherit 'font-lock-warning-face)
-    (agda2-highlight-typechecks-face              :inherit 'font-lock-warning-face)
-    ;;;; auctex <modes:latex-mode>
-    (font-latex-bold-face         :inherit 'bold)
-    (font-latex-italic-face       :inherit 'italic)
-    (font-latex-math-face         :foreground blue)
-    (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
-    (font-latex-sectioning-1-face :foreground magenta :weight 'semi-bold)
-    (font-latex-sectioning-2-face :foreground violet  :weight 'semi-bold)
-    (font-latex-sectioning-3-face :foreground (sinolor-themes--lighten blue 0.3)    :weight 'semi-bold)
-    (font-latex-sectioning-4-face :foreground (sinolor-themes--lighten magenta 0.3) :weight 'semi-bold)
-    (font-latex-sectioning-5-face :foreground (sinolor-themes--lighten violet 0.3)  :weight 'semi-bold)
-    (font-latex-script-char-face  :foreground dark-blue)
-    (font-latex-string-face       :inherit 'font-lock-string-face)
-    (font-latex-warning-face      :inherit 'font-lock-warning-face)
-    (font-latex-verbatim-face     :inherit 'fixed-pitch :foreground violet :slant 'italic)
-    (TeX-error-description-error    :inherit 'error   :weight 'bold)
-    (TeX-error-description-warning  :inherit 'warning :weight 'bold)
-    (TeX-error-description-tex-said :inherit 'success :weight 'bold)
     ;;;; alert
     (alert-high-face         :inherit bold :foreground warning)
     (alert-low-face          :foreground grey)
@@ -179,6 +137,23 @@
     ;;;; anzu
     (anzu-replace-highlight :background base0 :foreground red   :weight 'bold :strike-through t)
     (anzu-replace-to        :background base0 :foreground green :weight 'bold)
+    ;;;; auctex <modes:latex-mode>
+    (font-latex-bold-face         :inherit 'bold)
+    (font-latex-italic-face       :inherit 'italic)
+    (font-latex-math-face         :foreground blue)
+    (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
+    (font-latex-sectioning-1-face :foreground magenta :weight 'semi-bold)
+    (font-latex-sectioning-2-face :foreground violet  :weight 'semi-bold)
+    (font-latex-sectioning-3-face :foreground (sinolor-themes--lighten blue 0.3)    :weight 'semi-bold)
+    (font-latex-sectioning-4-face :foreground (sinolor-themes--lighten magenta 0.3) :weight 'semi-bold)
+    (font-latex-sectioning-5-face :foreground (sinolor-themes--lighten violet 0.3)  :weight 'semi-bold)
+    (font-latex-script-char-face  :foreground dark-blue)
+    (font-latex-string-face       :inherit 'font-lock-string-face)
+    (font-latex-warning-face      :inherit 'font-lock-warning-face)
+    (font-latex-verbatim-face     :inherit 'fixed-pitch :foreground violet :slant 'italic)
+    (TeX-error-description-error    :inherit 'error   :weight 'bold)
+    (TeX-error-description-warning  :inherit 'warning :weight 'bold)
+    (TeX-error-description-tex-said :inherit 'success :weight 'bold)
     ;;;; avy
     (avy-background-face :foreground comments)
     (avy-lead-face :background highlight :foreground bg :distant-foreground fg :weight 'bold)
@@ -249,6 +224,12 @@
     (cfw:face-annotation         :foreground violet)
     (cfw:face-disable            :foreground grey)
     (cfw:face-select             :background region)
+    ;;;; circe
+    (circe-fool :foreground doc-comments)
+    (circe-highlight-nick-face :weight 'bold :foreground constants)
+    (circe-prompt-face :weight 'bold :foreground highlight)
+    (circe-server-face :foreground comments)
+    (circe-my-message-face :weight 'bold)
     ;;;; company
     (company-tooltip        :inherit 'tooltip)
     (company-tooltip-common :foreground highlight :distant-foreground base0 :weight 'bold)
@@ -265,16 +246,6 @@
     (company-template-field     :inherit 'match)
     ;;;; company-box
     (company-box-candidate :foreground fg)
-    ;;;; circe
-    (circe-fool :foreground doc-comments)
-    (circe-highlight-nick-face :weight 'bold :foreground constants)
-    (circe-prompt-face :weight 'bold :foreground highlight)
-    (circe-server-face :foreground comments)
-    (circe-my-message-face :weight 'bold)
-    ;;;; cperl <built-in>
-    (cperl-array-face          :weight 'bold :inherit 'font-lock-variable-name-face)
-    (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
-    (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
     ;;;; compilation <built-in>
     (compilation-column-number  :inherit 'font-lock-comment-face)
     (compilation-line-number    :foreground highlight)
@@ -283,6 +254,10 @@
     (compilation-info    :inherit 'success)
     (compilation-mode-line-exit :inherit 'compilation-info)
     (compilation-mode-line-fail :inherit 'compilation-error)
+    ;;;; cperl <built-in>
+    (cperl-array-face          :weight 'bold :inherit 'font-lock-variable-name-face)
+    (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
+    (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
     ;;;; custom <built-in>
     (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style none))
     (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style none))
@@ -437,6 +412,8 @@
     (evil-ex-substitute-matches     :background base0     :foreground red   :weight 'bold :strike-through t)
     (evil-ex-substitute-replacement :background base0     :foreground green :weight 'bold)
     (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
+    ;;;; flx-ido
+    (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
     ;;;; flycheck
     (flycheck-error          :underline `(:style wave :color ,red))
     (flycheck-warning        :underline `(:style wave :color ,yellow))
@@ -457,8 +434,6 @@
     ;;;; flyspell <built-in>
     (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
     (flyspell-duplicate :underline `(:style wave :color ,warning) :inherit 'unspecified)
-    ;;;; flx-ido
-    (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
     ;;;; git-commit
     (git-commit-summary               :foreground strings)
     (git-commit-overlong-summary      :inherit 'error          :background base0 :slant 'italic :weight 'bold)
@@ -572,15 +547,15 @@
     (hi-green-b  :foreground green :weight 'bold)
     (hi-blue     :background blue)
     (hi-blue-b   :foreground blue :weight 'bold)
-    ;; (hi-black-b  :weight 'bold)
-    ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
-    ;;;; highlight-numbers-mode
-    (highlight-numbers-number :inherit 'bold :foreground numbers)
+    (hi-black-b  :weight 'bold)
+    (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
     ;;;; highlight-indentation-mode
     (highlight-indentation-face                :inherit 'hl-line)
     (highlight-indentation-current-column-face :background base1)
     (highlight-indentation-guides-odd-face     :inherit 'highlight-indentation-face)
     (highlight-indentation-guides-even-face    :inherit 'highlight-indentation-face)
+    ;;;; highlight-numbers-mode
+    (highlight-numbers-number :inherit 'bold :foreground numbers)
     ;;;; highlight-quoted-mode
     (highlight-quoted-symbol :foreground type)
     (highlight-quoted-quote  :foreground operators)
@@ -606,15 +581,15 @@
     (hydra-face-amaranth :foreground magenta :weight 'bold)
     (hydra-face-pink     :foreground violet  :weight 'bold)
     (hydra-face-teal     :foreground teal    :weight 'bold)
-    ;;;; iedit
-    (iedit-occurrence :foreground magenta :weight 'bold :inverse-video t)
-    (iedit-read-only-occurrence :inherit 'region)
     ;;;; ido <built-in>
     (ido-first-match :foreground orange)
     (ido-indicator   :foreground red :background bg)
     (ido-only-match  :foreground green)
     (ido-subdir      :foreground violet)
     (ido-virtual     :foreground comments)
+    ;;;; iedit
+    (iedit-occurrence :foreground magenta :weight 'bold :inverse-video t)
+    (iedit-read-only-occurrence :inherit 'region)
     ;;;; imenu-list
     ;; (imenu-list-entry-face)
     (imenu-list-entry-face-0 :foreground highlight)
@@ -662,6 +637,85 @@
     ((linum &inherit line-number))
     ;;;; linum-relative
     ((linum-relative-current-face &inherit line-number-current-line))
+    ;;;; lsp-mode
+    ;; TODO Add light versions
+    (lsp-face-highlight-textual :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-read    :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-write   :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-ui-doc-background :inherit 'tooltip)
+    (lsp-ui-peek-filename :inherit 'mode-line-buffer-id)
+    (lsp-ui-peek-header :foreground fg :background (sinolor-themes--lighten bg 0.1) :bold bold)
+    (lsp-ui-peek-selection :foreground bg :background blue :bold bold)
+    (lsp-ui-peek-list :background (sinolor-themes--darken bg 0.1))
+    (lsp-ui-peek-peek :background (sinolor-themes--darken bg 0.1))
+    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
+    (lsp-ui-peek-line-number :foreground success)
+    (lsp-ui-sideline-code-action :foreground (sinolor-themes--blend highlight bg 0.85))
+    (lsp-ui-sideline-current-symbol :inherit 'highlight)
+    (lsp-ui-sideline-symbol-info :foreground (sinolor-themes--blend comments bg 0.85)
+                                 :background bg-alt :extend t)
+    (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
+    ;;;; magit
+    (magit-bisect-bad        :foreground red)
+    (magit-bisect-good       :foreground green)
+    (magit-bisect-skip       :foreground orange)
+    (magit-blame-date        :foreground red)
+    (magit-blame-heading     :foreground orange :background base3 :extend t)
+    (magit-branch-current    :foreground blue)
+    (magit-branch-local      :foreground cyan)
+    (magit-branch-remote     :foreground green)
+    (magit-cherry-equivalent :foreground violet)
+    (magit-cherry-unmatched  :foreground cyan)
+    (magit-diff-added             :foreground (sinolor-themes--darken green 0.2)  :background (sinolor-themes--blend green bg 0.1) :extend t)
+    (magit-diff-added-highlight   :foreground green                    :background (sinolor-themes--blend green bg 0.2) :weight 'bold :extend t)
+    (magit-diff-base              :foreground (sinolor-themes--darken orange 0.2) :background (sinolor-themes--blend orange bg 0.1) :extend t)
+    (magit-diff-base-highlight    :foreground orange                   :background (sinolor-themes--blend orange bg 0.2) :weight 'bold :extend t)
+    (magit-diff-context           :foreground (sinolor-themes--darken fg 0.4) :background bg :extend t)
+    (magit-diff-context-highlight :foreground fg                   :background bg-alt :extend t)
+    (magit-diff-file-heading           :foreground fg :weight 'bold :extend t)
+    (magit-diff-file-heading-selection :foreground magenta               :background dark-blue :weight 'bold :extend t)
+    (magit-diff-hunk-heading           :foreground bg                    :background (sinolor-themes--blend violet bg 0.8) :extend t)
+    (magit-diff-hunk-heading-highlight :foreground bg                    :background violet :weight 'bold :extend t)
+    (magit-diff-removed                :foreground (sinolor-themes--darken red 0.2) :background (sinolor-themes--blend red base3 0.1) :extend t)
+    (magit-diff-removed-highlight      :foreground red                   :background (sinolor-themes--blend red base3 0.2) :weight 'bold :extend t)
+    (magit-diff-lines-heading          :foreground yellow :background red :extend t :extend t)
+    (magit-diffstat-added              :foreground green)
+    (magit-diffstat-removed            :foreground red)
+    (magit-dimmed :foreground comments)
+    (magit-hash :foreground comments)
+    (magit-header-line :background dark-blue :foreground base8 :weight 'bold
+                       :box `(:line-width 3 :color ,dark-blue))
+    (magit-log-author :foreground orange)
+    (magit-log-date :foreground blue)
+    (magit-log-graph :foreground comments)
+    (magit-process-ng :inherit 'error)
+    (magit-process-ok :inherit 'success)
+    (magit-reflog-amend :foreground magenta)
+    (magit-reflog-checkout :foreground blue)
+    (magit-reflog-cherry-pick :foreground green)
+    (magit-reflog-commit :foreground green)
+    (magit-reflog-merge :foreground green)
+    (magit-reflog-other :foreground cyan)
+    (magit-reflog-rebase :foreground magenta)
+    (magit-reflog-remote :foreground cyan)
+    (magit-reflog-reset :inherit 'error)
+    (magit-refname :foreground comments)
+    (magit-section-heading :foreground blue :weight 'bold :extend t)
+    (magit-section-heading-selection :foreground orange :weight 'bold :extend t)
+    (magit-section-highlight :inherit 'hl-line)
+    (magit-sequence-drop :foreground red)
+    (magit-sequence-head :foreground blue)
+    (magit-sequence-part :foreground orange)
+    (magit-sequence-stop :foreground green)
+    (magit-signature-bad :inherit 'error)
+    (magit-signature-error :inherit 'error)
+    (magit-signature-expired :foreground orange)
+    (magit-signature-good :inherit 'success)
+    (magit-signature-revoked :foreground magenta)
+    (magit-signature-untrusted :foreground yellow)
+    (magit-tag :foreground yellow)
+    (magit-filename :foreground violet)
+    (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
     ;;;; make-mode <built-in> <modes:makefile-mode, makefile-automake-mode, makefile-makepp-mode, makefile-gmake-mode, makefile-imake-mode, makefile-bsdmake-mode>
     (makefile-targets :foreground blue)
     ;;;; man <built-in> <mode:Man-mode>
@@ -753,85 +807,6 @@
     (notmuch-tree-no-match-tree-face         :foreground yellow)
     (notmuch-wash-cited-text                 :foreground base4)
     (notmuch-wash-toggle-button :foreground fg)
-    ;;;; lsp-mode
-    ;; TODO Add light versions
-    (lsp-face-highlight-textual :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
-    (lsp-face-highlight-read    :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
-    (lsp-face-highlight-write   :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
-    (lsp-ui-doc-background :inherit 'tooltip)
-    (lsp-ui-peek-filename :inherit 'mode-line-buffer-id)
-    (lsp-ui-peek-header :foreground fg :background (sinolor-themes--lighten bg 0.1) :bold bold)
-    (lsp-ui-peek-selection :foreground bg :background blue :bold bold)
-    (lsp-ui-peek-list :background (sinolor-themes--darken bg 0.1))
-    (lsp-ui-peek-peek :background (sinolor-themes--darken bg 0.1))
-    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
-    (lsp-ui-peek-line-number :foreground success)
-    (lsp-ui-sideline-code-action :foreground (sinolor-themes--blend highlight bg 0.85))
-    (lsp-ui-sideline-current-symbol :inherit 'highlight)
-    (lsp-ui-sideline-symbol-info :foreground (sinolor-themes--blend comments bg 0.85)
-                                 :background bg-alt :extend t)
-    (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
-    ;;;; magit
-    (magit-bisect-bad        :foreground red)
-    (magit-bisect-good       :foreground green)
-    (magit-bisect-skip       :foreground orange)
-    (magit-blame-date        :foreground red)
-    (magit-blame-heading     :foreground orange :background base3 :extend t)
-    (magit-branch-current    :foreground blue)
-    (magit-branch-local      :foreground cyan)
-    (magit-branch-remote     :foreground green)
-    (magit-cherry-equivalent :foreground violet)
-    (magit-cherry-unmatched  :foreground cyan)
-    (magit-diff-added             :foreground (sinolor-themes--darken green 0.2)  :background (sinolor-themes--blend green bg 0.1) :extend t)
-    (magit-diff-added-highlight   :foreground green                    :background (sinolor-themes--blend green bg 0.2) :weight 'bold :extend t)
-    (magit-diff-base              :foreground (sinolor-themes--darken orange 0.2) :background (sinolor-themes--blend orange bg 0.1) :extend t)
-    (magit-diff-base-highlight    :foreground orange                   :background (sinolor-themes--blend orange bg 0.2) :weight 'bold :extend t)
-    (magit-diff-context           :foreground (sinolor-themes--darken fg 0.4) :background bg :extend t)
-    (magit-diff-context-highlight :foreground fg                   :background bg-alt :extend t)
-    (magit-diff-file-heading           :foreground fg :weight 'bold :extend t)
-    (magit-diff-file-heading-selection :foreground magenta               :background dark-blue :weight 'bold :extend t)
-    (magit-diff-hunk-heading           :foreground bg                    :background (sinolor-themes--blend violet bg 0.8) :extend t)
-    (magit-diff-hunk-heading-highlight :foreground bg                    :background violet :weight 'bold :extend t)
-    (magit-diff-removed                :foreground (sinolor-themes--darken red 0.2) :background (sinolor-themes--blend red base3 0.1) :extend t)
-    (magit-diff-removed-highlight      :foreground red                   :background (sinolor-themes--blend red base3 0.2) :weight 'bold :extend t)
-    (magit-diff-lines-heading          :foreground yellow :background red :extend t :extend t)
-    (magit-diffstat-added              :foreground green)
-    (magit-diffstat-removed            :foreground red)
-    (magit-dimmed :foreground comments)
-    (magit-hash :foreground comments)
-    (magit-header-line :background dark-blue :foreground base8 :weight 'bold
-                       :box `(:line-width 3 :color ,dark-blue))
-    (magit-log-author :foreground orange)
-    (magit-log-date :foreground blue)
-    (magit-log-graph :foreground comments)
-    (magit-process-ng :inherit 'error)
-    (magit-process-ok :inherit 'success)
-    (magit-reflog-amend :foreground magenta)
-    (magit-reflog-checkout :foreground blue)
-    (magit-reflog-cherry-pick :foreground green)
-    (magit-reflog-commit :foreground green)
-    (magit-reflog-merge :foreground green)
-    (magit-reflog-other :foreground cyan)
-    (magit-reflog-rebase :foreground magenta)
-    (magit-reflog-remote :foreground cyan)
-    (magit-reflog-reset :inherit 'error)
-    (magit-refname :foreground comments)
-    (magit-section-heading :foreground blue :weight 'bold :extend t)
-    (magit-section-heading-selection :foreground orange :weight 'bold :extend t)
-    (magit-section-highlight :inherit 'hl-line)
-    (magit-sequence-drop :foreground red)
-    (magit-sequence-head :foreground blue)
-    (magit-sequence-part :foreground orange)
-    (magit-sequence-stop :foreground green)
-    (magit-signature-bad :inherit 'error)
-    (magit-signature-error :inherit 'error)
-    (magit-signature-expired :foreground orange)
-    (magit-signature-good :inherit 'success)
-    (magit-signature-revoked :foreground magenta)
-    (magit-signature-untrusted :foreground yellow)
-    (magit-tag :foreground yellow)
-    (magit-filename :foreground violet)
-    (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
     ;;;; org <built-in> <modes:org-mode>
     (org-archived                 :foreground doc-comments)
     (org-block                    :background base3           :extend t)
@@ -852,7 +827,6 @@
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
-    ((solaire-org-hide-face &inherit org-hide))
     (org-latex-and-related        :foreground base8           :weight 'bold)
     (org-list-dt                  :foreground highlight)
     (org-meta-line                :foreground doc-comments)
@@ -974,26 +948,21 @@
     ((sp-show-pair-match-face    &inherit show-paren-match))
     ((sp-show-pair-mismatch-face &inherit show-paren-mismatch))
     ;;;; smerge-tool
-    (smerge-lower :background (sinolor-themes--blend green bg 0.2))
-    (smerge-upper :background (sinolor-themes--blend red base3 0.2))
-    (smerge-base  :background (sinolor-themes--blend blue bg 0.2))
+    (smerge-lower   :background (sinolor-themes--blend green bg 0.2))
+    (smerge-upper   :background (sinolor-themes--blend red base3 0.2))
+    (smerge-base    :background (sinolor-themes--blend blue bg 0.2))
     (smerge-markers :background comments :foreground bg :distant-foreground fg :weight 'bold)
     (smerge-refined-added   :inherit 'diff-added :inverse-video t)
     (smerge-refined-removed :inherit 'diff-removed :inverse-video t)
     ;; Emacs <25 compatibility
     ((smerge-mine  &inherit smerge-upper))
     ((smerge-other &inherit smerge-lower))
-    ;;;; solaire-mode
-    (solaire-default-face  :inherit 'default :background bg-alt)
-    (solaire-hl-line-face  :inherit 'hl-line :background bg :extend t)
-    (solaire-mode-line-face                  :background bg     :foreground fg     :distant-foreground bg)
-    (solaire-mode-line-inactive-face         :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
     ;;;; stripe-buffer
     (stripe-highlight
      (&light :background base5)
      (&dark  :background base3))
     ;;;; swiper
-    (swiper-line-face    :background blue    :foreground base0)
+    (swiper-line-face                          :background blue    :foreground base0)
     (swiper-match-face-1 :inherit 'unspecified :background base0   :foreground base5)
     (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
     (swiper-match-face-3 :inherit 'unspecified :background magenta :foreground base0 :weight 'bold)
@@ -1010,18 +979,6 @@
      :inherit 'tabbar-default :weight 'bold
      :foreground fg :background bg-alt)
     (tabbar-selected-modified :inherit 'tabbar-selected :foreground green)
-    ;;;; telephone-line
-    (telephone-line-accent-active :foreground fg :background base4)
-    (telephone-line-accent-inactive :foreground fg :background base2)
-    (telephone-line-projectile :foreground green)
-    (telephone-line-evil :foreground fg :weight 'bold)
-    (telephone-line-evil-insert :background (sinolor-themes--blend green bg 0.5) :weight 'bold)
-    (telephone-line-evil-normal :background (sinolor-themes--blend red bg 0.5) :weight 'bold)
-    (telephone-line-evil-visual :background (sinolor-themes--blend orange bg 0.5) :weight 'bold)
-    (telephone-line-evil-replace :background (sinolor-themes--color bg-alt) :weight 'bold)
-    (telephone-line-evil-motion :background (sinolor-themes--blend blue bg 0.5) :weight 'bold)
-    (telephone-line-evil-operator :background (sinolor-themes--blend violet bg 0.5) :weight 'bold)
-    (telephone-line-evil-emacs :background (sinolor-themes--blend magenta bg 0.5) :weight 'bold)
     ;;;; term <built-in>
     (term               :foreground fg)
     (term-bold          :weight 'bold)
@@ -1130,11 +1087,11 @@
     ;;;; ansi-color <built-in>
     (ansi-color-names-vector
      (vconcat (mapcar #'sinolor-themes--color '(bg red green yellow blue magenta cyan fg))))
+    ;;;; pdf-tools
+    (pdf-view-midnight-colors `(cons ,(sinolor-themes--color 'fg) ,(sinolor-themes--color 'bg)))
     ;;;; rustic <modes:rustic-mode>
     (rustic-ansi-faces
      (vconcat (mapcar #'sinolor-themes--color '(bg red green yellow blue magenta cyan fg))))
-    ;;;; pdf-tools
-    (pdf-view-midnight-colors `(cons ,(sinolor-themes--color 'fg) ,(sinolor-themes--color 'bg)))
     ;;;; vc <built-in>
     (vc-annotate-color-map
      `(list (cons 20  ,(sinolor-themes--color 'green))
