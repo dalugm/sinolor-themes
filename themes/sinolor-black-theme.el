@@ -166,15 +166,15 @@ Can be an integer to determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground blue)
-   ((markdown-code-face &override) :background (sinolor-themes--lighten base3 0.05))
+   ((markdown-code-face &override) :background (sinolor-themes--lighten bg 0.05))
 
    ;; info-mode
    (Info-quoted :inherit font-lock-variable-name-face)
 
    ;; org-mode
    (org-hide :foreground hidden)
-   (org-block-begin-line :background (sinolor-themes--lighten base3 0.05) :overline t)
-   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t))
+   (org-block-begin-line :background (sinolor-themes--lighten bg 0.05) :overline t)
+   (org-block-end-line   :background (sinolor-themes--lighten bg 0.05) :underline t))
 
 
   ;; --- extra variables ---------------------

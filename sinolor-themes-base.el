@@ -937,6 +937,15 @@
     (rst-level-4 :inherit 'rst-adornment :weight 'bold)
     (rst-level-5 :inherit 'rst-adornment :weight 'bold)
     (rst-level-6 :inherit 'rst-adornment :weight 'bold)
+    ;;;; selectrum
+    (selectrum-current-candidate :background region :distant-foreground nil :extend t)
+    (selectrum-primary-highlight
+     :background nil
+     :foreground (sinolor-themes--lighten grey 0.14)
+     :weight 'light)
+    (selectrum-secondary-highlight
+     :inherit 'selectrum-primary-highlight
+     :foreground magenta :background base1 :weight 'semi-bold)
     ;;;; sh-script <built-in> <modes:sh-mode,shell-script-mode>
     (sh-heredoc :inherit 'font-lock-string-face :weight 'normal)
     (sh-quoted-exec :inherit 'font-lock-preprocessor-face)
