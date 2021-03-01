@@ -4,16 +4,19 @@
 ;;
 ;; A theme with blackened green colors.
 ;;
+;; 毛绿	#66c18c
 ;; 水绿	#8cc269
 ;; 竹绿	#1ba784
-;; 苍绿	#314a43
-;; 毛绿	#66c18c
+;; 绿灰	#314a43
+;; 苍绿	#223e36
+;; 云杉绿	#15231b
 ;; 宫殿绿	#20894d
-;; 飞泉绿	#497568
-;; 深海绿	#1a3b32
-;; 莽丛绿	#223e36
-;; 瓦松绿	#6e8b74
 ;; 松霜绿	#83a78d
+;; 深海绿	#1a3b32
+;; 瓦松绿	#6e8b74
+;; 甘蓝绿	#15231b
+;; 莽丛绿	#141e1b
+;; 飞泉绿	#497568
 ;;
 
 ;;; Code:
@@ -53,9 +56,9 @@ Can be an integer to determine the exact padding."
   "A dark theme inspired by `green-is-the-new-black'."
 
   ;; name          default   256       16
-  ((bg           '("#141e1b" "black"   "black"       ))
-   (bg-alt       '("#333333" "#7f7f7f" "brightblack" ))
-   (base0        '("#1B2229" "black"   "black"       ))
+  ((bg           '("#141e1b" "#3a3a3a" "black"       ))
+   (bg-alt       '("#1f2623" "#7f7f7f" "brightblack" ))
+   (base0        '("#1B2229" "#5b5b5b" "black"       ))
    (base1        '("#1c1f24" "#1e1e1e" "brightblack" ))
    (base2        '("#202328" "#2e2e2e" "brightblack" ))
    (base3        '("#23272e" "#262626" "brightblack" ))

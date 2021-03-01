@@ -4,8 +4,9 @@
 ;;
 ;; Black theme.
 ;;
-;; 月影白	#c0c4c3
 ;; 夏云灰	#617172
+;; 月影白	#c0c4c3
+;; 牛角灰	#131124
 ;;
 ;; 赭石	#862617
 ;;
@@ -52,9 +53,9 @@ Can be an integer to determine the exact padding."
   "A derived dark theme from `sinolor-dark'."
 
   ;; name        default   256       16
-  ((bg         '("#000000" "black"   "black"        ))
-   (bg-alt     '("#333333" "#7f7f7f" "brightblack"  ))
-   (base0      '("#1B2229" "black"   "black"        ))
+  ((bg         '("#000000" "#3a3a3a" "black"        ))
+   (bg-alt     '("#2d2e36" "#7f7f7f" "brightblack"  ))
+   (base0      '("#1B2229" "#5c5c5c" "black"        ))
    (base1      '("#ef632b" "#d75f00" "brightyellow" ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
    (base3      '("#23272e" "#262626" "brightblack"  ))

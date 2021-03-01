@@ -6,31 +6,32 @@
 ;;
 ;; Color selected from Chinese traditional colors.
 ;;
-;; 唐菖蒲红	#de1c31
-;; 尖晶石红	#cc163a
 ;; 春梅红	#f1939c
 ;; 满江红	#a7535a
+;; 唐菖蒲红	#de1c31
+;; 尖晶石红	#cc163a
 ;;
-;; 蝶黄	#e2d849
-;; 佛手黄	#fed71a
 ;; 姜黄	#e2c027
 ;; 枯黄	#b78d12
+;; 蝶黄	#e2d849
+;; 佛手黄	#fed71a
 ;;
 ;; 群青	#1772b4
 ;; 景泰蓝	#2775b6
 ;; 晴山蓝	#8fb2c9
 ;;
-;; 汉白玉	#f8f4ed
 ;; 云峰白	#d8e3e7
 ;; 古鼎灰	#36292f
+;; 汉白玉	#f8f4ed
 ;; 大理石灰	#c4cbcf
 ;;
 ;; 蕈紫	#815c94
+;; 龙葵紫	#322f3b
 ;; 暗龙胆紫	#22202e
 ;;
-;; 玉髓绿	#41b349
-;; 宫殿绿	#20894d
 ;; 芽绿	#96c24e
+;; 宫殿绿	#20894d
+;; 玉髓绿	#41b349
 ;;
 
 ;;; Code:
@@ -69,9 +70,9 @@ Can be an integer to determine the exact padding."
   "A dark theme inspired by the Palace Museum."
 
   ;; name       default   256       16
-  ((bg        '("#22202e" "black"   "black"        ))
-   (bg-alt    '("#333333" nil       "brightblack"  ))
-   (base0     '("#1B2229" "black"   "black"        ))
+  ((bg        '("#22202e" "#3a3a3a" "black"        ))
+   (bg-alt    '("#322f3b" "#4e4e4e" "brightblack"  ))
+   (base0     '("#1b2229" "#2c2c2c" "black"        ))
    (base1     '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2     '("#202328" "#2e2e2e" "brightblack"  ))
    (base3     '("#23272e" "#262626" "brightblack"  ))
