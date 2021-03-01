@@ -4,6 +4,7 @@
 ;;
 ;; Black theme.
 ;;
+;; 月影白	#c0c4c3
 ;; 夏云灰	#617172
 ;;
 ;; 赭石	#862617
@@ -79,13 +80,14 @@ Can be an integer to determine the exact padding."
    (dark-cyan  '("#132c33" "#00d7ff" "cyan"          ))
 
    (white       '("#f8f4ed" "#dfdfdf" "white"        ))
-   (clear-white '("#eef7f2" "#dadada" "white"        ))
+   (clear-white '("#eef7f2" "#dadada" "brightwhite"  ))
+   (deep-white  '("#c0c4c3" "#d1d1d1" "white"        ))
    (deep-red    '("#cf7543" "#ffd700" "brightyellow" ))
    (dark-green  '("#1a3b32" "#005f00" "green"        ))
    (deep-green  '("#584717" "#003f00" "green"        ))
 
    ;; face categories -- required for all themes
-   (highlight      white)
+   (highlight      deep-white)
    (vertical-bar   (sinolor-themes--darken base1 0.1))
    (selection      dark-blue)
    (builtin        dark-green)
