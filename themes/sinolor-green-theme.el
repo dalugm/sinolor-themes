@@ -104,7 +104,7 @@ Can be an integer to determine the exact padding."
    (functions      bright-green)
    (keywords       green)
    (methods        cyan)
-   (operators      dark-cyan)
+   (operators      light-green2)
    (type           clear-green)
    (strings        light-green)
    (variables      bright-green2)

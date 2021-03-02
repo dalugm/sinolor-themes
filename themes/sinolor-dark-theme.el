@@ -143,7 +143,7 @@ Can be an integer to determine the exact padding."
    (functions      dark-magenta)
    (keywords       clear-magenta)
    (methods        cyan)
-   (operators      dark-cyan)
+   (operators      light-magenta)
    (type           purple)
    (strings        light-magenta2)
    (variables      bright-magenta)

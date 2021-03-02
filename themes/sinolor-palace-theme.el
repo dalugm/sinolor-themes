@@ -114,7 +114,7 @@ Can be an integer to determine the exact padding."
    (functions      gold)
    (keywords       teal)
    (methods        cyan)
-   (operators      cyan)
+   (operators      deep-gold)
    (type           light-blue)
    (strings        yellow)
    (variables      gold)
