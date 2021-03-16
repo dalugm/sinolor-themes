@@ -116,7 +116,6 @@ Can be an integer to determine the exact padding."
    (blue           '("#51c4d3" "#00afff" "brightblue"    ))
    (dark-blue      '("#126e82" "#000087" "blue"          ))
    (magenta        '("#8b2671" "#870087" "brightmagenta" ))
-   (purple         '("#7e1671" "#5f5faf" "brightmagenta" ))
    (violet         '("#815c94" "#af87ff" "magenta"       ))
    (cyan           '("#63bbd0" "#00ffff" "brightcyan"    ))
    (dark-cyan      '("#134857" "#00d7ff" "cyan"          ))
@@ -126,6 +125,7 @@ Can be an integer to determine the exact padding."
    (dark-grey      '("#74759b" "#dfdfdf" "white"         ))
    (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
    (dark-green     '("#1a3b32" "#005f00" "green"         ))
+   (purple         '("#7e1671" "#5f5faf" "brightmagenta" ))
    (light-magenta  '("#ba2f7b" "#5f5faf" "magenta"       ))
    (light-magenta2 '("#ad6598" "#5f5faf" "magenta"       ))
    (clear-magenta  '("#c35691" "#5f5fbf" "magenta"       ))
@@ -144,11 +144,11 @@ Can be an integer to determine the exact padding."
    (keywords       clear-magenta)
    (methods        cyan)
    (operators      light-magenta)
-   (type           purple)
+   (type           bright-magenta)
    (strings        light-magenta2)
-   (variables      bright-magenta)
+   (variables      dark-magenta)
    (numbers        orange)
-   (region         violet)
+   (region         purple)
    (region-fg      base8)
    (error          red)
    (warning        yellow)
@@ -205,6 +205,7 @@ Can be an integer to determine the exact padding."
    ;; ivy-mode
    (ivy-current-match :distant-foreground base0 :background base3 :underline t :weight 'normal)
 
+
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
@@ -222,7 +223,9 @@ Can be an integer to determine the exact padding."
    ;; org-mode
    (org-hide             :foreground hidden)
    (org-block-begin-line :background (sinolor-themes--lighten base3 0.05) :overline t)
-   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t))
+   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t)
+
+    )
 
 
   ;; --- extra variables ---------------------

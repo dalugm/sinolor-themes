@@ -19,6 +19,8 @@ Light, Black (used in lightless night) theme are derived from the Dark theme.
 
 `sinolor-green-theme` refers to [green-is-the-new-black-emacs](https://github.com/fredcamps/green-is-the-new-black-emacs "gitnb").
 
+`sinolor-eva-theme` is inspired by EVANGELION.
+
 ## Installation
 
 1. Clone this repository

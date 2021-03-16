@@ -46,14 +46,12 @@
 
 (defcustom sinolor-light-comment-bg sinolor-light-brighter-comments
   "If non-nil, comments will have a subtle, darker background.
-
 Enhancing their legibility."
   :group 'sinolor-light-theme
   :type 'boolean)
 
 (defcustom sinolor-light-padded-modeline sinolor-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
-
 Can be an integer to determine the exact padding."
   :group 'sinolor-light-theme
   :type '(choice integer boolean))
@@ -173,6 +171,7 @@ Can be an integer to determine the exact padding."
    ;; ivy-mode
    (ivy-current-match :underline t :distant-foreground base0 :foreground base4 :weight 'normal)
 
+
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
@@ -195,7 +194,9 @@ Can be an integer to determine the exact padding."
    (org-hide             :foreground hidden)
    (org-block            :background base3 :extend t)
    (org-block-begin-line :background (sinolor-themes--lighten base3 0.05) :overline t)
-   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t))
+   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t)
+
+    )
 
 
   ;; --- extra variables ---------------------
