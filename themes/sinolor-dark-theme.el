@@ -8,6 +8,7 @@
 ;;
 ;; 春梅红	#f1939c
 ;; 满江红	#a7535a
+;; 丹紫红	#d2568c
 ;; 唐菖蒲红	#de1c31
 ;; 尖晶石红	#cc163a
 ;; 龙利鱼红	#ef632b
@@ -125,10 +126,8 @@ Can be an integer to determine the exact padding."
    (dark-grey      '("#74759b" "#dfdfdf" "white"         ))
    (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
    (dark-green     '("#1a3b32" "#005f00" "green"         ))
-   (purple         '("#7e1671" "#5f5faf" "brightmagenta" ))
+   (clear-magenta  '("#d2568c" "#5f5fbf" "magenta"       ))
    (light-magenta  '("#ba2f7b" "#5f5faf" "magenta"       ))
-   (light-magenta2 '("#ad6598" "#5f5faf" "magenta"       ))
-   (clear-magenta  '("#c35691" "#5f5fbf" "magenta"       ))
    (bright-magenta '("#c06f98" "#5f5faf" "brightmagenta" ))
    (dark-magenta   '("#a8456b" "#af87ff" "magenta"       ))
 
@@ -136,19 +135,19 @@ Can be an integer to determine the exact padding."
    (highlight      white)
    (vertical-bar   (sinolor-themes--darken base1 0.1))
    (selection      dark-blue)
-   (builtin        violet)
+   (builtin        magenta)
    (comments       (if sinolor-dark-brighter-comments base7 grey))
    (doc-comments   dark-grey)
-   (constants      magenta)
-   (functions      dark-magenta)
+   (constants      violet)
+   (functions      magenta)
    (keywords       clear-magenta)
    (methods        cyan)
    (operators      light-magenta)
-   (type           bright-magenta)
-   (strings        light-magenta2)
-   (variables      dark-magenta)
+   (type           dark-magenta)
+   (strings        gold)
+   (variables      bright-magenta)
    (numbers        orange)
-   (region         purple)
+   (region         violet)
    (region-fg      base8)
    (error          red)
    (warning        yellow)
