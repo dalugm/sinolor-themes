@@ -13,6 +13,7 @@
     (bold        :weight  'bold :foreground (unless bold base8))
     (italic      :slant   'italic)
     (bold-italic :inherit '(bold italic))
+    (escape-glyph :foreground cyan)
     (default :background bg    :foreground fg)
     (fringe  :inherit 'default :foreground base4)
     (region               :background region     :foreground nil   :distant-foreground (sinolor-themes--darken fg 0.2) :extend t)
@@ -70,7 +71,8 @@
     ;;;; tab-line/tab-bar (Emacs 27+)
     (tab-line :background bg-alt :foreground bg-alt)
     (tab-line-tab :background bg :foreground fg)
-    (tab-line-tab-inactive :background bg-alt :foreground fg-alt)
+    (tab-line-tab-inactive :inherit 'tab-line-tab :background bg-alt :foreground fg-alt)
+    (tab-line-tab-inactive-alternate :inherit 'tab-line-tab-inactive)
     (tab-line-tab-current :background bg :foreground fg)
     (tab-line-highlight :inherit 'tab-line-tab)
     (tab-line-close-highlight :foreground highlight)
@@ -638,10 +640,9 @@
     ;;;; linum-relative
     ((linum-relative-current-face &inherit line-number-current-line))
     ;;;; lsp-mode
-    ;; TODO Add light versions
-    (lsp-face-highlight-textual :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
-    (lsp-face-highlight-read    :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
-    (lsp-face-highlight-write   :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-textual :background (sinolor-themes--blend highlight bg 0.3) :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-read    :inherit 'lsp-face-highlight-textual)
+    (lsp-face-highlight-write   :inherit 'lsp-face-highlight-textual)
     (lsp-ui-doc-background :inherit 'tooltip)
     (lsp-ui-peek-filename :inherit 'mode-line-buffer-id)
     (lsp-ui-peek-header :foreground fg :background (sinolor-themes--lighten bg 0.1) :bold bold)
@@ -654,7 +655,7 @@
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
     (lsp-ui-sideline-symbol-info :foreground (sinolor-themes--blend comments bg 0.85)
                                  :background bg-alt :extend t)
-    (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
+    (lsp-headerline-breadcrumb-separator-face :inherit 'shadow)
     ;;;; magit
     (magit-bisect-bad        :foreground red)
     (magit-bisect-good       :foreground green)
