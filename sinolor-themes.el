@@ -7,10 +7,11 @@
 ;;
 ;; Flagship themes
 ;;   `sinolor-black'
+;;   `sinolor-dark'
+;;   `sinolor-eva'
+;;   `sinolor-green'
 ;;   `sinolor-light'
 ;;   `sinolor-palace'
-;;   `sinolor-black'
-;;   `sinolor-green'
 ;;
 
 ;;; Code:

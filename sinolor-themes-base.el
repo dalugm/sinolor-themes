@@ -1,4 +1,4 @@
-;;; sinolor-themes-base.el --- basic theme config -*- lexical-binding: t; -*-
+;;; sinolor-themes-base.el --- basic faces for all sinolor themes -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -7,23 +7,26 @@
 
 ;;; Code:
 
+;; These are used as a basis for every sinolor theme defined with
+;; `def-sinolor-theme', as a set of reasonble defaults. They are
+;; intended to be overidden where it makes sense to.
 (defvar sinolor-themes--base-faces
-  '(
-    ;;;; --- base faces -------------------------
-    (bold        :weight  'bold :foreground (unless bold base8))
+  '((bold        :weight  'bold :foreground (unless bold base8))
     (italic      :slant   'italic)
     (bold-italic :inherit '(bold italic))
     (escape-glyph :foreground cyan)
     (default :background bg    :foreground fg)
     (fringe  :inherit 'default :foreground base4)
-    (region               :background region     :foreground nil   :distant-foreground (sinolor-themes--darken fg 0.2) :extend t)
-    (highlight            :background highlight  :foreground base0 :distant-foreground base8)
-    (cursor               :background highlight)
-    (shadow               :foreground base5)
-    (minibuffer-prompt    :foreground highlight)
-    (tooltip              :background base3 :foreground fg)
-    (secondary-selection  :background grey :extend t)
-    (lazy-highlight       :background dark-blue  :foreground base8 :distant-foreground base0 :weight 'bold)
+    (region              :background region     :foreground nil   :distant-foreground (sinolor-themes--darken fg 0.2) :extend t)
+    (highlight           :background highlight  :foreground base0 :distant-foreground base8)
+    (cursor              :background highlight)
+    (shadow              :foreground base5)
+    (minibuffer-prompt   :foreground highlight)
+    (tooltip             :background bg-alt :foreground fg)
+    (secondary-selection :background grey :extend t)
+    (lazy-highlight
+     (&dark  :background (sinolor-themes--darken highlight 0.3)   :foreground base8 :distant-foreground base0 :weight 'bold)
+     (&light :background (sinolor-themes--blend bg highlight 0.7) :foreground base0 :distant-foreground base8))
     (match                :foreground green      :background base0 :weight 'bold)
     (trailing-whitespace  :background red)
     (nobreak-space        :inherit 'default :underline nil)
@@ -62,12 +65,13 @@
      :foreground fg :distant-foreground nil
      :weight 'normal :italic nil :underline nil :strike-through nil)
     ;;;; mode-line / header-line
+    (header-line :inherit 'mode-line)
+    (header-line-highlight :inherit 'mode-line-highlight)
     (mode-line           :background bg     :foreground fg     :distant-foreground bg)
     (mode-line-inactive  :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
     (mode-line-buffer-id :weight 'bold)
-    (header-line         :background bg     :foreground fg     :distant-foreground bg)
     ;;;; tab-line/tab-bar (Emacs 27+)
     (tab-line :background bg-alt :foreground bg-alt)
     (tab-line-tab :background bg :foreground fg)
@@ -450,11 +454,11 @@
     (git-commit-comment-file          :foreground violet)
     (git-commit-comment-action)
     ;;;; git-gutter
-    (git-gutter:modified :inherit 'fringe :foreground cyan)
+    (git-gutter:modified :inherit 'fringe :foreground vc-modified)
     (git-gutter:added    :inherit 'fringe :foreground vc-added)
     (git-gutter:deleted  :inherit 'fringe :foreground vc-deleted)
     ;;;; git-gutter+
-    (git-gutter+-modified :inherit 'fringe :foreground cyan :background nil)
+    (git-gutter+-modified :inherit 'fringe :foreground vc-modified :background nil)
     (git-gutter+-added    :inherit 'fringe :foreground vc-added :background nil)
     (git-gutter+-deleted  :inherit 'fringe :foreground vc-deleted :background nil)
     ;;;; git-gutter-fringe
@@ -625,7 +629,7 @@
     (ivy-confirm-face :foreground success)
     (ivy-match-required-face :foreground error)
     (ivy-virtual :inherit 'italic :foreground doc-comments)
-    (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
+    (ivy-modified-buffer :inherit 'bold :foreground warning)
     ;;;; ivy-posframe
     (ivy-posframe :background (sinolor-themes--darken bg-alt 0.2))
     (ivy-posframe-border :inherit 'internal-border)
@@ -640,9 +644,14 @@
     ;;;; linum-relative
     ((linum-relative-current-face &inherit line-number-current-line))
     ;;;; lsp-mode
-    (lsp-face-highlight-textual :background (sinolor-themes--blend highlight bg 0.3) :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-textual
+     (&all   :weight 'bold)
+     (&light :background base3 :foreground base0 :distant-foreground base8)
+     (&dark  :background (sinolor-themes--blend highlight bg 0.3) :foreground base8 :distant-foreground base0))
     (lsp-face-highlight-read    :inherit 'lsp-face-highlight-textual)
     (lsp-face-highlight-write   :inherit 'lsp-face-highlight-textual)
+    (lsp-headerline-breadcrumb-separator-face :inherit 'shadow)
+    ;;;; lsp-ui
     (lsp-ui-doc-background :inherit 'tooltip)
     (lsp-ui-peek-filename :inherit 'mode-line-buffer-id)
     (lsp-ui-peek-header :foreground fg :background (sinolor-themes--lighten bg 0.1) :bold bold)
@@ -655,11 +664,11 @@
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
     (lsp-ui-sideline-symbol-info :foreground (sinolor-themes--blend comments bg 0.85)
                                  :background bg-alt :extend t)
-    (lsp-headerline-breadcrumb-separator-face :inherit 'shadow)
     ;;;; magit
     (magit-bisect-bad        :foreground red)
     (magit-bisect-good       :foreground green)
     (magit-bisect-skip       :foreground orange)
+    (magit-blame-hash        :foreground cyan)
     (magit-blame-date        :foreground red)
     (magit-blame-heading     :foreground orange :background base3 :extend t)
     (magit-branch-current    :foreground blue)
@@ -667,22 +676,23 @@
     (magit-branch-remote     :foreground green)
     (magit-cherry-equivalent :foreground violet)
     (magit-cherry-unmatched  :foreground cyan)
-    (magit-diff-added             :foreground (sinolor-themes--darken green 0.2)  :background (sinolor-themes--blend green bg 0.1) :extend t)
-    (magit-diff-added-highlight   :foreground green                    :background (sinolor-themes--blend green bg 0.2) :weight 'bold :extend t)
-    (magit-diff-base              :foreground (sinolor-themes--darken orange 0.2) :background (sinolor-themes--blend orange bg 0.1) :extend t)
-    (magit-diff-base-highlight    :foreground orange                   :background (sinolor-themes--blend orange bg 0.2) :weight 'bold :extend t)
+    (magit-diff-added             :foreground (sinolor-themes--darken vc-added 0.2) :background (sinolor-themes--blend vc-added bg 0.1) :extend t)
+    (magit-diff-added-highlight   :foreground vc-added                              :background (sinolor-themes--blend vc-added bg 0.2) :weight 'bold :extend t)
+    (magit-diff-base              :foreground (sinolor-themes--darken vc-modified 0.2) :background (sinolor-themes--blend vc-modified bg 0.1) :extend t)
+    (magit-diff-base-highlight    :foreground vc-modified                              :background (sinolor-themes--blend vc-modified bg 0.2) :weight 'bold :extend t)
     (magit-diff-context           :foreground (sinolor-themes--darken fg 0.4) :background bg :extend t)
     (magit-diff-context-highlight :foreground fg                   :background bg-alt :extend t)
     (magit-diff-file-heading           :foreground fg :weight 'bold :extend t)
     (magit-diff-file-heading-selection :foreground magenta               :background dark-blue :weight 'bold :extend t)
     (magit-diff-hunk-heading           :foreground bg                    :background (sinolor-themes--blend violet bg 0.8) :extend t)
     (magit-diff-hunk-heading-highlight :foreground bg                    :background violet :weight 'bold :extend t)
-    (magit-diff-removed                :foreground (sinolor-themes--darken red 0.2) :background (sinolor-themes--blend red base3 0.1) :extend t)
-    (magit-diff-removed-highlight      :foreground red                   :background (sinolor-themes--blend red base3 0.2) :weight 'bold :extend t)
     (magit-diff-lines-heading          :foreground yellow :background red :extend t :extend t)
-    (magit-diffstat-added              :foreground green)
-    (magit-diffstat-removed            :foreground red)
+    (magit-diff-removed                :foreground (sinolor-themes--darken vc-deleted 0.2) :background (sinolor-themes--blend vc-deleted base3 0.1) :extend t)
+    (magit-diff-removed-highlight      :foreground vc-deleted                              :background (sinolor-themes--blend vc-deleted base3 0.2) :weight 'bold :extend t)
+    (magit-diffstat-added              :foreground vc-added)
+    (magit-diffstat-removed            :foreground vc-deleted)
     (magit-dimmed :foreground comments)
+    (magit-filename :foreground violet)
     (magit-hash :foreground comments)
     (magit-header-line :background dark-blue :foreground base8 :weight 'bold
                        :box `(:line-width 3 :color ,dark-blue))
@@ -704,6 +714,7 @@
     (magit-section-heading :foreground blue :weight 'bold :extend t)
     (magit-section-heading-selection :foreground orange :weight 'bold :extend t)
     (magit-section-highlight :inherit 'hl-line)
+    (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
     (magit-sequence-drop :foreground red)
     (magit-sequence-head :foreground blue)
     (magit-sequence-part :foreground orange)
@@ -715,8 +726,6 @@
     (magit-signature-revoked :foreground magenta)
     (magit-signature-untrusted :foreground yellow)
     (magit-tag :foreground yellow)
-    (magit-filename :foreground violet)
-    (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
     ;;;; make-mode <built-in> <modes:makefile-mode, makefile-automake-mode, makefile-makepp-mode, makefile-gmake-mode, makefile-imake-mode, makefile-bsdmake-mode>
     (makefile-targets :foreground blue)
     ;;;; man <built-in> <mode:Man-mode>
@@ -810,9 +819,9 @@
     (notmuch-wash-toggle-button :foreground fg)
     ;;;; org <built-in> <modes:org-mode>
     (org-archived                 :foreground doc-comments)
-    (org-block                    :background base3           :extend t)
-    (org-block-background         :background base3           :extend t)
-    (org-block-begin-line         :foreground comments        :background base3 :extend t)
+    (org-block                    :background base3    :extend t)
+    (org-block-background         :background base3    :extend t)
+    (org-block-begin-line         :foreground comments :background base3 :extend t)
     (org-block-end-line           :inherit 'org-block-begin-line)
     (org-checkbox                 :inherit 'org-todo)
     (org-checkbox-statistics-done :inherit 'org-done)
@@ -910,7 +919,11 @@
     (rainbow-delimiters-depth-5-face :foreground violet)
     (rainbow-delimiters-depth-6-face :foreground yellow)
     (rainbow-delimiters-depth-7-face :foreground teal)
-    (rainbow-delimiters-unmatched-face  :foreground red :weight 'bold :inverse-video t)
+    (rainbow-delimiters-depth-8-face :foreground cyan)
+    (rainbow-delimiters-depth-9-face :foreground grey)
+    (rainbow-delimiters-base-error-face :inherit 'rainbow-delimiters-base-face :foreground error)
+    (rainbow-delimiters-base-face :inherit 'default)
+    (rainbow-delimiters-unmatched-face :foreground red :weight 'bold :inverse-video t)
     (rainbow-delimiters-mismatched-face :inherit 'rainbow-delimiters-unmatched-face)
     ;;;; re-builder <built-in>
     (reb-match-0 :foreground orange  :inverse-video t)
@@ -1045,7 +1058,7 @@
     (web-mode-keyword-face           :foreground keywords)
     (web-mode-string-face            :foreground strings)
     (web-mode-type-face              :foreground type)
-    ;;;; wgrep
+    ;;;; wgrep <built-in>
     (wgrep-face :weight 'bold :foreground green :background base5)
     (wgrep-delete-face :foreground base3 :background red)
     (wgrep-done-face   :foreground blue)
@@ -1058,7 +1071,7 @@
     (which-key-group-description-face     :foreground violet)
     (which-key-command-description-face   :foreground blue)
     (which-key-local-map-description-face :foreground magenta)
-    ;;;; whitespace
+    ;;;; whitespace <built-in>
     (whitespace-empty    :background base3)
     (whitespace-space    :foreground base4)
     (whitespace-newline  :foreground base4)

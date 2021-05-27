@@ -1,4 +1,4 @@
-;;; sinolor-green-theme.el --- inspired by green-is-the-new-black
+;;; sinolor-green-theme.el --- inspired by green-is-the-new-black -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;

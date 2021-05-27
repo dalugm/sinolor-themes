@@ -1,4 +1,4 @@
-;;; sinolor-light-theme.el --- Light theme
+;;; sinolor-light-theme.el --- Light theme -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;

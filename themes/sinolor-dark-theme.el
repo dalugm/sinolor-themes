@@ -1,4 +1,4 @@
-;;; sinolor-dark-theme.el --- Dark theme
+;;; sinolor-dark-theme.el --- Dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;

@@ -1,4 +1,4 @@
-;;; sinolor-eva-theme.el --- inspired by Evangelion
+;;; sinolor-eva-theme.el --- inspired by Evangelion -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;
@@ -15,7 +15,7 @@
 ;; eva-deep-green	#506c5c
 ;;
 ;; eva-yellow	#f0cf48
-;; eva-orange #f7ba2b
+;; eva-orange	#f7ba2b
 ;;
 ;; eva-red	#ec1f2e
 ;;

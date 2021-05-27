@@ -1,4 +1,4 @@
-;;; sinolor-palace-theme.el --- Dark theme
+;;; sinolor-palace-theme.el --- inspired by the Palace Museum -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;
