@@ -191,6 +191,7 @@ Can be an integer to determine the exact padding."
    (magit-section-heading   :foreground eva-green :weight 'bold :extend t)
    (magit-diff-hunk-heading :foreground bg :background (sinolor-themes--blend eva-green bg 0.6) :extend t)
    (magit-diff-hunk-heading-highlight :foreground bg :background eva-green :weight 'bold :extend t)
+   (magit-dimmed :foreground eva-deep-green)
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
