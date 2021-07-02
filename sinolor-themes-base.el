@@ -1095,6 +1095,8 @@
     (undo-tree-visualizer-unmodified-face    :foreground base5)
     (undo-tree-visualizer-active-branch-face :foreground blue)
     (undo-tree-visualizer-register-face      :foreground yellow)
+    ;;;; vertico
+    (vertico-current :background region :distant-foreground nil :extend t)
     ;;;; vterm
     (vterm               :foreground fg)
     (vterm-color-default :foreground fg)
