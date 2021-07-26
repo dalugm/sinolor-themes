@@ -796,6 +796,15 @@
     ;;;; man <built-in> <mode:Man-mode>
     (Man-overstrike :inherit 'bold :foreground operators)
     (Man-underline :inherit 'underline :foreground keywords)
+    ;;;; marginalia
+    (marginalia-documentation   :inherit 'font-lock-doc-face)
+    (marginalia-file-priv-dir   :foreground blue)
+    (marginalia-file-priv-exec  :foreground green)
+    (marginalia-file-priv-link  :foreground violet)
+    (marginalia-file-priv-other :foreground magenta)
+    (marginalia-file-priv-rare  :foreground fg)
+    (marginalia-file-priv-read  :foreground yellow)
+    (marginalia-file-priv-write :foreground red)
     ;;;; markdown-mode <modes:markdown-mode,gfm-mode>
     (markdown-header-face           :inherit 'bold :foreground highlight)
     (markdown-header-delimiter-face :inherit 'markdown-header-face)
@@ -882,6 +891,11 @@
     (notmuch-tree-no-match-tree-face         :foreground yellow)
     (notmuch-wash-cited-text                 :foreground base4)
     (notmuch-wash-toggle-button :foreground fg)
+    ;;;; orderless
+    (orderless-match-face-0 :weight 'bold :foreground (sinolor-themes--blend blue    fg 0.6) :background (sinolor-themes--blend blue    bg 0.1))
+    (orderless-match-face-1 :weight 'bold :foreground (sinolor-themes--blend magenta fg 0.6) :background (sinolor-themes--blend magenta bg 0.1))
+    (orderless-match-face-2 :weight 'bold :foreground (sinolor-themes--blend green   fg 0.6) :background (sinolor-themes--blend green   bg 0.1))
+    (orderless-match-face-3 :weight 'bold :foreground (sinolor-themes--blend yellow  fg 0.6) :background (sinolor-themes--blend yellow  bg 0.1))
     ;;;; org <built-in> <modes:org-mode>
     (org-archived                 :foreground doc-comments)
     (org-block                    :background base3    :extend t)
