@@ -68,6 +68,7 @@
     (header-line :inherit 'mode-line)
     (header-line-highlight :inherit 'mode-line-highlight)
     (mode-line           :background bg     :foreground fg     :distant-foreground bg)
+    (mode-line-active    :inherit 'mode-line)
     (mode-line-inactive  :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
@@ -262,6 +263,9 @@
     (compilation-info    :inherit 'success)
     (compilation-mode-line-exit :inherit 'compilation-info)
     (compilation-mode-line-fail :inherit 'compilation-error)
+    ;;;; corfu
+    (corfu-background :inherit 'tooltip)
+    (corfu-current :background bg :foreground fg)
     ;;;; cperl <built-in>
     (cperl-array-face          :weight 'bold :inherit 'font-lock-variable-name-face)
     (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
