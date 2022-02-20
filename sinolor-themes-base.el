@@ -1126,6 +1126,13 @@
     (undo-tree-visualizer-register-face      :foreground yellow)
     ;;;; vertico
     (vertico-current :background region :distant-foreground nil :extend t)
+    ;;;; vertico-posframe
+    ;;(vertico-posframe :inherit 'default)
+    (vertico-posframe-border :background grey)
+    (vertico-posframe-border-2 :background red)
+    (vertico-posframe-border-3 :background green)
+    (vertico-posframe-border-4 :background blue)
+    (vertico-posframe-border-fallback :background yellow)
     ;;;; vterm
     (vterm               :foreground fg)
     (vterm-color-default :foreground fg)
