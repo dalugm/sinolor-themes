@@ -842,11 +842,11 @@
     (message-header-xheader    :foreground doc-comments)
     (message-separator         :foreground comments)
     (message-mml               :foreground comments :slant 'italic)
-    (message-cited-text        :foreground magenta)
-    (message-cited-text-1      :inherit 'gnus-cite-1)
-    (message-cited-text-2      :inherit 'gnus-cite-2)
-    (message-cited-text-3      :inherit 'gnus-cite-3)
-    (message-cited-text-4      :inherit 'gnus-cite-4)
+    ((message-cited-text   &inherit gnus-cite-1))
+    ((message-cited-text-1 &inherit gnus-cite-2))
+    ((message-cited-text-2 &inherit gnus-cite-3))
+    ((message-cited-text-3 &inherit gnus-cite-4))
+    ((message-cited-text-4 &inherit gnus-cite-5))
     ;;;; multiple cursors
     (mc/cursor-face :inherit 'cursor)
     ;;;; nav-flash
