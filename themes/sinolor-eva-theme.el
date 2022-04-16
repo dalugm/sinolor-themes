@@ -27,7 +27,7 @@
 (require 'sinolor-themes)
 
 (defgroup sinolor-eva-theme nil
-  "Options for sinolor-themes"
+  "Options for sinolor-themes."
   :group 'sinolor-themes)
 
 (defcustom sinolor-eva-brighter-modeline nil

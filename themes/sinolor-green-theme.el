@@ -24,7 +24,7 @@
 (require 'sinolor-themes)
 
 (defgroup sinolor-green-theme nil
-  "Options for sinolor-themes"
+  "Options for sinolor-themes."
   :group 'sinolor-themes)
 
 (defcustom sinolor-green-brighter-modeline nil

@@ -65,7 +65,7 @@
 (require 'sinolor-themes)
 
 (defgroup sinolor-dark-theme nil
-  "Options for sinolor-themes"
+  "Options for sinolor-themes."
   :group 'sinolor-themes)
 
 (defcustom sinolor-dark-brighter-modeline nil

@@ -22,7 +22,7 @@
 (require 'sinolor-themes)
 
 (defgroup sinolor-black-theme nil
-  "Options for sinolor-themes"
+  "Options for sinolor-themes."
   :group 'sinolor-themes)
 
 (defcustom sinolor-black-brighter-modeline nil

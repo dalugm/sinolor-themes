@@ -39,7 +39,7 @@
 (require 'sinolor-themes)
 
 (defgroup sinolor-palace-theme nil
-  "Options for sinolor-themes"
+  "Options for sinolor-themes."
   :group 'sinolor-themes)
 
 (defcustom sinolor-palace-brighter-modeline nil
