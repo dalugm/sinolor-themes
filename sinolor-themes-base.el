@@ -1151,8 +1151,6 @@
     (vertico-posframe-border-4 :background blue)
     (vertico-posframe-border-fallback :background yellow)
     ;;;; vterm
-    (vterm               :foreground fg)
-    (vterm-color-default :foreground fg)
     (vterm-color-black   :background (sinolor-themes--lighten base0 0.25)   :foreground base0)
     (vterm-color-red     :background (sinolor-themes--lighten red 0.25)     :foreground red)
     (vterm-color-green   :background (sinolor-themes--lighten green 0.25)   :foreground green)
