@@ -281,7 +281,7 @@
     (compilation-mode-line-exit :inherit 'compilation-info)
     (compilation-mode-line-fail :inherit 'compilation-error)
     ;;;; corfu
-    (corfu-background :inherit 'tooltip)
+    (corfu-default :inherit 'tooltip)
     (corfu-current :background bg :foreground fg)
     ;;;; cperl <built-in>
     (cperl-array-face          :weight 'bold :inherit 'font-lock-variable-name-face)
