@@ -230,7 +230,10 @@ ALPHA: (a float between 0 and 1)."
 
 ;;;###autoload
 (defun sinolor-themes--darken (color alpha)
-  "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between 0 and 1)."
+  "Darken COLOR by a coefficient ALPHA.
+
+color : hexidecimal string.
+alpha : float between 0 and 1."
   (cond ((and color (symbolp color))
          (sinolor-themes--darken (sinolor-themes--color color) alpha))
         ((listp color)
@@ -239,7 +242,10 @@ ALPHA: (a float between 0 and 1)."
 
 ;;;###autoload
 (defun sinolor-themes--lighten (color alpha)
-  "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between 0 and 1)."
+  "Brighten COLOR by a coefficient ALPHA.
+
+color : hexidecimal string.
+alpha : float between 0 and 1."
   (cond ((and color (symbolp color))
          (sinolor-themes--lighten (sinolor-themes--color color) alpha))
         ((listp color)
@@ -248,7 +254,7 @@ ALPHA: (a float between 0 and 1)."
 
 ;;;###autoload
 (defun sinolor-themes--color (name &optional type)
-  "Retrieve a specific color named NAME (a symbol) with TYPE from the current theme."
+  "Retrieve a NAME color with TYPE from the current theme."
   (let ((colors (if (listp name)
                     name
                   (cdr-safe (assq name sinolor-themes--colors)))))
@@ -303,11 +309,13 @@ FACES is a list of theme face specs.
 These is a simplified spec.  For example:
 
   (sinolor-themes--set-faces 'user
-    '(default :background red :foreground blue)
-    '(sinolor-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-    '(sinolor-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-    '(sinolor-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-    '(sinolor-modeline-buffer-project-root :foreground green :weight 'bold))"
+   '(default :background red :foreground blue)
+   '(sinolor-modeline-bar :background (if -modeline-bright
+                                          modeline-bg
+                                        highlight))
+   '(sinolor-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
+   '(sinolor-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
+   '(sinolor-modeline-buffer-project-root :foreground green :weight 'bold))"
   (declare (indent defun))
   (apply #'custom-theme-set-faces
          (or theme 'user)
@@ -319,7 +327,9 @@ These is a simplified spec.  For example:
              (list ,@(mapcar #'sinolor-themes--build-face faces))))))
 
 (defmacro def-sinolor-theme (name docstring defs &optional extra-faces extra-vars)
-  "Define a theme, named NAME (a symbol) with DOCSTRING, DEFS and optional EXTRA-FACES EXTRA-VARS."
+  "Define a custom theme.
+
+NAME with DOCSTRING, DEFS and optional EXTRA-FACES EXTRA-VARS."
   (declare (doc-string 2))
   (let ((sinolor-themes--colors defs))
     `(let* ((bold   sinolor-themes-enable-bold)
