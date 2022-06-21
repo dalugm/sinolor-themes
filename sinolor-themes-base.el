@@ -29,7 +29,7 @@
      (&light :background (sinolor-themes--blend bg highlight 0.7) :foreground base0 :distant-foreground base8))
     (match                :foreground green      :background base0 :weight 'bold)
     (trailing-whitespace  :background red)
-    (nobreak-space        :inherit 'default :underline nil)
+    (nobreak-space        :inherit 'escape-glyph :underline t)
     (vertical-border      :background vertical-bar :foreground vertical-bar)
     (link                 :foreground highlight :underline t :weight 'bold)
     (error   :foreground error)
