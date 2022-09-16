@@ -308,14 +308,17 @@ FACES is a list of theme face specs.
 
 These is a simplified spec.  For example:
 
-  (sinolor-themes--set-faces 'user
-   '(default :background red :foreground blue)
-   '(sinolor-modeline-bar :background (if -modeline-bright
-                                          modeline-bg
-                                        highlight))
-   '(sinolor-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   '(sinolor-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   '(sinolor-modeline-buffer-project-root :foreground green :weight 'bold))"
+  (sinolor-themes--set-faces \\='user
+   \\='(default :background red :foreground blue)
+   \\='(sinolor-modeline-bar :background (if -modeline-bright
+                                             modeline-bg
+                                           highlight))
+   \\='(sinolor-modeline-buffer-file :inherit \\='mode-line-buffer-id
+                                     :weight \\='bold)
+   \\='(sinolor-modeline-buffer-path :inherit \\='mode-line-emphasis
+                                     :weight \\='bold)
+   \\='(sinolor-modeline-buffer-project-root :foreground green
+                                             :weight \\='bold))"
   (declare (indent defun))
   (apply #'custom-theme-set-faces
          (or theme 'user)

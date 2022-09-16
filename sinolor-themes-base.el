@@ -11,14 +11,14 @@
 ;; `def-sinolor-theme', as a set of reasonble defaults. They are
 ;; intended to be overidden where it makes sense to.
 (defvar sinolor-themes--base-faces
-  '((bold        :weight  'bold :foreground (unless bold base8))
+  '((bold        :weight  'bold :foreground (if bold 'unspecified base8))
     (italic      :slant   'italic)
     (bold-italic :inherit '(bold italic))
     (escape-glyph :foreground cyan)
     (default :background bg    :foreground fg)
     (fringe  :inherit 'default :foreground base4)
-    (region              :background region     :foreground nil   :distant-foreground (sinolor-themes--darken fg 0.2) :extend t)
-    (highlight           :background highlight  :foreground base0 :distant-foreground base8)
+    (region              :background region :distant-foreground (sinolor-themes--darken fg 0.2) :extend t)
+    (highlight           :background highlight :foreground base0 :distant-foreground base8)
     (cursor              :background highlight)
     (shadow              :foreground base5)
     (minibuffer-prompt   :foreground highlight)
@@ -58,12 +58,14 @@
     ;; 2. All other line number plugin faces should &inherit from these.
     (line-number
      :inherit 'default
-     :foreground base5 :distant-foreground nil
-     :weight 'normal :italic nil :underline nil :strike-through nil)
+     :foreground base5 :distant-foreground 'unspecified
+     :weight 'normal :italic 'unspecified
+     :underline 'unspecified :strike-through 'unspecified)
     (line-number-current-line
      :inherit '(hl-line default)
-     :foreground fg :distant-foreground nil
-     :weight 'normal :italic nil :underline nil :strike-through nil)
+     :foreground fg :distant-foreground 'unspecified
+     :weight 'normal :italic 'unspecified
+     :underline 'unspecified :strike-through 'unspecified)
     ;;;; mode-line / header-line
     (header-line :inherit 'mode-line)
     (header-line-highlight :inherit 'mode-line-highlight)
@@ -195,67 +197,6 @@
      (&light :background (sinolor-themes--darken highlight 0.9)))
     ;;;; bookmark <built-in>
     (bookmark-face :background (sinolor-themes--blend highlight bg 0.1) :extend t)
-    ;;;; bookmark+
-    (bmkp-*-mark :foreground bg :background yellow)
-    (bmkp->-mark :foreground yellow)
-    (bmkp-D-mark :foreground bg :background red)
-    (bmkp-X-mark :foreground red)
-    (bmkp-a-mark :background red)
-    (bmkp-bad-bookmark :foreground bg :background yellow)
-    (bmkp-bookmark-file :foreground violet :background bg-alt)
-    (bmkp-bookmark-list :background bg-alt)
-    (bmkp-buffer :foreground blue)
-    (bmkp-desktop :foreground bg :background violet)
-    (bmkp-file-handler :background red)
-    (bmkp-function :foreground green)
-    (bmkp-gnus :foreground orange)
-    (bmkp-heading :foreground yellow)
-    (bmkp-info :foreground cyan)
-    (bmkp-light-autonamed :foreground bg-alt :background cyan)
-    (bmkp-light-autonamed-region :foreground bg-alt :background red)
-    (bmkp-light-fringe-autonamed :foreground bg-alt :background violet)
-    (bmkp-light-fringe-non-autonamed :foreground bg-alt :background green)
-    (bmkp-light-mark :foreground bg :background cyan)
-    (bmkp-light-non-autonamed :foreground bg :background violet)
-    (bmkp-light-non-autonamed-region :foreground bg :background red)
-    (bmkp-local-directory :foreground bg :background violet)
-    (bmkp-local-file-with-region :foreground yellow)
-    (bmkp-local-file-without-region :foreground comments)
-    (bmkp-man :foreground violet)
-    (bmkp-no-jump :foreground comments)
-    (bmkp-no-local :foreground yellow)
-    (bmkp-non-file :foreground green)
-    (bmkp-remote-file :foreground orange)
-    (bmkp-sequence :foreground blue)
-    (bmkp-su-or-sudo :foreground red)
-    (bmkp-t-mark :foreground violet)
-    (bmkp-url :foreground blue :underline t)
-    (bmkp-variable-list :foreground green)
-    ;;;; calfw
-    (cfw:face-title              :foreground blue :weight 'bold :height 2.0 :inherit 'variable-pitch)
-    (cfw:face-header             :foreground (sinolor-themes--blend blue bg 0.8) :weight 'bold)
-    (cfw:face-sunday             :foreground (sinolor-themes--blend red bg 0.8)  :weight 'bold)
-    (cfw:face-saturday           :foreground (sinolor-themes--blend red bg 0.8)  :weight 'bold)
-    (cfw:face-holiday            :foreground nil :background bg-alt   :weight 'bold)
-    (cfw:face-grid               :foreground vertical-bar)
-    (cfw:face-periods            :foreground yellow)
-    (cfw:face-toolbar            :foreground nil :background nil)
-    (cfw:face-toolbar-button-off :foreground base6 :weight 'bold :inherit 'variable-pitch)
-    (cfw:face-toolbar-button-on  :foreground blue  :weight 'bold :inherit 'variable-pitch)
-    (cfw:face-default-content    :foreground fg)
-    (cfw:face-day-title          :foreground fg                   :weight 'bold)
-    (cfw:face-today-title        :foreground bg  :background blue :weight 'bold)
-    (cfw:face-default-day                                         :weight 'bold)
-    (cfw:face-today              :foreground nil :background nil  :weight 'bold)
-    (cfw:face-annotation         :foreground violet)
-    (cfw:face-disable            :foreground grey)
-    (cfw:face-select             :background region)
-    ;;;; circe
-    (circe-fool :foreground doc-comments)
-    (circe-highlight-nick-face :weight 'bold :foreground constants)
-    (circe-prompt-face :weight 'bold :foreground highlight)
-    (circe-server-face :foreground comments)
-    (circe-my-message-face :weight 'bold)
     ;;;; company
     (company-tooltip        :inherit 'tooltip)
     (company-tooltip-common :foreground highlight :distant-foreground base0 :weight 'bold)
@@ -299,7 +240,7 @@
     (custom-comment-tag             :foreground grey)
     (custom-modified                :foreground blue   :background (sinolor-themes--blend blue bg 0.2))
     (custom-variable-tag            :foreground magenta)
-    (custom-visibility              :foreground blue   :underline nil)
+    (custom-visibility              :foreground blue)
     (custom-group-subtitle          :foreground red)
     (custom-group-tag               :foreground violet)
     (custom-group-tag-1             :foreground blue)
@@ -313,7 +254,7 @@
     ;; (cider-stacktrace-error-class-face :inherit 'font-lock-warning-face)
     ;; (cider-stacktrace-error-message-face :inherit 'font-lock-doc-face)
     ;; (cider-stacktrace-filter-active-face :inherit 'button :underline t :weight 'normal)
-    ;; (cider-stacktrace-filter-inactive-face :inherit 'cider-stacktrace-filter-active-face :underline nil)
+    ;; (cider-stacktrace-filter-inactive-face :inherit 'cider-stacktrace-filter-active-face)
     ;; (cider-stacktrace-face :inherit 'default)
     ;; (cider-stacktrace-ns-face :inherit 'font-lock-comment-face)
     ;; (cider-stacktrace-fn-face :inherit 'default :weight 'bold)
@@ -339,11 +280,11 @@
     ;; (cider-reader-conditional-face :inherit 'font-lock-comment-face)
     (cider-error-highlight-face
      `((((supports :underline (:style wave)))
-        (:inherit unspecified :underline (:style wave :color ,(car error))))
+        (:underline (:style wave :color ,(car error))))
        (t (:inherit font-lock-warning-face :underline t))))
     (cider-warning-highlight-face
      `((((supports :underline (:style wave)))
-        (:underline (:style wave :color ,(car warning)) :inherit unspecified))
+        (:underline (:style wave :color ,(car warning))))
        (t (:inherit font-lock-warning-face :underline (:color ,(car warning))))))
     (cider-test-failure-face :background (sinolor-themes--blend bg error 0.7))
     (cider-test-error-face   :background orange)
@@ -361,8 +302,8 @@
      (&dark  :foreground (sinolor-themes--darken fg 0.12))
      (&light :foreground (sinolor-themes--lighten fg 0.12)))
     (diff-removed :foreground red :background base3)
-    (diff-header  :foreground cyan :background nil)
-    (diff-file-header :foreground blue :background nil)
+    (diff-header  :foreground cyan)
+    (diff-file-header :foreground blue)
     (diff-hunk-header :foreground violet)
     (diff-refine-added   :inherit 'diff-added :inverse-video t)
     (diff-refine-changed :inherit 'diff-changed :inverse-video t)
@@ -492,7 +433,7 @@
     (eww-invalid-certificate :foreground error)
     (eww-valid-certificate :foreground highlight)
     ;;;; flx-ido
-    (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
+    (flx-highlight-face :weight 'bold :foreground yellow)
     ;;;; flycheck
     (flycheck-error          :underline `(:style wave :color ,red))
     (flycheck-warning        :underline `(:style wave :color ,yellow))
@@ -511,8 +452,8 @@
     (flymake-note    :underline `(:style wave :color ,green))
     (flymake-warning :underline `(:style wave :color ,orange))
     ;;;; flyspell <built-in>
-    (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
-    (flyspell-duplicate :underline `(:style wave :color ,warning) :inherit 'unspecified)
+    (flyspell-incorrect :underline `(:style wave :color ,error))
+    (flyspell-duplicate :underline `(:style wave :color ,warning))
     ;;;; git-commit
     (git-commit-summary               :foreground strings)
     (git-commit-overlong-summary      :inherit 'error          :background base0 :slant 'italic :weight 'bold)
@@ -526,18 +467,6 @@
     (git-commit-comment-heading       :foreground keywords)
     (git-commit-comment-file          :foreground violet)
     (git-commit-comment-action)
-    ;;;; git-gutter
-    (git-gutter:modified :inherit 'fringe :foreground vc-modified)
-    (git-gutter:added    :inherit 'fringe :foreground vc-added)
-    (git-gutter:deleted  :inherit 'fringe :foreground vc-deleted)
-    ;;;; git-gutter+
-    (git-gutter+-modified :inherit 'fringe :foreground vc-modified :background nil)
-    (git-gutter+-added    :inherit 'fringe :foreground vc-added :background nil)
-    (git-gutter+-deleted  :inherit 'fringe :foreground vc-deleted :background nil)
-    ;;;; git-gutter-fringe
-    ((git-gutter-fr:modified &inherit git-gutter:modified))
-    ((git-gutter-fr:added    &inherit git-gutter:added))
-    ((git-gutter-fr:deleted  &inherit git-gutter:deleted))
     ;;;; gnus (built-in)
     (gnus-group-mail-1           :weight 'bold :foreground fg)
     (gnus-group-mail-2           :inherit 'gnus-group-mail-1)
@@ -666,7 +595,7 @@
     ;;;; hl-todo
     (hl-todo :foreground red :weight 'bold)
     ;;;; hlinum
-    (linum-highlight-face :foreground fg :distant-foreground nil :weight 'normal)
+    (linum-highlight-face :foreground fg :distant-foreground 'unspecified :weight 'normal)
     ;;;; hydra
     (hydra-face-red      :foreground red     :weight 'bold)
     (hydra-face-blue     :foreground blue    :weight 'bold)
@@ -696,9 +625,9 @@
     (isearch :inherit 'lazy-highlight :weight 'bold)
     (isearch-fail :background error :foreground base0 :weight 'bold)
     ;;;; ivy
-    (ivy-current-match :background region :distant-foreground nil :extend t)
+    (ivy-current-match :background region :distant-foreground 'unspecified :extend t)
     (ivy-minibuffer-match-face-1
-     :background nil
+     :background 'unspecified
      :foreground (sinolor-themes--lighten grey 0.14)
      :weight 'light)
     (ivy-minibuffer-match-face-2
@@ -843,7 +772,7 @@
     (markdown-pre-face              :foreground strings)
     (markdown-code-face             :background base3 :extend t)
     (markdown-reference-face        :foreground doc-comments)
-    (markdown-inline-code-face      :inherit '(markdown-code-face markdown-pre-face) :extend nil)
+    (markdown-inline-code-face      :inherit '(markdown-code-face markdown-pre-face) :extend 'unspecified)
     (markdown-html-attr-name-face     :inherit 'font-lock-variable-name-face)
     (markdown-html-attr-value-face    :inherit 'font-lock-string-face)
     (markdown-html-entity-face        :inherit 'font-lock-variable-name-face)
@@ -892,7 +821,7 @@
     ;; (notmuch-crypto-signature-good-key       :foreground aqua-l)
     ;; (notmuch-crypto-signature-unknown        :foreground yellow)
     ;; (notmuch-hello-logo-background           :foreground fg)
-    (notmuch-message-summary-face            :foreground grey :background nil)
+    (notmuch-message-summary-face            :foreground grey)
     (notmuch-search-count                    :foreground comments)
     (notmuch-search-date                     :foreground numbers)
     (notmuch-search-flagged-face             :foreground (sinolor-themes--blend red base4 0.5))
@@ -940,9 +869,9 @@
     (org-default                  :inherit 'variable-pitch)
     (org-document-info            :foreground builtin)
     (org-document-title           :foreground builtin         :weight 'bold)
-    (org-done                     :inherit 'org-headline-done :strike-through nil :weight 'bold)
+    (org-done                     :inherit 'org-headline-done :weight 'bold)
     (org-drawer                   :foreground comments)
-    (org-ellipsis                 :underline nil              :background nil   :foreground grey)
+    (org-ellipsis                 :foreground comments)
     (org-footnote                 :foreground orange)
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
@@ -954,10 +883,10 @@
     (org-priority                 :foreground red)
     (org-property-value           :foreground doc-comments)
     (org-quote                    :inherit 'org-block         :slant 'italic :extend t)
-    (org-special-keyword          :foreground doc-comments    :underline nil)
+    (org-special-keyword          :foreground doc-comments)
     (org-table                    :foreground violet)
-    (org-tag                      :foreground doc-comments    :weight 'normal)
-    (org-todo                     :foreground green           :bold 'inherit)
+    (org-tag                      :foreground doc-comments :weight 'normal)
+    (org-todo                     :foreground green :bold 'inherit)
     (org-verbatim                 :foreground green)
     (org-warning                  :foreground warning)
     ;; Omitted because we rely on style they inherit from the outline-N faces
@@ -1016,6 +945,10 @@
     (outline-6 :foreground (sinolor-themes--lighten blue 0.5)     :weight 'bold :extend t)
     (outline-7 :foreground (sinolor-themes--lighten magenta 0.5)  :weight 'bold :extend t)
     (outline-8 :foreground (sinolor-themes--lighten blue 0.8)     :weight 'bold :extend t)
+    ;;;; paren
+    (paren-face-match    :foreground red   :background base0 :weight 'ultra-bold)
+    (paren-face-mismatch :foreground base0 :background red   :weight 'ultra-bold)
+    (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
     ;;;; pkgbuild-mode <modes:pkgbuild-mode>
     (pkgbuild-error-face :underline `(:style wave :color ,red))
     ;;;; popup
@@ -1063,9 +996,9 @@
     (rst-level-5 :inherit 'rst-adornment :weight 'bold)
     (rst-level-6 :inherit 'rst-adornment :weight 'bold)
     ;;;; selectrum
-    (selectrum-current-candidate :background region :distant-foreground nil :extend t)
+    (selectrum-current-candidate :background region :extend t)
     (selectrum-primary-highlight
-     :background nil
+     :background 'unspecified
      :foreground (sinolor-themes--lighten grey 0.14)
      :weight 'light)
     (selectrum-secondary-highlight
@@ -1096,11 +1029,11 @@
      (&light :background base5)
      (&dark  :background base3))
     ;;;; swiper
-    (swiper-line-face                          :background blue    :foreground base0)
-    (swiper-match-face-1 :inherit 'unspecified :background base0   :foreground base5)
-    (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
-    (swiper-match-face-3 :inherit 'unspecified :background magenta :foreground base0 :weight 'bold)
-    (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base0 :weight 'bold)
+    (swiper-line-face    :background blue    :foreground base0)
+    (swiper-match-face-1 :background base0   :foreground base5)
+    (swiper-match-face-2 :background orange  :foreground base0 :weight 'bold)
+    (swiper-match-face-3 :background magenta :foreground base0 :weight 'bold)
+    (swiper-match-face-4 :background green   :foreground base0 :weight 'bold)
     ;;;; tabbar
     (tabbar-default             :foreground bg :background bg :height 1.0)
     (tabbar-highlight           :foreground fg :background selection :distant-foreground bg)
@@ -1142,7 +1075,7 @@
     (undo-tree-visualizer-active-branch-face :foreground blue)
     (undo-tree-visualizer-register-face      :foreground yellow)
     ;;;; vertico
-    (vertico-current :background region :distant-foreground nil :extend t)
+    (vertico-current :background region :distant-foreground 'unspecified :extend t)
     ;;;; vertico-posframe
     ;;(vertico-posframe :inherit 'default)
     (vertico-posframe-border :background grey)
@@ -1195,10 +1128,10 @@
     (whitespace-newline  :foreground base4)
     (whitespace-tab
      :foreground base4
-     :background (unless (default-value 'indent-tabs-mode) base3))
+     :background (if (default-value 'indent-tabs-mode) 'unspecified base3))
     (whitespace-indentation
      :foreground base4
-     :background (if (default-value 'indent-tabs-mode) base3))
+     :background (if (default-value 'indent-tabs-mode) base3 'unspecified))
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :weight 'bold)
     ;;;; widget
@@ -1257,7 +1190,7 @@
             (cons 320 ,(sinolor-themes--blend 'grey 'red (/ 3.0 4)))
             (cons 340 ,(sinolor-themes--color 'base5))
             (cons 360 ,(sinolor-themes--color 'base5))))
-    (vc-annotate-very-old-color nil)
+    (vc-annotate-very-old-color 'unspecified)
     (vc-annotate-background (sinolor-themes--color 'bg)))
 ;;;; --- END Package variables --------------
   "Base variables.")

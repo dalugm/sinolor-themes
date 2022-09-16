@@ -90,146 +90,166 @@ Can be an integer to determine the exact padding."
   :group 'sinolor-dark-theme
   :type '(choice integer boolean))
 
-(def-sinolor-theme sinolor-dark
-  "A dark theme based on Chinese traditional colors."
+(def-sinolor-theme
+ sinolor-dark
+ "A dark theme based on Chinese traditional colors."
 
-  ;; name            default   256       16
-  ((bg             '("#3e3841" "#3a3a3a" "black"       ))
-   (bg-alt         '("#5d3f51" "#4e4e4e" "brightblack" ))
-   (base0          '("#322f3b" "#303030" "brightblack" ))
-   (base1          '("#36292f" "#1e1e1e" "brightblack" ))
-   (base2          '("#2b1216" "#2e2e2e" "brightblack" ))
-   (base3          '("#23272e" "#262626" "brightblack" ))
-   (base4          '("#3f444a" "#3f3f3f" "brightblack" ))
-   (base5          '("#5B6268" "#525252" "brightblack" ))
-   (base6          '("#73797e" "#6b6b6b" "brightblack" ))
-   (base7          '("#9ca0a4" "#979797" "brightblack" ))
-   (base8          '("#eef7f2" "#dfdfdf" "white"       ))
-   (fg             '("#d8e3e7" "#bfbfbf" "brightwhite" ))
-   (fg-alt         '("#1772b4" "#2d2d2d" "white"       ))
+ ;; name            default   256       16
+ ((bg             '("#3e3841" "#3a3a3a" "black"       ))
+  (bg-alt         '("#5d3f51" "#4e4e4e" "brightblack" ))
+  (base0          '("#322f3b" "#303030" "brightblack" ))
+  (base1          '("#36292f" "#1e1e1e" "brightblack" ))
+  (base2          '("#2b1216" "#2e2e2e" "brightblack" ))
+  (base3          '("#23272e" "#262626" "brightblack" ))
+  (base4          '("#3f444a" "#3f3f3f" "brightblack" ))
+  (base5          '("#5B6268" "#525252" "brightblack" ))
+  (base6          '("#73797e" "#6b6b6b" "brightblack" ))
+  (base7          '("#9ca0a4" "#979797" "brightblack" ))
+  (base8          '("#eef7f2" "#dfdfdf" "white"       ))
+  (fg             '("#d8e3e7" "#bfbfbf" "brightwhite" ))
+  (fg-alt         '("#1772b4" "#2d2d2d" "white"       ))
 
-   (grey           '("#b7ae8f" "#b2b2b2" "brightblack"   ))
-   (red            '("#de1c31" "#ff6655" "red"           ))
-   (orange         '("#fa7e23" "#dd8844" "brightred"     ))
-   (green          '("#20894d" "#00ff00" "brightgreen"   ))
-   (teal           '("#12a182" "#00ff00" "brightblue"    ))
-   (yellow         '("#e2d849" "#ffff00" "yellow"        ))
-   (blue           '("#51c4d3" "#00afff" "brightblue"    ))
-   (dark-blue      '("#126e82" "#000087" "blue"          ))
-   (magenta        '("#8b2671" "#870087" "brightmagenta" ))
-   (violet         '("#815c94" "#af87ff" "magenta"       ))
-   (cyan           '("#63bbd0" "#00ffff" "brightcyan"    ))
-   (dark-cyan      '("#134857" "#00d7ff" "cyan"          ))
+  (grey           '("#b7ae8f" "#b2b2b2" "brightblack"   ))
+  (red            '("#de1c31" "#ff6655" "red"           ))
+  (orange         '("#fa7e23" "#dd8844" "brightred"     ))
+  (green          '("#20894d" "#00ff00" "brightgreen"   ))
+  (teal           '("#12a182" "#00ff00" "brightblue"    ))
+  (yellow         '("#e2d849" "#ffff00" "yellow"        ))
+  (blue           '("#51c4d3" "#00afff" "brightblue"    ))
+  (dark-blue      '("#126e82" "#000087" "blue"          ))
+  (magenta        '("#8b2671" "#870087" "brightmagenta" ))
+  (violet         '("#815c94" "#af87ff" "magenta"       ))
+  (cyan           '("#63bbd0" "#00ffff" "brightcyan"    ))
+  (dark-cyan      '("#134857" "#00d7ff" "cyan"          ))
 
-   (white          '("#f8f4ed" "#dfdfdf" "brightwhite"   ))
-   (clear-white    '("#eef7f2" "#dadada" "white"         ))
-   (dark-grey      '("#74759b" "#dfdfdf" "white"         ))
-   (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
-   (dark-green     '("#1a3b32" "#005f00" "green"         ))
-   (clear-magenta  '("#d2568c" "#5f5fbf" "magenta"       ))
-   (light-magenta  '("#ba2f7b" "#5f5faf" "magenta"       ))
-   (bright-magenta '("#c06f98" "#5f5faf" "brightmagenta" ))
-   (dark-magenta   '("#a8456b" "#af87ff" "magenta"       ))
+  (white          '("#f8f4ed" "#dfdfdf" "brightwhite"   ))
+  (clear-white    '("#eef7f2" "#dadada" "white"         ))
+  (dark-grey      '("#74759b" "#dfdfdf" "white"         ))
+  (gold           '("#fed71a" "#ffd700" "brightyellow"  ))
+  (dark-green     '("#1a3b32" "#005f00" "green"         ))
+  (clear-magenta  '("#d2568c" "#5f5fbf" "magenta"       ))
+  (light-magenta  '("#ba2f7b" "#5f5faf" "magenta"       ))
+  (bright-magenta '("#c06f98" "#5f5faf" "brightmagenta" ))
+  (dark-magenta   '("#a8456b" "#af87ff" "magenta"       ))
 
-   ;; face categories -- required for all themes
-   (highlight      white)
-   (vertical-bar   (sinolor-themes--darken base1 0.1))
-   (selection      dark-blue)
-   (builtin        magenta)
-   (comments       (if sinolor-dark-brighter-comments base7 grey))
-   (doc-comments   dark-grey)
-   (constants      violet)
-   (functions      magenta)
-   (keywords       clear-magenta)
-   (methods        cyan)
-   (operators      light-magenta)
-   (type           dark-magenta)
-   (strings        gold)
-   (variables      bright-magenta)
-   (numbers        orange)
-   (region         violet)
-   (region-fg      base8)
-   (error          red)
-   (warning        yellow)
-   (success        green)
-   (vc-modified    orange)
-   (vc-added       green)
-   (vc-deleted     red)
+  ;; face categories -- required for all themes
+  (highlight      white)
+  (vertical-bar   (sinolor-themes--darken base1 0.1))
+  (selection      dark-blue)
+  (builtin        magenta)
+  (comments       (if sinolor-dark-brighter-comments base7 grey))
+  (doc-comments   dark-grey)
+  (constants      violet)
+  (functions      magenta)
+  (keywords       clear-magenta)
+  (methods        cyan)
+  (operators      light-magenta)
+  (type           dark-magenta)
+  (strings        gold)
+  (variables      bright-magenta)
+  (numbers        orange)
+  (region         violet)
+  (region-fg      base8)
+  (error          red)
+  (warning        yellow)
+  (success        green)
+  (vc-modified    orange)
+  (vc-added       green)
+  (vc-deleted     red)
 
-   ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright sinolor-dark-brighter-modeline)
-   (-modeline-pad
-    (when sinolor-dark-padded-modeline
-      (if (integerp sinolor-dark-padded-modeline) sinolor-dark-padded-modeline 4)))
+  ;; custom categories
+  (hidden     `(,(car bg) "black" "black"))
+  (-modeline-bright sinolor-dark-brighter-modeline)
+  (-modeline-pad
+   (when sinolor-dark-padded-modeline
+     (if (integerp sinolor-dark-padded-modeline)
+         sinolor-dark-padded-modeline
+       4)))
 
-   (modeline-fg     fg)
-   (modeline-fg-alt base5)
+  (modeline-fg     fg)
+  (modeline-fg-alt base5)
 
-   (modeline-bg
-    (if -modeline-bright
-        (sinolor-themes--darken blue 0.475)
-      `(,(sinolor-themes--darken (car bg-alt) 0.15) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
-        (sinolor-themes--darken blue 0.45)
-      `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
-
-
-  ;; --- extra faces ------------------------
-  (((line-number &override) :foreground fg-alt :background bg)
-   ((line-number-current-line &override) :foreground fg :background bg)
-
-   (font-lock-comment-face
-    :foreground comments
-    :background (if sinolor-dark-comment-bg (sinolor-themes--lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-inactive :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
-
-   ;; table
-   (table-cell :background magenta)
-
-   ;; ivy-mode
-   (ivy-current-match :distant-foreground base0 :background base3 :underline t :weight 'normal)
+  (modeline-bg
+   (if -modeline-bright
+       (sinolor-themes--darken blue 0.475)
+     `(,(sinolor-themes--darken (car bg-alt) 0.15) ,@(cdr base0))))
+  (modeline-bg-l
+   (if -modeline-bright
+       (sinolor-themes--darken blue 0.45)
+     `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr base0))))
+  (modeline-bg-inactive
+   `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
+  (modeline-bg-inactive-l
+   `(,(car bg-alt) ,@(cdr base1))))
 
 
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
+ ;; --- extra faces ------------------------
+ (((line-number &override) :foreground fg-alt :background bg)
+  ((line-number-current-line &override) :foreground fg :background bg)
 
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (sinolor-themes--lighten base3 0.05))
+  (font-lock-comment-face
+   :foreground comments
+   :background (if sinolor-dark-comment-bg
+                   (sinolor-themes--lighten bg 0.05)
+                 'unspecified))
+  (font-lock-doc-face
+   :inherit 'font-lock-comment-face
+   :foreground doc-comments)
 
-   ;; info-mode
-   (Info-quoted :inherit font-lock-variable-name-face)
+  (mode-line
+   :background modeline-bg :foreground modeline-fg
+   :box (if -modeline-pad
+            `(:line-width ,-modeline-pad :color ,modeline-bg)
+          'unspecified))
+  (mode-line-inactive
+   :background modeline-bg-inactive :foreground modeline-fg-alt
+   :box (if -modeline-pad
+            `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)
+          'unspecified))
+  (mode-line-emphasis
+   :foreground (if -modeline-bright base8 highlight))
 
-   ;; org-mode
-   (org-hide             :foreground hidden)
-   (org-block-begin-line :background (sinolor-themes--lighten base3 0.05) :overline t)
-   (org-block-end-line   :background (sinolor-themes--lighten base3 0.05) :underline t)
+  ;; table
+  (table-cell :background magenta)
 
-    )
+  ;; ivy-mode
+  (ivy-current-match
+   :distant-foreground base0
+   :background base3
+   :underline t
+   :weight 'normal)
 
 
-  ;; --- extra variables ---------------------
-  ()
+  ;; --- major-mode faces -------------------
+  ;; css-mode / scss-mode
+  (css-proprietary-property :foreground orange)
+  (css-property             :foreground green)
+  (css-selector             :foreground blue)
+
+  ;; markdown-mode
+  (markdown-markup-face :foreground base5)
+  (markdown-header-face :inherit 'bold :foreground red)
+  ((markdown-code-face &override)
+   :background (sinolor-themes--lighten base3 0.05))
+
+  ;; info-mode
+  (Info-quoted :inherit font-lock-variable-name-face)
+
+  ;; org-mode
+  (org-hide             :foreground hidden)
+  (org-block-begin-line
+   :background (sinolor-themes--lighten base3 0.05)
+   :overline t)
+  (org-block-end-line
+   :background (sinolor-themes--lighten base3 0.05)
+   :underline t)
+
   )
+
+
+ ;; --- extra variables ---------------------
+ ()
+ )
 
 ;; Local Variables:
 ;; no-byte-compile: t
