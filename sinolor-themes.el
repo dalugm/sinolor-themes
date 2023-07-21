@@ -25,11 +25,10 @@
 ;;; Commentary:
 ;;
 ;; Sinolor Themes is an opinionated UI plugin and pack of themes
-;; inspired by `doom-themes'
+;; inspired by `doom-themes'.
 ;;
-;; Flagship themes
 ;;   `sinolor-black'
-;;   `sinolor-dark'
+;;   `sinolor-elydis'
 ;;   `sinolor-eva'
 ;;   `sinolor-green'
 ;;   `sinolor-light'

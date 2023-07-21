@@ -58,7 +58,7 @@ Can be an integer to determine the exact padding."
 
 (def-sinolor-theme
  sinolor-light
- "A derived light theme from `sinolor-dark'."
+ "A derived light theme from `sinolor-elysia'."
 
  ;; name          default   256       16
  ((bg           '("#eef7f2" "#d7ffff" "brightwhite" ))
@@ -174,7 +174,7 @@ Can be an integer to determine the exact padding."
    :box (if -modeline-pad
             `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)
           'unspecified))
-  (mode-line-emphasis 
+  (mode-line-emphasis
    :foreground (if -modeline-bright base8 highlight))
 
   ;; table

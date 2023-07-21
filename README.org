@@ -1,0 +1,43 @@
+* Table of Contents                                               :TOC:noexport:
+- [[#sinolor-theme][Sinolor Theme]]
+  - [[#installation][Installation]]
+  - [[#usage][Usage]]
+
+* Sinolor Theme
+
+Sinolor themes is a theme package which code base fork from
+[[https://github.com/hlissner/emacs-doom-themes][emacs-doom-themes]].
+
+Colors are selected from [[http://zhongguose.com/][CHINESE COLORS]].
+
+=sinolor-elysia= is the flagship theme. To Romantic Unfailing Elysia.
+
+Light, Black (used in lightless night) theme are derived from the elysia
+theme.
+
+=sinolor-palace-theme= is inspired by the Palace Museum.
+
+=sinolor-green-theme= refers to [[https://github.com/fredcamps/green-is-the-new-black-emacs][green-is-the-new-black-emacs]].
+
+=sinolor-eva-theme= is inspired by EVANGELION.
+
+** Installation
+
+1. Clone this repository
+
+#+begin_src bash-ts
+  git clone --depth=1 https://github.com/dalugm/sinolor-themes.git
+#+end_src
+
+2. Add =sinolor-themes= to load-path.
+
+#+begin_src elisp
+  (add-to-list 'load-path (expand-file-name "path/to/sinolor-themes"))
+  (require 'sinolor-themes)
+#+end_src
+
+** Usage
+
+#+begin_src elisp
+  (load-theme 'sinolor-elysia t)
+#+end_src

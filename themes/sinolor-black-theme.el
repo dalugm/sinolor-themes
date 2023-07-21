@@ -49,7 +49,7 @@ Can be an integer to determine the exact padding."
 
 (def-sinolor-theme
  sinolor-black
- "A derived dark theme from `sinolor-dark'."
+ "A derived dark theme from `sinolor-elysia'."
 
  ;; name        default   256       16
  ((bg         '("#000000" "#3a3a3a" "black"        ))

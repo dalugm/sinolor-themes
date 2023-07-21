@@ -1,8 +1,8 @@
-;;; sinolor-dark-theme.el --- Dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; sinolor-elysia-theme.el --- To Romantic Unfailing Elysia. -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;
-;; Dark theme.
+;; Dark theme. To Romantic Unfailing Elysia.
 ;;
 ;; Color selected from Chinese traditional colors.
 ;;
@@ -64,34 +64,34 @@
 
 (require 'sinolor-themes)
 
-(defgroup sinolor-dark-theme nil
+(defgroup sinolor-elysia-theme nil
   "Options for sinolor-themes."
   :group 'sinolor-themes)
 
-(defcustom sinolor-dark-brighter-modeline nil
+(defcustom sinolor-elysia-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'sinolor-dark-theme
+  :group 'sinolor-elysia-theme
   :type 'boolean)
 
-(defcustom sinolor-dark-brighter-comments nil
+(defcustom sinolor-elysia-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'sinolor-dark-theme
+  :group 'sinolor-elysia-theme
   :type 'boolean)
 
-(defcustom sinolor-dark-comment-bg sinolor-dark-brighter-comments
-  "If non-nil, comments will have a subtle, darker background.
+(defcustom sinolor-elysia-comment-bg sinolor-elysia-brighter-comments
+  "If non-nil, comments will have a subtle, elysiaer background.
 Enhancing their legibility."
-  :group 'sinolor-dark-theme
+  :group 'sinolor-elysia-theme
   :type 'boolean)
 
-(defcustom sinolor-dark-padded-modeline sinolor-themes-padded-modeline
+(defcustom sinolor-elysia-padded-modeline sinolor-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
-  :group 'sinolor-dark-theme
+  :group 'sinolor-elysia-theme
   :type '(choice integer boolean))
 
 (def-sinolor-theme
- sinolor-dark
+ sinolor-elysia
  "A dark theme based on Chinese traditional colors."
 
  ;; name            default   256       16
@@ -137,7 +137,7 @@ Can be an integer to determine the exact padding."
   (vertical-bar   (sinolor-themes--darken base1 0.1))
   (selection      dark-blue)
   (builtin        magenta)
-  (comments       (if sinolor-dark-brighter-comments base7 grey))
+  (comments       (if sinolor-elysia-brighter-comments base7 grey))
   (doc-comments   dark-grey)
   (constants      violet)
   (functions      magenta)
@@ -159,11 +159,11 @@ Can be an integer to determine the exact padding."
 
   ;; custom categories
   (hidden     `(,(car bg) "black" "black"))
-  (-modeline-bright sinolor-dark-brighter-modeline)
+  (-modeline-bright sinolor-elysia-brighter-modeline)
   (-modeline-pad
-   (when sinolor-dark-padded-modeline
-     (if (integerp sinolor-dark-padded-modeline)
-         sinolor-dark-padded-modeline
+   (when sinolor-elysia-padded-modeline
+     (if (integerp sinolor-elysia-padded-modeline)
+         sinolor-elysia-padded-modeline
        4)))
 
   (modeline-fg     fg)
@@ -189,7 +189,7 @@ Can be an integer to determine the exact padding."
 
   (font-lock-comment-face
    :foreground comments
-   :background (if sinolor-dark-comment-bg
+   :background (if sinolor-elysia-comment-bg
                    (sinolor-themes--lighten bg 0.05)
                  'unspecified))
   (font-lock-doc-face
@@ -256,4 +256,4 @@ Can be an integer to determine the exact padding."
 ;; indent-tabs-mode: nil
 ;; End:
 
-;;; sinolor-dark-theme.el ends here
+;;; sinolor-elysia-theme.el ends here
