@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 ;;
-;;  Basic theme configurations
+;;  Basic theme configurations.
 ;;
 
 ;;; Code:
@@ -43,19 +43,22 @@
     (font-lock-constant-face             :foreground constants)
     (font-lock-function-name-face        :foreground functions)
     (font-lock-keyword-face              :foreground keywords)
-    (font-lock-string-face               :foreground strings)
-    (font-lock-type-face                 :foreground type)
-    (font-lock-variable-name-face        :foreground variables)
-    (font-lock-warning-face              :inherit 'warning)
     (font-lock-negation-char-face        :inherit 'bold :foreground operators)
+    (font-lock-number-face               :foreground numbers)
     (font-lock-preprocessor-face         :inherit 'bold :foreground operators)
     (font-lock-preprocessor-char-face    :inherit 'bold :foreground operators)
     (font-lock-regexp-grouping-backslash :inherit 'bold :foreground operators)
     (font-lock-regexp-grouping-construct :inherit 'bold :foreground operators)
+    (font-lock-string-face               :foreground strings)
+    (font-lock-type-face                 :foreground type)
+    (font-lock-variable-name-face        :foreground variables)
+    (font-lock-warning-face              :inherit 'warning)
     ;;;; line numbers
-    ;; 1. Line number faces must explicitly disable its text style attributes
-    ;;    because nearby faces may "bleed" into the line numbers otherwise.
-    ;; 2. All other line number plugin faces should &inherit from these.
+    ;; 1. Line number faces must explicitly disable its text style
+    ;;    attributes because nearby faces may "bleed" into the line
+    ;;    numbers otherwise.
+    ;; 2. All other line number plugin faces should &inherit from
+    ;;    these.
     (line-number
      :inherit 'default
      :foreground base5 :distant-foreground 'unspecified
@@ -75,7 +78,7 @@
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
     (mode-line-buffer-id :weight 'bold)
-    ;;;; tab-line/tab-bar (Emacs 27+)
+    ;;;; tab-line/tab-bar
     (tab-line :background bg-alt :foreground bg-alt)
     (tab-line-tab :background bg :foreground fg)
     (tab-line-tab-inactive :inherit 'tab-line-tab :background bg-alt :foreground fg-alt)
@@ -92,8 +95,8 @@
     ;;
     ;;   PACKAGE [<built-in>] [<modes:some-mode[, ...]>]
     ;;
-    ;; The purpose of this is to make it easy to jump to via `imenu', or search
-    ;; for with isearch, swiper, etc.
+    ;; The purpose of this is to make it easy to jump to via `imenu',
+    ;; or search for with isearch, swiper, etc.
 
     ;;;; alert
     (alert-high-face         :inherit bold :foreground warning)
