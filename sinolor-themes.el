@@ -2,7 +2,7 @@
 
 ;; Author: dalu <mou.tong@qq.com>
 ;; Maintainer: dalu <mou.tong@qq.com>
-;; Version: 0.1.0
+;; Version: 0.1.2
 ;; Package-Requires: ((emacs "25.1") (cl-lib "0.5"))
 ;; Homepage: https://github.com/dalugm/sinolor-themes
 ;; Keywords: themes, faces
@@ -28,7 +28,7 @@
 ;; inspired by `doom-themes'.
 ;;
 ;;   `sinolor-black'
-;;   `sinolor-elydis'
+;;   `sinolor-elysia'
 ;;   `sinolor-eva'
 ;;   `sinolor-green'
 ;;   `sinolor-light'

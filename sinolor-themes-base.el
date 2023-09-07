@@ -72,7 +72,7 @@
     ;;;; mode-line / header-line
     (header-line :inherit 'mode-line)
     (header-line-highlight :inherit 'mode-line-highlight)
-    (mode-line           :background bg     :foreground fg     :distant-foreground bg)
+    (mode-line :background bg :foreground fg :distant-foreground bg)
     (mode-line-active    :inherit 'mode-line)
     (mode-line-inactive  :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
@@ -156,12 +156,12 @@
     (ansi-color-cyan           :foreground cyan    :background cyan)
     (ansi-color-white          :foreground fg      :background fg)
     (ansi-color-bright-black   :foreground base0   :background base2)
-    (ansi-color-bright-red     :foreground (doom-lighten red 0.15)     :background (doom-lighten red 0.15))
-    (ansi-color-bright-green   :foreground (doom-lighten green 0.15)   :background (doom-lighten green 0.15))
-    (ansi-color-bright-yellow  :foreground (doom-lighten yellow 0.15)  :background (doom-lighten yellow 0.15))
-    (ansi-color-bright-blue    :foreground (doom-lighten blue 0.15)    :background (doom-lighten blue 0.15))
-    (ansi-color-bright-magenta :foreground (doom-lighten magenta 0.15) :background (doom-lighten magenta 0.15))
-    (ansi-color-bright-cyan    :foreground (doom-lighten cyan 0.15)    :background (doom-lighten cyan 0.15))
+    (ansi-color-bright-red     :foreground (sinolor-themes--lighten red 0.15)     :background (sinolor-themes--lighten red 0.15))
+    (ansi-color-bright-green   :foreground (sinolor-themes--lighten green 0.15)   :background (sinolor-themes--lighten green 0.15))
+    (ansi-color-bright-yellow  :foreground (sinolor-themes--lighten yellow 0.15)  :background (sinolor-themes--lighten yellow 0.15))
+    (ansi-color-bright-blue    :foreground (sinolor-themes--lighten blue 0.15)    :background (sinolor-themes--lighten blue 0.15))
+    (ansi-color-bright-magenta :foreground (sinolor-themes--lighten magenta 0.15) :background (sinolor-themes--lighten magenta 0.15))
+    (ansi-color-bright-cyan    :foreground (sinolor-themes--lighten cyan 0.15)    :background (sinolor-themes--lighten cyan 0.15))
     (ansi-color-bright-white   :foreground base8   :background base8)
     ;;;; anzu
     (anzu-replace-highlight :background base0 :foreground red   :weight 'bold :strike-through t)
@@ -347,6 +347,11 @@
     (diredfl-symlink                :foreground violet)
     (diredfl-tagged-autofile-name   :foreground base5)
     (diredfl-write-priv             :foreground red)
+    ;;;; disk-usage
+    (disk-usage-children :foreground yellow)
+    (disk-usage-percent  :foreground violet)
+    (disk-usage-size     :foreground blue)
+    (disk-usage-symlink  :foreground cyan :weight 'bold)
     ;;;; ediff <built-in>
     (ediff-fine-diff-A    :background (sinolor-themes--blend selection bg 0.7) :weight 'bold :extend t)
     (ediff-fine-diff-B    :inherit 'ediff-fine-diff-A)
@@ -381,6 +386,8 @@
     (elscreen-tab-control-face        :background bg     :foreground bg)
     (elscreen-tab-current-screen-face :background bg-alt :foreground fg)
     (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
+    ;;;; embark
+    ((embark-target &inherit vertico-current))
     ;;;; enh-ruby-mode <modes:enh-ruby-mode>
     (enh-ruby-heredoc-delimiter-face :inherit 'font-lock-string-face)
     (enh-ruby-op-face                :foreground operators)
@@ -892,7 +899,8 @@
     (org-todo                     :foreground green :bold 'inherit)
     (org-verbatim                 :foreground green)
     (org-warning                  :foreground warning)
-    ;; Omitted because we rely on style they inherit from the outline-N faces
+    ;; Omitted because we rely on style they inherit from the
+    ;; outline-N faces.
     ;;(org-level-1)
     ;;(org-level-2)
     ;;(org-level-3)
@@ -948,10 +956,6 @@
     (outline-6 :foreground (sinolor-themes--lighten blue 0.5)     :weight 'bold :extend t)
     (outline-7 :foreground (sinolor-themes--lighten magenta 0.5)  :weight 'bold :extend t)
     (outline-8 :foreground (sinolor-themes--lighten blue 0.8)     :weight 'bold :extend t)
-    ;;;; paren
-    (paren-face-match    :foreground red   :background base0 :weight 'ultra-bold)
-    (paren-face-mismatch :foreground base0 :background red   :weight 'ultra-bold)
-    (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
     ;;;; pkgbuild-mode <modes:pkgbuild-mode>
     (pkgbuild-error-face :underline `(:style wave :color ,red))
     ;;;; popup
@@ -977,9 +981,6 @@
     (reb-match-1 :foreground magenta :inverse-video t)
     (reb-match-2 :foreground green   :inverse-video t)
     (reb-match-3 :foreground yellow  :inverse-video t)
-    ;;;; rjsx-mode <modes:rjsx-mode>
-    (rjsx-tag :foreground type)
-    (rjsx-attr :foreground strings)
     ;;;; rpm-spec-mode <modes:rpm-spec-mode>
     (rpm-spec-macro-face        :foreground yellow)
     (rpm-spec-var-face          :foreground violet)
@@ -1024,9 +1025,6 @@
     (smerge-markers :background comments :foreground bg :distant-foreground fg :weight 'bold)
     (smerge-refined-added   :inherit 'diff-added :inverse-video t)
     (smerge-refined-removed :inherit 'diff-removed :inverse-video t)
-    ;; Emacs <25 compatibility
-    ((smerge-mine  &inherit smerge-upper))
-    ((smerge-other &inherit smerge-lower))
     ;;;; stripe-buffer
     (stripe-highlight
      (&light :background base5)
@@ -1037,18 +1035,18 @@
     (swiper-match-face-2 :background orange  :foreground base0 :weight 'bold)
     (swiper-match-face-3 :background magenta :foreground base0 :weight 'bold)
     (swiper-match-face-4 :background green   :foreground base0 :weight 'bold)
-    ;;;; tabbar
-    (tabbar-default             :foreground bg :background bg :height 1.0)
-    (tabbar-highlight           :foreground fg :background selection :distant-foreground bg)
-    (tabbar-button              :foreground fg :background bg)
-    (tabbar-button-highlight    :inherit 'tabbar-button :inverse-video t)
-    (tabbar-modified            :inherit 'tabbar-default :foreground red :weight 'bold)
-    (tabbar-unselected          :inherit 'tabbar-default :foreground base5)
-    (tabbar-unselected-modified :inherit 'tabbar-modified)
-    (tabbar-selected
-     :inherit 'tabbar-default :weight 'bold
-     :foreground fg :background bg-alt)
-    (tabbar-selected-modified :inherit 'tabbar-selected :foreground green)
+    ;;;; symbol-overlay
+    (symbol-overlay-default-face
+     (&dark  :background (sinolor-themes--lighten region 0.1) :distant-foreground fg-alt)
+     (&light :background (sinolor-themes--darken region 0.1)  :distant-foreground fg-alt))
+    (symbol-overlay-face-1 :background (sinolor-themes--blend blue bg 0.4)    :distant-foreground fg-alt)
+    (symbol-overlay-face-2 :background (sinolor-themes--blend violet bg 0.4)  :distant-foreground fg-alt)
+    (symbol-overlay-face-3 :background (sinolor-themes--blend yellow bg 0.3)  :distant-foreground fg-alt)
+    (symbol-overlay-face-4 :background (sinolor-themes--blend orange bg 0.3)  :distant-foreground fg-alt)
+    (symbol-overlay-face-5 :background (sinolor-themes--blend red bg 0.3)     :distant-foreground fg-alt)
+    (symbol-overlay-face-6 :background (sinolor-themes--blend magenta bg 0.3) :distant-foreground fg-alt)
+    (symbol-overlay-face-7 :background (sinolor-themes--blend green bg 0.4)   :distant-foreground fg-alt)
+    (symbol-overlay-face-8 :background (sinolor-themes--blend cyan bg 0.2)    :distant-foreground fg-alt)
     ;;;; term <built-in>
     (term               :foreground fg)
     (term-bold          :weight 'bold)
@@ -1067,10 +1065,6 @@
     (tldr-introduction     :foreground (sinolor-themes--blend blue bg 0.8) :weight 'semi-bold)
     (tldr-code-block       :foreground green :background region :weight 'semi-bold)
     (tldr-command-argument :foreground fg :background region )
-    ;;;; typescript-mode <modes:typescript-mode,typescript-tsx-mode>
-    (typescript-jsdoc-tag   :foreground doc-comments)
-    (typescript-jsdoc-type  :foreground (sinolor-themes--darken doc-comments 0.15))
-    (typescript-jsdoc-value :foreground (sinolor-themes--lighten doc-comments 0.15))
     ;;;; undo-tree
     (undo-tree-visualizer-default-face       :foreground base5)
     (undo-tree-visualizer-current-face       :foreground green :weight 'bold)
@@ -1118,7 +1112,7 @@
     (wgrep-done-face   :foreground blue)
     (wgrep-file-face   :foreground comments)
     (wgrep-reject-face :foreground red :weight 'bold)
-    ;;;; which-func
+    ;;;; which-func <built-in>
     (which-func :foreground blue)
     ;;;; which-key
     (which-key-key-face                   :foreground green)
@@ -1156,23 +1150,13 @@
     (wg-divider-face           :foreground grey)
     (wg-brace-face             :foreground highlight)
     ;;;; yasnippet
-    (yas-field-highlight-face :inherit 'match)
-    ;;;; --- END Package faces ------------------
-    )
+    (yas-field-highlight-face :inherit 'match))
   "Base faces.")
 
-;;;; --- Package variables ------------------
+;;;; Package variables.
 (defvar sinolor-themes--base-vars
-  '(
-    ;;;; ansi-color <built-in>
-    ;; DEPRECATED since Emacs v28.1
-    (ansi-color-names-vector
-     (vconcat (mapcar #'sinolor-themes--color '(bg red green yellow blue magenta cyan fg))))
-    ;;;; pdf-tools
+  '(;;;; pdf-tools
     (pdf-view-midnight-colors `(cons ,(sinolor-themes--color 'fg) ,(sinolor-themes--color 'bg)))
-    ;;;; rustic <modes:rustic-mode>
-    (rustic-ansi-faces
-     (vconcat (mapcar #'sinolor-themes--color '(bg red green yellow blue magenta cyan fg))))
     ;;;; vc <built-in>
     (vc-annotate-color-map
      `(list (cons 20  ,(sinolor-themes--color 'green))
@@ -1195,7 +1179,6 @@
             (cons 360 ,(sinolor-themes--color 'base5))))
     (vc-annotate-very-old-color 'unspecified)
     (vc-annotate-background (sinolor-themes--color 'bg)))
-;;;; --- END Package variables --------------
   "Base variables.")
 
 (provide 'sinolor-themes-base)

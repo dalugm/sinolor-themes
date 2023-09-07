@@ -1,4 +1,4 @@
-* Table of Contents                                               :TOC:noexport:
+* Table of Contents                                            :TOC:noexport:
 - [[#sinolor-theme][Sinolor Theme]]
   - [[#installation][Installation]]
   - [[#usage][Usage]]
