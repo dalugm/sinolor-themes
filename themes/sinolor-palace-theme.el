@@ -1,4 +1,4 @@
-;;; sinolor-palace-theme.el --- inspired by the Palace Museum -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; sinolor-palace-theme.el --- inspired by the Palace Museum -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -64,162 +64,152 @@ Can be an integer to determine the exact padding."
   :group 'sinolor-palace-theme
   :type '(choice integer boolean))
 
-(def-sinolor-theme
- sinolor-palace
- "A dark theme inspired by the Palace Museum."
+(def-sinolor-theme sinolor-palace
+  "A dark theme inspired by the Palace Museum."
 
- ;; name       default   256       16
- ((bg        '("#22202e" "#3a3a3a" "black"        ))
-  (bg-alt    '("#322f3b" "#4e4e4e" "brightblack"  ))
-  (base0     '("#1b2229" "#2c2c2c" "black"        ))
-  (base1     '("#1c1f24" "#1e1e1e" "brightblack"  ))
-  (base2     '("#202328" "#2e2e2e" "brightblack"  ))
-  (base3     '("#23272e" "#262626" "brightblack"  ))
-  (base4     '("#3f444a" "#3f3f3f" "brightblack"  ))
-  (base5     '("#5B6268" "#525252" "brightblack"  ))
-  (base6     '("#73797e" "#6b6b6b" "brightblack"  ))
-  (base7     '("#9ca0a4" "#979797" "brightblack"  ))
-  (base8     '("#DFDFDF" "#dfdfdf" "white"        ))
-  (fg        '("#cc163a" "#bfbfbf" "brightwhite"  ))
-  (fg-alt    '("#1772b4" "#2d2d2d" "white"        ))
+  ;; name       default   256       16
+  ((bg        '("#22202e" "#3a3a3a" "black"        ))
+   (bg-alt    '("#322f3b" "#4e4e4e" "brightblack"  ))
+   (base0     '("#1b2229" "#2c2c2c" "black"        ))
+   (base1     '("#1c1f24" "#1e1e1e" "brightblack"  ))
+   (base2     '("#202328" "#2e2e2e" "brightblack"  ))
+   (base3     '("#23272e" "#262626" "brightblack"  ))
+   (base4     '("#3f444a" "#3f3f3f" "brightblack"  ))
+   (base5     '("#5B6268" "#525252" "brightblack"  ))
+   (base6     '("#73797e" "#6b6b6b" "brightblack"  ))
+   (base7     '("#9ca0a4" "#979797" "brightblack"  ))
+   (base8     '("#DFDFDF" "#dfdfdf" "white"        ))
+   (fg        '("#cc163a" "#bfbfbf" "brightwhite"  ))
+   (fg-alt    '("#1772b4" "#2d2d2d" "white"        ))
 
-  (grey      '("#b7ae8f" "#3f3f3f" "brightblack"   ))
-  (red       '("#de1c31" "#ff6655" "red"           ))
-  (orange    '("#fa7e23" "#dd8844" "brightred"     ))
-  (green     '("#20894d" "#00ff00" "green"         ))
-  (teal      '("#12a182" "#00ff00" "brightgreen"   ))
-  (yellow    '("#e2d849" "#ffff00" "yellow"        ))
-  (blue      '("#51c4d3" "#00afff" "brightblue"    ))
-  (dark-blue '("#126e82" "#000087" "blue"          ))
-  (magenta   '("#8b2671" "#870087" "brightmagenta" ))
-  (violet    '("#815c94" "#af87ff" "magenta"       ))
-  (cyan      '("#63bbd0" "#00ffff" "brightcyan"    ))
-  (dark-cyan '("#134857" "#00d7ff" "cyan"          ))
+   (grey      '("#b7ae8f" "#3f3f3f" "brightblack"   ))
+   (red       '("#de1c31" "#ff6655" "red"           ))
+   (orange    '("#fa7e23" "#dd8844" "brightred"     ))
+   (green     '("#20894d" "#00ff00" "green"         ))
+   (teal      '("#12a182" "#00ff00" "brightgreen"   ))
+   (yellow    '("#e2d849" "#ffff00" "yellow"        ))
+   (blue      '("#51c4d3" "#00afff" "brightblue"    ))
+   (dark-blue '("#126e82" "#000087" "blue"          ))
+   (magenta   '("#8b2671" "#870087" "brightmagenta" ))
+   (violet    '("#815c94" "#af87ff" "magenta"       ))
+   (cyan      '("#63bbd0" "#00ffff" "brightcyan"    ))
+   (dark-cyan '("#134857" "#00d7ff" "cyan"          ))
 
-  (white       '("#f8f4ed" "#dfdfdf" "white"        ))
-  (clear-white '("#eef7f2" "#dadada" "white"        ))
-  (light-blue  '("#2775b6" "#0087ff" "brightblue"   ))
-  (gold        '("#fed71a" "#ffd700" "brightyellow" ))
-  (deep-gold   '("#b78d12" "#bbbd22" "yellow"       ))
+   (white       '("#f8f4ed" "#dfdfdf" "white"        ))
+   (clear-white '("#eef7f2" "#dadada" "white"        ))
+   (light-blue  '("#2775b6" "#0087ff" "brightblue"   ))
+   (gold        '("#fed71a" "#ffd700" "brightyellow" ))
+   (deep-gold   '("#b78d12" "#bbbd22" "yellow"       ))
 
-  ;; face categories -- required for all themes
-  (highlight      white)
-  (vertical-bar   (sinolor-themes--darken base1 0.4))
-  (selection      dark-blue)
-  (builtin        dark-blue)
-  (comments       grey)
-  (doc-comments   yellow)
-  (constants      violet)
-  (functions      gold)
-  (keywords       teal)
-  (methods        cyan)
-  (operators      deep-gold)
-  (type           light-blue)
-  (strings        yellow)
-  (variables      gold)
-  (numbers        orange)
-  (region         deep-gold)
-  (region-fg      white)
-  (error          red)
-  (warning        yellow)
-  (success        green)
-  (vc-modified    orange)
-  (vc-added       green)
-  (vc-deleted     red)
+   ;; face categories -- required for all themes
+   (highlight      white)
+   (vertical-bar   (sinolor-themes--darken base1 0.4))
+   (selection      dark-blue)
+   (builtin        dark-blue)
+   (comments       grey)
+   (doc-comments   yellow)
+   (constants      violet)
+   (functions      gold)
+   (keywords       teal)
+   (methods        cyan)
+   (operators      deep-gold)
+   (type           light-blue)
+   (strings        yellow)
+   (variables      gold)
+   (numbers        orange)
+   (region         deep-gold)
+   (region-fg      white)
+   (error          red)
+   (warning        yellow)
+   (success        green)
+   (vc-modified    orange)
+   (vc-added       green)
+   (vc-deleted     red)
 
-  ;; custom categories
-  (hidden     `(,(car bg) "black" "black"))
-  (-modeline-bright sinolor-palace-brighter-modeline)
-  (-modeline-pad
-   (when sinolor-palace-padded-modeline
-     (if (integerp sinolor-palace-padded-modeline)
-         sinolor-palace-padded-modeline
-       4)))
+   ;; custom categories
+   (hidden     `(,(car bg) "black" "black"))
+   (-modeline-bright sinolor-palace-brighter-modeline)
+   (-modeline-pad
+    (when sinolor-palace-padded-modeline
+      (if (integerp sinolor-palace-padded-modeline)
+          sinolor-palace-padded-modeline
+        4)))
 
-  (modeline-fg     fg)
-  (modeline-fg-alt base5)
+   (modeline-fg     fg)
+   (modeline-fg-alt base5)
 
-  (modeline-bg
-   (if -modeline-bright
-       (sinolor-themes--darken blue 0.475)
-     `(,(sinolor-themes--darken (car bg-alt) 0.15) ,@(cdr base0))))
-  (modeline-bg-l
-   (if -modeline-bright
-       (sinolor-themes--darken blue 0.45)
-     `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr base0))))
-  (modeline-bg-inactive
-   `(,(sinolor-themes--darken (car bg-alt) 0.1)
-     ,@(cdr bg-alt)))
-  (modeline-bg-inactive-l
-   `(,(car bg-alt) ,@(cdr base1))))
-
-
- ;; --- extra faces ------------------------
- (((line-number &override) :foreground fg-alt :background bg)
-  ((line-number-current-line &override) :foreground fg :background bg)
-
-  (font-lock-comment-face
-   :foreground comments
-   :background (if sinolor-palace-comment-bg
-                   (sinolor-themes--lighten bg 0.05)
-                 'unspecified))
-  (font-lock-doc-face
-   :inherit 'font-lock-comment-face
-   :foreground doc-comments)
-
-  (mode-line
-   :background modeline-bg :foreground modeline-fg
-   :box (if -modeline-pad
-            `(:line-width ,-modeline-pad :color ,modeline-bg)
-          'unspecified))
-  (mode-line-inactive
-   :background modeline-bg-inactive :foreground modeline-fg-alt
-   :box (if -modeline-pad
-            `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)
-          'unspecified))
-  (mode-line-emphasis
-   :foreground (if -modeline-bright base8 highlight))
-
-  ;; table
-  (table-cell :background grey)
-
-  ;; ivy-mode
-  (ivy-current-match
-   :underline t
-   :distant-foreground base0
-   :foreground orange
-   :weight 'normal)
+   (modeline-bg
+    (if -modeline-bright
+        (sinolor-themes--darken blue 0.475)
+      `(,(sinolor-themes--darken (car bg-alt) 0.15) ,@(cdr base0))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (sinolor-themes--darken blue 0.45)
+      `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr base0))))
+   (modeline-bg-inactive
+    `(,(sinolor-themes--darken (car bg-alt) 0.1)
+      ,@(cdr bg-alt)))
+   (modeline-bg-inactive-l
+    `(,(car bg-alt) ,@(cdr base1))))
 
 
-  ;; --- major-mode faces -------------------
-  ;; css-mode / scss-mode
-  (css-proprietary-property :foreground orange)
-  (css-property             :foreground green)
-  (css-selector             :foreground blue)
+;;;; extra faces
 
-  ;; markdown-mode
-  (markdown-markup-face :foreground base5)
-  (markdown-header-face :inherit 'bold :foreground blue)
-  ((markdown-code-face &override)
-   :background (sinolor-themes--lighten base3 0.05))
+  (((line-number &override) :foreground fg-alt :background bg)
+   ((line-number-current-line &override) :foreground fg :background bg)
 
-  ;; info-mode
-  (Info-quoted :inherit font-lock-variable-name-face)
+   (font-lock-comment-face
+    :foreground comments
+    :background (if sinolor-palace-comment-bg
+                    (sinolor-themes--lighten bg 0.05)
+                  'unspecified))
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
 
-  ;; org-mode
-  (org-hide             :foreground hidden)
-  (org-block-begin-line
-   :background (sinolor-themes--lighten base3 0.05)
-   :overline t)
-  (org-block-end-line
-   :background (sinolor-themes--lighten base3 0.05)
-   :underline t)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad
+             `(:line-width ,-modeline-pad :color ,modeline-bg)
+           'unspecified))
+   (mode-line-inactive
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if -modeline-pad
+             `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)
+           'unspecified))
+   (mode-line-emphasis
+    :foreground (if -modeline-bright base8 highlight))
+
+   ;; table
+   (table-cell :background grey)
+
+;;;; major-mode faces
+
+   ;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground blue)
+   ((markdown-code-face &override)
+    :background (sinolor-themes--lighten base3 0.05))
+
+   ;; info-mode
+   (Info-quoted :inherit font-lock-variable-name-face)
+
+   ;; org-mode
+   (org-hide             :foreground hidden)
+   (org-block-begin-line
+    :background (sinolor-themes--lighten base3 0.05)
+    :overline t)
+   (org-block-end-line
+    :background (sinolor-themes--lighten base3 0.05)
+    :underline t)
+
+   )
+
+;;;; base theme variable overrides
+
+  ()
 
   )
-
- ;; --- extra variables ---------------------
- ()
- )
 
 ;; Local Variables:
 ;; no-byte-compile: t

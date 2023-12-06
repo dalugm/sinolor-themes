@@ -329,10 +329,10 @@ These is a simplified spec.  For example:
              (list ,@(mapcar #'sinolor-themes--build-face faces))))))
 
 (defmacro def-sinolor-theme (name docstring defs &optional extra-faces extra-vars)
-  "Define a custom theme.
+  "Define a NAME theme.
 
-NAME with DOCSTRING, DEFS and optional EXTRA-FACES EXTRA-VARS."
-  (declare (doc-string 2))
+With DOCSTRING, DEFS and optional EXTRA-FACES EXTRA-VARS."
+  (declare (indent defun))
   (let ((sinolor-themes--colors defs))
     `(let* ((bold   sinolor-themes-enable-bold)
             (italic sinolor-themes-enable-italic)

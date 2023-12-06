@@ -35,7 +35,7 @@
     (error   :foreground error)
     (warning :foreground warning)
     (success :foreground success)
-    ;;;; font-lock-* faces
+;;;; font-lock-* faces
     (font-lock-builtin-face              :foreground builtin)
     (font-lock-comment-face              :foreground comments)
     (font-lock-comment-delimiter-face    :inherit 'font-lock-comment-face)
@@ -53,7 +53,7 @@
     (font-lock-type-face                 :foreground type)
     (font-lock-variable-name-face        :foreground variables)
     (font-lock-warning-face              :inherit 'warning)
-    ;;;; line numbers
+;;;; line numbers
     ;; 1. Line number faces must explicitly disable its text style
     ;;    attributes because nearby faces may "bleed" into the line
     ;;    numbers otherwise.
@@ -69,7 +69,7 @@
      :foreground fg :distant-foreground 'unspecified
      :weight 'normal :italic 'unspecified
      :underline 'unspecified :strike-through 'unspecified)
-    ;;;; mode-line / header-line
+;;;; mode-line / header-line
     (header-line :inherit 'mode-line)
     (header-line-highlight :inherit 'mode-line-highlight)
     (mode-line :background bg :foreground fg :distant-foreground bg)
@@ -78,7 +78,7 @@
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
     (mode-line-buffer-id :weight 'bold)
-    ;;;; tab-line/tab-bar
+;;;; tab-line/tab-bar
     (tab-line :background bg-alt :foreground bg-alt)
     (tab-line-tab :background bg :foreground fg)
     (tab-line-tab-inactive :inherit 'tab-line-tab :background bg-alt :foreground fg-alt)
@@ -90,7 +90,7 @@
     ((tab-bar-tab &inherit tab-line-tab))
     ((tab-bar-tab-inactive &inherit tab-line-tab-inactive))
 
-    ;;;; --- package faces --------------
+;;;; package faces
     ;; Headings are formatted as such:
     ;;
     ;;   PACKAGE [<built-in>] [<modes:some-mode[, ...]>]
@@ -98,13 +98,13 @@
     ;; The purpose of this is to make it easy to jump to via `imenu',
     ;; or search for with isearch, swiper, etc.
 
-    ;;;; alert
+;;;; alert
     (alert-high-face         :inherit bold :foreground warning)
     (alert-low-face          :foreground grey)
     (alert-moderate-face     :inherit bold :foreground fg-alt)
     (alert-trivial-face      :foreground doc-comments)
     (alert-urgent-face       :inherit bold :foreground error)
-    ;;;; all-the-icons
+;;;; all-the-icons
     (all-the-icons-blue       :foreground blue)
     (all-the-icons-blue-alt   :foreground teal)
     (all-the-icons-cyan       :foreground cyan)
@@ -139,14 +139,14 @@
     (all-the-icons-red-alt    :foreground (sinolor-themes--blend red grey 0.15))
     (all-the-icons-silver     :foreground (sinolor-themes--lighten grey 0.45))
     (all-the-icons-yellow     :foreground yellow)
-    ;;;; all-the-icons-dired
+;;;; all-the-icons-dired
     (all-the-icons-dired-dir-face :foreground doc-comments)
-    ;;;; annotate
+;;;; annotate
     (annotate-annotation           :background (sinolor-themes--blend highlight bg 0.1) :foreground doc-comments)
     (annotate-annotation-secondary :background (sinolor-themes--blend green bg 0.1)     :foreground doc-comments)
     (annotate-highlight            :background (sinolor-themes--blend highlight bg 0.1) :underline highlight)
     (annotate-highlight-secondary  :background (sinolor-themes--blend green bg 0.1)     :underline green)
-    ;;;; ansi-color <built-in>
+;;;; ansi-color <built-in>
     (ansi-color-black          :foreground bg      :background bg)
     (ansi-color-red            :foreground red     :background red)
     (ansi-color-green          :foreground green   :background green)
@@ -163,10 +163,10 @@
     (ansi-color-bright-magenta :foreground (sinolor-themes--lighten magenta 0.15) :background (sinolor-themes--lighten magenta 0.15))
     (ansi-color-bright-cyan    :foreground (sinolor-themes--lighten cyan 0.15)    :background (sinolor-themes--lighten cyan 0.15))
     (ansi-color-bright-white   :foreground base8   :background base8)
-    ;;;; anzu
+;;;; anzu
     (anzu-replace-highlight :background base0 :foreground red   :weight 'bold :strike-through t)
     (anzu-replace-to        :background base0 :foreground green :weight 'bold)
-    ;;;; auctex <modes:latex-mode>
+;;;; auctex <modes:latex-mode>
     (font-latex-bold-face         :inherit 'bold)
     (font-latex-italic-face       :inherit 'italic)
     (font-latex-math-face         :foreground blue)
@@ -183,7 +183,7 @@
     (TeX-error-description-error    :inherit 'error   :weight 'bold)
     (TeX-error-description-warning  :inherit 'warning :weight 'bold)
     (TeX-error-description-tex-said :inherit 'success :weight 'bold)
-    ;;;; avy
+;;;; avy
     (avy-background-face :foreground comments)
     (avy-lead-face :background highlight :foreground bg :distant-foreground fg :weight 'bold)
     (avy-lead-face-0
@@ -198,9 +198,9 @@
      (&all   :inherit 'avy-lead-face)
      (&dark  :background (sinolor-themes--lighten highlight 0.9))
      (&light :background (sinolor-themes--darken highlight 0.9)))
-    ;;;; bookmark <built-in>
+;;;; bookmark <built-in>
     (bookmark-face :background (sinolor-themes--blend highlight bg 0.1) :extend t)
-    ;;;; company
+;;;; company
     (company-tooltip        :inherit 'tooltip)
     (company-tooltip-common :foreground highlight :distant-foreground base0 :weight 'bold)
     (company-tooltip-search :background highlight :foreground bg :distant-foreground fg :weight 'bold)
@@ -214,9 +214,9 @@
     (company-preview-common     :background base3 :foreground highlight)
     (company-preview-search     :inherit 'company-tooltip-search)
     (company-template-field     :inherit 'match)
-    ;;;; company-box
+;;;; company-box
     (company-box-candidate :foreground fg)
-    ;;;; compilation <built-in>
+;;;; compilation <built-in>
     (compilation-column-number  :inherit 'font-lock-comment-face)
     (compilation-line-number    :foreground highlight)
     (compilation-error   :inherit 'error   :weight 'bold)
@@ -224,36 +224,34 @@
     (compilation-info    :inherit 'success)
     (compilation-mode-line-exit :inherit 'compilation-info)
     (compilation-mode-line-fail :inherit 'compilation-error)
-    ;;;; corfu
+;;;; corfu
     (corfu-default :inherit 'tooltip)
     (corfu-current :background bg :foreground fg)
-    ;;;; cperl <built-in>
+;;;; cperl <built-in>
     (cperl-array-face          :weight 'bold :inherit 'font-lock-variable-name-face)
     (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
     (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
-    ;;;; custom <built-in>
-    (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style none))
-    (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style none))
-    (custom-button-pressed-unraised :foreground bg     :background violet :box '(:line-width 1 :style none))
-    (custom-button-pressed          :foreground bg     :background blue   :box '(:line-width 1 :style none))
-    (custom-button-mouse            :foreground bg     :background blue   :box '(:line-width 1 :style none))
-    (custom-variable-button         :foreground green  :underline t)
-    (custom-saved                   :foreground green  :background (sinolor-themes--blend green bg 0.2) :bold bold)
-    (custom-comment                 :foreground fg     :background region)
-    (custom-comment-tag             :foreground grey)
-    (custom-modified                :foreground blue   :background (sinolor-themes--blend blue bg 0.2))
-    (custom-variable-tag            :foreground magenta)
-    (custom-visibility              :foreground blue)
-    (custom-group-subtitle          :foreground red)
-    (custom-group-tag               :foreground violet)
-    (custom-group-tag-1             :foreground blue)
-    (custom-set                     :foreground yellow :background bg)
-    (custom-themed                  :foreground yellow :background bg)
-    (custom-invalid                 :foreground red    :background (sinolor-themes--blend red bg 0.2))
-    (custom-variable-obsolete       :foreground grey   :background bg)
-    (custom-state                   :foreground green  :background (sinolor-themes--blend green bg 0.2))
-    (custom-changed                 :foreground blue   :background bg)
-    ;;;; cider
+;;;; custom <built-in>
+    (custom-button            :foreground blue :background bg   :box '(:line-width 1 :style released-button))
+    (custom-button-mouse      :foreground bg   :background blue :box '(:line-width 1 :style released-button))
+    (custom-button-pressed    :foreground bg   :background blue :box '(:line-width 1 :style pressed-button))
+    (custom-changed           :foreground blue :background bg)
+    (custom-comment           :foreground fg   :background region)
+    (custom-comment-tag       :foreground grey)
+    (custom-group-subtitle    :foreground red)
+    (custom-group-tag         :foreground violet)
+    (custom-group-tag-1       :foreground blue)
+    (custom-invalid           :foreground red    :background (sinolor-themes--blend red bg 0.2))
+    (custom-modified          :foreground blue   :background (sinolor-themes--blend blue bg 0.2))
+    (custom-saved             :foreground green  :background (sinolor-themes--blend green bg 0.2) :bold 'inherit)
+    (custom-set               :foreground yellow :background bg)
+    (custom-state             :foreground green  :background (sinolor-themes--blend green bg 0.2))
+    (custom-themed            :foreground yellow :background bg)
+    (custom-variable-button   :foreground green  :underline t)
+    (custom-variable-obsolete :foreground grey   :background bg)
+    (custom-variable-tag      :foreground magenta)
+    (custom-visibility        :foreground blue)
+;;;; cider
     ;; (cider-stacktrace-error-class-face :inherit 'font-lock-warning-face)
     ;; (cider-stacktrace-error-message-face :inherit 'font-lock-doc-face)
     ;; (cider-stacktrace-filter-active-face :inherit 'button :underline t :weight 'normal)
@@ -294,11 +292,11 @@
     (cider-test-success-face
      (&light :foreground base0 :background green)
      (&dark  :foreground green :background base0))
-    ;;;; diff-hl
+;;;; diff-hl
     (diff-hl-change :foreground vc-modified :background vc-modified)
     (diff-hl-delete :foreground vc-deleted :background vc-deleted)
     (diff-hl-insert :foreground vc-added :background vc-added)
-    ;;;; diff-mode <built-in>
+;;;; diff-mode <built-in>
     (diff-added   :inherit 'hl-line :foreground green)
     (diff-changed :foreground violet)
     (diff-context
@@ -311,7 +309,7 @@
     (diff-refine-added   :inherit 'diff-added :inverse-video t)
     (diff-refine-changed :inherit 'diff-changed :inverse-video t)
     (diff-refine-removed :inherit 'diff-removed :inverse-video t)
-    ;;;; dired <built-in>
+;;;; dired <built-in>
     (dired-directory  :foreground builtin)
     (dired-ignored    :foreground comments)
     (dired-flagged    :foreground red)
@@ -321,38 +319,7 @@
     (dired-perm-write :foreground fg :underline t)
     (dired-symlink    :foreground cyan :weight 'bold)
     (dired-warning    :foreground warning)
-    ;;;; diredfl
-    (diredfl-autofile-name          :foreground base4)
-    (diredfl-compressed-file-name   :foreground yellow)
-    (diredfl-compressed-file-suffix :foreground (sinolor-themes--blend orange bg 0.6))
-    (diredfl-date-time              :foreground cyan :weight 'light)
-    (diredfl-deletion               :foreground red :background (sinolor-themes--blend red bg 0.2) :weight 'bold)
-    (diredfl-deletion-file-name     :foreground red :background (sinolor-themes--blend red bg 0.2))
-    (diredfl-dir-heading            :foreground blue :weight 'bold)
-    (diredfl-dir-name               :foreground blue)
-    (diredfl-dir-priv               :foreground blue)
-    (diredfl-exec-priv              :foreground green)
-    (diredfl-executable-tag         :foreground green)
-    (diredfl-file-name              :foreground fg)
-    (diredfl-file-suffix            :foreground (sinolor-themes--blend fg bg 0.6))
-    (diredfl-flag-mark              :foreground yellow :background (sinolor-themes--blend yellow bg 0.2) :weight 'bold)
-    (diredfl-flag-mark-line         :background (sinolor-themes--blend yellow bg 0.1))
-    (diredfl-ignored-file-name      :foreground comments)
-    (diredfl-link-priv              :foreground violet)
-    (diredfl-no-priv                :inherit 'shadow)
-    (diredfl-number                 :foreground orange)
-    (diredfl-other-priv             :foreground magenta)
-    (diredfl-rare-priv              :foreground fg)
-    (diredfl-read-priv              :foreground yellow)
-    (diredfl-symlink                :foreground violet)
-    (diredfl-tagged-autofile-name   :foreground base5)
-    (diredfl-write-priv             :foreground red)
-    ;;;; disk-usage
-    (disk-usage-children :foreground yellow)
-    (disk-usage-percent  :foreground violet)
-    (disk-usage-size     :foreground blue)
-    (disk-usage-symlink  :foreground cyan :weight 'bold)
-    ;;;; ediff <built-in>
+;;;; ediff <built-in>
     (ediff-fine-diff-A    :background (sinolor-themes--blend selection bg 0.7) :weight 'bold :extend t)
     (ediff-fine-diff-B    :inherit 'ediff-fine-diff-A)
     (ediff-fine-diff-C    :inherit 'ediff-fine-diff-A)
@@ -365,7 +332,7 @@
     (ediff-odd-diff-A     :inherit 'ediff-even-diff-A)
     (ediff-odd-diff-B     :inherit 'ediff-odd-diff-A)
     (ediff-odd-diff-C     :inherit 'ediff-odd-diff-A)
-    ;;;; elfeed
+;;;; elfeed
     (elfeed-log-debug-level-face :foreground comments)
     (elfeed-log-error-level-face :inherit 'error)
     (elfeed-log-info-level-face  :inherit 'success)
@@ -377,26 +344,9 @@
     (elfeed-search-filter-face   :foreground violet)
     (elfeed-search-unread-count-face :foreground yellow)
     (elfeed-search-unread-title-face :foreground fg :weight 'bold)
-    ;;;; elixir-mode <modes:elixir-mode>
-    (elixir-atom-face (&light :foreground dark-blue)
-                      (&dark  :foreground cyan))
-    (elixir-attribute-face :foreground violet)
-    ;;;; elscreen
-    (elscreen-tab-background-face     :background bg)
-    (elscreen-tab-control-face        :background bg     :foreground bg)
-    (elscreen-tab-current-screen-face :background bg-alt :foreground fg)
-    (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
-    ;;;; embark
+;;;; embark
     ((embark-target &inherit vertico-current))
-    ;;;; enh-ruby-mode <modes:enh-ruby-mode>
-    (enh-ruby-heredoc-delimiter-face :inherit 'font-lock-string-face)
-    (enh-ruby-op-face                :foreground operators)
-    (enh-ruby-regexp-delimiter-face  :inherit 'enh-ruby-regexp-face)
-    (enh-ruby-regexp-face            :foreground constants)
-    (enh-ruby-string-delimiter-face  :inherit 'font-lock-string-face)
-    (erm-syn-errline                 :underline `(:style wave :color ,error))
-    (erm-syn-warnline                :underline `(:style wave :color ,warning))
-    ;;;; erc <built-in>
+;;;; erc <built-in>
     (erc-button :weight 'bold :underline t)
     (erc-default-face :inherit 'default)
     (erc-action-face  :weight 'bold)
@@ -414,7 +364,7 @@
     (erc-my-nick-prefix-face :inherit 'erc-my-nick-face)
     (erc-notice-face :foreground comments)
     (erc-prompt-face :foreground highlight :weight 'bold)
-    ;;;; eshell <built-in>
+;;;; eshell <built-in>
     (eshell-prompt        :foreground highlight :weight 'bold)
     (eshell-ls-archive    :foreground magenta)
     (eshell-ls-backup     :foreground yellow)
@@ -427,13 +377,13 @@
     (eshell-ls-special    :foreground violet)
     (eshell-ls-symlink    :foreground cyan)
     (eshell-ls-unreadable :foreground base5)
-    ;;;; evil
+;;;; evil
     (evil-ex-info                   :foreground error :slant 'italic)
     (evil-ex-search                 :background highlight :foreground base0 :weight 'bold)
     (evil-ex-substitute-matches     :background base0     :foreground red   :weight 'bold :strike-through t)
     (evil-ex-substitute-replacement :background base0     :foreground green :weight 'bold)
     (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
-    ;;;; eww <built-in>
+;;;; eww <built-in>
     (eww-form-checkbox :inherit 'eww-form-file)
     (eww-form-file   :inherit 'eww-form-submit :background bg-alt)
     (eww-form-select :inherit 'eww-form-submit :background bg-alt)
@@ -442,42 +392,29 @@
     (eww-form-textarea :inherit 'eww-form-text)
     (eww-invalid-certificate :foreground error)
     (eww-valid-certificate :foreground highlight)
-    ;;;; flx-ido
+;;;; flx-ido
     (flx-highlight-face :weight 'bold :foreground yellow)
-    ;;;; flycheck
+;;;; flycheck
     (flycheck-error          :underline `(:style wave :color ,red))
     (flycheck-warning        :underline `(:style wave :color ,yellow))
     (flycheck-info           :underline `(:style wave :color ,green))
     (flycheck-fringe-error   :inherit 'fringe :foreground error)
     (flycheck-fringe-warning :inherit 'fringe :foreground warning)
     (flycheck-fringe-info    :inherit 'fringe :foreground success)
-    ;;;; flycheck-posframe
+;;;; flycheck-posframe
     (flycheck-posframe-face            :inherit 'default)
     (flycheck-posframe-background-face :background bg-alt)
     (flycheck-posframe-error-face      :inherit 'flycheck-posframe-face :foreground error)
     (flycheck-posframe-info-face       :inherit 'flycheck-posframe-face :foreground fg)
     (flycheck-posframe-warning-face    :inherit 'flycheck-posframe-face :foreground warning)
-    ;;;; flymake
+;;;; flymake
     (flymake-error   :underline `(:style wave :color ,red))
     (flymake-note    :underline `(:style wave :color ,green))
     (flymake-warning :underline `(:style wave :color ,orange))
-    ;;;; flyspell <built-in>
+;;;; flyspell <built-in>
     (flyspell-incorrect :underline `(:style wave :color ,error))
     (flyspell-duplicate :underline `(:style wave :color ,warning))
-    ;;;; git-commit
-    (git-commit-summary               :foreground strings)
-    (git-commit-overlong-summary      :inherit 'error          :background base0 :slant 'italic :weight 'bold)
-    (git-commit-nonempty-second-line  :inherit 'git-commit-overlong-summary)
-    (git-commit-keyword               :foreground cyan         :slant 'italic)
-    (git-commit-pseudo-header         :foreground doc-comments :slant 'italic)
-    (git-commit-known-pseudo-header   :foreground doc-comments :weight 'bold     :slant 'italic)
-    (git-commit-comment-branch-local  :foreground magenta)
-    (git-commit-comment-branch-remote :foreground green)
-    (git-commit-comment-detached      :foreground orange)
-    (git-commit-comment-heading       :foreground keywords)
-    (git-commit-comment-file          :foreground violet)
-    (git-commit-comment-action)
-    ;;;; gnus (built-in)
+;;;; gnus (built-in)
     (gnus-group-mail-1           :weight 'bold :foreground fg)
     (gnus-group-mail-2           :inherit 'gnus-group-mail-1)
     (gnus-group-mail-3           :inherit 'gnus-group-mail-1)
@@ -532,45 +469,9 @@
     (gnus-cite-11                :foreground yellow)
     (gnus-signature              :foreground yellow)
     (gnus-x-face                 :background base5 :foreground fg)
-    ;;;; helm
-    (helm-selection
-     (&all :inherit 'bold :background selection :extend t)
-     (&dark  :distant-foreground highlight)
-     (&light :distant-foreground base0))
-    (helm-match :inherit 'bold :foreground highlight :distant-foreground base8)
-    (helm-ff-directory         :foreground variables)
-    (helm-ff-dotted-directory  :foreground grey)
-    (helm-ff-executable        :foreground base8 :inherit 'italic)
-    (helm-ff-file              :foreground fg)
-    (helm-ff-prefix            :foreground keywords)
-    (helm-grep-file            :foreground methods)
-    (helm-grep-finish          :foreground green)
-    (helm-grep-lineno          :foreground base5)
-    (helm-grep-match           :foreground highlight :distant-foreground red)
-    (helm-moccur-buffer        :inherit 'link)
-    (helm-source-header        :background base2 :foreground keywords :weight 'bold)
-    (helm-visible-mark         :inherit '(bold highlight))
-    ;;;; helm-rg
-    (helm-rg-active-arg-face        :foreground green  :weight 'normal)
-    (helm-rg-base-rg-cmd-face       :foreground grey   :weight 'normal)
-    (helm-rg-colon-separator-ripgrep-output-face :foreground base8)
-    (helm-rg-directory-cmd-face     :foreground (sinolor-themes--darken yellow 0.25) :background base0 :weight 'normal)
-    (helm-rg-directory-header-face  :foreground base8 :background base0 :weight 'bold)
-    (helm-rg-error-message          :foreground red)
-    (helm-rg-extra-arg-face         :foreground yellow :weight 'normal)
-    (helm-rg-file-match-face        :foreground cyan :underline t)
-    (helm-rg-inactive-arg-face      :foreground grey   :weight 'normal)
-    (helm-rg-line-number-match-face :foreground orange :underline t)
-    (helm-rg-match-text-face        :foreground base8 :background violet)
-    (helm-rg-title-face             :foreground violet :background base0 :weight 'bold)
-    ;;;; helm-swoop
-    (helm-swoop-target-line-block-face :foreground yellow)
-    (helm-swoop-target-line-face       :foreground highlight :inverse-video t)
-    (helm-swoop-target-number-face     :foreground base5)
-    (helm-swoop-target-word-face       :foreground green :inherit 'bold)
-    ;;;; helpful
+;;;; helpful
     (helpful-heading :weight 'bold :height 1.2)
-    ;;;; hi-lock <built-in>
+;;;; hi-lock <built-in>
     (hi-yellow   :background yellow)
     (hi-pink     :background magenta)
     (hi-red-b    :foreground red :weight 'bold)
@@ -580,48 +481,20 @@
     (hi-blue-b   :foreground blue :weight 'bold)
     (hi-black-b  :weight 'bold)
     (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
-    ;;;; highlight-indentation-mode
-    (highlight-indentation-face                :inherit 'hl-line)
-    (highlight-indentation-current-column-face :background base1)
-    (highlight-indentation-guides-odd-face     :inherit 'highlight-indentation-face)
-    (highlight-indentation-guides-even-face    :inherit 'highlight-indentation-face)
-    ;;;; highlight-numbers-mode
-    (highlight-numbers-number :inherit 'bold :foreground numbers)
-    ;;;; highlight-quoted-mode
-    (highlight-quoted-symbol :foreground type)
-    (highlight-quoted-quote  :foreground operators)
-    ;;;; highlight-symbol
-    (highlight-symbol-face
-     (&dark  :background (sinolor-themes--lighten region 0.1) :distant-foreground fg-alt)
-     (&light :background (sinolor-themes--darken region 0.1) :distant-foreground fg-alt))
-    ;;;; highlight-thing
-    (highlight-thing
-     (&dark  :background (sinolor-themes--lighten region 0.1) :distant-foreground fg-alt)
-     (&light :background (sinolor-themes--darken region 0.1) :distant-foreground fg-alt))
-    ;;;; hl-fill-column-face
-    (hl-fill-column-face :inherit '(hl-line shadow))
-    ;;;; hl-line (built-in)
+;;;; hl-line (built-in)
     (hl-line :background bg-alt :extend t)
-    ;;;; hl-todo
+;;;; hl-todo
     (hl-todo :foreground red :weight 'bold)
-    ;;;; hlinum
-    (linum-highlight-face :foreground fg :distant-foreground 'unspecified :weight 'normal)
-    ;;;; hydra
-    (hydra-face-red      :foreground red     :weight 'bold)
-    (hydra-face-blue     :foreground blue    :weight 'bold)
-    (hydra-face-amaranth :foreground magenta :weight 'bold)
-    (hydra-face-pink     :foreground violet  :weight 'bold)
-    (hydra-face-teal     :foreground teal    :weight 'bold)
-    ;;;; ido <built-in>
+;;;; ido <built-in>
     (ido-first-match :foreground orange)
     (ido-indicator   :foreground red :background bg)
     (ido-only-match  :foreground green)
     (ido-subdir      :foreground violet)
     (ido-virtual     :foreground comments)
-    ;;;; iedit
+;;;; iedit
     (iedit-occurrence :foreground magenta :weight 'bold :inverse-video t)
     (iedit-read-only-occurrence :inherit 'region)
-    ;;;; imenu-list
+;;;; imenu-list
     ;; (imenu-list-entry-face)
     (imenu-list-entry-face-0 :foreground highlight)
     (imenu-list-entry-subalist-face-0 :inherit 'imenu-list-entry-face-0 :weight 'bold)
@@ -629,67 +502,12 @@
     (imenu-list-entry-subalist-face-1 :inherit 'imenu-list-entry-face-1 :weight 'bold)
     (imenu-list-entry-face-2 :foreground yellow)
     (imenu-list-entry-subalist-face-2 :inherit 'imenu-list-entry-face-2 :weight 'bold)
-    ;;;; indent-guide
-    ((indent-guide-face &inherit highlight-indentation-face))
-    ;;;; isearch <built-in>
+;;;; isearch <built-in>
     (isearch :inherit 'lazy-highlight :weight 'bold)
     (isearch-fail :background error :foreground base0 :weight 'bold)
-    ;;;; ivy
-    (ivy-current-match :background region :distant-foreground 'unspecified :extend t)
-    (ivy-minibuffer-match-face-1
-     :background 'unspecified
-     :foreground (sinolor-themes--lighten grey 0.14)
-     :weight 'light)
-    (ivy-minibuffer-match-face-2
-     :inherit 'ivy-minibuffer-match-face-1
-     :foreground magenta :background base1 :weight 'semi-bold)
-    (ivy-minibuffer-match-face-3
-     :inherit 'ivy-minibuffer-match-face-2
-     :foreground green :weight 'semi-bold)
-    (ivy-minibuffer-match-face-4
-     :inherit 'ivy-minibuffer-match-face-2
-     :foreground yellow :weight 'semi-bold)
-    (ivy-minibuffer-match-highlight :foreground violet)
-    (ivy-highlight-face :foreground violet)
-    (ivy-confirm-face :foreground success)
-    (ivy-match-required-face :foreground error)
-    (ivy-virtual :inherit 'italic :foreground doc-comments)
-    (ivy-modified-buffer :inherit 'bold :foreground warning)
-    ;;;; ivy-posframe
-    (ivy-posframe :background (sinolor-themes--darken bg-alt 0.2))
-    (ivy-posframe-border :inherit 'internal-border)
-    ;;;; js2-mode <modes:js2-mode,js2-jsx-mode>
-    (js2-function-param    :foreground variables)
-    (js2-function-call     :foreground functions)
-    (js2-object-property   :foreground violet)
-    (js2-jsdoc-tag         :foreground doc-comments)
-    (js2-external-variable :foreground operators)
-    ;;;; linum <built-in>
+;;;; linum <built-in>
     ((linum &inherit line-number))
-    ;;;; linum-relative
-    ((linum-relative-current-face &inherit line-number-current-line))
-    ;;;; lsp-mode
-    (lsp-face-highlight-textual
-     (&all   :weight 'bold)
-     (&light :background base3 :foreground base0 :distant-foreground base8)
-     (&dark  :background (sinolor-themes--blend highlight bg 0.3) :foreground base8 :distant-foreground base0))
-    (lsp-face-highlight-read    :inherit 'lsp-face-highlight-textual)
-    (lsp-face-highlight-write   :inherit 'lsp-face-highlight-textual)
-    (lsp-headerline-breadcrumb-separator-face :inherit 'shadow)
-    ;;;; lsp-ui
-    (lsp-ui-doc-background :inherit 'tooltip)
-    (lsp-ui-peek-filename :inherit 'mode-line-buffer-id)
-    (lsp-ui-peek-header :foreground fg :background (sinolor-themes--lighten bg 0.1) :bold bold)
-    (lsp-ui-peek-selection :foreground bg :background blue :bold bold)
-    (lsp-ui-peek-list :background (sinolor-themes--darken bg 0.1))
-    (lsp-ui-peek-peek :background (sinolor-themes--darken bg 0.1))
-    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
-    (lsp-ui-peek-line-number :foreground success)
-    (lsp-ui-sideline-code-action :foreground (sinolor-themes--blend highlight bg 0.85))
-    (lsp-ui-sideline-current-symbol :inherit 'highlight)
-    (lsp-ui-sideline-symbol-info :foreground (sinolor-themes--blend comments bg 0.85)
-                                 :background bg-alt :extend t)
-    ;;;; magit
+;;;; magit
     (magit-bisect-bad        :foreground red)
     (magit-bisect-good       :foreground green)
     (magit-bisect-skip       :foreground orange)
@@ -751,12 +569,12 @@
     (magit-signature-revoked :foreground magenta)
     (magit-signature-untrusted :foreground yellow)
     (magit-tag :foreground yellow)
-    ;;;; make-mode <built-in> <modes:makefile-mode, makefile-automake-mode, makefile-makepp-mode, makefile-gmake-mode, makefile-imake-mode, makefile-bsdmake-mode>
+;;;; make-mode <built-in> <modes:makefile-mode, makefile-automake-mode, makefile-makepp-mode, makefile-gmake-mode, makefile-imake-mode, makefile-bsdmake-mode>
     (makefile-targets :foreground blue)
-    ;;;; man <built-in> <mode:Man-mode>
+;;;; man <built-in> <mode:Man-mode>
     (Man-overstrike :inherit 'bold :foreground operators)
     (Man-underline :inherit 'underline :foreground keywords)
-    ;;;; marginalia
+;;;; marginalia
     (marginalia-documentation   :inherit 'font-lock-doc-face)
     (marginalia-file-priv-dir   :foreground blue)
     (marginalia-file-priv-exec  :foreground green)
@@ -768,7 +586,7 @@
     (marginalia-number          :foreground numbers)
     (marginalia-size            :foreground violet)
     (marginalia-lighter         :foreground violet)
-    ;;;; markdown-mode <modes:markdown-mode,gfm-mode>
+;;;; markdown-mode <modes:markdown-mode,gfm-mode>
     (markdown-header-face           :inherit 'bold :foreground highlight)
     (markdown-header-delimiter-face :inherit 'markdown-header-face)
     (markdown-metadata-key-face     :foreground red)
@@ -788,7 +606,7 @@
     (markdown-html-entity-face        :inherit 'font-lock-variable-name-face)
     (markdown-html-tag-delimiter-face :inherit 'markdown-markup-face)
     (markdown-html-tag-name-face      :inherit 'font-lock-keyword-face)
-    ;;;; message <built-in>
+;;;; message <built-in>
     (message-header-name       :foreground green)
     (message-header-subject    :foreground highlight :weight 'bold)
     (message-header-to         :foreground highlight :weight 'bold)
@@ -803,27 +621,11 @@
     ((message-cited-text-2 &inherit gnus-cite-3))
     ((message-cited-text-3 &inherit gnus-cite-4))
     ((message-cited-text-4 &inherit gnus-cite-5))
-    ;;;; multiple cursors
+;;;; multiple cursors
     (mc/cursor-face :inherit 'cursor)
-    ;;;; nav-flash
+;;;; nav-flash
     (nav-flash-face :background selection :foreground base8 :weight 'bold)
-    ;;;; neotree
-    (neo-root-dir-face   :foreground strings :background bg :box `(:line-width 4 :color ,bg))
-    (neo-file-link-face  :foreground fg)
-    (neo-dir-link-face   :foreground highlight)
-    (neo-expand-btn-face :foreground highlight)
-    (neo-vc-edited-face  :foreground yellow)
-    (neo-vc-added-face   :foreground green)
-    (neo-vc-removed-face :foreground red :strike-through t)
-    (neo-vc-conflict-face :foreground magenta :weight 'bold)
-    (neo-vc-ignored-face  :foreground comments)
-    ;;;; nlinum
-    ((nlinum-current-line &inherit line-number-current-line))
-    ;;;; nlinum-hl
-    ((nlinum-hl-face &inherit line-number-current-line))
-    ;;;; nlinum-relative
-    ((nlinum-relative-current-face &inherit line-number-current-line))
-    ;;;; notmuch
+;;;; notmuch
     ;; (notmuch-crypto-decryption               :foreground blue-l)
     ;; (notmuch-crypto-part-header              :foreground yellow-l)
     ;; (notmuch-crypto-signature-bad            :foreground red-l)
@@ -858,12 +660,12 @@
     (notmuch-tree-no-match-tree-face         :foreground yellow)
     (notmuch-wash-cited-text                 :foreground base4)
     (notmuch-wash-toggle-button :foreground fg)
-    ;;;; orderless
+;;;; orderless
     (orderless-match-face-0 :weight 'bold :foreground (sinolor-themes--blend blue    fg 0.6) :background (sinolor-themes--blend blue    bg 0.1))
     (orderless-match-face-1 :weight 'bold :foreground (sinolor-themes--blend magenta fg 0.6) :background (sinolor-themes--blend magenta bg 0.1))
     (orderless-match-face-2 :weight 'bold :foreground (sinolor-themes--blend green   fg 0.6) :background (sinolor-themes--blend green   bg 0.1))
     (orderless-match-face-3 :weight 'bold :foreground (sinolor-themes--blend yellow  fg 0.6) :background (sinolor-themes--blend yellow  bg 0.1))
-    ;;;; org <built-in> <modes:org-mode>
+;;;; org <built-in> <modes:org-mode>
     (org-archived                 :foreground doc-comments)
     (org-block                    :background base3    :extend t)
     (org-block-background         :background base3    :extend t)
@@ -909,7 +711,7 @@
     ;;(org-level-6)
     ;;(org-level-7)
     ;;(org-level-8)
-    ;;;; org-agenda <built-in>
+;;;; org-agenda <built-in>
     (org-agenda-done :inherit 'org-done)
     (org-agenda-dimmed-todo-face :foreground comments)
     (org-agenda-date          :foreground violet :weight 'ultra-bold)
@@ -924,7 +726,7 @@
     (org-scheduled-previously :foreground base8)
     (org-time-grid            :foreground comments)
     (org-sexp-date            :foreground fg)
-    ;;;; org-habit
+;;;; org-habit
     (org-habit-clear-face          :weight 'bold :background base4)
     (org-habit-clear-future-face   :weight 'bold :background base3)
     (org-habit-ready-face          :weight 'bold :background (sinolor-themes--blend blue bg-alt 0.5))
@@ -933,20 +735,20 @@
     (org-habit-alert-future-face   :weight 'bold :background (sinolor-themes--blend yellow bg-alt 0.3))
     (org-habit-overdue-face        :weight 'bold :background (sinolor-themes--blend red bg-alt 0.5))
     (org-habit-overdue-future-face :weight 'bold :background (sinolor-themes--blend red bg-alt 0.3))
-    ;;;; org-journal <modes:org-journal-mode>
+;;;; org-journal <modes:org-journal-mode>
     (org-journal-highlight :foreground highlight)
     (org-journal-calendar-entry-face :foreground magenta :slant 'italic)
     (org-journal-calendar-scheduled-face :foreground red :slant 'italic)
-    ;;;; org-pomodoro
+;;;; org-pomodoro
     (org-pomodoro-mode-line :foreground red)
     (org-pomodoro-mode-line-overtime :foreground warning :weight 'bold)
-    ;;;; org-ref
+;;;; org-ref
     (org-ref-acronym-face    :foreground violet)
     (org-ref-cite-face       :foreground yellow :weight 'light :underline t)
     (org-ref-glossary-face   :foreground magenta)
     (org-ref-label-face      :foreground blue)
     (org-ref-ref-face        :inherit 'link :foreground teal)
-    ;;;; outline <built-in>
+;;;; outline <built-in>
     ;; NOTE org-mode's org-level-N faces inherit these outline-N faces.
     (outline-1 :foreground blue                        :weight 'bold :extend t)
     (outline-2 :foreground magenta                     :weight 'bold :extend t)
@@ -956,13 +758,13 @@
     (outline-6 :foreground (sinolor-themes--lighten blue 0.5)     :weight 'bold :extend t)
     (outline-7 :foreground (sinolor-themes--lighten magenta 0.5)  :weight 'bold :extend t)
     (outline-8 :foreground (sinolor-themes--lighten blue 0.8)     :weight 'bold :extend t)
-    ;;;; pkgbuild-mode <modes:pkgbuild-mode>
+;;;; pkgbuild-mode <modes:pkgbuild-mode>
     (pkgbuild-error-face :underline `(:style wave :color ,red))
-    ;;;; popup
+;;;; popup
     (popup-face           :inherit 'tooltip)
     (popup-tip-face       :inherit 'popup-face :foreground violet :background base0)
     (popup-selection-face :background selection)
-    ;;;; rainbow-delimiters
+;;;; rainbow-delimiters
     (rainbow-delimiters-depth-1-face :foreground blue)
     (rainbow-delimiters-depth-2-face :foreground magenta)
     (rainbow-delimiters-depth-3-face :foreground green)
@@ -976,12 +778,12 @@
     (rainbow-delimiters-base-face :inherit 'default)
     (rainbow-delimiters-unmatched-face :foreground red :weight 'bold :inverse-video t)
     (rainbow-delimiters-mismatched-face :inherit 'rainbow-delimiters-unmatched-face)
-    ;;;; re-builder <built-in>
+;;;; re-builder <built-in>
     (reb-match-0 :foreground orange  :inverse-video t)
     (reb-match-1 :foreground magenta :inverse-video t)
     (reb-match-2 :foreground green   :inverse-video t)
     (reb-match-3 :foreground yellow  :inverse-video t)
-    ;;;; rpm-spec-mode <modes:rpm-spec-mode>
+;;;; rpm-spec-mode <modes:rpm-spec-mode>
     (rpm-spec-macro-face        :foreground yellow)
     (rpm-spec-var-face          :foreground violet)
     (rpm-spec-tag-face          :foreground blue)
@@ -991,7 +793,7 @@
     (rpm-spec-doc-face          :foreground orange)
     (rpm-spec-ghost-face        :foreground comments)
     (rpm-spec-section-face      :foreground magenta)
-    ;;;; rst <built-in> <modes:rst-mode>
+;;;; rst <built-in> <modes:rst-mode>
     (rst-block :inherit 'font-lock-constant-face)
     (rst-level-1 :inherit 'rst-adornment :weight 'bold)
     (rst-level-2 :inherit 'rst-adornment :weight 'bold)
@@ -999,43 +801,28 @@
     (rst-level-4 :inherit 'rst-adornment :weight 'bold)
     (rst-level-5 :inherit 'rst-adornment :weight 'bold)
     (rst-level-6 :inherit 'rst-adornment :weight 'bold)
-    ;;;; selectrum
-    (selectrum-current-candidate :background region :extend t)
-    (selectrum-primary-highlight
-     :background 'unspecified
-     :foreground (sinolor-themes--lighten grey 0.14)
-     :weight 'light)
-    (selectrum-secondary-highlight
-     :inherit 'selectrum-primary-highlight
-     :foreground magenta :background base1 :weight 'semi-bold)
-    ;;;; sh-script <built-in> <modes:sh-mode,shell-script-mode>
+;;;; sh-script <built-in> <modes:sh-mode,shell-script-mode>
     (sh-heredoc :inherit 'font-lock-string-face :weight 'normal)
     (sh-quoted-exec :inherit 'font-lock-preprocessor-face)
-    ;;;; show-paren <built-in>
+;;;; show-paren <built-in>
     ((show-paren-match &inherit paren-face-match))
     ((show-paren-mismatch &inherit paren-face-mismatch))
-    ;;;; smartparens
+;;;; smartparens
     (sp-pair-overlay-face :background region)
     ((sp-show-pair-match-face    &inherit show-paren-match))
     ((sp-show-pair-mismatch-face &inherit show-paren-mismatch))
-    ;;;; smerge-tool
+;;;; smerge-tool
     (smerge-lower   :background (sinolor-themes--blend green bg 0.2))
     (smerge-upper   :background (sinolor-themes--blend red base3 0.2))
     (smerge-base    :background (sinolor-themes--blend blue bg 0.2))
     (smerge-markers :background comments :foreground bg :distant-foreground fg :weight 'bold)
     (smerge-refined-added   :inherit 'diff-added :inverse-video t)
     (smerge-refined-removed :inherit 'diff-removed :inverse-video t)
-    ;;;; stripe-buffer
+;;;; stripe-buffer
     (stripe-highlight
      (&light :background base5)
      (&dark  :background base3))
-    ;;;; swiper
-    (swiper-line-face    :background blue    :foreground base0)
-    (swiper-match-face-1 :background base0   :foreground base5)
-    (swiper-match-face-2 :background orange  :foreground base0 :weight 'bold)
-    (swiper-match-face-3 :background magenta :foreground base0 :weight 'bold)
-    (swiper-match-face-4 :background green   :foreground base0 :weight 'bold)
-    ;;;; symbol-overlay
+;;;; symbol-overlay
     (symbol-overlay-default-face
      (&dark  :background (sinolor-themes--lighten region 0.1) :distant-foreground fg-alt)
      (&light :background (sinolor-themes--darken region 0.1)  :distant-foreground fg-alt))
@@ -1047,7 +834,7 @@
     (symbol-overlay-face-6 :background (sinolor-themes--blend magenta bg 0.3) :distant-foreground fg-alt)
     (symbol-overlay-face-7 :background (sinolor-themes--blend green bg 0.4)   :distant-foreground fg-alt)
     (symbol-overlay-face-8 :background (sinolor-themes--blend cyan bg 0.2)    :distant-foreground fg-alt)
-    ;;;; term <built-in>
+;;;; term <built-in>
     (term               :foreground fg)
     (term-bold          :weight 'bold)
     (term-color-black   :background base0   :foreground base0)
@@ -1058,29 +845,16 @@
     (term-color-magenta :background magenta :foreground magenta)
     (term-color-cyan    :background cyan    :foreground cyan)
     (term-color-white   :background base8   :foreground base8)
-    ;;;; tldr
-    (tldr-command-itself   :foreground bg :background green :weight 'semi-bold)
-    (tldr-title            :foreground yellow :bold t :height 1.4)
-    (tldr-description      :foreground fg :weight 'semi-bold)
-    (tldr-introduction     :foreground (sinolor-themes--blend blue bg 0.8) :weight 'semi-bold)
-    (tldr-code-block       :foreground green :background region :weight 'semi-bold)
-    (tldr-command-argument :foreground fg :background region )
-    ;;;; undo-tree
-    (undo-tree-visualizer-default-face       :foreground base5)
-    (undo-tree-visualizer-current-face       :foreground green :weight 'bold)
-    (undo-tree-visualizer-unmodified-face    :foreground base5)
-    (undo-tree-visualizer-active-branch-face :foreground blue)
-    (undo-tree-visualizer-register-face      :foreground yellow)
-    ;;;; vertico
+;;;; vertico
     (vertico-current :background region :distant-foreground 'unspecified :extend t)
-    ;;;; vertico-posframe
+;;;; vertico-posframe
     ;;(vertico-posframe :inherit 'default)
     (vertico-posframe-border :background grey)
     (vertico-posframe-border-2 :background red)
     (vertico-posframe-border-3 :background green)
     (vertico-posframe-border-4 :background blue)
     (vertico-posframe-border-fallback :background yellow)
-    ;;;; vterm
+;;;; vterm
     (vterm-color-black   :background (sinolor-themes--lighten base0 0.25)   :foreground base0)
     (vterm-color-red     :background (sinolor-themes--lighten red 0.25)     :foreground red)
     (vterm-color-green   :background (sinolor-themes--lighten green 0.25)   :foreground green)
@@ -1089,7 +863,7 @@
     (vterm-color-magenta :background (sinolor-themes--lighten magenta 0.25) :foreground magenta)
     (vterm-color-cyan    :background (sinolor-themes--lighten cyan 0.25)    :foreground cyan)
     (vterm-color-white   :background (sinolor-themes--lighten base8 0.25)   :foreground base8)
-    ;;;; web-mode <modes:web-mode>
+;;;; web-mode <modes:web-mode>
     (web-mode-block-control-face     :foreground builtin)
     (web-mode-block-delimiter-face   :foreground builtin)
     (web-mode-css-property-name-face :foreground type)
@@ -1106,20 +880,20 @@
     (web-mode-keyword-face           :foreground keywords)
     (web-mode-string-face            :foreground strings)
     (web-mode-type-face              :foreground type)
-    ;;;; wgrep <built-in>
+;;;; wgrep <built-in>
     (wgrep-face :weight 'bold :foreground green :background base5)
     (wgrep-delete-face :foreground base3 :background red)
     (wgrep-done-face   :foreground blue)
     (wgrep-file-face   :foreground comments)
     (wgrep-reject-face :foreground red :weight 'bold)
-    ;;;; which-func <built-in>
+;;;; which-func <built-in>
     (which-func :foreground blue)
     ;;;; which-key
     (which-key-key-face                   :foreground green)
     (which-key-group-description-face     :foreground violet)
     (which-key-command-description-face   :foreground blue)
     (which-key-local-map-description-face :foreground magenta)
-    ;;;; whitespace <built-in>
+;;;; whitespace <built-in>
     (whitespace-empty    :background base3)
     (whitespace-space    :foreground base4)
     (whitespace-newline  :foreground base4)
@@ -1131,33 +905,25 @@
      :background (if (default-value 'indent-tabs-mode) base3 'unspecified))
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :weight 'bold)
-    ;;;; widget
+;;;; widget
     (widget-button-pressed :foreground red)
     (widget-documentation  :foreground green)
     (widget-single-line-field :background base3 :distant-foreground bg)
     (widget-field :background base3 :distant-foreground bg
                   :box `(:line-width -1 :color ,grey) :extend t)
-    ;;;; window-divider
-    (window-divider :inherit 'vertical-border)
-    (window-divider-first-pixel :inherit 'window-divider)
-    (window-divider-last-pixel  :inherit 'window-divider)
-    ;;;; woman <built-in>
-    (woman-bold :inherit 'Man-overstrike)
+;;;; woman <built-in>
+    (woman-bold   :inherit 'Man-overstrike)
     (woman-italic :inherit 'Man-underline)
-    ;;;; workgroups2
-    (wg-current-workgroup-face :foreground base0 :background highlight)
-    (wg-other-workgroup-face   :foreground base5)
-    (wg-divider-face           :foreground grey)
-    (wg-brace-face             :foreground highlight)
-    ;;;; yasnippet
+;;;; yasnippet
     (yas-field-highlight-face :inherit 'match))
   "Base faces.")
 
 ;;;; Package variables.
 (defvar sinolor-themes--base-vars
-  '(;;;; pdf-tools
+  '(
+;;;; pdf-tools
     (pdf-view-midnight-colors `(cons ,(sinolor-themes--color 'fg) ,(sinolor-themes--color 'bg)))
-    ;;;; vc <built-in>
+;;;; vc <built-in>
     (vc-annotate-color-map
      `(list (cons 20  ,(sinolor-themes--color 'green))
             (cons 40  ,(sinolor-themes--blend 'yellow 'green (/ 1.0 3)))

@@ -1,4 +1,4 @@
-;;; sinolor-black-theme.el --- Black theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; sinolor-black-theme.el --- Black theme -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -47,163 +47,151 @@ Can be an integer to determine the exact padding."
   :group 'sinolor-black-theme
   :type '(choice integer boolean))
 
-(def-sinolor-theme
- sinolor-black
- "A derived dark theme from `sinolor-elysia'."
+(def-sinolor-theme sinolor-black
+  "A derived dark theme from `sinolor-elysia'."
 
- ;; name        default   256       16
- ((bg         '("#000000" "#3a3a3a" "black"        ))
-  (bg-alt     '("#2d2e36" "#7f7f7f" "brightblack"  ))
-  (base0      '("#1B2229" "#5c5c5c" "black"        ))
-  (base1      '("#ef632b" "#d75f00" "brightyellow" ))
-  (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-  (base3      '("#23272e" "#262626" "brightblack"  ))
-  (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
-  (base5      '("#5B6268" "#525252" "brightblack"  ))
-  (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
-  (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-  (base8      '("#eef7f2" "#dfdfdf" "white"        ))
-  (fg         '("#617172" "#bfbfbf" "brightwhite"  ))
-  (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
+  ;; name        default   256       16
+  ((bg         '("#000000" "#3a3a3a" "black"        ))
+   (bg-alt     '("#2d2e36" "#7f7f7f" "brightblack"  ))
+   (base0      '("#1B2229" "#5c5c5c" "black"        ))
+   (base1      '("#ef632b" "#d75f00" "brightyellow" ))
+   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
+   (base3      '("#23272e" "#262626" "brightblack"  ))
+   (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
+   (base5      '("#5B6268" "#525252" "brightblack"  ))
+   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
+   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
+   (base8      '("#eef7f2" "#dfdfdf" "white"        ))
+   (fg         '("#617172" "#bfbfbf" "brightwhite"  ))
+   (fg-alt     '("#1772b4" "#2d2d2d" "white"        ))
 
-  (grey       '("#b7ae8f" "#b2b2b2" "brightblack"   ))
-  (red        '("#862617" "#ff6655" "red"           ))
-  (orange     '("#fa7e23" "#dd8844" "brightred"     ))
-  (green      '("#20894d" "#00ff00" "brightgreen"   ))
-  (teal       '("#12a182" "#00ff00" "brightblue"    ))
-  (yellow     '("#806332" "#ffff00" "yellow"        ))
-  (blue       '("#51c4d3" "#00afff" "brightblue"    ))
-  (dark-blue  '("#21373d" "#000087" "blue"          ))
-  (magenta    '("#8b2671" "#870087" "brightmagenta" ))
-  (violet     '("#5d3131" "#af87ff" "magenta"       ))
-  (cyan       '("#134857" "#00ffff" "brightcyan"    ))
-  (dark-cyan  '("#132c33" "#00d7ff" "cyan"          ))
+   (grey       '("#b7ae8f" "#b2b2b2" "brightblack"   ))
+   (red        '("#862617" "#ff6655" "red"           ))
+   (orange     '("#fa7e23" "#dd8844" "brightred"     ))
+   (green      '("#20894d" "#00ff00" "brightgreen"   ))
+   (teal       '("#12a182" "#00ff00" "brightblue"    ))
+   (yellow     '("#806332" "#ffff00" "yellow"        ))
+   (blue       '("#51c4d3" "#00afff" "brightblue"    ))
+   (dark-blue  '("#21373d" "#000087" "blue"          ))
+   (magenta    '("#8b2671" "#870087" "brightmagenta" ))
+   (violet     '("#5d3131" "#af87ff" "magenta"       ))
+   (cyan       '("#134857" "#00ffff" "brightcyan"    ))
+   (dark-cyan  '("#132c33" "#00d7ff" "cyan"          ))
 
-  (white       '("#f8f4ed" "#dfdfdf" "white"        ))
-  (clear-white '("#eef7f2" "#dadada" "brightwhite"  ))
-  (deep-white  '("#c0c4c3" "#d1d1d1" "white"        ))
-  (deep-red    '("#cf7543" "#ffd700" "brightyellow" ))
-  (dark-green  '("#1a3b32" "#005f00" "green"        ))
-  (deep-green  '("#584717" "#003f00" "green"        ))
+   (white       '("#f8f4ed" "#dfdfdf" "white"        ))
+   (clear-white '("#eef7f2" "#dadada" "brightwhite"  ))
+   (deep-white  '("#c0c4c3" "#d1d1d1" "white"        ))
+   (deep-red    '("#cf7543" "#ffd700" "brightyellow" ))
+   (dark-green  '("#1a3b32" "#005f00" "green"        ))
+   (deep-green  '("#584717" "#003f00" "green"        ))
 
-  ;; face categories -- required for all themes
-  (highlight      deep-white)
-  (vertical-bar   (sinolor-themes--darken base1 0.1))
-  (selection      dark-blue)
-  (builtin        dark-green)
-  (comments       grey)
-  (doc-comments   deep-green)
-  (constants      violet)
-  (functions      deep-red)
-  (keywords       yellow)
-  (methods        cyan)
-  (operators      cyan)
-  (type           red)
-  (strings        yellow)
-  (variables      deep-red)
-  (numbers        orange)
-  (region         base3)
-  (region-fg      clear-white)
-  (error          red)
-  (warning        yellow)
-  (success        green)
-  (vc-modified    orange)
-  (vc-added       green)
-  (vc-deleted     red)
+   ;; face categories -- required for all themes
+   (highlight      deep-white)
+   (vertical-bar   (sinolor-themes--darken base1 0.1))
+   (selection      dark-blue)
+   (builtin        dark-green)
+   (comments       grey)
+   (doc-comments   deep-green)
+   (constants      violet)
+   (functions      deep-red)
+   (keywords       yellow)
+   (methods        cyan)
+   (operators      cyan)
+   (type           red)
+   (strings        yellow)
+   (variables      deep-red)
+   (numbers        orange)
+   (region         base3)
+   (region-fg      clear-white)
+   (error          red)
+   (warning        yellow)
+   (success        green)
+   (vc-modified    orange)
+   (vc-added       green)
+   (vc-deleted     red)
 
-  ;; custom categories
-  (hidden `(,(car bg) "black" "black"))
-  (-modeline-bright sinolor-black-brighter-modeline)
-  (-modeline-pad
-   (when sinolor-black-padded-modeline
-     (if (integerp sinolor-black-padded-modeline)
-         sinolor-black-padded-modeline
-       4)))
+   ;; custom categories
+   (hidden `(,(car bg) "black" "black"))
+   (-modeline-bright sinolor-black-brighter-modeline)
+   (-modeline-pad
+    (when sinolor-black-padded-modeline
+      (if (integerp sinolor-black-padded-modeline)
+          sinolor-black-padded-modeline
+        4)))
 
-  (modeline-fg     fg)
-  (modeline-fg-alt base5)
+   (modeline-fg     fg)
+   (modeline-fg-alt base5)
 
-  (modeline-bg
-   (if -modeline-bright
-       (sinolor-themes--darken blue 0.475)
-     `(,(sinolor-themes--darken (car bg-alt) 0.15) ,@(cdr base0))))
-  (modeline-bg-l
-   (if -modeline-bright
-       (sinolor-themes--darken blue 0.45)
-     `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr base0))))
-  (modeline-bg-inactive
-   `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
-  (modeline-bg-inactive-l
-   `(,(car bg-alt) ,@(cdr base1))))
+   (modeline-bg
+    (if -modeline-bright
+        (sinolor-themes--darken blue 0.475)
+      `(,(sinolor-themes--darken (car bg-alt) 0.15) ,@(cdr base0))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (sinolor-themes--darken blue 0.45)
+      `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr base0))))
+   (modeline-bg-inactive
+    `(,(sinolor-themes--darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
+   (modeline-bg-inactive-l
+    `(,(car bg-alt) ,@(cdr base1))))
 
+;;;; extra faces
 
- ;; --- extra faces ------------------------
- (((line-number &override) :foreground fg-alt :background bg)
-  ((line-number-current-line &override) :foreground fg :background bg)
+  (((line-number &override) :foreground fg-alt :background bg)
+   ((line-number-current-line &override) :foreground fg :background bg)
 
-  (font-lock-comment-face
-   :foreground comments
-   :background (if sinolor-black-comment-bg
-                   (sinolor-themes--lighten bg 0.05)
-                 'unspecified))
-  (font-lock-doc-face
-   :inherit 'font-lock-comment-face
-   :foreground doc-comments)
+   (font-lock-comment-face
+    :foreground comments
+    :background (if sinolor-black-comment-bg
+                    (sinolor-themes--lighten bg 0.05)
+                  'unspecified))
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
 
-  (mode-line
-   :background modeline-bg :foreground modeline-fg
-   :box (if -modeline-pad
-            `(:line-width ,-modeline-pad :color ,modeline-bg)
-          'unspecified))
-  (mode-line-inactive
-   :background modeline-bg-inactive :foreground modeline-fg-alt
-   :box (if -modeline-pad
-            `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)
-          'unspecified))
-  (mode-line-emphasis
-   :foreground (if -modeline-bright base8 highlight))
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad
+             `(:line-width ,-modeline-pad :color ,modeline-bg)
+           'unspecified))
+   (mode-line-inactive
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if -modeline-pad
+             `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)
+           'unspecified))
+   (mode-line-emphasis
+    :foreground (if -modeline-bright base8 highlight))
 
-  ;; table
-  (table-cell :background grey)
+   ;; table
+   (table-cell :background grey)
 
-  ;; ivy-mode
-  (ivy-current-match
-   :underline t
-   :distant-foreground base0
-   :foreground base1
-   :weight 'normal)
+;;;; major-mode faces
 
+   ;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground blue)
+   ((markdown-code-face &override)
+    :background (sinolor-themes--lighten bg 0.05))
 
-  ;; --- major-mode faces -------------------
-  ;; css-mode / scss-mode
-  (css-proprietary-property :foreground orange)
-  (css-property :foreground green)
-  (css-selector :foreground blue)
+   ;; info-mode
+   (Info-quoted :inherit font-lock-variable-name-face)
 
-  ;; markdown-mode
-  (markdown-markup-face :foreground base5)
-  (markdown-header-face :inherit 'bold :foreground blue)
-  ((markdown-code-face &override)
-   :background (sinolor-themes--lighten bg 0.05))
+   ;; org-mode
+   (org-hide :foreground hidden)
+   (org-block-begin-line
+    :background (sinolor-themes--lighten bg 0.05)
+    :overline t)
+   (org-block-end-line
+    :background (sinolor-themes--lighten bg 0.05)
+    :underline t)
 
-  ;; info-mode
-  (Info-quoted :inherit font-lock-variable-name-face)
+   )
 
-  ;; org-mode
-  (org-hide :foreground hidden)
-  (org-block-begin-line
-   :background (sinolor-themes--lighten bg 0.05)
-   :overline t)
-  (org-block-end-line
-   :background (sinolor-themes--lighten bg 0.05)
-   :underline t)
+;;;; base theme variable overrides
+
+  ()
 
   )
-
-
- ;; --- extra variables ---------------------
- ()
- )
 
 ;; Local Variables:
 ;; no-byte-compile: t
