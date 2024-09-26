@@ -41,7 +41,7 @@
   "Colorful and legible themes."
   :group 'faces
   :link '(info-link "(sinolor-themes) Top")
-  :link '(url-link :tag "Homepage" "https://github.com/dalugm/sinolor-themes")
+  :link '(url-link :tag "Website" "https://github.com/dalugm/sinolor-themes")
   :prefix "sinolor-themes-"
   :tag "Sinolor Themes")
 
