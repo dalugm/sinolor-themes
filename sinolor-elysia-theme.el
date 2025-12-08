@@ -59,178 +59,123 @@
 ;;; Code:
 
 
-(eval-and-compile
-  (require 'sinolor-themes)
+(require 'sinolor-themes)
 
-;;;###theme-autoload
-  (deftheme sinolor-elysia
-    "To Romantic Unfailing Elysia."
-    :background-mode 'light
-    :kind 'color-scheme
-    :family 'sinolor)
-
-  (defconst sinolor-elysia-palette
-    '(
-;;; Basic values
-
-      (bg-main     "#3e3841")
-      (fg-main     "#d8e3e7")
-      (bg-dim      "#4f383e")
-      (fg-dim      "#857f8f")
-      (bg-alt      "#5d3f51")
-      (fg-alt      "#c08eaf")
-
-      (bg-active   "#4b4b4b")
-      (bg-inactive "#5d3f51")
-
-;;; Basic hues for foreground values
-
-      (red             "#ff7359")
-      (red-warmer      "#ff656f")
-      (red-cooler      "#ff78aa")
-      (red-faint       "#e47f72")
-      (green           "#20894d")
-      (green-warmer    "#80b25f")
-      (green-cooler    "#60bf88")
-      (green-faint     "#61a06c")
-      (yellow          "#e2d849")
-      (yellow-warmer   "#ea9955")
-      (yellow-cooler   "#f59280")
-      (yellow-faint    "#bf9f8f")
-      (blue            "#51c4d3")
-      (blue-warmer     "#a897ef")
-      (blue-cooler     "#7fa5ff")
-      (blue-faint      "#7f9ab4")
-      (magenta         "#8b2671")
-      (magenta-warmer  "#a8456b")
-      (magenta-cooler  "#d2568c")
-      (magenta-faint   "#ba2f7b")
-      (cyan            "#63bbd0")
-      (cyan-warmer     "#9ac0e4")
-      (cyan-cooler     "#8fcfdf")
-      (cyan-faint      "#aac0cf")
-
-;;; Basic hues for background values
-
-      (bg-red-intense     "#bd1f30")
-      (bg-green-intense   "#20a020")
-      (bg-yellow-intense  "#847020")
-      (bg-blue-intense    "#3633b0")
-      (bg-magenta-intense "#b04fcf")
-      (bg-cyan-intense    "#2270be")
-
-      (bg-red-subtle      "#6a002a")
-      (bg-green-subtle    "#00422a")
-      (bg-yellow-subtle   "#5a3000")
-      (bg-blue-subtle     "#242679")
-      (bg-magenta-subtle  "#50105a")
-      (bg-cyan-subtle     "#004065")
-
-;;; Diffs
-
-      (bg-added          "#00351f")
-      (bg-added-faint    "#002410")
-      (bg-added-refine   "#034d2f")
-      (fg-added          "#a0e0a0")
-
-      (bg-changed        "#363300")
-      (bg-changed-faint  "#2a1f00")
-      (bg-changed-refine "#4a4a00")
-      (fg-changed        "#efef80")
-
-      (bg-removed        "#510c28")
-      (bg-removed-faint  "#340a14")
-      (bg-removed-refine "#701a35")
-      (fg-removed        "#ffbfbf")
-
-;;; Graphs
-
-      (bg-graph-red-0     "#b52c2c")
-      (bg-graph-red-1     "#702020")
-      (bg-graph-green-0   "#0fed00")
-      (bg-graph-green-1   "#007800")
-      (bg-graph-yellow-0  "#f1e00a")
-      (bg-graph-yellow-1  "#b08940")
-      (bg-graph-blue-0    "#2fafef")
-      (bg-graph-blue-1    "#1f2f8f")
-      (bg-graph-magenta-0 "#bf94fe")
-      (bg-graph-magenta-1 "#5f509f")
-      (bg-graph-cyan-0    "#47dfea")
-      (bg-graph-cyan-1    "#00808f")
-
-;;; Special hues
-
-      (bg-mode-line       "#5d3f51")
-      (fg-mode-line       "#ffcfdf")
-      (bg-completion      "#4a1937")
-      (bg-hover           "#303f6f")
-      (bg-hover-secondary "#66364f")
-      (bg-hl-line         "#401f33")
-      (bg-paren           "#3f5f75")
-      (bg-err             "#3c0f12") ; check with err
-      (bg-warning         "#352905") ; check with warning
-      (bg-info            "#1a2e00") ; check with info
-
-      (border        "#695960")
-      (cursor        "#ff5aaf")
-      (fg-intense    "#ffffff")
-
-      (modeline-err     "#ff9f1f")
-      (modeline-warning "#c0bf30")
-      (modeline-info    "#6fefaf")
-
-      (underline-err     "#df2f2f")
-      (underline-warning "#c0b000")
-      (underline-info    "#22b022")
-
-      (bg-char-0 "#0050af")
-      (bg-char-1 "#7f1f7f")
-      (bg-char-2 "#625a00")
-
-;;; Mappings
-
-;;;; General mappings
-
-      (fringe unspecified)
-
-      (err red)
-      (warning yellow)
-      (info green)
-
-      (link cyan)
-      (link-alt magenta)
-      (name blue-warmer)
-      (keybind blue-cooler)
-      (identifier magenta-faint)
-      (prompt green-cooler)
-
-      (bg-region "#2a234a")
-      (fg-region unspecified)
-
-;;;; Code mappings
-
-      (builtin magenta)
-      (comment "#b7ae8f")
-      (constant "#815c94")
+(defconst sinolor-elysia-palette
+  (modus-themes-generate-palette
+   '((purple-xunzi "#815c94")
+     (yellow-foshouhuang "#fed71a")
+     (yellow-kuhuang "#b78d12")
+     (bg-main     "#3e3841")
+     (fg-main     "#d8e3e7")
+     (bg-dim      "#4f383e")
+     (fg-dim      "#857f8f")
+     (bg-alt      "#5d3f51")
+     (fg-alt      "#c08eaf")
+     (bg-active   "#4b4b4b")
+     (bg-inactive "#5d3f51")
+     (red             "#ff7359")
+     (red-warmer      "#ff656f")
+     (red-cooler      "#ff78aa")
+     (red-faint       "#e47f72")
+     (green           "#20894d")
+     (green-warmer    "#80b25f")
+     (green-cooler    "#60bf88")
+     (green-faint     "#61a06c")
+     (yellow          "#e2d849")
+     (yellow-warmer   "#ea9955")
+     (yellow-cooler   "#f59280")
+     (yellow-faint    "#bf9f8f")
+     (blue            "#51c4d3")
+     (blue-warmer     "#a897ef")
+     (blue-cooler     "#7fa5ff")
+     (blue-faint      "#7f9ab4")
+     (magenta         "#8b2671")
+     (magenta-warmer  "#a8456b")
+     (magenta-cooler  "#d2568c")
+     (magenta-faint   "#ba2f7b")
+     (cyan            "#63bbd0")
+     (cyan-warmer     "#9ac0e4")
+     (cyan-cooler     "#8fcfdf")
+     (cyan-faint      "#aac0cf")
+     (bg-red-intense     "#bd1f30")
+     (bg-green-intense   "#20a020")
+     (bg-yellow-intense  "#847020")
+     (bg-blue-intense    "#3633b0")
+     (bg-magenta-intense "#b04fcf")
+     (bg-cyan-intense    "#2270be")
+     (bg-red-subtle      "#6a002a")
+     (bg-green-subtle    "#00422a")
+     (bg-yellow-subtle   "#5a3000")
+     (bg-blue-subtle     "#242679")
+     (bg-magenta-subtle  "#50105a")
+     (bg-cyan-subtle     "#004065")
+     (bg-added          "#00351f")
+     (bg-added-faint    "#002410")
+     (bg-added-refine   "#034d2f")
+     (fg-added          "#a0e0a0")
+     (bg-changed        "#363300")
+     (bg-changed-faint  "#2a1f00")
+     (bg-changed-refine "#4a4a00")
+     (fg-changed        "#efef80")
+     (bg-removed        "#510c28")
+     (bg-removed-faint  "#340a14")
+     (bg-removed-refine "#701a35")
+     (fg-removed        "#ffbfbf")
+     (bg-graph-red-0     "#b52c2c")
+     (bg-graph-red-1     "#702020")
+     (bg-graph-green-0   "#0fed00")
+     (bg-graph-green-1   "#007800")
+     (bg-graph-yellow-0  "#f1e00a")
+     (bg-graph-yellow-1  "#b08940")
+     (bg-graph-blue-0    "#2fafef")
+     (bg-graph-blue-1    "#1f2f8f")
+     (bg-graph-magenta-0 "#bf94fe")
+     (bg-graph-magenta-1 "#5f509f")
+     (bg-graph-cyan-0    "#47dfea")
+     (bg-graph-cyan-1    "#00808f")
+     (bg-mode-line       "#5d3f51")
+     (fg-mode-line       "#ffcfdf")
+     (bg-completion      "#4a1937")
+     (bg-hover           "#303f6f")
+     (bg-hover-secondary "#66364f")
+     (bg-hl-line         "#401f33")
+     (bg-paren           "#3f5f75")
+     (bg-err             "#3c0f12")
+     (bg-warning         "#352905")
+     (bg-info            "#1a2e00")
+     (border        "#695960")
+     (cursor        "#ff5aaf")
+     (fg-intense    "#ffffff")
+     (modeline-err     "#ff9f1f")
+     (modeline-warning "#c0bf30")
+     (modeline-info    "#6fefaf")
+     (underline-err     "#df2f2f")
+     (underline-warning "#c0b000")
+     (underline-info    "#22b022")
+     (bg-char-0 "#0050af")
+     (bg-char-1 "#7f1f7f")
+     (bg-char-2 "#625a00")
+     (bg-region "#2a234a"))
+   'cool
+   nil
+   (append
+    '((builtin magenta)
+      (comment yellow-kuhuang)
+      (constant purple-xunzi)
       (fnname magenta-warmer)
       (keyword magenta-cooler)
       (preprocessor red-warmer)
       (docstring cyan-faint)
-      (string "#fed71a")
+      (string yellow-foshouhuang)
       (type green-cooler)
       (variable purple)
       (rx-escape green-warmer) ; compare with `string'
       (rx-construct red)
-
-;;;; Accent mappings
-
       (accent-0 magenta-cooler)
       (accent-1 blue)
       (accent-2 green-cooler)
       (accent-3 red)
-
-;;;; Date mappings
-
       (date-common green-cooler)
       (date-deadline red-warmer)
       (date-event fg-alt)
@@ -240,9 +185,6 @@
       (date-scheduled yellow)
       (date-weekday cyan)
       (date-weekend red-faint)
-
-;;;; Prose mappings
-
       (prose-code magenta-warmer)
       (prose-done green)
       (prose-macro green-cooler)
@@ -253,9 +195,6 @@
       (prose-tag yellow-faint)
       (prose-todo red-warmer)
       (prose-verbatim blue)
-
-;;;; Mail mappings
-
       (mail-cite-0 blue)
       (mail-cite-1 magenta-warmer)
       (mail-cite-2 green-cooler)
@@ -264,31 +203,14 @@
       (mail-recipient blue-warmer)
       (mail-subject blue-cooler)
       (mail-other cyan)
-
-;;;; Space mappings
-
       (bg-space unspecified)
       (fg-space border)
       (bg-space-err bg-yellow-intense)
-
-;;;; Tab mappings
-
       (bg-tab-bar      bg-alt)
       (bg-tab-current  bg-main)
-      (bg-tab-other    bg-active)
-
-;;;; Rainbow mappings
-
-      (rainbow-0 green-cooler)
-      (rainbow-1 blue)
-      (rainbow-2 magenta-warmer)
-      (rainbow-3 cyan-cooler)
-      (rainbow-4 yellow-cooler)
-      (rainbow-5 magenta-cooler)
-      (rainbow-6 red-cooler)
-      (rainbow-7 green-warmer)
-      (rainbow-8 yellow))
-    "The `sinolor-elysia' palette.
+      (bg-tab-other    bg-active))
+    sinolor-themes-common-palette-mappings))
+  "The `sinolor-elysia' palette.
 Color values have the form (COLOR-NAME HEX-VALUE) with the former
 as a symbol and the latter as a string.
 
@@ -296,8 +218,8 @@ Semantic color mappings have the form (MAPPING-NAME COLOR-NAME)
 with both as symbols.  The latter is a color that already exists
 in the palette and is associated with a HEX-VALUE.")
 
-  (defcustom  sinolor-elysia-palette-overrides nil
-    "Overrides for `sinolor-elysia-palette'.
+(defcustom  sinolor-elysia-palette-overrides nil
+  "Overrides for `sinolor-elysia-palette'.
 
 Mirror the elements of the aforementioned palette, overriding
 their value.
@@ -311,15 +233,18 @@ mappings, such as to make the cursor red.  Wherea theme-specific
 overrides can also be used to change the value of a named color,
 such as what hexadecimal RGB value the red-warmer symbol
 represents."
-    :group 'sinolor-themes
-    :package-version '(sinolor-themes . "0.2.0")
-    :type '(repeat (list symbol (choice symbol string)))
-    :link '(info-link "(sinolor-themes) Palette overrides"))
+  :group 'sinolor-themes
+  :package-version '(sinolor-themes . "0.3.0")
+  :type '(repeat (list symbol (choice symbol string))))
 
-  (sinolor-themes-theme sinolor-elysia
-                        sinolor-elysia-palette
-                        sinolor-elysia-palette-overrides)
-
-  (provide-theme 'sinolor-elysia))
+(modus-themes-theme
+ 'sinolor-elysia
+ 'sinolor-themes
+ "To Romantic Unfailing Elysia."
+ 'dark
+ 'modus-vivendi-palette
+ 'sinolor-elysia-palette
+ 'sinolor-elysia-palette-overrides
+ 'sinolor-themes-custom-faces)
 
 ;;; sinolor-elysia-theme.el ends here

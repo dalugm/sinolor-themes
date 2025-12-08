@@ -5,8 +5,7 @@
 
 * Sinolor Theme
 
-Sinolor themes is a theme package which code base fork from
-[[https://git.sr.ht/~protesilaos/ef-themes][ef-themes]].
+Sinolor themes is a theme package which code based on [[https://github.com/protesilaos/standard-themes][standard-themes]].
 
 Colors are selected from [[http://zhongguose.com/][CHINESE COLORS]].
 
@@ -21,18 +20,18 @@ Colors are selected from [[http://zhongguose.com/][CHINESE COLORS]].
 1. Clone this repository
 
 #+begin_src bash-ts
-  git clone https://github.com/dalugm/sinolor-themes.git
+git clone https://github.com/dalugm/sinolor-themes.git
 #+end_src
 
 2. Add =sinolor-themes= to load-path.
 
 #+begin_src elisp
-  (add-to-list 'load-path (expand-file-name "path/to/sinolor-themes"))
-  (require 'sinolor-themes)
+(add-to-list 'load-path (expand-file-name "path/to/sinolor-themes"))
+(require 'sinolor-themes)
 #+end_src
 
 ** Usage
 
 #+begin_src elisp
-  (load-theme 'sinolor-elysia t)
+(load-theme 'sinolor-elysia t)
 #+end_src
