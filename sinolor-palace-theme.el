@@ -210,14 +210,10 @@ in the palette and is associated with a HEX-VALUE.")
 Mirror the elements of the aforementioned palette, overriding
 their value.
 
-For overrides that are shared across all of the Ef themes,
-refer to `sinolor-themes-common-palette-overrides'.
-
-To preview the palette entries, use `sinolor-themes-preview-colors' or
-`sinolor-themes-preview-colors-current' (read the documentation for
-further details)."
+For overrides that are shared across all of the Sinolor themes,
+refer to `modus-themes-common-palette-overrides'."
   :group 'sinolor-themes
-  :package-version '(sinolor-themes . "0.3.0")
+  :package-version '(sinolor-themes . "0.4.0")
   :type '(repeat (list symbol (choice symbol string))))
 
 (modus-themes-theme
@@ -225,7 +221,7 @@ further details)."
  'sinolor-themes
  "The Palace Museum."
  'dark
- 'modus-vivendi-palette
+ 'modus-themes-vivendi-palette
  'sinolor-palace-palette
  'sinolor-palace-palette-overrides
  'sinolor-themes-custom-faces)

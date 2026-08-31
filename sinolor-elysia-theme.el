@@ -225,16 +225,16 @@ Mirror the elements of the aforementioned palette, overriding
 their value.
 
 For overrides that are shared across all of the Sinolor themes,
-refer to `sinolor-themes-common-palette-overrides'.
+refer to `modus-themes-common-palette-overrides'.
 
 Theme-specific overrides take precedence over shared overrides.
 The idea of common overrides is to change semantic color
-mappings, such as to make the cursor red.  Wherea theme-specific
+mappings, such as to make the cursor red.  Whereas theme-specific
 overrides can also be used to change the value of a named color,
 such as what hexadecimal RGB value the red-warmer symbol
 represents."
   :group 'sinolor-themes
-  :package-version '(sinolor-themes . "0.3.0")
+  :package-version '(sinolor-themes . "0.4.0")
   :type '(repeat (list symbol (choice symbol string))))
 
 (modus-themes-theme
@@ -242,7 +242,7 @@ represents."
  'sinolor-themes
  "To Romantic Unfailing Elysia."
  'dark
- 'modus-vivendi-palette
+ 'modus-themes-vivendi-palette
  'sinolor-elysia-palette
  'sinolor-elysia-palette-overrides
  'sinolor-themes-custom-faces)

@@ -3,8 +3,8 @@
 ;; Author: dalu <mou.tong@qq.com>
 ;; Maintainer: dalu <mou.tong@qq.com>
 ;; URL: https://github.com/dalugm/sinolor-themes
-;; Version: 0.3.0
-;; Package-Requires: ((emacs "28.1") (modus-themes "5.0.0"))
+;; Version: 0.4.0
+;; Package-Requires: ((emacs "28.1") (modus-themes "5.2.0"))
 ;; Keywords: faces, theme, accessibility
 
 ;; This file is NOT part of GNU Emacs.
@@ -41,7 +41,7 @@
 (defgroup sinolor-themes ()
   "Colorful and legible themes."
   :group 'faces
-  :group 'sinolor-themes
+  :group 'modus-themes
   :link '(url-link :tag "Website" "https://github.com/dalugm/sinolor-themes")
   :prefix "sinolor-themes-"
   :tag "Sinolor Themes")
@@ -51,7 +51,7 @@
   "List of symbols with the light Sinolor themes.")
 
 (defconst sinolor-themes-dark-themes
-  '(sinolor-elysia sinolor-eva sinolor-palce)
+  '(sinolor-elysia sinolor-eva sinolor-palace)
   "List of symbols with the dark Sinolor themes.")
 
 (defconst sinolor-themes-items
@@ -153,18 +153,18 @@
                 :background ,bg-mode-line-active
                 :foreground ,fg-mode-line-active)
        (((supports :box t))
-        ,@(modus-themes--box border-mode-line-active nil 'released-button))
+        :box (:color ,border-mode-line-active :style released-button))
        (t :underline ,border-mode-line-active)))
     `(mode-line-active
       ((default :inherit modus-themes-ui-variable-pitch
                 :background ,bg-mode-line-active
                 :foreground ,fg-mode-line-active)
        (((supports :box t))
-        ,@(modus-themes--box border-mode-line-active nil 'released-button))
+        :box (:color ,border-mode-line-active :style released-button))
        (t :underline ,border-mode-line-active)))))
 
 (defconst sinolor-themes-with-properties
-  '((sinolor-eva sinolor-themes "Evagelion test type 01." dark modus-themes-vivendi-palette sinolor-eva-palette sinolor-eva-palette-overrides)
+  '((sinolor-eva sinolor-themes "Evangelion test type 01." dark modus-themes-vivendi-palette sinolor-eva-palette sinolor-eva-palette-overrides)
     (sinolor-palace sinolor-themes "The Palace Museum." dark modus-themes-vivendi-palette sinolor-palace-palette sinolor-palace-palette-overrides)
     (sinolor-elysia sinolor-themes "To Romantic Unfailing Elysia" dark modus-themes-vivendi-palette sinolor-elysia-palette sinolor-elysia-palette-overrides)))
 
@@ -194,7 +194,8 @@ They are all designed to only consider Sinolor themes."
   :init-value nil)
 
 (cl-defmethod modus-themes-get-themes (&context (sinolor-themes-take-over-modus-themes-mode (eql t)))
-  "Return Sinolor themes per `sinolor-themes-take-over-modus-themes-mode'."
+  "Return Sinolor themes when takeover mode is active.
+This applies when SINOLOR-THEMES-TAKE-OVER-MODUS-THEMES-MODE is non-nil."
   (if-let* ((themes (modus-themes-get-all-known-themes 'sinolor-themes))
             (sorted-a-z (sort themes #'string-lessp))
             (sorted-light-dark (modus-themes-sort sorted-a-z 'light)))

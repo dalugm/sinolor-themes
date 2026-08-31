@@ -5,7 +5,7 @@
 
 * Sinolor Theme
 
-Sinolor themes is a theme package which code based on [[https://github.com/protesilaos/standard-themes][standard-themes]].
+Sinolor themes is a theme package whose code is based on [[https://github.com/protesilaos/modus-themes][modus-themes]].
 
 Colors are selected from [[http://zhongguose.com/][CHINESE COLORS]].
 
