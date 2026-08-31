@@ -74,7 +74,10 @@
                        "#ffb7d8"))
         (should (equal (modus-themes-get-color-value
                         'string nil 'sinolor-elysia)
-                       "#b7edf5")))
+                       "#b7edf5"))
+        (should (equal (modus-themes-get-color-value
+                        'bg-mode-line-active nil 'sinolor-elysia)
+                       "#d66398")))
     (disable-theme 'sinolor-elysia)))
 
 (provide 'sinolor-themes-tests)
