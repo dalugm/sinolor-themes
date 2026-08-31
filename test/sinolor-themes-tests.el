@@ -80,5 +80,23 @@
                        "#d66398")))
     (disable-theme 'sinolor-elysia)))
 
+(ert-deftest sinolor-palace-uses-red-wall-and-green-tile-roles ()
+  (load-theme 'sinolor-palace t)
+  (unwind-protect
+      (progn
+        (should (equal (modus-themes-get-color-value
+                        'palace-wall nil 'sinolor-palace)
+                       "#a7535a"))
+        (should (equal (modus-themes-get-color-value
+                        'palace-tile nil 'sinolor-palace)
+                       "#20894d"))
+        (should (equal (modus-themes-get-color-value
+                        'bg-mode-line-active nil 'sinolor-palace)
+                       "#a7535a"))
+        (should (equal (modus-themes-get-color-value
+                        'string nil 'sinolor-palace)
+                       "#77c294")))
+    (disable-theme 'sinolor-palace)))
+
 (provide 'sinolor-themes-tests)
 ;;; sinolor-themes-tests.el ends here
