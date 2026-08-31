@@ -14,7 +14,7 @@ pilot's colors as secondary accents.
 | Name           | Description                             |
 |----------------+-----------------------------------------|
 | sinolor-elysia | To Romantic Unfailing Elysia            |
-| sinolor-eva-00 | Evangelion Unit-00 and Rei Ayanami      |
+| sinolor-eva-00 | Evangelion Unit-00 and Rei Ayanami (light) |
 | sinolor-eva-01 | Evangelion Unit-01 and Shinji Ikari     |
 | sinolor-eva-02 | Evangelion Unit-02 and Asuka Shikinami Langley |
 | sinolor-palace | The Palace Museum                       |

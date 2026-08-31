@@ -7,8 +7,8 @@
 
 (ert-deftest sinolor-themes-list-all-declared-themes ()
   (should (equal sinolor-themes-items
-                 '(sinolor-elysia
-                   sinolor-eva-00
+                 '(sinolor-eva-00
+                   sinolor-elysia
                    sinolor-eva-01
                    sinolor-eva-02
                    sinolor-palace)))
@@ -24,10 +24,20 @@
           (should (custom-theme-enabled-p theme)))
       (disable-theme theme))))
 
+(ert-deftest sinolor-eva-00-is-the-only-light-theme ()
+  (should (equal sinolor-themes-light-themes '(sinolor-eva-00)))
+  (should (eq (plist-get (get 'sinolor-eva-00 'theme-properties)
+                              :background-mode)
+              'light))
+  (dolist (theme sinolor-themes-dark-themes)
+    (should (eq (plist-get (get theme 'theme-properties)
+                           :background-mode)
+                'dark))))
+
 (ert-deftest sinolor-eva-themes-have-distinct-signature-colors ()
   (dolist (spec '((sinolor-eva-00
                    sinolor-eva-00-palette
-                   "#d7a72e" "#df6b2f")
+                   "#806000" "#a9471b")
                   (sinolor-eva-01
                    sinolor-eva-01-palette
                    "#75409a" "#8fcf4f")

@@ -47,12 +47,11 @@
   :tag "Sinolor Themes")
 
 (defconst sinolor-themes-light-themes
-  '()
+  '(sinolor-eva-00)
   "List of symbols with the light Sinolor themes.")
 
 (defconst sinolor-themes-dark-themes
   '(sinolor-elysia
-    sinolor-eva-00
     sinolor-eva-01
     sinolor-eva-02
     sinolor-palace)
@@ -219,8 +218,8 @@
 
 (defconst sinolor-themes-with-properties
   '((sinolor-eva-00
-     sinolor-themes "Evangelion Unit-00 and Rei Ayanami." dark
-     modus-themes-vivendi-palette
+     sinolor-themes "Evangelion Unit-00 and Rei Ayanami." light
+     modus-themes-operandi-palette
      sinolor-eva-00-palette sinolor-eva-00-palette-overrides)
     (sinolor-eva-01
      sinolor-themes "Evangelion Unit-01 and Shinji Ikari." dark
