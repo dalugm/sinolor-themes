@@ -7,13 +7,17 @@
 
 Sinolor themes is a theme package whose code is based on [[https://github.com/protesilaos/modus-themes][modus-themes]].
 
-Colors are selected from [[http://zhongguose.com/][CHINESE COLORS]].
+The original Sinolor themes draw from [[http://zhongguose.com/][CHINESE COLORS]].  The EVA
+series instead follows each unit's signature armor colors and uses its
+pilot's colors as secondary accents.
 
-| Name           | Description                  |
-|----------------+------------------------------|
-| sinolor-elysia | To Romantic Unfailing Elysia |
-| sinolor-palace | The Palace Museum            |
-| sinolor-eva    | EVANGELION                   |
+| Name           | Description                             |
+|----------------+-----------------------------------------|
+| sinolor-elysia | To Romantic Unfailing Elysia            |
+| sinolor-eva-00 | Evangelion Unit-00 and Rei Ayanami      |
+| sinolor-eva-01 | Evangelion Unit-01 and Shinji Ikari     |
+| sinolor-eva-02 | Evangelion Unit-02 and Asuka Shikinami Langley |
+| sinolor-palace | The Palace Museum                       |
 
 ** Installation
 
@@ -33,5 +37,5 @@ git clone https://github.com/dalugm/sinolor-themes.git
 ** Usage
 
 #+begin_src elisp
-(load-theme 'sinolor-elysia t)
+(load-theme 'sinolor-eva-01 t)
 #+end_src

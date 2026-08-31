@@ -51,7 +51,11 @@
   "List of symbols with the light Sinolor themes.")
 
 (defconst sinolor-themes-dark-themes
-  '(sinolor-elysia sinolor-eva sinolor-palace)
+  '(sinolor-elysia
+    sinolor-eva-00
+    sinolor-eva-01
+    sinolor-eva-02
+    sinolor-palace)
   "List of symbols with the dark Sinolor themes.")
 
 (defconst sinolor-themes-items
@@ -142,6 +146,56 @@
     (fg-heading-8 rainbow-8))
   "Common palette mappings for the Sinolor themes.")
 
+(defconst sinolor-themes--eva-palette-mappings
+  '((cursor eva-secondary-bright)
+    (name eva-primary-bright)
+    (keybind eva-accent)
+    (err red)
+    (warning eva-accent)
+    (info eva-secondary)
+    (identifier eva-neutral)
+    (fg-prompt eva-secondary-bright)
+    (builtin eva-primary-bright)
+    (comment fg-dim)
+    (constant eva-primary-bright)
+    (fnname eva-pilot)
+    (fnname-call blue-warmer)
+    (keyword eva-accent)
+    (preprocessor eva-primary)
+    (docstring eva-secondary)
+    (string eva-secondary-bright)
+    (type eva-pilot)
+    (variable eva-primary-bright)
+    (variable-use eva-accent)
+    (rx-backslash eva-secondary)
+    (rx-construct eva-primary)
+    (accent-0 eva-primary-bright)
+    (accent-1 eva-secondary-bright)
+    (accent-2 eva-accent)
+    (accent-3 eva-pilot)
+    (fg-link eva-pilot)
+    (underline-link eva-pilot)
+    (fg-link-visited eva-primary-bright)
+    (underline-link-visited eva-primary-bright)
+    (mail-cite-0 eva-primary-bright)
+    (mail-cite-1 eva-secondary-bright)
+    (mail-cite-2 eva-pilot)
+    (mail-cite-3 eva-accent)
+    (mail-recipient eva-pilot)
+    (mail-subject eva-primary-bright)
+    (mail-other eva-secondary)
+    (prose-verbatim eva-neutral))
+  "Palette mappings shared by the Evangelion themes.")
+
+(defun sinolor-themes--generate-eva-palette (base-colors temperature)
+  "Generate an Evangelion palette from BASE-COLORS and TEMPERATURE."
+  (modus-themes-generate-palette
+   base-colors
+   temperature
+   nil
+   (append sinolor-themes--eva-palette-mappings
+           sinolor-themes-common-palette-mappings)))
+
 (defconst sinolor-themes-custom-faces
   '(
     `(company-tooltip ((,c :background ,bg-alt)))
@@ -164,9 +218,26 @@
        (t :underline ,border-mode-line-active)))))
 
 (defconst sinolor-themes-with-properties
-  '((sinolor-eva sinolor-themes "Evangelion test type 01." dark modus-themes-vivendi-palette sinolor-eva-palette sinolor-eva-palette-overrides)
-    (sinolor-palace sinolor-themes "The Palace Museum." dark modus-themes-vivendi-palette sinolor-palace-palette sinolor-palace-palette-overrides)
-    (sinolor-elysia sinolor-themes "To Romantic Unfailing Elysia" dark modus-themes-vivendi-palette sinolor-elysia-palette sinolor-elysia-palette-overrides)))
+  '((sinolor-eva-00
+     sinolor-themes "Evangelion Unit-00 and Rei Ayanami." dark
+     modus-themes-vivendi-palette
+     sinolor-eva-00-palette sinolor-eva-00-palette-overrides)
+    (sinolor-eva-01
+     sinolor-themes "Evangelion Unit-01 and Shinji Ikari." dark
+     modus-themes-vivendi-palette
+     sinolor-eva-01-palette sinolor-eva-01-palette-overrides)
+    (sinolor-eva-02
+     sinolor-themes "Evangelion Unit-02 and Asuka Shikinami Langley." dark
+     modus-themes-vivendi-palette
+     sinolor-eva-02-palette sinolor-eva-02-palette-overrides)
+    (sinolor-palace
+     sinolor-themes "The Palace Museum." dark
+     modus-themes-vivendi-palette
+     sinolor-palace-palette sinolor-palace-palette-overrides)
+    (sinolor-elysia
+     sinolor-themes "To Romantic Unfailing Elysia" dark
+     modus-themes-vivendi-palette
+     sinolor-elysia-palette sinolor-elysia-palette-overrides)))
 
 (defvar sinolor-themes--declared nil)
 
