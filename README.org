@@ -1,41 +1,39 @@
 * Table of Contents                                            :TOC:noexport:
-- [[#sinolor-theme][Sinolor Theme]]
+- [[#jinlor-themes][Jinlor Themes]]
   - [[#installation][Installation]]
   - [[#usage][Usage]]
 
-* Sinolor Theme
+* Jinlor Themes
 
-Sinolor themes is a theme package whose code is based on [[https://github.com/protesilaos/modus-themes][modus-themes]].
+Jinlor Themes is a collection of colorful, legible Emacs themes built
+on [[https://github.com/protesilaos/modus-themes][Modus Themes]].  Its palettes are inspired by architecture,
+characters, and imagined worlds.
 
-The original Sinolor themes draw from [[http://zhongguose.com/][CHINESE COLORS]].  The EVA
-series instead follows each unit's signature armor colors and uses its
-pilot's colors as secondary accents.
-
-| Name           | Description                             |
-|----------------+-----------------------------------------|
-| sinolor-elysia | To Romantic Unfailing Elysia            |
-| sinolor-eva-00 | Evangelion Unit-00 and Rei Ayanami (light) |
-| sinolor-eva-01 | Evangelion Unit-01 and Shinji Ikari     |
-| sinolor-eva-02 | Evangelion Unit-02 and Asuka Shikinami Langley |
-| sinolor-palace | The Palace Museum                       |
+| Name           | Description                                    |
+|----------------+------------------------------------------------|
+| jinlor-elysia  | To Romantic Unfailing Elysia                   |
+| jinlor-eva-00  | Evangelion Unit-00 and Rei Ayanami (light)     |
+| jinlor-eva-01  | Evangelion Unit-01 and Shinji Ikari            |
+| jinlor-eva-02  | Evangelion Unit-02 and Asuka Shikinami Langley |
+| jinlor-palace  | The Palace Museum                              |
 
 ** Installation
 
 1. Clone this repository
 
 #+begin_src bash-ts
-git clone https://github.com/dalugm/sinolor-themes.git
+git clone https://github.com/dalugm/jinlor.el.git
 #+end_src
 
-2. Add =sinolor-themes= to load-path.
+2. Add =jinlor= to load-path.
 
 #+begin_src elisp
-(add-to-list 'load-path (expand-file-name "path/to/sinolor-themes"))
-(require 'sinolor-themes)
+(add-to-list 'load-path (expand-file-name "path/to/jinlor.el"))
+(require 'jinlor)
 #+end_src
 
 ** Usage
 
 #+begin_src elisp
-(load-theme 'sinolor-eva-01 t)
+(load-theme 'jinlor-eva-01 t)
 #+end_src

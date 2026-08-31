@@ -1,4 +1,4 @@
-;;; sinolor-elysia-theme.el --- To Romantic Unfailing Elysia -*- lexical-binding: t -*-
+;;; jinlor-elysia-theme.el --- To Romantic Unfailing Elysia -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -7,9 +7,9 @@
 
 ;;; Code:
 
-(require 'sinolor-themes)
+(require 'jinlor)
 
-(defconst sinolor-elysia-palette
+(defconst jinlor-elysia-palette
   (modus-themes-generate-palette
    '((elysia-pink           "#e88fba")
      (elysia-pink-bright    "#ffb7d8")
@@ -99,23 +99,23 @@
       (rainbow-6 elysia-lilac)
       (rainbow-7 elysia-pink)
       (rainbow-8 elysia-gold))
-    sinolor-themes-common-palette-mappings))
-  "Palette for `sinolor-elysia'.")
+    jinlor-common-palette-mappings))
+  "Palette for `jinlor-elysia'.")
 
-(defcustom sinolor-elysia-palette-overrides nil
-  "Overrides for `sinolor-elysia-palette'."
-  :group 'sinolor-themes
-  :package-version '(sinolor-themes . "0.4.0")
+(defcustom jinlor-elysia-palette-overrides nil
+  "Overrides for `jinlor-elysia-palette'."
+  :group 'jinlor
+  :package-version '(jinlor . "0.5.0")
   :type '(repeat (list symbol (choice symbol string))))
 
 (modus-themes-theme
- 'sinolor-elysia
- 'sinolor-themes
+ 'jinlor-elysia
+ 'jinlor
  "To Romantic Unfailing Elysia."
  'dark
  'modus-themes-vivendi-palette
- 'sinolor-elysia-palette
- 'sinolor-elysia-palette-overrides
- 'sinolor-themes-custom-faces)
+ 'jinlor-elysia-palette
+ 'jinlor-elysia-palette-overrides
+ 'jinlor-custom-faces)
 
-;;; sinolor-elysia-theme.el ends here
+;;; jinlor-elysia-theme.el ends here

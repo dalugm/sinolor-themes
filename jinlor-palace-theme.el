@@ -1,4 +1,4 @@
-;;; sinolor-palace-theme.el --- The Palace Museum -*- lexical-binding: t -*-
+;;; jinlor-palace-theme.el --- The Palace Museum -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -7,9 +7,9 @@
 
 ;;; Code:
 
-(require 'sinolor-themes)
+(require 'jinlor)
 
-(defconst sinolor-palace-palette
+(defconst jinlor-palace-palette
   (modus-themes-generate-palette
    '((palace-wall          "#a7535a")
      (palace-wall-bright   "#ef817c")
@@ -88,23 +88,23 @@
       (mail-recipient palace-tile-bright)
       (mail-subject palace-wall-bright)
       (mail-other palace-blue))
-    sinolor-themes-common-palette-mappings))
-  "Palette for `sinolor-palace'.")
+    jinlor-common-palette-mappings))
+  "Palette for `jinlor-palace'.")
 
-(defcustom sinolor-palace-palette-overrides nil
-  "Overrides for `sinolor-palace-palette'."
-  :group 'sinolor-themes
-  :package-version '(sinolor-themes . "0.4.0")
+(defcustom jinlor-palace-palette-overrides nil
+  "Overrides for `jinlor-palace-palette'."
+  :group 'jinlor
+  :package-version '(jinlor . "0.5.0")
   :type '(repeat (list symbol (choice symbol string))))
 
 (modus-themes-theme
- 'sinolor-palace
- 'sinolor-themes
+ 'jinlor-palace
+ 'jinlor
  "The Palace Museum."
  'dark
  'modus-themes-vivendi-palette
- 'sinolor-palace-palette
- 'sinolor-palace-palette-overrides
- 'sinolor-themes-custom-faces)
+ 'jinlor-palace-palette
+ 'jinlor-palace-palette-overrides
+ 'jinlor-custom-faces)
 
-;;; sinolor-palace-theme.el ends here
+;;; jinlor-palace-theme.el ends here

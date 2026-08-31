@@ -1,4 +1,4 @@
-;;; sinolor-eva-01-theme.el --- Evangelion Unit-01 and Shinji Ikari -*- lexical-binding: t -*-
+;;; jinlor-eva-01-theme.el --- Evangelion Unit-01 and Shinji Ikari -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -7,10 +7,10 @@
 
 ;;; Code:
 
-(require 'sinolor-themes)
+(require 'jinlor)
 
-(defconst sinolor-eva-01-palette
-  (sinolor-themes--generate-eva-palette
+(defconst jinlor-eva-01-palette
+  (jinlor--generate-eva-palette
    '((eva-primary          "#75409a")
      (eva-primary-bright   "#b084d6")
      (eva-secondary        "#8fcf4f")
@@ -42,22 +42,22 @@
      (border               "#62457b")
      (fg-intense           "#ffffff"))
    'cool)
-  "Palette for `sinolor-eva-01'.")
+  "Palette for `jinlor-eva-01'.")
 
-(defcustom sinolor-eva-01-palette-overrides nil
-  "Overrides for `sinolor-eva-01-palette'."
-  :group 'sinolor-themes
-  :package-version '(sinolor-themes . "0.4.0")
+(defcustom jinlor-eva-01-palette-overrides nil
+  "Overrides for `jinlor-eva-01-palette'."
+  :group 'jinlor
+  :package-version '(jinlor . "0.5.0")
   :type '(repeat (list symbol (choice symbol string))))
 
 (modus-themes-theme
- 'sinolor-eva-01
- 'sinolor-themes
+ 'jinlor-eva-01
+ 'jinlor
  "Evangelion Unit-01 and Shinji Ikari."
  'dark
  'modus-themes-vivendi-palette
- 'sinolor-eva-01-palette
- 'sinolor-eva-01-palette-overrides
- 'sinolor-themes-custom-faces)
+ 'jinlor-eva-01-palette
+ 'jinlor-eva-01-palette-overrides
+ 'jinlor-custom-faces)
 
-;;; sinolor-eva-01-theme.el ends here
+;;; jinlor-eva-01-theme.el ends here

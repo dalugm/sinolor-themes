@@ -1,4 +1,4 @@
-;;; sinolor-eva-02-theme.el --- Evangelion Unit-02 and Asuka -*- lexical-binding: t -*-
+;;; jinlor-eva-02-theme.el --- Evangelion Unit-02 and Asuka -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -8,10 +8,10 @@
 
 ;;; Code:
 
-(require 'sinolor-themes)
+(require 'jinlor)
 
-(defconst sinolor-eva-02-palette
-  (sinolor-themes--generate-eva-palette
+(defconst jinlor-eva-02-palette
+  (jinlor--generate-eva-palette
    '((eva-primary          "#d7353f")
      (eva-primary-bright   "#ff6259")
      (eva-secondary        "#e56f2f")
@@ -43,22 +43,22 @@
      (border               "#71383b")
      (fg-intense           "#ffffff"))
    'warm)
-  "Palette for `sinolor-eva-02'.")
+  "Palette for `jinlor-eva-02'.")
 
-(defcustom sinolor-eva-02-palette-overrides nil
-  "Overrides for `sinolor-eva-02-palette'."
-  :group 'sinolor-themes
-  :package-version '(sinolor-themes . "0.4.0")
+(defcustom jinlor-eva-02-palette-overrides nil
+  "Overrides for `jinlor-eva-02-palette'."
+  :group 'jinlor
+  :package-version '(jinlor . "0.5.0")
   :type '(repeat (list symbol (choice symbol string))))
 
 (modus-themes-theme
- 'sinolor-eva-02
- 'sinolor-themes
+ 'jinlor-eva-02
+ 'jinlor
  "Evangelion Unit-02 and Asuka Shikinami Langley."
  'dark
  'modus-themes-vivendi-palette
- 'sinolor-eva-02-palette
- 'sinolor-eva-02-palette-overrides
- 'sinolor-themes-custom-faces)
+ 'jinlor-eva-02-palette
+ 'jinlor-eva-02-palette-overrides
+ 'jinlor-custom-faces)
 
-;;; sinolor-eva-02-theme.el ends here
+;;; jinlor-eva-02-theme.el ends here

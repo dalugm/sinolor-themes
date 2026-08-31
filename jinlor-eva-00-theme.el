@@ -1,4 +1,4 @@
-;;; sinolor-eva-00-theme.el --- Evangelion Unit-00 and Rei Ayanami -*- lexical-binding: t -*-
+;;; jinlor-eva-00-theme.el --- Evangelion Unit-00 and Rei Ayanami -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -7,10 +7,10 @@
 
 ;;; Code:
 
-(require 'sinolor-themes)
+(require 'jinlor)
 
-(defconst sinolor-eva-00-palette
-  (sinolor-themes--generate-eva-palette
+(defconst jinlor-eva-00-palette
+  (jinlor--generate-eva-palette
    '((eva-primary          "#806000")
      (eva-primary-bright   "#956600")
      (eva-secondary        "#a9471b")
@@ -42,22 +42,22 @@
      (border               "#a8b6bd")
      (fg-intense           "#111820"))
    'cool)
-  "Palette for `sinolor-eva-00'.")
+  "Palette for `jinlor-eva-00'.")
 
-(defcustom sinolor-eva-00-palette-overrides nil
-  "Overrides for `sinolor-eva-00-palette'."
-  :group 'sinolor-themes
-  :package-version '(sinolor-themes . "0.4.0")
+(defcustom jinlor-eva-00-palette-overrides nil
+  "Overrides for `jinlor-eva-00-palette'."
+  :group 'jinlor
+  :package-version '(jinlor . "0.5.0")
   :type '(repeat (list symbol (choice symbol string))))
 
 (modus-themes-theme
- 'sinolor-eva-00
- 'sinolor-themes
+ 'jinlor-eva-00
+ 'jinlor
  "Evangelion Unit-00 and Rei Ayanami."
  'light
  'modus-themes-operandi-palette
- 'sinolor-eva-00-palette
- 'sinolor-eva-00-palette-overrides
- 'sinolor-themes-custom-faces)
+ 'jinlor-eva-00-palette
+ 'jinlor-eva-00-palette-overrides
+ 'jinlor-custom-faces)
 
-;;; sinolor-eva-00-theme.el ends here
+;;; jinlor-eva-00-theme.el ends here

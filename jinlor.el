@@ -1,9 +1,9 @@
-;;; sinolor-themes.el --- Themes using traditional Chinese colors -*- lexical-binding: t -*-
+;;; jinlor.el --- Colorful and legible themes -*- lexical-binding: t -*-
 
 ;; Author: dalu <mou.tong@qq.com>
 ;; Maintainer: dalu <mou.tong@qq.com>
-;; URL: https://github.com/dalugm/sinolor-themes
-;; Version: 0.4.0
+;; URL: https://github.com/dalugm/jinlor.el
+;; Version: 0.5.0
 ;; Package-Requires: ((emacs "30.1") (modus-themes "5.2.0"))
 ;; Keywords: faces, theme, accessibility
 
@@ -24,44 +24,41 @@
 
 ;;; Commentary:
 ;;
-;; The `sinolor-themes' is a collection of light and dark themes whose
-;; goal is to provide colorful ("pretty") yet legible options for
-;; users who want something with some traditional Chinese feelings.
-;;
-;; "Sinolor" is a combined word (sino + color), to denote this package
-;; mainly use Chinese colors as the color reference.
+;; `jinlor' is a collection of colorful, legible themes inspired
+;; by architecture, characters, and imagined worlds.  It is built on
+;; Modus Themes.
 
 ;;; Code:
 
 (require 'modus-themes)
 (eval-when-compile (require 'subr-x))
 
-;;;; Basics for building on top of Sinolor
+;;;; Basics for building Jinlor themes
 
-(defgroup sinolor-themes ()
+(defgroup jinlor ()
   "Colorful and legible themes."
   :group 'faces
   :group 'modus-themes
-  :link '(url-link :tag "Website" "https://github.com/dalugm/sinolor-themes")
-  :prefix "sinolor-themes-"
-  :tag "Sinolor Themes")
+  :link '(url-link :tag "Website" "https://github.com/dalugm/jinlor.el")
+  :prefix "jinlor-"
+  :tag "Jinlor Themes")
 
-(defconst sinolor-themes-light-themes
-  '(sinolor-eva-00)
-  "List of symbols with the light Sinolor themes.")
+(defconst jinlor-light-themes
+  '(jinlor-eva-00)
+  "List of symbols with the light Jinlor themes.")
 
-(defconst sinolor-themes-dark-themes
-  '(sinolor-elysia
-    sinolor-eva-01
-    sinolor-eva-02
-    sinolor-palace)
-  "List of symbols with the dark Sinolor themes.")
+(defconst jinlor-dark-themes
+  '(jinlor-elysia
+    jinlor-eva-01
+    jinlor-eva-02
+    jinlor-palace)
+  "List of symbols with the dark Jinlor themes.")
 
-(defconst sinolor-themes-items
-  (append sinolor-themes-light-themes sinolor-themes-dark-themes)
-  "Symbols of all the Sinolor themes.")
+(defconst jinlor-items
+  (append jinlor-light-themes jinlor-dark-themes)
+  "Symbols of all the Jinlor themes.")
 
-(defconst sinolor-themes-common-palette-mappings
+(defconst jinlor-common-palette-mappings
   '((bg-diff-context bg-dim)
 
     (fg-region unspecified)
@@ -143,9 +140,9 @@
     (fg-heading-6 rainbow-6)
     (fg-heading-7 rainbow-7)
     (fg-heading-8 rainbow-8))
-  "Common palette mappings for the Sinolor themes.")
+  "Common palette mappings for the Jinlor themes.")
 
-(defconst sinolor-themes--eva-palette-mappings
+(defconst jinlor--eva-palette-mappings
   '((cursor eva-secondary-bright)
     (name eva-primary-bright)
     (keybind eva-accent)
@@ -186,103 +183,103 @@
     (prose-verbatim eva-neutral))
   "Palette mappings shared by the Evangelion themes.")
 
-(defun sinolor-themes--generate-eva-palette (base-colors temperature)
+(defun jinlor--generate-eva-palette (base-colors temperature)
   "Generate an Evangelion palette from BASE-COLORS and TEMPERATURE."
   (modus-themes-generate-palette
    base-colors
    temperature
    nil
-   (append sinolor-themes--eva-palette-mappings
-           sinolor-themes-common-palette-mappings)))
+   (append jinlor--eva-palette-mappings
+           jinlor-common-palette-mappings)))
 
-(defconst sinolor-themes-custom-faces
+(defconst jinlor-custom-faces
   '(
     `(company-tooltip ((,c :background ,bg-alt)))
     `(corfu-default ((,c :background ,bg-alt)))
     `(magit-section-highlight ((,c :background ,bg-alt)))
     `(magit-diff-file-heading-highlight ((,c :inherit magit-diff-file-heading :background ,bg-alt)))))
 
-(defconst sinolor-themes-with-properties
-  '((sinolor-eva-00
-     sinolor-themes "Evangelion Unit-00 and Rei Ayanami." light
+(defconst jinlor-with-properties
+  '((jinlor-eva-00
+     jinlor "Evangelion Unit-00 and Rei Ayanami." light
      modus-themes-operandi-palette
-     sinolor-eva-00-palette sinolor-eva-00-palette-overrides)
-    (sinolor-eva-01
-     sinolor-themes "Evangelion Unit-01 and Shinji Ikari." dark
+     jinlor-eva-00-palette jinlor-eva-00-palette-overrides)
+    (jinlor-eva-01
+     jinlor "Evangelion Unit-01 and Shinji Ikari." dark
      modus-themes-vivendi-palette
-     sinolor-eva-01-palette sinolor-eva-01-palette-overrides)
-    (sinolor-eva-02
-     sinolor-themes "Evangelion Unit-02 and Asuka Shikinami Langley." dark
+     jinlor-eva-01-palette jinlor-eva-01-palette-overrides)
+    (jinlor-eva-02
+     jinlor "Evangelion Unit-02 and Asuka Shikinami Langley." dark
      modus-themes-vivendi-palette
-     sinolor-eva-02-palette sinolor-eva-02-palette-overrides)
-    (sinolor-palace
-     sinolor-themes "The Palace Museum." dark
+     jinlor-eva-02-palette jinlor-eva-02-palette-overrides)
+    (jinlor-palace
+     jinlor "The Palace Museum." dark
      modus-themes-vivendi-palette
-     sinolor-palace-palette sinolor-palace-palette-overrides)
-    (sinolor-elysia
-     sinolor-themes "To Romantic Unfailing Elysia." dark
+     jinlor-palace-palette jinlor-palace-palette-overrides)
+    (jinlor-elysia
+     jinlor "To Romantic Unfailing Elysia." dark
      modus-themes-vivendi-palette
-     sinolor-elysia-palette sinolor-elysia-palette-overrides)))
+     jinlor-elysia-palette jinlor-elysia-palette-overrides)))
 
-(defvar sinolor-themes--declared nil)
+(defvar jinlor--declared nil)
 
-(defun sinolor-themes-declare-themes ()
-  "Declare the Sinolor themes."
-  (unless sinolor-themes--declared
-    (dolist (theme sinolor-themes-with-properties)
+(defun jinlor-declare-themes ()
+  "Declare the Jinlor themes."
+  (unless jinlor--declared
+    (dolist (theme jinlor-with-properties)
       (apply #'modus-themes-declare theme)
       (modus-themes-register (car theme)))
-    (setq sinolor-themes--declared t)))
+    (setq jinlor--declared t)))
 
-(sinolor-themes-declare-themes)
+(jinlor-declare-themes)
 
-;;;; Limit the Modus themes to only Sinolor themes
+;;;; Limit the Modus themes to only Jinlor themes
 
 ;;;###autoload
-(define-minor-mode sinolor-themes-take-over-modus-themes-mode
-  "When enabled, all Modus themes commands consider only Sinolor themes.
-Alternatively, use the commands `sinolor-themes-rotate',
-`sinolor-themes-select', `sinolor-themes-load-random',
-`sinolor-themes-load-random-dark', `sinolor-themes-load-random-light',
-`sinolor-themes-list-colors', `sinolor-themes-list-colors-current'.
-They are all designed to only consider Sinolor themes."
+(define-minor-mode jinlor-take-over-modus-themes-mode
+  "When enabled, all Modus themes commands consider only Jinlor themes.
+Alternatively, use the commands `jinlor-rotate',
+`jinlor-select', `jinlor-load-random',
+`jinlor-load-random-dark', `jinlor-load-random-light',
+`jinlor-list-colors', `jinlor-list-colors-current'.
+They are all designed to only consider Jinlor themes."
   :global t
   :init-value nil)
 
-(cl-defmethod modus-themes-get-themes (&context (sinolor-themes-take-over-modus-themes-mode (eql t)))
-  "Return Sinolor themes when takeover mode is active.
-This applies when SINOLOR-THEMES-TAKE-OVER-MODUS-THEMES-MODE is non-nil."
-  (if-let* ((themes (modus-themes-get-all-known-themes 'sinolor-themes))
+(cl-defmethod modus-themes-get-themes (&context (jinlor-take-over-modus-themes-mode (eql t)))
+  "Return Jinlor themes when takeover mode is active.
+This applies when JINLOR-TAKE-OVER-MODUS-THEMES-MODE is non-nil."
+  (if-let* ((themes (modus-themes-get-all-known-themes 'jinlor))
             (sorted-a-z (sort themes #'string-lessp))
             (sorted-light-dark (modus-themes-sort sorted-a-z 'light)))
       sorted-light-dark
-    sinolor-themes-items))
+    jinlor-items))
 
 ;;;; Convenience commands
 
-;;;###autoload (autoload 'sinolor-themes-toggle "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes toggle)
+;;;###autoload (autoload 'jinlor-toggle "jinlor")
+(modus-themes-define-derivative-command jinlor toggle)
 
-;;;###autoload (autoload 'sinolor-themes-rotate "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes rotate)
+;;;###autoload (autoload 'jinlor-rotate "jinlor")
+(modus-themes-define-derivative-command jinlor rotate)
 
-;;;###autoload (autoload 'sinolor-themes-select "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes select)
+;;;###autoload (autoload 'jinlor-select "jinlor")
+(modus-themes-define-derivative-command jinlor select)
 
-;;;###autoload (autoload 'sinolor-themes-load-random "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes load-random)
+;;;###autoload (autoload 'jinlor-load-random "jinlor")
+(modus-themes-define-derivative-command jinlor load-random)
 
-;;;###autoload (autoload 'sinolor-themes-load-random-dark "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes load-random-dark)
+;;;###autoload (autoload 'jinlor-load-random-dark "jinlor")
+(modus-themes-define-derivative-command jinlor load-random-dark)
 
-;;;###autoload (autoload 'sinolor-themes-load-random-light "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes load-random-light)
+;;;###autoload (autoload 'jinlor-load-random-light "jinlor")
+(modus-themes-define-derivative-command jinlor load-random-light)
 
-;;;###autoload (autoload 'sinolor-themes-list-colors "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes list-colors)
+;;;###autoload (autoload 'jinlor-list-colors "jinlor")
+(modus-themes-define-derivative-command jinlor list-colors)
 
-;;;###autoload (autoload 'sinolor-themes-list-colors-current "sinolor-themes")
-(modus-themes-define-derivative-command sinolor-themes list-colors-current)
+;;;###autoload (autoload 'jinlor-list-colors-current "jinlor")
+(modus-themes-define-derivative-command jinlor list-colors-current)
 
 ;;;; Add themes from the package to the load path
 
@@ -292,5 +289,5 @@ This applies when SINOLOR-THEMES-TAKE-OVER-MODUS-THEMES-MODE is non-nil."
     (unless (file-equal-p dir (expand-file-name "themes/" data-directory))
       (add-to-list 'custom-theme-load-path dir))))
 
-(provide 'sinolor-themes)
-;;; sinolor-themes.el ends here
+(provide 'jinlor)
+;;; jinlor.el ends here
