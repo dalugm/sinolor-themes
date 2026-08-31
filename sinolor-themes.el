@@ -235,7 +235,7 @@
      modus-themes-vivendi-palette
      sinolor-palace-palette sinolor-palace-palette-overrides)
     (sinolor-elysia
-     sinolor-themes "To Romantic Unfailing Elysia" dark
+     sinolor-themes "To Romantic Unfailing Elysia." dark
      modus-themes-vivendi-palette
      sinolor-elysia-palette sinolor-elysia-palette-overrides)))
 

@@ -1,5 +1,7 @@
 ;;; sinolor-themes-tests.el --- Tests for sinolor-themes -*- lexical-binding: t; -*-
 
+;;; Code:
+
 (require 'ert)
 (require 'sinolor-themes)
 
@@ -43,6 +45,27 @@
                                       (symbol-value palette)))
                            secondary)))
         (disable-theme theme)))))
+
+(ert-deftest sinolor-elysia-uses-pink-crystal-and-lilac-roles ()
+  (should (equal (plist-get (get 'sinolor-elysia 'theme-properties)
+                            :modus-documentation)
+                 "To Romantic Unfailing Elysia."))
+  (load-theme 'sinolor-elysia t)
+  (unwind-protect
+      (progn
+        (dolist (spec '((elysia-pink "#e88fba")
+                        (elysia-crystal "#8fd6e8")
+                        (elysia-lilac "#b49ad8")
+                        (elysia-gold "#e8c76d")))
+          (should (equal (cadr (assq (car spec) sinolor-elysia-palette))
+                         (cadr spec))))
+        (should (equal (modus-themes-get-color-value
+                        'keyword nil 'sinolor-elysia)
+                       "#ffb7d8"))
+        (should (equal (modus-themes-get-color-value
+                        'string nil 'sinolor-elysia)
+                       "#b7edf5")))
+    (disable-theme 'sinolor-elysia)))
 
 (provide 'sinolor-themes-tests)
 ;;; sinolor-themes-tests.el ends here
