@@ -4,7 +4,7 @@
 ;; Maintainer: dalu <mou.tong@qq.com>
 ;; URL: https://github.com/dalugm/sinolor-themes
 ;; Version: 0.4.0
-;; Package-Requires: ((emacs "28.1") (modus-themes "5.2.0"))
+;; Package-Requires: ((emacs "30.1") (modus-themes "5.2.0"))
 ;; Keywords: faces, theme, accessibility
 
 ;; This file is NOT part of GNU Emacs.
@@ -168,15 +168,15 @@
     (sinolor-palace sinolor-themes "The Palace Museum." dark modus-themes-vivendi-palette sinolor-palace-palette sinolor-palace-palette-overrides)
     (sinolor-elysia sinolor-themes "To Romantic Unfailing Elysia" dark modus-themes-vivendi-palette sinolor-elysia-palette sinolor-elysia-palette-overrides)))
 
-(defvar sinolor-themes--declared-p nil)
+(defvar sinolor-themes--declared nil)
 
 (defun sinolor-themes-declare-themes ()
   "Declare the Sinolor themes."
-  (unless sinolor-themes--declared-p
+  (unless sinolor-themes--declared
     (dolist (theme sinolor-themes-with-properties)
       (apply #'modus-themes-declare theme)
       (modus-themes-register (car theme)))
-    (setq sinolor-themes--declared-p t)))
+    (setq sinolor-themes--declared t)))
 
 (sinolor-themes-declare-themes)
 
