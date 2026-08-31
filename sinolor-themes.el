@@ -200,21 +200,7 @@
     `(company-tooltip ((,c :background ,bg-alt)))
     `(corfu-default ((,c :background ,bg-alt)))
     `(magit-section-highlight ((,c :background ,bg-alt)))
-    `(magit-diff-file-heading-highlight ((,c :inherit magit-diff-file-heading :background ,bg-alt)))
-    `(mode-line
-      ((default :inherit modus-themes-ui-variable-pitch
-                :background ,bg-mode-line-active
-                :foreground ,fg-mode-line-active)
-       (((supports :box t))
-        :box (:color ,border-mode-line-active :style released-button))
-       (t :underline ,border-mode-line-active)))
-    `(mode-line-active
-      ((default :inherit modus-themes-ui-variable-pitch
-                :background ,bg-mode-line-active
-                :foreground ,fg-mode-line-active)
-       (((supports :box t))
-        :box (:color ,border-mode-line-active :style released-button))
-       (t :underline ,border-mode-line-active)))))
+    `(magit-diff-file-heading-highlight ((,c :inherit magit-diff-file-heading :background ,bg-alt)))))
 
 (defconst sinolor-themes-with-properties
   '((sinolor-eva-00
