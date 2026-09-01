@@ -1,5 +1,8 @@
 ;;; jinlor-palace-theme.el --- The Palace Museum -*- lexical-binding: t -*-
 
+;; Copyright (C) 2026 dalu
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Commentary:
 ;;
 ;; A dark theme centered on the Palace Museum's red walls and green

@@ -1,5 +1,8 @@
 ;;; jinlor-eva-01-theme.el --- Evangelion Unit-01 and Shinji Ikari -*- lexical-binding: t -*-
 
+;; Copyright (C) 2026 dalu
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Commentary:
 ;;
 ;; Unit-01's deep purple armor and luminous green details define the

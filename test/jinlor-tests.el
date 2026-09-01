@@ -1,5 +1,8 @@
 ;;; jinlor-tests.el --- Tests for jinlor -*- lexical-binding: t; -*-
 
+;; Copyright (C) 2026 dalu
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Code:
 
 (require 'ert)

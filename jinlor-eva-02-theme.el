@@ -1,5 +1,8 @@
 ;;; jinlor-eva-02-theme.el --- Evangelion Unit-02 and Asuka -*- lexical-binding: t -*-
 
+;; Copyright (C) 2026 dalu
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Commentary:
 ;;
 ;; Unit-02's red armor dominates this warm theme.  Orange and yellow

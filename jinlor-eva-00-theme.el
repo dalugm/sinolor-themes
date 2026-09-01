@@ -1,5 +1,8 @@
 ;;; jinlor-eva-00-theme.el --- Evangelion Unit-00 and Rei Ayanami -*- lexical-binding: t -*-
 
+;; Copyright (C) 2026 dalu
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Commentary:
 ;;
 ;; A light theme pairing Unit-00's yellow-orange armor with the cool

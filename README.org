@@ -2,6 +2,7 @@
 - [[#jinlor-themes][Jinlor Themes]]
   - [[#installation][Installation]]
   - [[#usage][Usage]]
+  - [[#license][License]]
 
 * Jinlor Themes
 
@@ -37,3 +38,8 @@ git clone https://github.com/dalugm/jinlor.el.git
 #+begin_src elisp
 (load-theme 'jinlor-eva-01 t)
 #+end_src
+
+** License
+
+Jinlor Themes is released under the GNU General Public License,
+version 3 or any later version.  See [[file:LICENSE][LICENSE]].

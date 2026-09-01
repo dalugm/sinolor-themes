@@ -1,5 +1,8 @@
 ;;; jinlor-elysia-theme.el --- To Romantic Unfailing Elysia -*- lexical-binding: t -*-
 
+;; Copyright (C) 2026 dalu
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Commentary:
 ;;
 ;; A dark theme centered on Elysia's rose-pink, with crystal blue,
