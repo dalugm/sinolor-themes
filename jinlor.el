@@ -6,8 +6,8 @@
 ;; Author: dalu <mou.tong@qq.com>
 ;; Maintainer: dalu <mou.tong@qq.com>
 ;; URL: https://github.com/dalugm/jinlor.el
-;; Version: 0.5.0
-;; Package-Requires: ((emacs "30.1") (modus-themes "5.2.0"))
+;; Version: 0.5.1
+;; Package-Requires: ((emacs "30.1") (modus-themes "5.3.0"))
 ;; Keywords: faces, theme, accessibility
 
 ;; This file is NOT part of GNU Emacs.
@@ -160,14 +160,14 @@
     (fnname eva-pilot)
     (fnname-call blue-warmer)
     (keyword eva-accent)
-    (preprocessor eva-primary)
+    (preprocessor eva-primary-bright)
     (docstring eva-secondary)
     (string eva-secondary-bright)
     (type eva-pilot)
     (variable eva-primary-bright)
     (variable-use eva-accent)
     (rx-backslash eva-secondary)
-    (rx-construct eva-primary)
+    (rx-construct eva-primary-bright)
     (accent-0 eva-primary-bright)
     (accent-1 eva-secondary-bright)
     (accent-2 eva-accent)
@@ -260,28 +260,28 @@ This applies when JINLOR-TAKE-OVER-MODUS-THEMES-MODE is non-nil."
 
 ;;;; Convenience commands
 
-;;;###autoload (autoload 'jinlor-toggle "jinlor")
+;;;###autoload (autoload 'jinlor-toggle "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor toggle)
 
-;;;###autoload (autoload 'jinlor-rotate "jinlor")
+;;;###autoload (autoload 'jinlor-rotate "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor rotate)
 
-;;;###autoload (autoload 'jinlor-select "jinlor")
+;;;###autoload (autoload 'jinlor-select "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor select)
 
-;;;###autoload (autoload 'jinlor-load-random "jinlor")
+;;;###autoload (autoload 'jinlor-load-random "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor load-random)
 
-;;;###autoload (autoload 'jinlor-load-random-dark "jinlor")
+;;;###autoload (autoload 'jinlor-load-random-dark "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor load-random-dark)
 
-;;;###autoload (autoload 'jinlor-load-random-light "jinlor")
+;;;###autoload (autoload 'jinlor-load-random-light "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor load-random-light)
 
-;;;###autoload (autoload 'jinlor-list-colors "jinlor")
+;;;###autoload (autoload 'jinlor-list-colors "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor list-colors)
 
-;;;###autoload (autoload 'jinlor-list-colors-current "jinlor")
+;;;###autoload (autoload 'jinlor-list-colors-current "jinlor" nil t)
 (modus-themes-define-derivative-command jinlor list-colors-current)
 
 ;;;; Add themes from the package to the load path
